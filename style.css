@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width:0px) and (max-width:600px){
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        font-size: 20px;
+    }
+
+        .spotify span {
+        color: rgb(26, 184, 26); 
+        font-size: 20px; 
+        margin-left: 5%;
+    }
+
+    .apple span {
+        color: purple; 
+        font-size: 20px; 
+        margin-left: 5%;
+    }
+
+    .ivoox span {
+        color: orange; 
+        font-size: 20px; 
+        margin-left: 5%;
+    }
+
+.youtube span {
+    color:red; 
+    font-size: 20px; 
+    margin-left: 5%;
+
+}
+}
+@media screen and (min-width:600px){
+    .spotify span {
+        color: rgb(26, 184, 26); 
+        font-size: 30px; 
+        margin-left: 5%;
+    }
+
+    .apple span {
+        color: purple; 
+        font-size: 30px; 
+        margin-left: 5%;
+    }
+
+    .ivoox span {
+        color: orange; 
+        font-size: 30px; 
+        margin-left: 5%;
+    }
+
+    .youtube span {
+        color:red; 
+        font-size: 30px; 
+        margin-left: 5%;
+    }
+
+    .spotify:hover {
+        background-color: rgb(26, 184, 26);
+    }
+
+    .spotify:hover span {
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    }
+
+    .apple:hover {
+        background-color: purple;
+    }
+
+    .apple:hover span {
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    }
+
+    .ivoox:hover {
+        background-color: orange;
+    }
+
+    .ivoox:hover span {
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    }
+
+    .youtube:hover {
+        background-color: red;
+    }
+
+    .youtube:hover span {
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    }
+
+    .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 24px;
+}
+}
+
+header {
+    background-color: #171e28;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 1px solid #172b48;
+}
+
+.menu a{
+    color: white;
+}
+.menu li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.boton_imagen {
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+#sobre_el_podcast p{
+    margin-top: 20vh;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+#plataformas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_plataforma {
+    width: auto;
+    height: 15vh;
+    border-radius: 5px;
+}
+
+.contenedor_boton {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 3vh;
+    width: 70vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.portada_img{
+    width: auto;
+    height: 30vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    position: relative;
+    top: 6vh;
+}
+
+.fondo_img {
+  background-color: #171e28;
+  height: 20vh;
+  display: flex;
+}
+
+#sobre_el_podcast{
+      margin: 0 auto 20vh;
+}
+
+#contacto{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+.correo{
+    font-size: 24px;
+    border: 2px solid black;
+    padding: 5px;
+}
+footer{
+    background-color: #171e28;
+    padding: 5%;
+}
+
+footer span{
+    font-size: 20px;
+    color: white;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.red_social{
+    height: 35px;
+    width: 35px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
