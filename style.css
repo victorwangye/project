@@ -148,6 +148,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .img_plataforma {
