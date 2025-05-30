@@ -10,7 +10,7 @@
         font-size: 20px;
     }
 
-        .spotify span {
+    .spotify span {
         color: rgb(26, 184, 26); 
         font-size: 20px; 
         margin-left: 5%;
@@ -28,12 +28,29 @@
         margin-left: 5%;
     }
 
-.youtube span {
+    .youtube span {
     color:red; 
     font-size: 20px; 
     margin-left: 5%;
-
-}
+    }
+    .img_yo {
+        width: 60vw;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .perfil{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .descripcion {
+        font-size: 22px;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 @media screen and (min-width:600px){
     .spotify span {
@@ -105,7 +122,52 @@
     flex-direction: row;
     gap: 20px;
     font-size: 24px;
+    }
+
+    .img_yo{
+        width: 60vw;
+        height: auto;
+    }
+
+    .descripcion{
+        font-size: 22px;
+    }
+
+    .titulo{
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .perfil{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 25px;
+    }
+
 }
+
+@media screen and (min-width:800px){
+    .img_yo{
+        width: 50vw;
+    }
+}
+@media screen and (min-width:900px){
+    .img_yo{
+        width: 40vw;
+    }
+}
+@media screen and (min-width:1100px){
+    .img_yo{
+        width: 30vw;
+        
+    }
 }
 
 header {
@@ -148,7 +210,6 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .img_plataforma {
@@ -173,7 +234,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 10px;
+    border-radius: 5px;
     position: relative;
     top: 6vh;
 }
@@ -216,5 +277,5 @@ footer span{
     height: 35px;
     width: 35px;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 10px
 }
