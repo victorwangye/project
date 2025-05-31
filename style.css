@@ -221,7 +221,7 @@ a {
 .contenedor_boton {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-top: 3vh;
-    width: 70vw;
+    width: 60%;
     height: auto;
     display: flex;
     flex-direction: column;
