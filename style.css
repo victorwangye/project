@@ -1,175 +1,22 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
 }
-@media screen and (min-width:0px) and (max-width:600px){
-    .menu {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        font-size: 20px;
-    }
 
-    .spotify span {
-        color: rgb(26, 184, 26); 
-        font-size: 20px; 
-        margin-left: 5%;
-    }
-
-    .apple span {
-        color: purple; 
-        font-size: 20px; 
-        margin-left: 5%;
-    }
-
-    .ivoox span {
-        color: orange; 
-        font-size: 20px; 
-        margin-left: 5%;
-    }
-
-    .youtube span {
-    color:red; 
-    font-size: 20px; 
-    margin-left: 5%;
-    }
-    .img_yo {
-        width: 60vw;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .perfil{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    .descripcion {
-        font-size: 22px;
-        margin-top: 5px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+a {
+    text-decoration: none;
 }
-@media screen and (min-width:600px){
-    .spotify span {
-        color: rgb(26, 184, 26); 
-        font-size: 30px; 
-        margin-left: 5%;
-    }
 
-    .apple span {
-        color: purple; 
-        font-size: 30px; 
-        margin-left: 5%;
-    }
-
-    .ivoox span {
-        color: orange; 
-        font-size: 30px; 
-        margin-left: 5%;
-    }
-
-    .youtube span {
-        color:red; 
-        font-size: 30px; 
-        margin-left: 5%;
-    }
-
-    .spotify:hover {
-        background-color: rgb(26, 184, 26);
-    }
-
-    .spotify:hover span {
+.menu a {
     color: white;
-    transition: color 0.3s ease;
-    font-weight: bold;
-    }
-
-    .apple:hover {
-        background-color: purple;
-    }
-
-    .apple:hover span {
-    color: white;
-    transition: color 0.3s ease;
-    font-weight: bold;
-    }
-
-    .ivoox:hover {
-        background-color: orange;
-    }
-
-    .ivoox:hover span {
-    color: white;
-    transition: color 0.3s ease;
-    font-weight: bold;
-    }
-
-    .youtube:hover {
-        background-color: red;
-    }
-
-    .youtube:hover span {
-    color: white;
-    transition: color 0.3s ease;
-    font-weight: bold;
-    }
-
-    .menu {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-size: 24px;
-    }
-
-    .img_yo{
-        width: 60vw;
-        height: auto;
-    }
-
-    .descripcion{
-        font-size: 22px;
-    }
-
-    .titulo{
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-
-    .perfil{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .text{
-        display: flex;
-        flex-direction: column;
-        margin-top: 15px;
-        margin-left: 15px;
-        margin-right: 25px;
-    }
-
 }
 
-@media screen and (min-width:800px){
-    .img_yo{
-        width: 50vw;
-    }
-}
-@media screen and (min-width:900px){
-    .img_yo{
-        width: 40vw;
-    }
-}
-@media screen and (min-width:1100px){
-    .img_yo{
-        width: 30vw;
-        
-    }
+.menu li {
+    list-style: none;
 }
 
+/* Header */
 header {
     background-color: #171e28;
     color: white;
@@ -180,24 +27,32 @@ header {
     border: 1px solid #172b48;
 }
 
-.menu a{
-    color: white;
-}
-.menu li {
-    list-style: none;
+/* Imagen de portada */
+.portada_img {
+    width: auto;
+    height: 30vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    position: relative;
+    top: 6vh;
 }
 
-a {
-    text-decoration: none;
-}
-
-.boton_imagen {
-    align-items: center;
+.fondo_img {
+    background-color: #171e28;
+    height: 20vh;
     display: flex;
-    text-align: center;
 }
 
-#sobre_el_podcast p{
+
+
+/* Sección sobre el podcast */
+#sobre_el_podcast {
+    margin: 0 auto 20vh;
+}
+
+#sobre_el_podcast p {
     margin-top: 20vh;
     text-align: center;
     font-size: 18px;
@@ -205,78 +60,307 @@ a {
     margin-right: 6%;
 }
 
-#plataformas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.img_plataforma {
-    width: auto;
-    height: 15vh;
-    border-radius: 5px;
-}
-
-.contenedor_boton {
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-top: 3vh;
-    width: 60%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-}
-
-.portada_img{
-    width: auto;
-    height: 30vh;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    position: relative;
-    top: 6vh;
-}
-
-.fondo_img {
-  background-color: #171e28;
-  height: 20vh;
-  display: flex;
-}
-
-#sobre_el_podcast{
-      margin: 0 auto 20vh;
-}
-
-#contacto{
+/* Contacto */
+#contacto {
     margin-top: 30px;
     justify-content: center;
     align-items: center;
     display: flex;
     margin-bottom: 20px;
 }
-.correo{
+
+.correo {
     font-size: 24px;
     border: 2px solid black;
     padding: 5px;
 }
-footer{
+
+/* Footer */
+footer {
     background-color: #171e28;
     padding: 5%;
-    margin-top: 2vh;
 }
 
-footer span{
+footer span {
     font-size: 20px;
     color: white;
     margin-top: 5px;
     margin-left: 10px;
 }
 
-.red_social{
+.red_social {
     height: 35px;
     width: 35px;
     margin-top: 5px;
-    margin-left: 10px
+    margin-left: 10px;
+}
+
+/* Imagen del perfil */
+.img_yo {
+    width: 60vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sección perfil */
+.perfil {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.descripcion {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.titulo {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+/* MENÚ */
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 24px;
+}
+
+/* SECCIÓN PLATAFORMAS */
+#plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.contenedor_boton {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 200px;
+    text-align: center;
+}
+
+.contenedor_boton:hover {
+    transform: translateY(-5px);
+}
+
+.boton_imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.img_plataforma {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+/* Colores y hover efectos */
+.spotify span {
+    color: rgb(26, 184, 26);
+    font-size: 18px;
+}
+
+.apple span {
+    color: purple;
+    font-size: 18px;
+}
+
+.youtube span {
+    color: red;
+    font-size: 18px;
+}
+
+.spotify:hover {
+    background-color: rgb(26, 184, 26);
+}
+
+.spotify:hover span {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.apple:hover {
+    background-color: purple;
+}
+
+.apple:hover span {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.youtube:hover {
+    background-color: red;
+}
+
+.youtube:hover span {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        font-size: 20px;
+    }
+
+    .spotify span,
+    .apple span,
+    .ivoox span,
+    .youtube span {
+        font-size: 20px;
+        margin-left: 5%;
+    }
+
+    .spotify span { color: rgb(26, 184, 26); }
+    .apple span { color: purple; }
+    .ivoox span { color: orange; }
+    .youtube span { color: red; }
+
+    .img_yo {
+        width: 60vw;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .perfil {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .descripcion {
+        font-size: 22px;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #plataformas {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .contenedor_boton {
+        width: 80%;
+    }
+
+    .img_plataforma {
+        width: 50px;
+        height: 50px;
+    }
+
+    .spotify span,
+    .apple span,
+    .youtube span {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .spotify span,
+    .apple span,
+    .ivoox span,
+    .youtube span {
+        font-size: 30px;
+        margin-left: 5%;
+    }
+
+    .spotify span { color: rgb(26, 184, 26); }
+    .apple span { color: purple; }
+    .ivoox span { color: orange; }
+    .youtube span { color: red; }
+
+    .spotify:hover { background-color: rgb(26, 184, 26); }
+    .spotify:hover span { color: white; font-weight: bold; }
+
+    .apple:hover { background-color: purple; }
+    .apple:hover span { color: white; font-weight: bold; }
+
+    .ivoox:hover { background-color: orange; }
+    .ivoox:hover span { color: white; font-weight: bold; }
+
+    .youtube:hover { background-color: red; }
+    .youtube:hover span { color: white; font-weight: bold; }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        font-size: 24px;
+    }
+
+    .img_yo {
+        width: 60vw;
+        height: auto;
+    }
+
+    .descripcion {
+        font-size: 22px;
+    }
+
+    .titulo {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .perfil {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 25px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .img_yo {
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .img_yo {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .img_yo {
+        width: 30vw;
+    }
 }
