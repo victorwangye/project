@@ -233,6 +233,21 @@ footer span {
     transition: color 0.3s ease;
 }
 
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown.show .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+Existen esas clases en el HTML?
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
     .menu {
