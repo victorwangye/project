@@ -14,7 +14,24 @@ a {
 .menu li {
     list-style: none;
 }
+.footer-menu {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
+.footer-menu a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-menu a:hover {
+  color: #0056b3;
+}
 /* Header */
 header {
     background-color: #171e28;
@@ -306,6 +323,10 @@ footer span {
         width: 50px;
         height: 50px;
     }
+    .footer-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media screen and (min-width: 600px) {
