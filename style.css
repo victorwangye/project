@@ -43,6 +43,25 @@ header {
     height: 20vh;
     display: flex;
 }
+.footer-menu {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-menu a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-menu a:hover {
+  color: #0056b3;
+}
+
 
 /* Sección sobre el podcast */
 #sobre_el_podcast {
