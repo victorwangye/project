@@ -221,12 +221,6 @@ footer span {
     font-size: 18px;
 }
 
-.youtube span {
-    color: red;
-    font-size: 18px;
-    text-decoration: none 
-    
-}
 
 .ivoox span {
     color: orange;
@@ -248,16 +242,6 @@ footer span {
 }
 
 .apple:hover span {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.youtube:hover {
-    background-color: red;
-}
-
-.youtube:hover span {
     color: white;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -409,4 +393,5 @@ footer span {
         width: 30vw;
     }
 }
+
 
