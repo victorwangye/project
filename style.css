@@ -121,13 +121,6 @@ footer span {
     margin-left: 10px;
 }
 
-.red_social {
-    height: 35px;
-    width: 35px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
 /* Imagen del perfil */
 .img_yo {
     width: 60vw;
@@ -393,5 +386,6 @@ footer span {
         width: 30vw;
     }
 }
+
 
 
