@@ -212,16 +212,20 @@ footer span {
 .spotify span {
     color: rgb(26, 184, 26);
     font-size: 18px;
+    text-decoration: none 
 }
 
 .apple span {
     color: purple;
+    text-decoration: none 
     font-size: 18px;
 }
 
 .youtube span {
     color: red;
     font-size: 18px;
+    text-decoration: none 
+    
 }
 
 .ivoox span {
@@ -405,3 +409,4 @@ footer span {
         width: 30vw;
     }
 }
+
