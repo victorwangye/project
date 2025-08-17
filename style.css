@@ -115,9 +115,6 @@ header {
   gap: 1rem;
   font-size: 2rem;
   margin: 10px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #fff;
 }
 
 .podcast-links .btn i,
@@ -126,25 +123,18 @@ header {
   height: 48px;
 }
 
-/* Colores específicos */
-.spotify {
-  background-color: #1DB954;
-}
-
+/* Apple podcast (ya que no usas clase bootstrap específica) */
 .apple {
+  color: #fff;
   background-color: #8e44ad;
   border: 4px solid #8e44ad;
-}
-
-.youtube {
-  background-color: #FF0000;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .podcast-links .btn {
-    width: 80%;      /* más flexible */
-    height: auto;    /* un poco más bajo */
+    width: 90%;
+    height: 80px;
     font-size: 1.5rem;
   }
 
