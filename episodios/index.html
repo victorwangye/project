@@ -10,18 +10,31 @@
 </head>
 <body class="bg-light">
   <header class="d-flex align-items-center justify-content-between p-3 bg-dark shadow-sm">
-  <!-- Logo -->
   <a href="/" class="text-decoration-none">
     <button type="button" class="btn btn-outline-info">mentes404</button>
   </a>
 
   <nav class="d-none d-md-flex gap-4 justify-content-center flex-grow-1">
-    <a href="/" class="text-white text-decoration-none">Inicio</a>
-    <a href="/episodios/" class="text-white text-decoration-none"><i class="bi bi-play"></i> Episodios</a>
-    <a href="/Personas-que-hemos-invitado-al-Podcast/" class="text-white text-decoration-none">Personas a las que hemod invitado</a>
-    <a href="/blog/" class="text-white text-decoration-none">Blog</a>
-    <a href="/contacto/" class="text-white text-decoration-none">Contacto</a>
+    <a href="../" class="text-white text-decoration-none">Inicio</a>
+    <a href="../episodios/" class="text-white text-decoration-none"><i class="bi bi-play"></i> Episodios</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/" class="text-white text-decoration-none">Personas a las que hemod invitado</a>
+    <a href="../blog/" class="text-white text-decoration-none">Blog</a>
+    <a href="/..contacto/" class="text-white text-decoration-none">Contacto</a>
   </nav>
+
+  <div class="dropdown d-md-none">
+    <button class="btn btn-outline-secondary border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+      <li><a class="dropdown-item" href="../"><i class="bi bi-house"></i> Inicio</a></li>
+      <li><a class="dropdown-item" href="../episodios/"><i class="bi bi-play"></i> Episodios</a></li>
+      <li><a class="dropdown-item" href="../Personas-que-hemos-invitado-al-Podcast/"><i class="bi bi-people-fill"></i> Invitados</a></li>
+      <li><a class="dropdown-item" href="../blog/"><i class="bi bi-file-richtext"></i> Blog</a></li>
+      <li><a class="dropdown-item" href="../contacto/"><i class="bi bi-envelope"></i> Contacto</a></li>
+    </ul>
+  </div>
+</header>
     <div style="display: flex; margin-top: 15px; margin-bottom: 15px; margin-left: 15px; margin-right: 15px; flex-direction: column;">
         <h1>🎧 Episodios en camino</h1>
         <p style="font-size: 22px;">Estamos trabajando en conversaciones que te inspirarán, informarán y entretendrán.</p>
