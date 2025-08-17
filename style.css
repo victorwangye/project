@@ -143,8 +143,8 @@ header {
 /* Responsive */
 @media (max-width: 768px) {
   .podcast-links .btn {
-    width: 90%;      /* más flexible */
-    height: 80px;    /* un poco más bajo */
+    width: 80%;      /* más flexible */
+    height: auto;    /* un poco más bajo */
     font-size: 1.5rem;
   }
 
