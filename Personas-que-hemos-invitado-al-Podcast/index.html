@@ -449,18 +449,15 @@
     </footer>
   <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const collapseElements = document.querySelectorAll('.collapse');
-
-  collapseElements.forEach(el => {
+  document.querySelectorAll('.collapse').forEach(el => {
     const btn = document.querySelector(`[data-bs-target="#${el.id}"]`);
-    const dots = document.querySelector(`#dots${el.id.replace("more","")}`);
+    const dots = document.getElementById('dots' + el.id.replace('more', ''));
 
     if (btn && dots) {
       el.addEventListener('show.bs.collapse', () => {
         btn.textContent = "Ocultar";
         dots.style.display = "none";
       });
-
       el.addEventListener('hide.bs.collapse', () => {
         btn.textContent = "Ver más";
         dots.style.display = "inline";
@@ -469,9 +466,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
