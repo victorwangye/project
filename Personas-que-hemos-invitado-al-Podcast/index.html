@@ -272,7 +272,8 @@
           <div class="container my-4">
             <p>
               Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje (ChatGPT, Claude, Copilot, Gemini, Grok o LLAMA).
-              <span id="dots">...</span><span id="more" class="collapse"><br>
+              <span id="dotsHugo">...</span>
+              <span class="collapse" id="moreHugo">
               Certificado en Al Engineering por IBM y Machine Learning por Stanford, y forma parte del proyecto OdiselA Digital Futures de google.org
               <br><br>
               Cuento con experiencia en seguridad en IA (AI Red Teaming), fine-tuning de modelos (Whisper, Stable Diffusion) y despliegue de agentes personalizados en la nube (GCP, AWS, Azure).
@@ -282,8 +283,14 @@
               Además, colaboro como docente en plataformas como Udemy, con miles de estudiantes en cursos sobre IA y LLMs.
               </span>
             </p>
-            <button id="toggleBtn" class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#more" aria-expanded="false" aria-controls="more">
-              Ver más</button>
+            <button class="btn btn-primary btn-sm mt-2" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#moreHugo" 
+                  aria-expanded="false" 
+                  aria-controls="moreHugo">
+            Ver más
+          </button>
           </div>
           <b>🎙️ ¿Quien piensa cuando la ia piensa por ti?</b>
           En este episodio, conversamos con Hugo sobre como utilizar la ia de forma correcta, el sesgo invisible de ia, deepfake y mucho más.
@@ -441,19 +448,7 @@
         </div>
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const toggleBtn = document.getElementById("toggleBtn");
-    const moreContent = document.getElementById("more");
-    const dots = document.getElementById("dots");
-    moreContent.addEventListener("shown.bs.collapse", () => {
-      toggleBtn.textContent = "Ocultar";
-      dots.style.display = "none";
-    });
-    moreContent.addEventListener("hidden.bs.collapse", () => {
-      toggleBtn.textContent = "Ver más";
-      dots.style.display = "inline";
-    });
-  </script>
 </body>
 </html>
+
 
