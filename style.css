@@ -123,13 +123,6 @@ header {
   height: 48px;
 }
 
-/* Apple podcast (ya que no usas clase bootstrap específica) */
-.btn-apple {
-  color: #fff;
-  background-color: #8e44ad;
-  border: 4px solid #8e44ad;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .podcast-links .btn {
