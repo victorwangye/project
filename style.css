@@ -274,35 +274,7 @@ footer span {
     font-size: 18px;
 }
 
-.spotify:hover {
-    background-color: rgb(26, 184, 26);
-}
 
-.spotify:hover span {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.apple:hover {
-    background-color: purple;
-}
-
-.apple:hover span {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.ivoox:hover {
-    background-color: orange;
-}
-
-.ivoox:hover span {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
 
 
 /* MEDIA QUERIES */
@@ -368,18 +340,6 @@ footer span {
     .ivoox span { color: orange; }
     .youtube span { color: red; }
 
-    .spotify:hover { background-color: rgb(26, 184, 26); }
-    .spotify:hover span { color: white; font-weight: bold; }
-
-    .apple:hover { background-color: purple; }
-    .apple:hover span { color: white; font-weight: bold; }
-
-    .ivoox:hover { background-color: orange; }
-    .ivoox:hover span { color: white; font-weight: bold; }
-
-    .youtube:hover { background-color: red; }
-    .youtube:hover span { color: white; font-weight: bold; }
-
     .menu {
         gap: 20px;
         font-size: 24px;
@@ -430,3 +390,4 @@ footer span {
         width: 30vw;
     }
 }
+
