@@ -100,6 +100,60 @@ header {
 .icon-social.youtube { color: #FF0000; }
 .icon-social.instagram { color: #E1306C; }
 
+.podcast-links {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.podcast-links .btn {
+  width: 400px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.podcast-links .btn i,
+.podcast-links .btn img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Colores específicos */
+.spotify {
+  background-color: #1DB954;
+}
+
+.apple {
+  background-color: #8e44ad;
+  border: 4px solid #8e44ad;
+}
+
+.youtube {
+  background-color: #FF0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .podcast-links .btn {
+    width: 90%;      /* más flexible */
+    height: 80px;    /* un poco más bajo */
+    font-size: 1.5rem;
+  }
+
+  .podcast-links .btn i,
+  .podcast-links .btn img {
+    width: 36px;
+    height: 36px;
+  }
+}
 
 /* SecciÃ³n sobre el podcast */
 #sobre_el_podcast {
