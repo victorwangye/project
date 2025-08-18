@@ -13,6 +13,7 @@ a {
 
 .menu-text{
      color: rgb(0, 170, 255) !important;
+    text-decoration: none;
 }
 .menu-text:hover {
     color: rgb(0, 220, 255) !important;
