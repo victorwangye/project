@@ -11,6 +11,14 @@ a {
     color: white;
 }
 
+.menu-text{
+     color: rgb(0, 170, 255);
+}
+.menu-text:hover {
+    color: rgb(0, 220, 255);
+    font-weight: bold;
+}
+
 .menu li {
     list-style: none;
 }
@@ -390,4 +398,5 @@ footer span {
         width: 30vw;
     }
 }
+
 
