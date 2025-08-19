@@ -7,6 +7,11 @@ a {
     text-decoration: none;
 }
 
+.icon-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .menu a {
     color: white;
 }
