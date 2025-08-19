@@ -108,6 +108,7 @@ header {
 .icon-social.spotify { color: #1DB954; }
 .icon-social.youtube { color: #FF0000; }
 .icon-social.instagram { color: #E1306C; }
+.icon-social.tiktok { color: #FFFFFF; }
 
 .podcast-links {
   text-align: center;
@@ -399,6 +400,7 @@ footer span {
         width: 30vw;
     }
 }
+
 
 
 
