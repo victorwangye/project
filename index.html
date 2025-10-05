@@ -1,144 +1,490 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>mentes404</title>  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentes404 – Podcast para mentes curiosas</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-bg: #0e1722;
+      --color-bg-alt: #0b1118;
+      --color-text: #eee7d5;
+      --color-accent: #2093cc;
+      --color-secondary: #ccc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    /* ===== Header ===== */
+    header {
+      background-color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    a.logo-btn {
+      font-weight: 700;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 1.4rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a.menu-text {
+      color: var(--color-text);
+      font-weight: 500;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav a.menu-text.active {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    nav a.menu-text::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a.menu-text:hover::after,
+    nav a.menu-text.active::after {
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      background-color: var(--color-bg);
+      border: none;
+    }
+
+    .dropdown-item {
+      color: var(--color-text);
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--color-accent);
+      color: #fff;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(rgba(14,23,34,0.8), rgba(14,23,34,0.8)), url('imagenes/hero-bg.webp') center/cover no-repeat;
+      color: var(--color-text);
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+
+    .hero h1 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: var(--color-text);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-hero:hover {
+      background-color: #167aa8;
+      transform: scale(1.05);
+    }
+
+    /* ===== Carrusel ===== */
+    .carousel-inner img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 10px;
+      background-color: #000;
+    }
+
+    /* ===== Sección de temas destacados ===== */
+    .topics-section {
+      padding: 4rem 1rem;
+      text-align: center;
+      background-color: var(--color-bg-alt);
+    }
+
+    .topics-section h2 {
+      color: var(--color-accent);
+      margin-bottom: 2rem;
+    }
+
+    .topic-card {
+      background-color: var(--color-bg);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ===== Últimos episodios ===== */
+    .episode-section {
+      background-color: var(--color-bg-alt);
+      padding: 4rem 1rem;
+    }
+
+    .episode-section h2 {
+      color: var(--color-accent);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .episode-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    .episode-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .episode-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      background-color: #111828;
+    }
+
+    .episode-card .card-body a {
+      text-decoration: none;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .episode-card .card-body a:hover {
+      color: #167aa8;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--color-text);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-social {
+      margin-bottom: 1rem;
+    }
+
+  /* Botón principal */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: #167aa8;
+  transform: scale(1.05);
+}
+
+.dropdown-item:hover {
+  background-color: #333; /* Mantener contraste al pasar el cursor */
+  color: #fff !important;
+}
+
+
+  </style>
 </head>
-<body class="bg-light">
-    <header class="d-flex align-items-center justify-content-between p-3 bg-dark shadow-sm">
-  <!-- Logo -->
-  <a href="/" class="text-decoration-none">
-    <button type="button" class="btn btn-outline-info">mentes404</button>
-  </a>
+<body>
 
-     <nav class="d-none d-md-flex gap-4 justify-content-center flex-grow-1">
-        <a href="/" class="btn btn-primary">Inicio</a>
-        <a href="/episodios/" class="menu-text">Episodios</a>
-        <a href="/Personas-que-hemos-invitado-al-Podcast/" class="menu-text">Invitados</a>
-        <a href="/blog/" class="menu-text">Blog</a>
-        <a href="/contacto/" class="menu-text">Contacto</a>
+  <!-- Header -->
+  <header>
+    <a href="/" class="logo-btn">Mentes404</a>
 
-  </nav>
+    <nav class="d-none d-md-flex">
+      <a href="/" class="menu-text active">Inicio</a>
+      <a href="/episodios/" class="menu-text">Episodios</a>
+      <a href="/Personas-que-hemos-invitado-al-Podcast/" class="menu-text">Invitados</a>
+      <a href="/blog/" class="menu-text">Blog</a>
+      <a href="/contacto/" class="menu-text">Contacto</a>
+    </nav>
 
+    <div class="dropdown d-md-none">
+      <button class="btn border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+        <li><a class="dropdown-item" href="/">Inicio</a></li>
+        <li><a class="dropdown-item" href="/episodios/">Episodios</a></li>
+        <li><a class="dropdown-item" href="/Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
+        <li><a class="dropdown-item" href="/blog/">Blog</a></li>
+        <li><a class="dropdown-item" href="/contacto/">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
 
-  <div class="dropdown d-md-none">
-    <button class="btn btn-outline-secondary border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-list fs-2"></i>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Mentes404</h1>
+    <p>Un podcast para mentes curiosas: tecnología, ciencia, marketing, filosofía, emprendimiento y mucho más.</p>
+    <a href="/episodios/" class="btn-hero">🎧 Escuchar ahora</a>
+  </section>
+
+  <!-- Carrusel -->
+  <div id="carouselExampleIndicators" class="carousel slide my-5" data-bs-ride="carousel" style="max-width: 900px; margin: auto;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-primary"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-primary"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-primary"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="bg-primary"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class="bg-primary"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="https://youtu.be/8kse_XQM2lE?si=IdVkIGXh75aTDB8i" target="_blank">
+          <img src="imagenes/epimg/ep6.webp" class="d-block w-100 rounded" alt="Episodio 6">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://youtu.be/9FJZ7Y4HxM4?si=CtLgZyVoaqieqznP" target="_blank">
+          <img src="imagenes/epimg/ep2.webp" class="d-block w-100 rounded" alt="Episodio 2">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://youtu.be/_Ag5G_8YqdU?si=7yDqsAMzeLvChggc" target="_blank">
+          <img src="imagenes/epimg/ep3.webp" class="d-block w-100 rounded" alt="Episodio 3">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://youtu.be/hMcbpC-28yo?si=M5vErYz-ZSMDtRfE" target="_blank">
+          <img src="imagenes/epimg/ep4.webp" class="d-block w-100 rounded" alt="Episodio 4">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://youtu.be/Vg8c-970xCk?si=oFaeAbrVwtLsfcJR" target="_blank">
+          <img src="imagenes/epimg/ep1.webp" class="d-block w-100 rounded" alt="Episodio 1">
+        </a>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+      <span class="visually-hidden">Anterior</span>
     </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
-      <li><a class="dropdown-item" href="/"><i class="bi bi-house"></i> Inicio</a></li>
-      <li><a class="dropdown-item" href="/episodios/"><i class="bi bi-play"></i> Episodios</a></li>
-      <li><a class="dropdown-item" href="/Personas-que-hemos-invitado-al-Podcast/"><i class="bi bi-people-fill"></i> Invitados</a></li>
-      <li><a class="dropdown-item" href="/blog/"><i class="bi bi-file-richtext"></i> Blog</a></li>
-      <li><a class="dropdown-item" href="/contacto/"><i class="bi bi-envelope"></i> Contacto</a></li>
-    </ul>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
   </div>
-</header>
-    <section id="sobre_el_podcast">
-        <div class="fondo_img">
-            <img src="imagenes/portada.png" class="portada_img" loading="lazy">
+
+  <!-- Temas Destacados -->
+  <section class="topics-section">
+    <h2>Temas destacados</h2>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="topic-card">
+            <h5>Innovación</h5>
+            <p>Explora las últimas ideas y tecnologías que están cambiando el mundo.</p>
+          </div>
         </div>
-        <p>Un podcast para mentes curiosas desde la innovación tecnológica al emprendimiento con propósito, del pensamiento filosófico a la reinvención profesional, pasando por productividad, educación, activismo y más. Cada semana, charlas con voces reales que ofrecen nuevas perspectivas.</p>
-    </section>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="max-width: 700px; margin: auto;">
-  <!-- Indicadores -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3"></button>
-  </div>
-
-  <!-- Slides -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <a href="https://youtu.be/Vg8c-970xCk?si=6NV2nWExjcq6zfG9" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100 rounded img-fluid" src="imagenes/miniatura-mentes404.webp" alt="Episodio 1" style="max-height: 400px; object-fit: cover;">
-      </a>
-    </div>
-    <div class="carousel-item">
-      <a href="https://youtu.be/9FJZ7Y4HxM4?si=ij92JUfd1Q6Ci62N" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100 rounded img-fluid" src="imagenes/2.webp" alt="Episodio 2" style="max-height: 400px; object-fit: cover;">
-      </a>
-    </div>
-    <div class="carousel-item">
-      <a href="https://www.youtube.com/watch?v=_Ag5G_8YqdU&list=PL9CPXVrtHWpNeJyZm6RBZue5XkRCOvDWS&index=6" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100 rounded img-fluid" src="imagenes/3.webp" alt="Episodio 3" style="max-height: 400px; object-fit: cover;">
-      </a>
-    </div>
-  </div>
-
-  <!-- Controles -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon text-primary" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon text-primary" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-</div>
-
-
-    <footer>
-          <div class="footer-menu text-center">
-              <a href="../" class="text-light">Inicio</a>
-              <a href="../episodios/" class="text-light">Episodios</a>
-              <a href="../Personas-que-hemos-invitado-al-Podcast/" class="text-light">Invitados</a>
-              <a href="../blog/" class="text-light">Blog</a>
-              <a href="../contacto/" class="text-light">Contacto</a>
+        <div class="col-md-4">
+          <div class="topic-card">
+            <h5>Filosofía</h5>
+            <p>Reflexiona sobre el pensamiento humano y los grandes dilemas actuales.</p>
+          </div>
         </div>
-        <div class="text-light">
-  <div class="mb-2">
-    <span>Síguenos:</span>
+        <div class="col-md-4">
+          <div class="topic-card">
+            <h5>Emprendimiento</h5>
+            <p>Historias y consejos para crear proyectos con propósito y éxito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Últimos episodios -->
+<section class="episode-section">
+  <h2>Últimos episodios</h2>
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Episodio 8 -->
+      <div class="col-md-4">
+        <div class="card episode-card">
+          <img src="imagenes/epimg/ep8.webp" class="card-img-top" alt="Episodio 8">
+          <div class="card-body">
+            <h5 class="card-title">Nanotecnología - Daniel González Muñoz PhD</h5>
+            <p class="card-text">En este episodio de Mentes404, conversamos con Daniel González Muñoz, Doctor en Fotocatálisis y Nanociencia, CEO y divulgador científico. Desde su experiencia, exploramos que es la nanotecnología.</p>
+
+            <!-- Dropdown escuchar -->
+            <div class="dropdown">
+              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio" data-bs-toggle="dropdown" aria-expanded="false">
+              🎧 Escuchar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio8">
+              <li><a class="dropdown-item youtube" href="https://youtu.be/HuVWvcqrodc" target="_blank">YouTube</a></li>
+              <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/5K9offS0rqvZmKhFYXnbA5?si=exnAKwquShCqerI6LZZsIg" target="_blank">Spotify</a></li>
+              <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/mentes-404/id1817544014" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/sq/2785517" target="_blank">Ivoox</a></li>
+            </ul>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Episodio 7 -->
+      <div class="col-md-4">
+        <div class="card episode-card">
+          <img src="imagenes/epimg/ep7.webp" class="card-img-top" alt="Episodio 7">
+          <div class="card-body">
+            <h5 class="card-title">Episodio 7: Hablamos sin filtros sobre los bootcamps - Rebeca García Muñoz</h5>
+            <p class="card-text">En este episodio conversamos Rebeca García Muñoz,  que después de estudiar y vivir en Corea decidió reinventarse profesionalmente al regresar a España.</p>
+
+            <!-- Dropdown escuchar -->
+            <div class="dropdown">
+              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio8" data-bs-toggle="dropdown" aria-expanded="false">
+              🎧 Escuchar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio">
+              <li><a class="dropdown-item" href="https://youtu.be/0KRBAck9ms8?si=RyGg8JwmpF7QExQl" target="_blank">YouTube</a></li>
+              <li><a class="dropdown-item" href="https://open.spotify.com/episode/3Da1KfgS9ybYpQsRXNQFTy?si=2dcd3cacd67a4516" target="_blank">Spotify</a></li>
+              <li><a class="dropdown-item" href="https://podcasts.apple.com/es/podcast/hablamos-sin-filtros-sobre-los-bootcamps-rebeca-garc%C3%ADa/id1817544014?i=1000729497522" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/rf/159915556" target="_blank">Ivoox</a></li>
+
+            </ul>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Episodio 6 -->
+      <div class="col-md-4">
+        <div class="card episode-card">
+          <img src="imagenes/epimg/ep6.webp" class="card-img-top" alt="Episodio 6">
+          <div class="card-body">
+            <h5 class="card-title">Episodio 6: Bitcoin, criptomonedas y el futuro del dinero - Javier Pastor Moreno</h5>
+            <p class="card-text">En este episodio de Mentes404 hablamos con Javier Pastor, director de formación en Bit2Me, sobre el mundo de las criptomonedas y su impacto en el futuro de la economía digital.</p>
+
+            <!-- Dropdown escuchar -->
+          <div class="dropdown">
+              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio" data-bs-toggle="dropdown" aria-expanded="false">
+              🎧 Escuchar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio8">
+              <li><a class="dropdown-item youtube" href="https://youtu.be/8kse_XQM2lE?si=wHDCt_EJ-2LMHkCj" target="_blank">YouTube</a></li>
+              <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/7CLvi7Jql9Afp3wobLp6Cz?si=f430c92ea05b4738" target="_blank">Spotify</a></li>
+              <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/bitcoin-criptomonedas-y-el-futuro-del-dinero-javier/id1817544014?i=1000729059195" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/rf/159571138" target="_blank">Ivoox</a></li>
+            </ul>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 
-<div class="d-flex align-items-center gap-3 flex-wrap justify-content-center justify-content-md-start ms-md-3">
 
-    <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb" class="text-light fs-3">
-      <i class="bi bi-spotify"></i>
-    </a>
-    <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light">
+  <!-- Footer -->
+  <footer>
+    <div class="footer-social">
+      <span>Síguenos:</span>
+      <div class="d-flex justify-content-center gap-3 mt-2">
+        <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb"><i class="bi bi-spotify fs-3"></i></a>
+        <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA"><i class="bi bi-youtube fs-3"></i></a>
+        <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light  fs-3">
         <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
         <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
         <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
         <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
       </svg>
     </a>
+        <a href="https://www.instagram.com/mentes404.studio/"><i class="bi bi-instagram fs-3"></i></a>
+        <a href="https://www.linkedin.com/company/mentes404/"><i class="bi bi-linkedin fs-3"></i></a>
+        <a href="https://www.tiktok.com/@mentes404"><i class="bi bi-tiktok fs-3"></i></a>
+      </div>
+    </div>
 
-    <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA" class="text-light fs-3">
-      <i class="bi bi-youtube"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/mentes404/" class="text-light fs-3">
-      <i class="bi bi-linkedin"></i>
-    </a>
-    <a href="https://www.instagram.com/mentes404.studio/" class="text-light fs-3">
-      <i class="bi bi-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@mentes404" class="text-light fs-3">
-      <i class="bi bi-tiktok"></i>
-    </a>
-  </div>
-</div>
+    <div class="footer-menu mb-2">
+      <a href="/">Inicio</a>
+      <a href="/episodios/">Episodios</a>
+      <a href="/Personas-que-hemos-invitado-al-Podcast/">Invitados</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
 
-        <div style="margin-top: 20px; font-size: 0.9em; color: #888;">
-            © 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.
-        </div>
-    </footer>
+    <p style="font-size: 0.9em; color: #aaa;">© 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.</p>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
