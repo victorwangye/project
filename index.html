@@ -254,11 +254,13 @@
 }
 
 .episode-card {
-  overflow: visible !important;
+  margin-bottom: 80px; /* espacio adicional entre cards */
 }
 
-.dropdown-menu {
-  z-index: 1050; /* mayor que el de las cards */
+@media (max-width: 768px) {
+  .episode-card {
+    margin-bottom: 100px; /* más espacio en móvil */
+  }
 }
 
 
