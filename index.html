@@ -10,343 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
 
   <!-- Tipografía -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --color-bg: #0e1722;
-      --color-bg-alt: #0b1118;
-      --color-text: #eee7d5;
-      --color-accent: #2093cc;
-      --color-secondary: #ccc;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-    }
-
-    /* ===== Header ===== */
-    header {
-      background-color: var(--color-bg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    a.logo-btn {
-      font-weight: 700;
-      color: var(--color-accent);
-      text-decoration: none;
-      font-size: 1.4rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a.menu-text {
-      color: var(--color-text);
-      font-weight: 500;
-      position: relative;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    nav a.menu-text.active {
-      color: var(--color-accent);
-      font-weight: 700;
-    }
-
-    nav a.menu-text::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-accent);
-      transition: width 0.3s ease;
-    }
-
-    nav a.menu-text:hover::after,
-    nav a.menu-text.active::after {
-      width: 100%;
-    }
-
-    .dropdown-menu {
-      background-color: var(--color-bg);
-      border: none;
-    }
-
-    .dropdown-item {
-      color: var(--color-text);
-    }
-
-    .dropdown-item:hover {
-      background-color: var(--color-accent);
-      color: #fff;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(rgba(14,23,34,0.8), rgba(14,23,34,0.8)), url('imagenes/hero-bg.webp') center/cover no-repeat;
-      color: var(--color-text);
-      text-align: center;
-      padding: 6rem 1rem;
-    }
-
-    .hero h1 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      font-family: 'Roboto', sans-serif;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-hero {
-      display: inline-block;
-      background-color: var(--color-accent);
-      color: var(--color-text);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-hero:hover {
-      background-color: #167aa8;
-      transform: scale(1.05);
-    }
-
-    /* ===== Carrusel ===== */
-    .carousel-inner img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: contain;
-      border-radius: 10px;
-      background-color: #000;
-    }
-
-    /* ===== Sección de temas ===== */
-    .topics-section {
-      padding: 4rem 1rem;
-      text-align: center;
-      background-color: var(--color-bg-alt);
-    }
-
-    .topics-section h2 {
-      color: var(--color-accent);
-      margin-bottom: 2rem;
-    }
-
-    .topic-card {
-      background-color: var(--color-bg);
-      border-radius: 0.5rem;
-      padding: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .topic-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
-
-    /* ===== Últimos episodios ===== */
-    .episode-section {
-      background-color: var(--color-bg-alt);
-      padding: 4rem 1rem;
-    }
-
-    .episode-section h2 {
-      color: var(--color-accent);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .episode-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      border: none;
-      border-radius: 0.5rem;
-    }
-
-    .episode-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
-
-    .episode-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      background-color: #111828;
-    }
-
-    .episode-card .card-body a {
-      text-decoration: none;
-      color: var(--color-accent);
-      font-weight: 600;
-    }
-
-    .episode-card .card-body a:hover {
-      color: #167aa8;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--color-text);
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: var(--color-accent);
-    }
-
-    .footer-social {
-      margin-bottom: 1rem;
-    }
-
-  /* Botón principal */
-.btn-accent {
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-accent:hover {
-  background-color: #167aa8;
-  transform: scale(1.05);
-}
-
-.dropdown-item:hover {
-  background-color: #333; /* Mantener contraste al pasar el cursor */
-  color: #fff !important;
-}
-
-.episode-card {
-  margin-bottom: 80px; /* espacio adicional entre cards */
-}
-
-@media (max-width: 768px) {
-  .episode-card {
-    margin-bottom: 100px; /* más espacio en móvil */
-  }
-
-
-}
-
-
-
-/* ===== Temas destacados ===== */
-.topics-section {
-  padding: 4rem 1rem;
-  text-align: center;
-  background-color: var(--color-bg-alt);
-}
-
-.topics-section h2 {
-  color: var(--color-accent);
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.topic-card {
-  background-color: var(--color-bg);
-  border-radius: 0.8rem;
-  padding: 2.5rem 1.5rem;
-  height: 100%; /* <-- importante */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.topic-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Iconos grandes y animados */
-.topic-card i {
-  font-size: 3rem;
-  color: var(--color-accent);
-  margin-bottom: 1.2rem;
-  display: block;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.topic-card:hover i {
-  transform: scale(1.1);
-  color: #31b0f2;
-}
-
-/* Texto dentro del card */
-.topic-card h5 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: var(--color-text);
-}
-
-.topic-card p {
-  font-size: 1rem;
-  color: var(--color-secondary);
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 260px;
-}
-
-/* Asegura que todas las columnas sean iguales */
-.row.g-4 > [class*="col-"] {
-  display: flex;
-}
-
-.row.g-4 > [class*="col-"] > .topic-card {
-  flex-grow: 1;
-}
-
-
-
-
-
-  </style>
 </head>
 <body>
 
@@ -431,9 +99,9 @@
     </button>
   </div>
 
-  <!-- Temas Principales -->
+  <!-- Temas Destacados -->
 <section class="topics-section">
-  <h2>Temas Principales</h2>
+  <h2>Temas destacados</h2>
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-3">
@@ -499,6 +167,7 @@
               <li><a class="dropdown-item youtube" href="https://youtu.be/HuVWvcqrodc" target="_blank">YouTube</a></li>
               <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/5K9offS0rqvZmKhFYXnbA5?si=exnAKwquShCqerI6LZZsIg" target="_blank">Spotify</a></li>
               <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/mentes-404/id1817544014" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/sq/2785517" target="_blank">Ivoox</a></li>
             </ul>
           </div>
 
@@ -523,6 +192,8 @@
               <li><a class="dropdown-item" href="https://youtu.be/0KRBAck9ms8?si=RyGg8JwmpF7QExQl" target="_blank">YouTube</a></li>
               <li><a class="dropdown-item" href="https://open.spotify.com/episode/3Da1KfgS9ybYpQsRXNQFTy?si=2dcd3cacd67a4516" target="_blank">Spotify</a></li>
               <li><a class="dropdown-item" href="https://podcasts.apple.com/es/podcast/hablamos-sin-filtros-sobre-los-bootcamps-rebeca-garc%C3%ADa/id1817544014?i=1000729497522" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/rf/159915556" target="_blank">Ivoox</a></li>
+
             </ul>
           </div>
 
@@ -547,6 +218,7 @@
               <li><a class="dropdown-item youtube" href="https://youtu.be/8kse_XQM2lE?si=wHDCt_EJ-2LMHkCj" target="_blank">YouTube</a></li>
               <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/7CLvi7Jql9Afp3wobLp6Cz?si=f430c92ea05b4738" target="_blank">Spotify</a></li>
               <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/bitcoin-criptomonedas-y-el-futuro-del-dinero-javier/id1817544014?i=1000729059195" target="_blank">Apple Podcast</a></li>
+              <li><a class="dropdown-item" href="https://go.ivoox.com/rf/159571138" target="_blank">Ivoox</a></li>
             </ul>
           </div>
 
@@ -594,4 +266,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
