@@ -7,18 +7,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   let episodios = [];
   let filtrados = [];
   let currentPage = 1;
-  const perPage = 12; // 12 episodios por página
+  const perPage = 12;
   let categoriaActiva = "all";
   let subcategoriaActiva = null;
 
-  // === CARGAR DATOS ===
   async function loadData() {
     try {
       const res = await fetch("data.json");
+      if (!res.ok) throw new Error("No se pudo cargar data.json");
       const data = await res.json();
 
-      // Orden: destacados primero, luego más recientes
-      episodios = data.episodios.sort((a, b) => {
+      episodios = data.episodios.sort((a,b) => {
         if (a.destacado && !b.destacado) return -1;
         if (!a.destacado && b.destacado) return 1;
         return b.numero - a.numero;
@@ -27,12 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       filtrados = episodios;
       render();
     } catch (err) {
-      container.innerHTML = `<p class="text-danger text-center">Error cargando episodios.</p>`;
+      container.innerHTML = `<p class="text-danger text-center">Error cargando episodios: ${err}</p>`;
       console.error(err);
     }
   }
 
-  // === MOSTRAR EPISODIOS ===
   function render() {
     container.innerHTML = "";
     const start = (currentPage - 1) * perPage;
@@ -69,7 +67,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderPagination();
   }
 
-  // === PAGINACIÓN ===
   function renderPagination() {
     const totalPages = Math.ceil(filtrados.length / perPage);
     pagination.innerHTML = "";
@@ -85,15 +82,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     addPage("«", currentPage === 1, false, () => { currentPage--; render(); });
-
-    for (let i = 1; i <= totalPages; i++) {
-      addPage(i, false, i === currentPage, () => { currentPage = i; render(); });
+    for (let i=1; i<=totalPages; i++) {
+      addPage(i, false, i===currentPage, () => { currentPage=i; render(); });
     }
-
     addPage("»", currentPage === totalPages, false, () => { currentPage++; render(); });
   }
 
-  // === FILTROS ===
   categoriasBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       categoriasBtns.forEach(b => b.classList.remove("active"));
@@ -110,17 +104,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         filtrados = episodios.filter(ep => ep.categorias.includes(categoriaActiva));
         generarSubcategorias();
       }
-
       render();
     });
   });
 
-  // === SUBCATEGORÍAS ===
   function generarSubcategorias() {
     const subcats = new Set();
-    filtrados.forEach(ep => {
-      if (ep.subcategorias) ep.subcategorias.forEach(s => subcats.add(s));
-    });
+    filtrados.forEach(ep => ep.subcategorias?.forEach(s => subcats.add(s)));
 
     if (subcats.size === 0) {
       subcatContainer.classList.add("d-none");
@@ -156,4 +146,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   loadData();
 });
-
