@@ -1,0 +1,187 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Variables globales ===== */
+:root {
+  --fondo-principal: #0e1722;
+  --fondo-secundario: #0b1118;
+  --texto-principal: #eee7d5;
+  --texto-secundario: #4d4f52;
+  --boton-principal: #2093cc;
+  --boton-hover: #1b7abf;
+  --fuente-principal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sombra-card: rgba(32,147,204,0.4);
+  --border-radius-card: 15px;
+  --padding-card: 1.5rem;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, var(--fondo-principal), #1c2535);
+  color: var(--texto-principal);
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: var(--fondo-principal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+a.logo-btn {
+  font-weight: 700;
+  color: var(--boton-principal);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a.menu-text {
+  color: var(--texto-principal);
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav a.menu-text.active {
+  color: var(--boton-principal);
+  font-weight: 700;
+}
+
+nav a.menu-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--boton-principal);
+  transition: width 0.3s ease;
+}
+
+nav a.menu-text:hover::after,
+nav a.menu-text.active::after {
+  width: 100%;
+}
+
+/* ===== Dropdown ===== */
+.dropdown-menu {
+  background-color: var(--fondo-principal);
+  border: none;
+}
+
+.dropdown-item {
+  color: var(--texto-principal);
+  transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+  color: #fff !important;
+}
+
+/* ===== Contenedor principal y tarjetas ===== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: rgba(28,37,53,0.9);
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 25px var(--sombra-card);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(238,231,213,0.1);
+}
+
+.card-content {
+  padding: var(--padding-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--texto-principal);
+}
+
+.card p {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card button {
+  align-self: start;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--boton-principal);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card button:hover {
+  background-color: var(--boton-hover);
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--texto-principal);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--boton-principal);
+}
+
+.footer-social {
+  margin-bottom: 1rem;
+}

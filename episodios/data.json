@@ -1,0 +1,73 @@
+{
+  "episodios": [
+    {
+      "numero": 12,
+      "titulo": "Futuro de la Energía Solar",
+      "descripcion": "Analizamos las nuevas tecnologías solares y su impacto.",
+      "imagen": "https://images.pexels.com/photos/885350/pexels-photo-885350.jpeg",
+      "categorias": ["planet"],
+      "subcategorias": ["Energía", "Innovación"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "spotify": "https://open.spotify.com/episode/example1",
+        "apple": "https://podcasts.apple.com/example1"
+      }
+    },
+    {
+      "numero": 11,
+      "titulo": "ChatGPT y el Nuevo Mundo de la IA",
+      "descripcion": "Descubre cómo los modelos de lenguaje están transformando todo.",
+      "imagen": "https://images.pexels.com/photos/3182772/pexels-photo-3182772.jpeg",
+      "categorias": ["tech","think"],
+      "subcategorias": ["IA", "Lenguaje"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "spotify": "https://open.spotify.com/episode/example2",
+        "apple": "https://podcasts.apple.com/example2"
+      }
+    },
+    {
+      "numero": 10,
+      "titulo": "Movilidad Eléctrica y Sostenible",
+      "descripcion": "Exploramos el futuro de los autos eléctricos y el transporte verde.",
+      "imagen": "https://images.pexels.com/photos/276024/pexels-photo-276024.jpeg",
+      "categorias": ["planet","move"],
+      "subcategorias": ["Sostenibilidad","Transporte"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "spotify": "https://open.spotify.com/episode/example3",
+        "apple": "https://podcasts.apple.com/example3"
+      }
+    },
+    {
+      "numero": 9,
+      "titulo": "Mindset Creativo",
+      "descripcion": "Cómo pensar diferente para innovar.",
+      "imagen": "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg",
+      "categorias": ["think"],
+      "subcategorias": ["Creatividad","Innovación"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "spotify": "https://open.spotify.com/episode/example4",
+        "apple": "https://podcasts.apple.com/example4"
+      }
+    },
+    {
+      "numero": 8,
+      "titulo": "Explorando el Espacio",
+      "descripcion": "Hablamos sobre los últimos avances en la exploración espacial.",
+      "imagen": "https://images.pexels.com/photos/23790/pexels-photo.jpg",
+      "categorias": ["planet","think"],
+      "subcategorias": ["Astronomía","Innovación"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "spotify": "https://open.spotify.com/episode/example5",
+        "apple": "https://podcasts.apple.com/example5"
+      }
+    }
+  ]}
