@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // === CARGAR DATOS ===
   async function loadData() {
     try {
-      const res = await fetch("./data.json");
+      const res = await fetch("data.json");
       const data = await res.json();
 
       // Orden: destacados primero, luego más recientes
@@ -156,3 +156,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   loadData();
 });
+
