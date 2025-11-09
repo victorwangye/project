@@ -8,6 +8,7 @@
     "episodio_numero": "Episodio 01",
     "episodio_link": "https://youtu.be/Vg8c-970xCk",
     "bio_corta": "Soy desarrollador web especializado en WordPress y sostenibilidad digital. Escribo tutoriales de código (Código Genesis), creo plugins y temas para WordPress (OsomPress), organizo la Meetup de WP Terrassa y me gusta compartir estas y otras experiencias en mi blog y podcast (Freelandev).",
+    "bio_completa": "Soy desarrollador web especializado en WordPress y sostenibilidad digital. Escribo tutoriales de código (Código Genesis), creo plugins y temas para WordPress (OsomPress), organizo la Meetup de WP Terrassa y me gusta compartir estas y otras experiencias en mi blog y podcast (Freelandev).",
     "links": [
       { "tipo": "web", "url": "https://nbadiola.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/nahuaibadiola/", "icono": "bi-linkedin" },
@@ -25,14 +26,16 @@
     "episodio_numero": "Episodio 02",
     "episodio_link": "https://youtu.be/9FJZ7Y4HxM4?si=AlmitJ8Lq-yeaz0b",
     "bio_corta": "Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje. Cuenta con experiencia en seguridad en IA (AI Red Teaming) y es Director general en una empresa del sector EdTech, colaborador de Google for Education y creador del canal @GlobalCobots.",
+    "bio_completa": "Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje (ChatGPT, Claude, Copilot, Gemini, Grok o LLAMA).\nCertificado en Al Engineering por IBM y Machine Learning por Stanford, y forma parte del proyecto OdiselA Digital Futures de google.org.\nCuento con experiencia en seguridad en IA (AI Red Teaming), fine-tuning de modelos (Whisper, Stable Diffusion) y despliegue de agentes personalizados en la nube (GCP, AWS, Azure).\nDirector general en una empresa del sector EdTech, colaborador de Google for Education, y actualmente creador del canal @GlobalCobots en YouTube (+52K suscriptores).\nAdemás, colaboro como docente en plataformas como Udemy, con miles de estudiantes en cursos sobre IA y LLMs.",
     "links": [
       { "tipo": "web", "url": "https://www.hugoramallo.com", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/hugoramallo/es", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://www.globalcobots.com", "icono": "bi-code-slash" },
       { "tipo": "youtube", "url": "https://m.youtube.com/@globalcobots", "icono": "bi-youtube" }
     ]
   },
   {
-    "id": 3,
+    "id": "3",
     "nombre": "Ignacio Cabria",
     "titulo": "Investigador de las creencias y escritor.",
     "imagen": "../imagenes/0.webp",
@@ -40,14 +43,15 @@
     "episodio_numero": "Episodio 03",
     "episodio_link": "#",
     "bio_corta": "Licenciado en Antropología Cultural, Máster en Cooperación Internacional y autor de varios libros, incluyendo 'Así creamos monstruos'. Trabajó para el Ministerio de Asuntos Exteriores y se especializó en la investigación de las creencias populares y el fenómeno ovni desde una perspectiva antropológica.",
+    "bio_completa": "Nació en Santander, España, en 1955. Es licenciado en Antropología Cultural por la Universidad de Barcelona, Máster en Cooperación Internacional y Diploma de Estudios Avanzados (DEA) en Antropología Social, ambos por la Universidad Complutense de Madrid. Trabajó para el Ministerio de Asuntos Exteriores como canciller en varias embajadas y consulados de España, y ha sido coordinador general adjunto de la Cooperación Española en varios países. Ha tenido destinos en Mozambique, Argentina, República Dominicana y Filipinas.\nEs autor de los libros Entre ufólogos, creyentes y contactados. Una historia social de los ovnis en España (CdU, 1993), Ovnis y ciencias humanas (Fundación Anomalía, 2002), Historia cultural de los ovnis en España 1950-1990 (Reediciones Anómalas, 2022) y Así creamos monstruos (Luciérnaga, 2023). Para la obtención del DEA en Antropología Social realizó el trabajo Valores, símbolos y representaciones en una experiencia de contacto extraterrestre: el grupo Aztlán (2003), el único trabajo de postrado existente en el ámbito universitario español sobre el tema ovni y el contacto extraterrestre. Es autor también de artículos sobre África y Filipinas.",
     "links": [
-      { "tipo": "academia", "url": "https://independent.academia.edu/IgnacioCabria", "icono": "bi-journal-check" },
+      { "tipo": "academia", "url": "https://independent.academia.edu/IgnacioCabria", "icono": "bi-mortarboard" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/ignacio-cabria-44776546/", "icono": "bi-linkedin" },
       { "tipo": "libro", "url": "https://www.amazon.es/As%C3%AD-creamos-monstruos-ENIGMAS-CONSPIRACIONES/dp/8419164356/", "icono": "bi-book" }
     ]
   },
   {
-    "id": 4,
+    "id": "4",
     "nombre": "Beltrán Rubio González",
     "titulo": "Educador y divulgador financiero.",
     "imagen": "../imagenes/IMG_1098.webp",
@@ -55,12 +59,13 @@
     "episodio_numero": "Episodio 04",
     "episodio_link": "#",
     "bio_corta": "Licenciado en ADE, DEA en Economía y experto en Análisis de decisión. Colabora como docente e instructor en programas de educación financiera, impulsando la alfabetización financiera mediante su labor divulgativa y su enfoque práctico.",
+    "bio_completa": "Beltrán Rubio González es licenciado en ADE, DEA (Diploma de Estudios Avanzados) en Economía y experto en Análisis de decisión. Inversor desde hace 15 años, colabora como docente e instructor en programas de educación financiera, acercando la inversión y los mercados a un público amplio de manera práctica y sencilla. Impulsa la alfabetización financiera mediante su labor divulgativa, ayudando a las personas a tomar mejores decisiones sobre gasto, ahorro e inversión, especialmente orientada hacia la gestión pasiva. Su enfoque accesible y didáctico lo ha convertido en un punto de apoyo para quienes desean iniciarse en las finanzas personales y la inversión a largo plazo.",
     "links": [
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/beltr%C3%A1nrubio/", "icono": "bi-linkedin" }
     ]
   },
   {
-    "id": 5,
+    "id": "5",
     "nombre": "Enrique Revuelta García",
     "titulo": "Data Scientist",
     "imagen": "../imagenes/dataenrique.webp",
@@ -68,6 +73,7 @@
     "episodio_numero": "Episodio 05",
     "episodio_link": "#",
     "bio_corta": "Podólogo de formación que se reinventó profesionalmente enfocándose en la programación y ciencia de datos. Instructor de bootcamp en Data Science. Su transición laboral comenzó durante la pandemia, demostrando que nunca es tarde para un cambio de carrera.",
+    "bio_completa": "Soy Enrique Revuelta, podólogo de formación. En 2020, la pandemia me llevó a replantear mi rumbo profesional y decidí enfocarme en la programación.\nInicié con un curso de diseño de videojuegos con C# y Unity, realizando prácticas en Mad Gear Games. Estas prácticas me ayudaron a ver que esto me iba de verdad y que podía dedicarme a ello. Por lo que decidí ampliar mi base de conocimientos matriculándome en un CFGS de Desarrollo de Aplicaciones Multiplatafoma.\nConocí The Bridge a través de un webinar organizado por el instituto, y escribí a la ponente el mismo día nada más terminar. Necesitaba saber más sobre los bootcamps y si podría ser un candidato válido para realizar uno con ellos.\nDespués de varias entrevistas no solo conseguí mi plaza sino que me concedieron una beca de la Fundación Universia.",
     "links": [
       { "tipo": "web", "url": "https://enriquerevueltagarcia.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/kike-rev/", "icono": "bi-linkedin" },
@@ -83,10 +89,11 @@
     "episodio_numero": "Episodio 06",
     "episodio_link": "https://youtu.be/8kse_XQM2lE",
     "bio_corta": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
+    "bio_completa": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
     "links": []
   },
   {
-    "id": 7,
+    "id": "7",
     "nombre": "Rebeca García Muñoz",
     "titulo": "Studio Design Lead (UX/UI)",
     "imagen": "../imagenes/IMG_1048.webp",
@@ -94,12 +101,13 @@
     "episodio_numero": "Episodio 07",
     "episodio_link": "https://youtu.be/0KRBAck9ms8",
     "bio_corta": "Profesional con más de 10 años de experiencia en diseño gráfico y comunicación visual, actualmente enfocada en el diseño de productos digitales (UX/UI). Forma parte de Deloitte Digital, aportando su visión estratégica en la creación de experiencias digitales.",
+    "bio_completa": "Profesional con más de 10 años de experiencia en diseño gráfico y comunicación visual, actualmente enfocada en el diseño de productos digitales (UX/UI). Desde marzo de 2023, forma parte de Deloitte Digital, donde aporta su visión estratégica y creatividad en la creación de experiencias digitales centradas en el usuario.",
     "links": [
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/rbkgarcia", "icono": "bi-linkedin" }
     ]
   },
   {
-    "id": 8,
+    "id": "8",
     "nombre": "Daniel González Muñoz, PhD",
     "titulo": "CEO de Nanostine y divulgador científico.",
     "imagen": "../imagenes/IMG_1089.webp",
@@ -107,13 +115,14 @@
     "episodio_numero": "Episodio 08",
     "episodio_link": "https://youtu.be/w2fIngayTJQ?si=_DGHlftppYPTvtkx",
     "bio_corta": "Doctor en Nanociencia y Fotocatálisis, CEO de Nanostine, una empresa innovadora. Su labor se centra en divulgar la nanotecnología y sus aplicaciones, con premios a la innovación empresarial.",
+    "bio_completa": "Daniel González, doctor en Nanociencia y Fotocatálisis por la UAM. Actualmente, CEO de Nanostine, empresa dedicada al recubrimiento de superficies con nanopartículas ultrapuras en sectores de alto valor añadido. Nanostine ha sido elegida como una de las 100 empresas más innovadoras de España por El Referente en 2022, Top 100 startups de APTE en 2024, Mejor Startup Deep Tech en Transfiere 2024 y ganadores del Santander X Award - Universidades 2025.",
     "links": [
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/danielgonzalezmunoz/es", "icono": "bi-linkedin" },
       { "tipo": "empresa", "url": "https://nanostine.com", "icono": "bi-building" }
     ]
   },
   {
-    "id": 9,
+    "id": "9",
     "nombre": "Mireia Querol Rovira",
     "titulo": "Bióloga, divulgadora científica y educadora ambiental.",
     "imagen": "../imagenes/1756285939014.webp",
@@ -121,6 +130,7 @@
     "episodio_numero": "Episodio 09",
     "episodio_link": "https://youtu.be/GpkWc6c0EVY",
     "bio_corta": "Bióloga especializada en zoología y educación ambiental. Fundadora de Biologueando, un espacio de divulgación científica y conservación de la biodiversidad. Comprometida con inspirar curiosidad por la naturaleza a través de la comunicación y la enseñanza.",
+    "bio_completa": "Mireia Querol Rovira es bióloga especializada en Zoología, con un Máster en Estudios de Impacto y Auditoría Ambiental, un Máster en Formación del Profesorado de Secundaria y un diploma universitario en Auxiliar Técnica Veterinaria.\nCon más de 20 años de experiencia en conservación de la naturaleza, ha trabajado en divulgación científica, recuperación de fauna silvestre y apoyo a proyectos de investigación de campo.\nEmprendedora en el ámbito de la comunicación ambiental, ha fundado una comunidad online dedicada a la naturaleza, donde crea contenidos educativos, promueve actividades y fomenta redes de personas comprometidas con la conservación.",
     "links": [
       { "tipo": "web", "url": "https://www.biologueando.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/mireiaquerolrovira/", "icono": "bi-linkedin" },
@@ -130,7 +140,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": "10",
     "nombre": "Jorge Galvez Garcia",
     "titulo": "Fundador y CEO de Made In Code.",
     "imagen": "../imagenes/1695373179025.webp",
@@ -138,13 +148,14 @@
     "episodio_numero": "Episodio 10",
     "episodio_link": "#",
     "bio_corta": "Con experiencia previa en el sector comercial, textil y de representaciones, dio un giro a su carrera para sumergirse en el mundo de los datos y el análisis predictivo. Fundador y CEO de Made In Code.",
+    "bio_completa": "Durante 12 años, he estado inmerso en el mundo del sector comercial, textil y representaciones. Sin embargo, decidí dar un giro en mi carrera y sumergirme de lleno en el fascinante mundo de los datos, descubriendo así un sinfín de oportunidades de negocio y crecimiento. Mi enfoque se ha centrado en el análisis predictivo y la programación, donde he aplicado mi creatividad, visión y excelentes habilidades comerciales.",
     "links": [
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/jorgegalvezgarcia/", "icono": "bi-linkedin" },
       { "tipo": "empresa", "url": "https://madeincode.es/", "icono": "bi-code-slash" }
     ]
   },
   {
-    "id": 11,
+    "id": "11",
     "nombre": "Pierre Monteagudo Consoni",
     "titulo": "Escritor, investigador y divulgador científico.",
     "imagen": "../imagenes/unnamed.webp",
@@ -152,6 +163,7 @@
     "episodio_numero": "Episodio 11",
     "episodio_link": "https://youtu.be/_9BGn1gPZkA",
     "bio_corta": "Escritor e investigador hispano-venezolano, presidente del Centro de Estudios Espaciales Astrofísico y autor de la saga 'Los Expedientes'. Divulgador de la historia oculta de la ciencia y la carrera espacial, así como biógrafo oficial del científico Héctor R. Rojas.",
+    "bio_completa": "Pierre Monteagudo es un escritor e investigador hispano-venezolano, divulgador científico, biógrafo oficial y presidente del Centro de Estudios Espaciales Astrofísico Héctor R. Rojas. Desde joven cultivó la pasión por la escritura y la ciencia, especialmente por los misterios del universo, la posibilidad de vida extraterrestre y los secretos ocultos en la historia espacial. Su labor literaria se centra en “Los Expedientes”, una serie de libros donde revela información poco conocida sobre la carrera espacial y la Guerra Fría, basada en hechos reales y documentos inéditos. Entre sus obras destacan: Expediente Rojas NASA Reports 1/2/3 (2016), Expediente Rojas: La Tecnología del Cosmos (2019) y Secretos de Estado (2021). En ellas expone los secretos mejor guardados de las superpotencias, los pactos ocultos y los sucesos encubiertos de la política y la ciencia del siglo XX. Monteagudo se define como un buscador incansable de la verdad y un defensor de la paz a través del conocimiento.",
     "links": [
       { "tipo": "web", "url": "https://www.pierremonteagudo.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/pierremonteagudoconsoni/", "icono": "bi-linkedin" },
@@ -160,7 +172,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": "12",
     "nombre": "Marc Reklau",
     "titulo": "Autor bestseller internacional y coach en productividad y hábitos.",
     "imagen": "../imagenes/Marc.webp",
@@ -168,6 +180,7 @@
     "episodio_numero": "Episodio 12",
     "episodio_link": "https://youtu.be/AGm1RaNvKkk",
     "bio_corta": "Autor de más de 15 libros de desarrollo personal, entre ellos superventas como '30 Días' y 'El hábito que lo cambia todo', con más de un millón de lectores en todo el mundo. Tras perder su empleo en 2013, transformó su vida ayudando a otros a hacerlo también a través de sus obras y conferencias.",
+    "bio_completa": "Tras perder su empleo en 2013, Marc Reklau convirtió su punto más bajo en un nuevo comienzo. Lo que empezó con un solo libro escrito con sus ahorros se transformó en 15 títulos —cuatro de ellos superventas—, entre ellos 30 DÍAS – Cambia tus hábitos, cambia tu vida, Cómo ser un imán para las personas y Quiérete… y mucho. Hoy, con más de un millón de lectores en todo el mundo, Marc escribe desde el lago Balaton, en Hungría, demostrando que nunca es tarde para reescribir tu historia.",
     "links": [
       { "tipo": "web", "url": "https://www.marcreklau.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/marcreklau/?locale=es_ES", "icono": "bi-linkedin" },
@@ -177,7 +190,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": "13",
     "nombre": "Juan Merodio",
     "titulo": "Emprendedor, conferenciante y experto en transformación digital.",
     "imagen": "../imagenes/uNi0jEPE.webp",
@@ -185,6 +198,7 @@
     "episodio_numero": "Episodio 13",
     "episodio_link": "https://youtu.be/_oYcMrW5VuE",
     "bio_corta": "Fundador de TEKDI, emprendedor desde 2004 y referente en marketing digital, innovación y negocios digitales. Ha impartido más de 1.000 conferencias y publicado 16 libros sobre transformación digital y emprendimiento.",
+    "bio_completa": "Juan Merodio es el emprendedor que nunca se bajó del tren de la innovación. Fundó su primera empresa en el 2004 y desde entonces no ha dejado de crear, transformar y liderar proyectos que han impactado sectores tan diversos como la tecnología, la educación, el real estate o la inteligencia artificial. De startups digitales a compañías multimillonarias, pasando por TEKDI, su instituto online que ya ha formado a miles de personas en IA y marketing digital, Juan combina visión estratégica, pasión por enseñar y una obsesión sana por ayudar a otros a crecer. Con presencia en mercados como España, Estados Unidos, Japón o Latinoamérica, más de 1.000 conferencias impartidas y 16 libros publicados, es un divulgador nato. Pero si algo lo define no es su currículum, sino su capacidad para ver lo que viene… y construirlo antes que nadie.",
     "links": [
       { "tipo": "web", "url": "https://www.juanmerodio.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/juanmerodio/?locale=es_ES", "icono": "bi-linkedin" },
@@ -194,7 +208,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": "14",
     "nombre": "Alejandro Alonso Montero",
     "titulo": "Programador Full Stack",
     "imagen": "../imagenes/1748464688198.webp",
@@ -202,6 +216,7 @@
     "episodio_numero": "Episodio pendiente",
     "episodio_link": "#",
     "bio_corta": "Decidió dar un giro a su vida a los 41 años, buscando un bootcamp de programación para reinventarse profesionalmente. Hoy, trabaja como programador, demostrando que con actitud y formación, todo es posible.",
+    "bio_completa": "Después de años de esfuerzo y dedicación en distintos sectores —desde perito hasta teleoperador—, Alejandro Alonso decidió que era momento de dar un giro a su vida. A los 41 años, con determinación y ganas de aprender, buscó un bootcamp de programación para reinventarse profesionalmente. Hoy, Alejandro trabaja como programador, demostrando que nunca es tarde para empezar de nuevo y que con actitud y formación, todo es posible.",
     "links": [
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso", "icono": "bi-linkedin" }
     ]
