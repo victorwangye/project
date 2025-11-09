@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const perPage = 9;
     const BIO_COLLAPSE_THRESHOLD = 300;
 
-    // Función de ordenamiento personalizado
+    // Función de ordenamiento personalizado: prioriza IDs con letras
     function customSort(a, b) {
         // Expresión regular para detectar cualquier letra (carácter no numérico) en el ID
         const isALetter = /[a-zA-Z]/.test(a.id);
         const isBLetter = /[a-zA-Z]/.test(b.id);
-        const idA = a.id;
-        const idB = b.id;
+        const idA = String(a.id);
+        const idB = String(b.id);
 
         // 1. Prioridad: IDs con letra vienen ANTES de IDs solo numéricos.
         if (isALetter && !isBLetter) {
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (isALetter && isBLetter) {
             // Si ambos tienen letra (ej. "1A" y "2A"): ordenación lexicográfica (alfabética)
-            return String(idA).localeCompare(String(idB));
+            return idA.localeCompare(idB);
         } else {
-            // Si ambos son puramente numéricos (ej. 3 y 4): ordenación numérica ascendente
+            // Si ambos son puramente numéricos: ordenación numérica ascendente
             return Number(idA) - Number(idB);
         }
     }
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (!res.ok) throw new Error("No se pudo cargar invitados.json");
             invitados = await res.json();
 
-            // Aplicar el nuevo ordenamiento personalizado aquí
+            // Aplicar el ordenamiento personalizado
             invitados.sort(customSort); 
             
             // Inicializar la lista filtrada con todos los invitados
@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else {
             filteredInvitados = invitados.filter(guest => 
                 guest.nombre.toLowerCase().includes(query) ||
-                guest.titulo.toLowerCase().includes(query)
+                guest.titulo.toLowerCase().includes(query) ||
+                (guest.bio_corta && guest.bio_corta.toLowerCase().includes(query))
             );
         }
         renderGuests();
@@ -75,7 +76,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         container.innerHTML = "";
         modalContainer.innerHTML = "";
         
-        // Usar filteredInvitados para la paginación
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
         const pagData = filteredInvitados.slice(start, end);
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         pagData.forEach(guest => {
             const card = template.cloneNode(true);
-            const modalId = `modalGuest${guest.id}`;
+            const modalId = `modalGuest${String(guest.id)}`; 
             card.id = "";
             card.style.display = "block";
 
@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function createModal(guest, modalId) {
-        // ... (La función createModal queda igual que la última vez, omitida para brevedad) ...
         const getIconClass = (tipo, icono) => {
             if (tipo === "empresa" && icono === "bi-code-slash") return "bi bi-code-slash fs-5";
             if (tipo === "empresa" && icono === "bi-building") return "bi bi-building fs-5";
@@ -138,15 +137,18 @@ document.addEventListener("DOMContentLoaded", async () => {
           `;
         }).join('');
 
-        let bioContent = guest.bio_completa;
+        let bioContent = guest.bio_completa || guest.bio_corta; // Usar bio_completa o bio_corta como fallback
         let displayBio;
         let collapseToggle = '';
-
+        
+        // Reemplazar saltos de línea (\n) con etiquetas <br> para HTML
         const formattedBio = bioContent.replace(/\n/g, '<br>');
 
         if (formattedBio.length > BIO_COLLAPSE_THRESHOLD) {
-            const shortBio = formattedBio.substring(0, formattedBio.lastIndexOf(' ', BIO_COLLAPSE_THRESHOLD)) + '...';
-            const hiddenBio = formattedBio.substring(formattedBio.lastIndexOf(' ', BIO_COLLAPSE_THRESHOLD));
+            // Encuentra el último espacio antes del umbral para no cortar palabras
+            const splitIndex = formattedBio.lastIndexOf(' ', BIO_COLLAPSE_THRESHOLD);
+            const shortBio = formattedBio.substring(0, splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD) + '...';
+            const hiddenBio = formattedBio.substring(splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD);
 
             displayBio = `
               <p>${shortBio}<span id="dots-${guest.id}"></span></p>
@@ -220,7 +222,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function renderPagination() {
-        // Usar filteredInvitados.length para calcular las páginas
         const totalPages = Math.ceil(filteredInvitados.length / perPage); 
         pagination.innerHTML = "";
         if (totalPages <= 1) return;
@@ -241,7 +242,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Escuchar cambios en el input de búsqueda
-    searchInput.addEventListener("input", filterGuests);
+    if (searchInput) {
+        searchInput.addEventListener("input", filterGuests);
+    }
 
     loadData();
 });
