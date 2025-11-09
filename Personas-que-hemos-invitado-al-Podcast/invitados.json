@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nahuai Badiola",
+    "titulo": "Desarrollador de wordpress y emprendedor.",
+    "imagen": "../imagenes/IMG_1017.webp",
+    "episodio_titulo": "Transición profesional, emprendimiento y tecnología",
+    "episodio_numero": "Episodio 01",
+    "episodio_link": "https://youtu.be/Vg8c-970xCk",
+    "bio_corta": "Soy desarrollador web especializado en WordPress y sostenibilidad digital. Escribo tutoriales de código (Código Genesis), creo plugins y temas para WordPress (OsomPress), organizo la Meetup de WP Terrassa y me gusta compartir estas y otras experiencias en mi blog y podcast (Freelandev).",
+    "links": [
+      { "tipo": "web", "url": "https://nbadiola.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/nahuaibadiola/", "icono": "bi-linkedin" },
+      { "tipo": "podcast", "url": "https://freelandev.com/", "icono": "bi-mic-fill" },
+      { "tipo": "osompress", "url": "https://osompress.com/", "icono": "bi-code-square" },
+      { "tipo": "wordpress", "url": "https://profiles.wordpress.org/nahuai/", "icono": "bi-wordpress" }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Hugo Ramallo García",
+    "titulo": "CEO de GlobalCobots y divulgador de IA.",
+    "imagen": "../imagenes/img0101.webp",
+    "episodio_titulo": "¿Quien piensa cuando la IA piensa por ti?",
+    "episodio_numero": "Episodio 02",
+    "episodio_link": "https://youtu.be/9FJZ7Y4HxM4?si=AlmitJ8Lq-yeaz0b",
+    "bio_corta": "Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje. Cuenta con experiencia en seguridad en IA (AI Red Teaming) y es Director general en una empresa del sector EdTech, colaborador de Google for Education y creador del canal @GlobalCobots.",
+    "links": [
+      { "tipo": "web", "url": "https://www.hugoramallo.com", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/hugoramallo/es", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://m.youtube.com/@globalcobots", "icono": "bi-youtube" }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Ignacio Cabria",
+    "titulo": "Investigador de las creencias y escritor.",
+    "imagen": "../imagenes/0.webp",
+    "episodio_titulo": "Criptozoología y cultura",
+    "episodio_numero": "Episodio 03",
+    "episodio_link": "#",
+    "bio_corta": "Licenciado en Antropología Cultural, Máster en Cooperación Internacional y autor de varios libros, incluyendo 'Así creamos monstruos'. Trabajó para el Ministerio de Asuntos Exteriores y se especializó en la investigación de las creencias populares y el fenómeno ovni desde una perspectiva antropológica.",
+    "links": [
+      { "tipo": "academia", "url": "https://independent.academia.edu/IgnacioCabria", "icono": "bi-journal-check" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/ignacio-cabria-44776546/", "icono": "bi-linkedin" },
+      { "tipo": "libro", "url": "https://www.amazon.es/As%C3%AD-creamos-monstruos-ENIGMAS-CONSPIRACIONES/dp/8419164356/", "icono": "bi-book" }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Beltrán Rubio González",
+    "titulo": "Educador y divulgador financiero.",
+    "imagen": "../imagenes/IMG_1098.webp",
+    "episodio_titulo": "Mentalidad financiera y finanzas personales: conceptos clave para empezar",
+    "episodio_numero": "Episodio 04",
+    "episodio_link": "#",
+    "bio_corta": "Licenciado en ADE, DEA en Economía y experto en Análisis de decisión. Colabora como docente e instructor en programas de educación financiera, impulsando la alfabetización financiera mediante su labor divulgativa y su enfoque práctico.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/beltr%C3%A1nrubio/", "icono": "bi-linkedin" }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Enrique Revuelta García",
+    "titulo": "Data Scientist",
+    "imagen": "../imagenes/dataenrique.webp",
+    "episodio_titulo": "Una experiencia como estudiante e instructor de bootcamp",
+    "episodio_numero": "Episodio 05",
+    "episodio_link": "#",
+    "bio_corta": "Podólogo de formación que se reinventó profesionalmente enfocándose en la programación y ciencia de datos. Instructor de bootcamp en Data Science. Su transición laboral comenzó durante la pandemia, demostrando que nunca es tarde para un cambio de carrera.",
+    "links": [
+      { "tipo": "web", "url": "https://enriquerevueltagarcia.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/kike-rev/", "icono": "bi-linkedin" },
+      { "tipo": "github", "url": "https://github.com/Gobuub", "icono": "bi-github" }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Javier Pastor Moreno",
+    "titulo": "Director de Formación en Bit2Me.",
+    "imagen": "../imagenes/epimg/ep6.webp",
+    "episodio_titulo": "Bitcoin, criptomonedas y el futuro del dinero",
+    "episodio_numero": "Episodio 06",
+    "episodio_link": "https://youtu.be/8kse_XQM2lE",
+    "bio_corta": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
+    "links": []
+  },
+  {
+    "id": 7,
+    "nombre": "Rebeca García Muñoz",
+    "titulo": "Studio Design Lead (UX/UI)",
+    "imagen": "../imagenes/IMG_1048.webp",
+    "episodio_titulo": "Hablamos sin filtros sobre los bootcamps",
+    "episodio_numero": "Episodio 07",
+    "episodio_link": "https://youtu.be/0KRBAck9ms8",
+    "bio_corta": "Profesional con más de 10 años de experiencia en diseño gráfico y comunicación visual, actualmente enfocada en el diseño de productos digitales (UX/UI). Forma parte de Deloitte Digital, aportando su visión estratégica en la creación de experiencias digitales.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/rbkgarcia", "icono": "bi-linkedin" }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Daniel González Muñoz, PhD",
+    "titulo": "CEO de Nanostine y divulgador científico.",
+    "imagen": "../imagenes/IMG_1089.webp",
+    "episodio_titulo": "¿Qué es la nanotecnología y su aplicaciones reales?",
+    "episodio_numero": "Episodio 08",
+    "episodio_link": "https://youtu.be/w2fIngayTJQ?si=_DGHlftppYPTvtkx",
+    "bio_corta": "Doctor en Nanociencia y Fotocatálisis, CEO de Nanostine, una empresa innovadora. Su labor se centra en divulgar la nanotecnología y sus aplicaciones, con premios a la innovación empresarial.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/danielgonzalezmunoz/es", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://nanostine.com", "icono": "bi-building" }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Mireia Querol Rovira",
+    "titulo": "Bióloga y divulgadora científica.",
+    "imagen": "../imagenes/1756285939014.webp",
+    "episodio_titulo": "Leer la naturaleza y hacerse preguntas",
+    "episodio_numero": "Episodio 09",
+    "episodio_link": "#",
+    "bio_corta": "Bióloga especializada en Zoología, con más de 20 años de experiencia en conservación de la naturaleza y divulgación científica. Fundadora de una comunidad online dedicada a la naturaleza.",
+    "links": [
+      { "tipo": "web", "url": "https://www.biologueando.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/mireiaquerolrovira/", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/@biologueandocom", "icono": "bi-youtube" }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Jorge Galvez Garcia",
+    "titulo": "Fundador y CEO de Made In Code.",
+    "imagen": "../imagenes/1695373179025.webp",
+    "episodio_titulo": "Crear algo que importe. aunque aún no de dinero",
+    "episodio_numero": "Episodio 10",
+    "episodio_link": "#",
+    "bio_corta": "Con experiencia previa en el sector comercial, textil y de representaciones, dio un giro a su carrera para sumergirse en el mundo de los datos y el análisis predictivo. Fundador y CEO de Made In Code.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/jorgegalvezgarcia/", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://madeincode.es/", "icono": "bi-code-slash" }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Pierre Monteagudo Consoni",
+    "titulo": "Presidente del Centro de Estudios Espaciales Astrofísico.",
+    "imagen": "../imagenes/unnamed.webp",
+    "episodio_titulo": "Expedientes Rojas: Secretos de la NASA y la carrera espacial",
+    "episodio_numero": "Episodio 11",
+    "episodio_link": "#",
+    "bio_corta": "Escritor e investigador hispano-venezolano, divulgador científico, y biógrafo oficial de Héctor R. Rojas. Su labor literaria se centra en 'Los Expedientes', una serie de libros sobre información poco conocida de la carrera espacial y la Guerra Fría.",
+    "links": [
+      { "tipo": "web", "url": "https://www.pierremonteagudo.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/pierremonteagudoconsoni/", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/c/ExpedienteRojas", "icono": "bi-youtube" }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Marc Reklau",
+    "titulo": "Autor bestseller internacional.",
+    "imagen": "../imagenes/Marc.webp",
+    "episodio_titulo": "El Hábito que lo Cambia Todo",
+    "episodio_numero": "Episodio 12",
+    "episodio_link": "#",
+    "bio_corta": "Autor de 15 títulos, cuatro de ellos superventas, con más de un millón de lectores. Tras perder su empleo en 2013, convirtió su punto más bajo en un nuevo comienzo en la escritura de desarrollo personal.",
+    "links": [
+      { "tipo": "web", "url": "https://www.marcreklau.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/marcreklau/?locale=es_ES", "icono": "bi-linkedin" },
+      { "tipo": "libros", "url": "https://www.marcreklau.com/books", "icono": "bi-book" }
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Juan Merodio",
+    "titulo": "Fundador de TEKDI y conferenciante",
+    "imagen": "../imagenes/uNi0jEPE.webp",
+    "episodio_titulo": "Título pendiente",
+    "episodio_numero": "Episodio pendiente",
+    "episodio_link": "#",
+    "bio_corta": "Emprendedor que fundó su primera empresa en el 2004, creando, transformando y liderando proyectos en tecnología, educación (TEKDI) y marketing digital. Ha impartido más de 1.000 conferencias y publicado 16 libros.",
+    "links": [
+      { "tipo": "web", "url": "https://www.juanmerodio.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/juanmerodio/?locale=es_ES", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/@juanmerodio", "icono": "bi-youtube" }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Alejandro Alonso Montero",
+    "titulo": "Programador Full Stack",
+    "imagen": "../imagenes/1748464688198.webp",
+    "episodio_titulo": "Nunca es demasiado tarde para empezar de nuevo: la transición laboral",
+    "episodio_numero": "Episodio pendiente",
+    "episodio_link": "#",
+    "bio_corta": "Decidió dar un giro a su vida a los 41 años, buscando un bootcamp de programación para reinventarse profesionalmente. Hoy, trabaja como programador, demostrando que con actitud y formación, todo es posible.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso", "icono": "bi-linkedin" }
+    ]
+  }
+]
