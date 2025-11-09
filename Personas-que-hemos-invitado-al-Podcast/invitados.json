@@ -75,7 +75,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 6a,
     "nombre": "Javier Pastor Moreno",
     "titulo": "Director de Formación en Bit2Me.",
     "imagen": "../imagenes/epimg/ep6.webp",
@@ -207,4 +207,5 @@
     ]
   }
 ]
+
 
