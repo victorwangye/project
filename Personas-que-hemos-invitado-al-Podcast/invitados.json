@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 1a,
     "nombre": "Nahuai Badiola",
     "titulo": "Desarrollador de wordpress y emprendedor.",
     "imagen": "../imagenes/IMG_1017.webp",
@@ -17,7 +17,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 2a,
     "nombre": "Hugo Ramallo García",
     "titulo": "CEO de GlobalCobots y divulgador de IA.",
     "imagen": "../imagenes/img0101.webp",
@@ -207,3 +207,4 @@
     ]
   }
 ]
+
