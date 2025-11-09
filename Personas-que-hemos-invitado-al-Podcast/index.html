@@ -2,519 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Personas que hemos invitado al Podcast</title>
+  <title>Mentes404 | Invitados del Podcast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  
+  <link rel="stylesheet" href="../style.css"> 
+  <link rel="stylesheet" href="invitados.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="bg-light">
-  <header class="d-flex align-items-center justify-content-between p-3 bg-dark shadow-sm">
-  <a href="/" class="text-decoration-none">
-    <button type="button" class="btn btn-outline-info">mentes404</button>
-  </a>
+<body class="bg-dark text-light">
+  
+<header>
+  <a href="../" class="logo-btn">Mentes404</a>
 
-  <nav class="d-none d-md-flex gap-4 justify-content-center flex-grow-1">
+  <nav class="d-none d-md-flex">
     <a href="../" class="menu-text">Inicio</a>
     <a href="../episodios/" class="menu-text">Episodios</a>
-    <a href="../Personas-que-hemos-invitado-al-Podcast/" class="btn btn-primary">Invitados</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/" class="menu-text active">Invitados</a>
     <a href="../blog/" class="menu-text">Blog</a>
     <a href="../contacto/" class="menu-text">Contacto</a>
   </nav>
 
   <div class="dropdown d-md-none">
-    <button class="btn btn-outline-secondary border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    <button class="btn border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-list fs-2"></i>
     </button>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
-      <li><a class="dropdown-item" href="../"><i class="bi bi-house"></i> Inicio</a></li>
-      <li><a class="dropdown-item" href="../episodios/"><i class="bi bi-play"></i> Episodios</a></li>
-      <li><a class="dropdown-item" href="../Personas-que-hemos-invitado-al-Podcast/"><i class="bi bi-people-fill"></i> Invitados</a></li>
-      <li><a class="dropdown-item" href="../blog/"><i class="bi bi-file-richtext"></i> Blog</a></li>
-      <li><a class="dropdown-item" href="../contacto/"><i class="bi bi-envelope"></i> Contacto</a></li>
+      <li><a class="dropdown-item" href="../">Inicio</a></li>
+      <li><a class="dropdown-item" href="../episodios/">Episodios</a></li>
+      <li><a class="dropdown-item active" href="../Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
+      <li><a class="dropdown-item" href="../blog/">Blog</a></li>
+      <li><a class="dropdown-item" href="../contacto/">Contacto</a></li>
     </ul>
   </div>
 </header>
-  <div class="container py-5">
-    <h1 class="mb-4 text-center">Personas que hemos invitado al Podcast</h1>
-    
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalNahuai">
-          <img src="../imagenes/IMG_1017.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Nahuai Badiola" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Nahuai Badiola</h5>
-            <p class="card-text text-muted">Desarrollador de wordpress y emprendedor.</p>
-            <a href="https://youtu.be/Vg8c-970xCk" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalhugorg">
-          <img src="../imagenes/img0101.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Hugo Ramallo" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Hugo Ramallo García</h5>
-            <p class="card-text text-muted">CEO de GlobalCobots y divulgador de IA.</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modaldanielGM">
-          <img src="../imagenes/IMG_1089.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Daniel Gonález" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Daniel González Muñoz, PhD Fotocatálisis y Nanociencia</h5>
-            <p class="card-text text-muted">CEO de Nanostine y divulgador científico.</p>
-            <a href="https://youtu.be/9FJZ7Y4HxM4?si=AlmitJ8Lq-yeaz0b" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalbeltranrubio">
-          <img src="../imagenes/IMG_1098.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Beltrán Rubio" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Beltrán Rubio González</h5>
-            <p class="card-text text-muted">Educador y divulgador financiero</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalEnriqueRevueltaGarcia">
-          <img src="../imagenes/dataenrique.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Enrique Revuelta García " loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Enrique Revuelta García</h5>
-            <p class="card-text text-muted">Data Scientist</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalRebecaGarcíaMuñoz">
-          <img src="../imagenes/IMG_1048.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Rebeca García Muñoz" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Rebeca García Muñoz</h5>
-            <p class="card-text text-muted">Studio Design Lead (UX/UI)</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalIgnacioCabria">
-          <img src="../imagenes/0.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Ignacio Cabria" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Ignacio Cabria</h5>
-            <p class="card-text text-muted">Investigador de las creencias y escritor</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-            <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalAlejandroAM">
-          <img src="../imagenes/1748464688198.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Rebeca García Muñoz" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Alejandro Alonso Montero</h5>
-            <p class="card-text text-muted">Programador Full Stack</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-4">
-        <div class="card h-100 text-center" data-bs-toggle="modal" data-bs-target="#modalJorgeGG">
-          <img src="../imagenes/1695373179025.webp" class="card-img-top rounded-circle w-50 mx-auto mt-3" alt="Jorge Galvez Garcia" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Jorge Galvez Garcia</h5>
-            <p class="card-text text-muted">Fundador y CEO de Made In Code</p>
-            <a href="#" class="btn btn-dark btn-lg w-40"><i class="bi bi-headphones"></i>Escuchar Episodio</a><button class="btn btn-primary btn-lg w-30" style="margin-left: 10px;">Ver más</button>
-          </div>
-        </div>
-      </div>
-      
-  </div></div>
-
   
-  <div class="modal fade" id="modalNahuai" tabindex="-1" aria-labelledby="modalNahuaiLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalNahuaiLabel">Nahuai Badiola</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>🧑‍💻 Bio:</b> <p>Soy desarrollador web especializado en WordPress y sostenibilidad digital. Escribo tutoriales de código (Código Genesis), creo plugins y temas para WordPress (OsomPress), organizo la Meetup de WP Terrassa y me gusta compartir estas y otras experiencias en mi blog y podcast (Freelandev).</p>
-          <b>🎙️ Episodio 01: Transición profesional, emprendimiento y tecnología:</b>
-          En este episodio, Nahuai comparte su experiencia sobre cómo cambió de rumbo profesional, las decisiones detrás de su emprendimiento digital y su enfoque
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
-            <a href="https://nbadiola.com/" class="btn btn-primary" target="_blank" aria-label="Web personal"><i class="bi bi-globe fs-5"></i></a>
-            <a href="https://www.linkedin.com/in/nahuaibadiola/" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://freelandev.com/" class="btn btn-primary" target="_blank" aria-label="Podcast Freelandev"><i class="bi bi-mic-fill fs-5"></i></a>
-            <a href="https://osompress.com/" class="btn btn-light" target="_blank" aria-label="osompress"><img src="https://osompress.com/wp-content/uploads/2025/05/Logo-lightbg.svg" class="bi fs-5"></a>
-            <a href="https://profiles.wordpress.org/nahuai/" class="btn btn-primary" target="_blank" aria-label="Perfil WordPress"><i class="bi bi-wordpress fs-5"></i></a>
-          </div>
-           <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="https://youtu.be/Vg8c-970xCk" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="modal fade" id="modalIgnacioCabria" tabindex="-1" aria-labelledby="modalIgnacioCabriaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalIgnacioLabel">Ignacio Cabria</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>👨‍🏫 Bio:</b> <p>Nació en Santander, España, en 1955. Es licenciado en Antropología Cultural por la Universidad de Barcelona, Máster en Cooperación Internacional y Diploma de Estudios Avanzados (DEA) en
-            Antropología Social, ambos por la Universidad Complutense de Madrid. Trabajó para el Ministerio de Asuntos Exteriores como canciller en varias embajadas y consulados de España, y
-            ha sido coordinador general adjunto de la Cooperación Española en varios países. Ha tenido destinos en Mozambique, Argentina, República Dominicana y Filipinas.
-            <span id="dotsIgnacio">...</span>
-            <span class="collapse" id="moreIgnacio"><br>
-              Es autor de los libros Entre ufólogos, creyentes y contactados. Una historia social de los ovnis en España (CdU, 1993), Ovnis y ciencias humanas (Fundación Anomalía, 2002), Historia cultural
-              de los ovnis en España 1950-1990 (Reediciones Anómalas, 2022) y Así creamos monstruos (Luciérnaga, 2023). Para la obtención del DEA en Antropología Social realizó el trabajo Valores,
-              símbolos y representaciones en una experiencia de contacto extraterrestre: el grupo Aztlán (2003), el único trabajo de postrado existente en el ámbito universitario español sobre el tema ovni y el contacto extraterrestre. Es autor también de artículos sobre África y Filipinas.
-              <br><br>
-              Varias de sus publicaciones se encuentran en acceso libre en:
-              <a href="https://independent.academia.edu/IgnacioCabria">Academia</a>
-              </span>
-            </p>
-          <button class="btn btn-primary btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#moreIgnacio" aria-expanded="false" aria-controls="moreIgnacio">Ver más</button><br>
-          <b>🎙️ Episodio  Criptozoología y cultura:</b>
-          En este episodio, Ignacio cuenta el origen de monstruos como el chucabras, entre otros.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
-            <a href="https://independent.academia.edu/IgnacioCabria" class="btn btn-primary" target="_blank" aria-label="Web Academia Edu"><i class="bi bi-globe fs-5"></i></a>
-            <a href="https://www.linkedin.com/in/ignacio-cabria-44776546/" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://www.amazon.es/As%C3%AD-creamos-monstruos-ENIGMAS-CONSPIRACIONES/dp/8419164356/ref=sr_1_4?dib=eyJ2IjoiMSJ9.BZuZqD349MmAEqW8_6WVCfC7KkrrTDGHXAGxl-lliqfZongumyAZSCZbV18JmAmmqsYBnR8Bu88O-z8hEqH0CSkm6Z3bdvVz1fk6V1oP5BYrM44VRo2pN-QJbaruxN9KH5t6usV8BbZFZn70_XdV0rCSvz2zF3yaowiYaktfsdAU55AQXVKlvzdGim96-pB_.gBz0YItcLmlGlfNbwUTsAa7AJ3BhnMgafQCCwVd1bP4&dib_tag=se&qid=1756330507&refinements=p_27%3AIGNACIO+CABRIA&s=books&sr=1-4" class="btn btn-outline-primary" target="_blank" aria-label="libro"><i class="bi bi-book fs-5"></i></a>
-
-          </div>
-        </div>
-      </div>
-    </div></div>
-
+<main class="container py-5">
+  <h1 class="mb-5 text-center text-info">Personas que hemos invitado al Podcast</h1>
   
-  <div class="modal fade" id="modalbeltranrubio" tabindex="-1" aria-labelledby="modalbeltranrubioLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalBeltranLabel">Beltrán Rubio González</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>👨‍🏫 Bio:</b> <p>Beltrán Rubio González es licenciado en ADE, DEA (Diploma de Estudios Avanzados) en Economía y experto en Análisis de decisión. Inversor desde hace 15 años, colabora como docente e instructor en programas de educación financiera, acercando la inversión y los mercados a un público amplio de manera práctica y sencilla. Impulsa la alfabetización financiera mediante su labor divulgativa, ayudando a las personas a tomar mejores decisiones sobre gasto, ahorro e inversión, especialmente orientada hacia la gestión pasiva. Su enfoque accesible y didáctico lo ha convertido en un punto de apoyo para quienes desean iniciarse en las finanzas personales y la inversión a largo plazo.</p>
-          <b>🎙️ Episodio 04: Mentalidad financiera y finanzas personales: conceptos clave para empezar:</b>
-          En este episodio, hablamos con Beltrán sobre la mentalidad finciera y por donde empezar si quieres mejorar tus finanzas personales.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
-            <a href="https://www.linkedin.com/in/beltr%C3%A1nrubio/" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="modal fade" id="modaldanielGM" tabindex="-1" aria-labelledby="modalDanielGonzalezMuñozLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modaldanielGMLabel">Daniel González Muñoz</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>🧑‍💼 Bio:</b>
-          <div class="container my-4">
-            <p>Daniel González, doctor en Nanociencia y Fotocatális por la UAM. Actualmente, CEO de Nanostine, empresa dedicada al recubrimiento de superficies con nanopartículas ultrapuras en sectores de alto valor añadido. Nanostine ha sido elegida como una de las 100 empresas más innovadoras de España por El Referente en 2022, Top 100 startups de APTE en 2024, Mejor Startup Deep Tech en Transfiere 2024 y ganadores del Santander X Award - Universidades 2025.
-            </p>
-          </div>
-          <b>🎙️ ¿Qué es la nanotecnología y su aplicaciones reales? </b> En este episodio de Mentes404, hablamos con Daniel González Muñoz, CEO de Nanostine, sobre la revolución silenciosa de lo nano. Explica de forma sencilla qué es la nanotecnología y sus aplicaciones.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://es.linkedin.com/in/danielgonzalezmunoz/es" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://nanostine.com" class="btn btn-outline-light" target="_blank" aria-label="empresa"><img src="https://media.licdn.com/dms/image/v2/C4E0BAQHMfjOt74gBcA/company-logo_200_200/company-logo_200_200/0/1630655381659/nanostine_logo?e=2147483647&v=beta&t=PtPGSEgbAB7krpfHm06Ez8GTQMuPgsNPogZ5m0vkErc" style="height: 2.0rem; width: auto;"></a>
-          </div>
-      </div>
-    </div>
-  </div></div>
-  
-  <div class="modal fade" id="modalhugorg" tabindex="-1" aria-labelledby="modalHugoRamalloRevueltaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalHugoLabel">Hugo Ramallo García</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>👨‍💻 Bio:</b>
-          <div class="container my-4">
-            <p>
-              Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje (ChatGPT, Claude, Copilot, Gemini, Grok o LLAMA).
-              <span id="dotsHugo">...</span>
-              <span class="collapse" id="moreHugo">
-              Certificado en Al Engineering por IBM y Machine Learning por Stanford, y forma parte del proyecto OdiselA Digital Futures de google.org
-              <br><br>
-              Cuento con experiencia en seguridad en IA (AI Red Teaming), fine-tuning de modelos (Whisper, Stable Diffusion) y despliegue de agentes personalizados en la nube (GCP, AWS, Azure).
-              <br><br>
-              Director general en una empresa del sector EdTech, colaborador de Google for Education, y actualmente creador del canal @GlobalCobots en YouTube (+52K suscriptores).
-              <br><br>
-              Además, colaboro como docente en plataformas como Udemy, con miles de estudiantes en cursos sobre IA y LLMs.
-              </span>
-            </p>
-            <button class="btn btn-primary btn-sm mt-2" 
-                  type="button" 
-                  data-bs-toggle="collapse" 
-                  data-bs-target="#moreHugo" 
-                  aria-expanded="false" 
-                  aria-controls="moreHugo">
-            Ver más
-          </button>
-          </div>
-          <b>🎙️ ¿Quien piensa cuando la ia piensa por ti?</b>
-          En este episodio, conversamos con Hugo sobre como utilizar la ia de forma correcta, el sesgo invisible de ia, deepfake y mucho más.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
+  <section id="guests-container" class="row g-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="guest-card-template" style="display:none;">
+      <div class="card guest-card h-100">
+        <img src="" class="card-img-top" alt="Foto del invitado"> 
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text text-muted"></p>
           
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://www.hugoramallo.com" class="btn btn-primary" target="_blank" aria-label="Web personal"><i class="bi bi-globe fs-5"></i></a>
-            <a href="https://es.linkedin.com/in/hugoramallo/es" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://www.globalcobots.com" class="btn btn-outline-dark" target="_blank" aria-label="empresa"><img src="../imagenes/lg0901.svg" style="height: 1.5rem; width: auto;"></a>
-            <a href="https://m.youtube.com/@globalcobots" class="btn btn-outline-danger" target="_blank" aria-label="canal youtube"><i class="bi bi-youtube fs-5"></i></a>
-          </div>
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="https://youtu.be/9FJZ7Y4HxM4?si=AlmitJ8Lq-yeaz0b" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-      </div>
-    </div>
-  </div></div>
-
-  <div class="modal fade" id="modalJorgeGG" tabindex="-1" aria-labelledby="modalJorgeLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalJorgeLabel">Jorge Galvez Garcia</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>🧑‍💻 Bio:</b> <p>Durante 12 años, he estado inmerso en el mundo del sector comercial, textil y representaciones. Sin embargo, decidí dar un giro en mi carrera y sumergirme de lleno en el fascinante mundo de los datos, descubriendo así un sinfín de oportunidades de negocio y crecimiento. Mi enfoque se ha centrado en el análisis predictivo y la programación, donde he aplicado mi creatividad, visión y excelentes habilidades comerciales.</p>
-          <b>🎙️ Episodio 11: Crear algo que importe. aunque aún no de dinero:</b>
-          <p>En este episodio, Jorge comparte su experiencia sobre su decisión de crear made in code y más.</p>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
-            <a href="https://www.linkedin.com/in/jorgegalvezgarcia/" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://madeincode.es/" class="btn btn-outline-dark" target="_blank" aria-label="made in code"><img src="../imagenes/made_in_code_logo.webp" style="height: 1.5rem; width: auto;"></a>
+          <div class="d-flex justify-content-center gap-2 mt-auto">
+            <a href="#" class="btn btn-dark btn-sm"><i class="bi bi-headphones"></i> Escuchar</a>
+            <button class="btn btn-accent btn-sm btn-secondary" type="button">Ver más</button>
           </div>
         </div>
       </div>
     </div>
-  </div></div>
+    
+  </section>
 
-  <div class="modal fade" id="modalEnriqueRevueltaGarcia" tabindex="-1" aria-labelledby="modalEnriqueRevueltaGarciaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalEnriqueRevueltaGarciaLabel">Enrique Revuelta Garcia</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>🧑‍💻 Bio:</b>
-          <div class="container my-4">
-            <p>
-              Soy Enrique Revuelta, podólogo de formación. En 2020, la pandemia me llevó a replantear mi rumbo profesional y decidí enfocarme en la programación.
-              <span id="dotsEnrique">...</span><span class="collapse" id="moreEnrique"><br>
-              Inicié con un curso de diseño de videojuegos con C# y Unity, realizando prácticas en Mad Gear Games. Estas prácticas me ayudaron a ver que esto me iba de verdad y que podía dedicarme a ello. Por lo que decidí ampliar mi base de conocimientos matriculándome en un CFGS de Desarrollo de Aplicaciones Multiplatafoma.
-              <br><br>
-              Conocí The Bridge a través de un webinar organizado por el instituto, y escribí a la ponente el mismo día nada más terminar. Necesitaba saber más sobre los bootcamps y si podría ser un candidato válido para realizar uno con ellos.
-              Después de varias entrevistas no solo conseguí mi plaza sino que me concedieron una beca de la Fundación Universia.</span>
-            </p>
-            <button class="btn btn-primary btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#moreEnrique" aria-expanded="false" aria-controls="moreEnrique">Ver más</button>
-          </div>
-          <b>🎙️ Episodio 01: Sobre educación:</b>
-          En este episodio, Enrique comparte su experiencia desde ambas perspectivas: Como antiguo estudiante y como instructor de un bootcamp en Data Science.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://enriquerevueltagarcia.com/" class="btn btn-primary" target="_blank" aria-label="Web personal"><i class="bi bi-globe fs-5"></i></a>
-            <a href="https://www.linkedin.com/in/kike-rev/" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-            <a href="https://github.com/Gobuub" class="btn btn-dark" target="_blank" aria-label="Perfil github"><i class="bi bi-github fs-5"></i></a>
-          </div>
-      </div>
-    </div>
-  </div></div>
+  <nav aria-label="Paginación de invitados" class="mt-5">
+    <ul id="pagination" class="pagination justify-content-center"></ul>
+  </nav>
+</main>
 
-  <div class="modal fade" id="modalAlejandroAM" tabindex="-1" aria-labelledby="modalAlejandroAlonsoLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalAlejandroLabel">Alejandro Alonso Montero</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>👨‍💻 Bio:</b>
-          <div class="container my-4">
-            <p>
-              Después de años de esfuerzo y dedicación en distintos sectores —desde perito hasta teleoperador—, Alejandro Alonso decidió que era momento de dar un giro a su vida. A los 41 años, con determinación y ganas de aprender, buscó un bootcamp de programación para reinventarse profesionalmente.
-              Hoy, Alejandro trabaja como programador, demostrando que nunca es tarde para empezar de nuevo y que con actitud y formación, todo es posible.            </p>
-          </div>
-          <b>🎙️ Nunca es demasiado tarde para empezar de nuevo: la transición laboral de Alejandro Alosno.</b>
-                        En este episodio conversaremos con Alejandro que decidio a los 40 años realizar un bootcamp y asi cambiar de sector.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-          </div>
-      </div>
-    </div>
-  </div></div>
+<div id="modals-container">
+  </div>
 
 
-  <div class="modal fade" id="modalRebecaGarcíaMuñoz" tabindex="-1" aria-labelledby="modalRebecaGarcíaMuñozlabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalRebecaGarcíaMuñozLabel">Rebeca García Muñoz</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <b>👩‍💻 Bio:</b>
-          <div class="container my-4">
-            <p>
-              Profesional con más de 10 años de experiencia en diseño gráfico y comunicación visual, actualmente enfocada en el diseño de productos digitales (UX/UI). Desde marzo de 2023, forma parte de Deloitte Digital, donde aporta su visión estratégica y creatividad en la creación de experiencias digitales centradas en el usuario.
-            </p>
-          <b>🎙️ Episodio 01: Sobre educación:</b>
-          En este episodio, Rebeca comparte su experiencia como antigua estudiante de bootcamp en UX/UI.
-        </div>
-        <div class="modal-footer flex-column align-items-center">
-          <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-            <a href="#" class="btn btn-dark btn-lg w-100"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-          </div>
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://es.linkedin.com/in/rbkgarcia" class="btn btn-outline-primary" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-          </div>
-      </div>
-    </div>
-  </div></div></div>
-    <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="invitados2.html">2</a></li>
-    <li class="page-item">
-      <a class="page-link" href="invitados2.html" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
 <footer>
-          <div class="footer-menu text-center">
-              <a href="../" class="text-light">Inicio</a>
-              <a href="../episodios/" class="text-light">Episodios</a>
-              <a href="../Personas-que-hemos-invitado-al-Podcast/" class="text-light">Invitados</a>
-              <a href="../blog/" class="text-light">Blog</a>
-              <a href="../contacto/" class="text-light">Contacto</a>
-        </div>
-        <div class="text-light">
-  <div class="mb-2">
+  <div class="footer-social">
     <span>Síguenos:</span>
+    <div class="d-flex justify-content-center gap-3 mt-2">
+      <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb"><i class="bi bi-spotify fs-3"></i></a>
+      <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA"><i class="bi bi-youtube fs-3"></i></a>
+      <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light fs-3">
+          <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
+          <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
+          <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
+          <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/mentes404.studio/"><i class="bi bi-instagram fs-3"></i></a>
+      <a href="https://www.linkedin.com/company/mentes404/"><i class="bi bi-linkedin fs-3"></i></a>
+      <a href="https://www.tiktok.com/@mentes404"><i class="bi bi-tiktok fs-3"></i></a>
+    </div>
   </div>
 
-<div class="d-flex align-items-center gap-3 flex-wrap justify-content-center justify-content-md-start ms-md-3">
-
-    <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb" class="text-light fs-3">
-      <i class="bi bi-spotify"></i>
-    </a>
-    <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light">
-        <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
-        <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
-        <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
-        <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
-      </svg>
-    </a>
-
-    <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA" class="text-light fs-3">
-      <i class="bi bi-youtube"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/mentes404/" class="text-light fs-3">
-      <i class="bi bi-linkedin"></i>
-    </a>
-    <a href="https://www.instagram.com/mentes404.studio/" class="text-light fs-3">
-      <i class="bi bi-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@mentes404" class="text-light fs-3">
-      <i class="bi bi-tiktok"></i>
-    </a>
+  <div class="footer-menu mb-2">
+    <a href="../">Inicio</a>
+    <a href="../episodios/">Episodios</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/">Invitados</a>
+    <a href="../blog/">Blog</a>
+    <a href="../contacto/">Contacto</a>
   </div>
-</div>
 
-        <div style="margin-top: 20px; font-size: 0.9em; color: #888;">
-            © 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.
-        </div>
-    </footer>
+  <p style="font-size: 0.9em; color: #aaa;">© 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.</p>
+</footer>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.collapse').forEach(el => {
-    const btn = document.querySelector(`[data-bs-target="#${el.id}"]`);
-    const dots = document.getElementById('dots' + el.id.replace('more', ''));
-
-    if (btn && dots) {
-      el.addEventListener('show.bs.collapse', () => {
-        btn.textContent = "Ocultar";
-        dots.style.display = "none";
-      });
-      el.addEventListener('hide.bs.collapse', () => {
-        btn.textContent = "Ver más";
-        dots.style.display = "inline";
-      });
-    }
-  });
-});
-</script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="invitados.js"></script>
 </body>
-
 </html>
-
-
-
-
-
