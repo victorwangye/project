@@ -1,142 +1,217 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const container = document.getElementById("guests-container");
-  const template = document.getElementById("guest-card-template");
-  const pagination = document.getElementById("pagination");
-  const modalContainer = document.getElementById("modals-container");
-
-  let invitados = [];
-  let currentPage = 1;
-  const perPage = 9; // Se muestran 9 invitados por página
-
-  async function loadData() {
-    try {
-      // Usar rutas relativas adecuadas
-      const res = await fetch("./invitados.json");
-      if (!res.ok) throw new Error("No se pudo cargar invitados.json");
-      invitados = await res.json();
-      
-      // Ordenar por ID o número de episodio si está disponible (descendente)
-      invitados.sort((a, b) => b.id - a.id); 
-      
-      renderGuests();
-    } catch (err) {
-      container.innerHTML = `<p class="text-danger text-center">Error cargando invitados: ${err}</p>`;
-      console.error(err);
-    }
+[
+  {
+    "id": 1,
+    "nombre": "Nahuai Badiola",
+    "titulo": "Desarrollador de wordpress y emprendedor.",
+    "imagen": "../imagenes/IMG_1017.webp",
+    "episodio_titulo": "Transición profesional, emprendimiento y tecnología",
+    "episodio_numero": "Episodio 01",
+    "episodio_link": "https://youtu.be/Vg8c-970xCk",
+    "bio_corta": "Soy desarrollador web especializado en WordPress y sostenibilidad digital. Escribo tutoriales de código (Código Genesis), creo plugins y temas para WordPress (OsomPress), organizo la Meetup de WP Terrassa y me gusta compartir estas y otras experiencias en mi blog y podcast (Freelandev).",
+    "links": [
+      { "tipo": "web", "url": "https://nbadiola.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/nahuaibadiola/", "icono": "bi-linkedin" },
+      { "tipo": "podcast", "url": "https://freelandev.com/", "icono": "bi-mic-fill" },
+      { "tipo": "osompress", "url": "https://osompress.com/", "icono": "bi-code-square" },
+      { "tipo": "wordpress", "url": "https://profiles.wordpress.org/nahuai/", "icono": "bi-wordpress" }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Hugo Ramallo García",
+    "titulo": "CEO de GlobalCobots y divulgador de IA.",
+    "imagen": "../imagenes/img0101.webp",
+    "episodio_titulo": "¿Quien piensa cuando la IA piensa por ti?",
+    "episodio_numero": "Episodio 02",
+    "episodio_link": "https://youtu.be/9FJZ7Y4HxM4?si=AlmitJ8Lq-yeaz0b",
+    "bio_corta": "Formador y divulgador en Inteligencia Artificial, especializado en Machine Learning, Deep Learning, IA Generativa y Modelos de Lenguaje. Cuenta con experiencia en seguridad en IA (AI Red Teaming) y es Director general en una empresa del sector EdTech, colaborador de Google for Education y creador del canal @GlobalCobots.",
+    "links": [
+      { "tipo": "web", "url": "https://www.hugoramallo.com", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/hugoramallo/es", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://www.globalcobots.com", "icono": "bi-code-slash" },
+      { "tipo": "youtube", "url": "https://m.youtube.com/@globalcobots", "icono": "bi-youtube" }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Ignacio Cabria",
+    "titulo": "Investigador de las creencias y escritor.",
+    "imagen": "../imagenes/0.webp",
+    "episodio_titulo": "Criptozoología y cultura",
+    "episodio_numero": "Episodio 03",
+    "episodio_link": "#",
+    "bio_corta": "Licenciado en Antropología Cultural, Máster en Cooperación Internacional y autor de varios libros, incluyendo 'Así creamos monstruos'. Trabajó para el Ministerio de Asuntos Exteriores y se especializó en la investigación de las creencias populares y el fenómeno ovni desde una perspectiva antropológica.",
+    "links": [
+      { "tipo": "academia", "url": "https://independent.academia.edu/IgnacioCabria", "icono": "bi-mortarboard" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/ignacio-cabria-44776546/", "icono": "bi-linkedin" },
+      { "tipo": "libro", "url": "https://www.amazon.es/As%C3%AD-creamos-monstruos-ENIGMAS-CONSPIRACIONES/dp/8419164356/", "icono": "bi-book" }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Beltrán Rubio González",
+    "titulo": "Educador y divulgador financiero.",
+    "imagen": "../imagenes/IMG_1098.webp",
+    "episodio_titulo": "Mentalidad financiera y finanzas personales: conceptos clave para empezar",
+    "episodio_numero": "Episodio 04",
+    "episodio_link": "#",
+    "bio_corta": "Licenciado en ADE, DEA en Economía y experto en Análisis de decisión. Colabora como docente e instructor en programas de educación financiera, impulsando la alfabetización financiera mediante su labor divulgativa y su enfoque práctico.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/beltr%C3%A1nrubio/", "icono": "bi-linkedin" }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Enrique Revuelta García",
+    "titulo": "Data Scientist",
+    "imagen": "../imagenes/dataenrique.webp",
+    "episodio_titulo": "Una experiencia como estudiante e instructor de bootcamp",
+    "episodio_numero": "Episodio 05",
+    "episodio_link": "#",
+    "bio_corta": "Podólogo de formación que se reinventó profesionalmente enfocándose en la programación y ciencia de datos. Instructor de bootcamp en Data Science. Su transición laboral comenzó durante la pandemia, demostrando que nunca es tarde para un cambio de carrera.",
+    "links": [
+      { "tipo": "web", "url": "https://enriquerevueltagarcia.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/kike-rev/", "icono": "bi-linkedin" },
+      { "tipo": "github", "url": "https://github.com/Gobuub", "icono": "bi-github" }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Javier Pastor Moreno",
+    "titulo": "Director de Formación en Bit2Me.",
+    "imagen": "../imagenes/epimg/ep6.webp",
+    "episodio_titulo": "Bitcoin, criptomonedas y el futuro del dinero",
+    "episodio_numero": "Episodio 06",
+    "episodio_link": "https://youtu.be/8kse_XQM2lE",
+    "bio_corta": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
+    "links": []
+  },
+  {
+    "id": 7,
+    "nombre": "Rebeca García Muñoz",
+    "titulo": "Studio Design Lead (UX/UI)",
+    "imagen": "../imagenes/IMG_1048.webp",
+    "episodio_titulo": "Hablamos sin filtros sobre los bootcamps",
+    "episodio_numero": "Episodio 07",
+    "episodio_link": "https://youtu.be/0KRBAck9ms8",
+    "bio_corta": "Profesional con más de 10 años de experiencia en diseño gráfico y comunicación visual, actualmente enfocada en el diseño de productos digitales (UX/UI). Forma parte de Deloitte Digital, aportando su visión estratégica en la creación de experiencias digitales.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/rbkgarcia", "icono": "bi-linkedin" }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Daniel González Muñoz, PhD",
+    "titulo": "CEO de Nanostine y divulgador científico.",
+    "imagen": "../imagenes/IMG_1089.webp",
+    "episodio_titulo": "¿Qué es la nanotecnología y su aplicaciones reales?",
+    "episodio_numero": "Episodio 08",
+    "episodio_link": "https://youtu.be/w2fIngayTJQ?si=_DGHlftppYPTvtkx",
+    "bio_corta": "Doctor en Nanociencia y Fotocatálisis, CEO de Nanostine, una empresa innovadora. Su labor se centra en divulgar la nanotecnología y sus aplicaciones, con premios a la innovación empresarial.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/danielgonzalezmunoz/es", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://nanostine.com", "icono": "bi-building" }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Mireia Querol Rovira",
+    "titulo": "Bióloga y divulgadora científica.",
+    "imagen": "../imagenes/1756285939014.webp",
+    "episodio_titulo": "Leer la naturaleza y hacerse preguntas",
+    "episodio_numero": "Episodio 09",
+    "episodio_link": "#",
+    "bio_corta": "Bióloga especializada en Zoología, con más de 20 años de experiencia en conservación de la naturaleza y divulgación científica. Fundadora de una comunidad online dedicada a la naturaleza.",
+    "links": [
+      { "tipo": "web", "url": "https://www.biologueando.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/mireiaquerolrovira/", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/@biologueandocom", "icono": "bi-youtube" },
+      { "tipo": "instagram", "url": "https://www.instagram.com/biologueandocom/?hl=es", "icono": "bi-instagram" },
+      { "tipo": "facebook", "url": "https://www.facebook.com/biologueandocom/?hl=es", "icono": "bi-facebook" },
+      { "tipo": "tiktok", "url": "https://www.tiktok.com/@biologueandocom", "icono": "bi-tiktok" },
+      { "tipo": "bluesky", "url": "https://bsky.app/profile/biologueando.com", "icono": "bi-twitter-x" },
+      { "tipo": "comunidad", "url": "https://www.biologueando.com/comunidad/", "icono": "bi-people-fill" },
+      { "tipo": "newsletter", "url": "https://www.biologueando.com/newsletter/", "icono": "bi-newspaper" }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Jorge Galvez Garcia",
+    "titulo": "Fundador y CEO de Made In Code.",
+    "imagen": "../imagenes/1695373179025.webp",
+    "episodio_titulo": "Crear algo que importe. aunque aún no de dinero",
+    "episodio_numero": "Episodio 10",
+    "episodio_link": "#",
+    "bio_corta": "Con experiencia previa en el sector comercial, textil y de representaciones, dio un giro a su carrera para sumergirse en el mundo de los datos y el análisis predictivo. Fundador y CEO de Made In Code.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/jorgegalvezgarcia/", "icono": "bi-linkedin" },
+      { "tipo": "empresa", "url": "https://madeincode.es/", "icono": "bi-code-slash" }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Pierre Monteagudo Consoni",
+    "titulo": "Presidente del Centro de Estudios Espaciales Astrofísico.",
+    "imagen": "../imagenes/unnamed.webp",
+    "episodio_titulo": "Expedientes Rojas: Secretos de la NASA y la carrera espacial",
+    "episodio_numero": "Episodio 11",
+    "episodio_link": "#",
+    "bio_corta": "Escritor e investigador hispano-venezolano, divulgador científico, y biógrafo oficial de Héctor R. Rojas. Su labor literaria se centra en 'Los Expedientes', una serie de libros sobre información poco conocida de la carrera espacial y la Guerra Fría.",
+    "links": [
+      { "tipo": "web", "url": "https://www.pierremonteagudo.com/", "icono": "bi-globe" },
+      { "tipo": "web", "url": "https://expedienterojas.com/", "icono": "bi-file-earmark-person" },
+      { "tipo": "libros", "url": "https://www.pierremonteagudo.com/index.php/obras/", "icono": "bi-book" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/pierremonteagudoconsoni/", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/c/ExpedienteRojas", "icono": "bi-youtube" },
+      { "tipo": "instagram", "url": "https://www.instagram.com/pierremonteagudo/", "icono": "bi-instagram" }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Marc Reklau",
+    "titulo": "Autor bestseller internacional.",
+    "imagen": "../imagenes/Marc.webp",
+    "episodio_titulo": "El Hábito que lo Cambia Todo",
+    "episodio_numero": "Episodio 12",
+    "episodio_link": "#",
+    "bio_corta": "Autor de 15 títulos, cuatro de ellos superventas, con más de un millón de lectores. Tras perder su empleo en 2013, convirtió su punto más bajo en un nuevo comienzo en la escritura de desarrollo personal.",
+    "links": [
+      { "tipo": "web", "url": "https://www.marcreklau.com/", "icono": "bi-globe" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/marcreklau/?locale=es_ES", "icono": "bi-linkedin" },
+      { "tipo": "libros", "url": "https://www.marcreklau.com/books", "icono": "bi-book" },
+      { "tipo": "instagram", "url": "https://www.instagram.com/marcreklau", "icono": "bi-instagram" },
+      { "tipo": "facebook", "url": "https://www.facebook.com/marc.reklau", "icono": "bi-facebook" }
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Juan Merodio",
+    "titulo": "Fundador de TEKDI y conferenciante",
+    "imagen": "../imagenes/uNi0jEPE.webp",
+    "episodio_titulo": "Título pendiente",
+    "episodio_numero": "Episodio pendiente",
+    "episodio_link": "#",
+    "bio_corta": "Emprendedor que fundó su primera empresa en el 2004, creando, transformando y liderando proyectos en tecnología, educación (TEKDI) y marketing digital. Ha impartido más de 1.000 conferencias y publicado 16 libros.",
+    "links": [
+      { "tipo": "web", "url": "https://www.juanmerodio.com/", "icono": "bi-globe" },
+      { "tipo": "empresa", "url": "https://tekdi.education/", "icono": "bi-award" },
+      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/juanmerodio/?locale=es_ES", "icono": "bi-linkedin" },
+      { "tipo": "youtube", "url": "https://www.youtube.com/@juanmerodio", "icono": "bi-youtube" },
+      { "tipo": "instagram", "url": "https://www.instagram.com/juanmerodio", "icono": "bi-instagram" },
+      { "tipo": "facebook", "url": "https://www.facebook.com/JuanMerodio/", "icono": "bi-facebook" }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Alejandro Alonso Montero",
+    "titulo": "Programador Full Stack",
+    "imagen": "../imagenes/1748464688198.webp",
+    "episodio_titulo": "Nunca es demasiado tarde para empezar de nuevo: la transición laboral",
+    "episodio_numero": "Episodio pendiente",
+    "episodio_link": "#",
+    "bio_corta": "Decidió dar un giro a su vida a los 41 años, buscando un bootcamp de programación para reinventarse profesionalmente. Hoy, trabaja como programador, demostrando que con actitud y formación, todo es posible.",
+    "links": [
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso", "icono": "bi-linkedin" }
+    ]
   }
-
-  function renderGuests() {
-    container.innerHTML = "";
-    modalContainer.innerHTML = "";
-    const start = (currentPage - 1) * perPage;
-    const end = start + perPage;
-    const pagData = invitados.slice(start, end);
-
-    if (pagData.length === 0) {
-      container.innerHTML = `<p class="text-center text-light">No hay invitados disponibles.</p>`;
-      pagination.innerHTML = "";
-      return;
-    }
-
-    pagData.forEach(guest => {
-      // 1. Crear la Card (estilo episodio)
-      const card = template.cloneNode(true);
-      const modalId = `modalGuest${guest.id}`;
-      card.id = "";
-      card.style.display = "block"; 
-      
-      // Contenido de la Card
-      card.querySelector("img").src = guest.imagen;
-      card.querySelector("img").alt = guest.nombre;
-      card.querySelector("h5").textContent = guest.nombre;
-      card.querySelector("p.card-text").textContent = guest.titulo;
-      
-      // Configurar botón para abrir el modal
-      const modalButton = card.querySelector(".btn-secondary");
-      modalButton.setAttribute("data-bs-toggle", "modal");
-      modalButton.setAttribute("data-bs-target", `#${modalId}`);
-      modalButton.textContent = "Ver más";
-
-      // Botón de Escuchar
-      const listenButton = card.querySelector(".btn-dark");
-      listenButton.href = guest.episodio_link || "#";
-
-      container.appendChild(card);
-      
-      // 2. Crear el Modal
-      const modalHTML = createModal(guest, modalId);
-      modalContainer.innerHTML += modalHTML;
-    });
-
-    renderPagination();
-  }
-  
-  function createModal(guest, modalId) {
-      // Generar dinámicamente los botones de redes sociales
-      const socialLinksHTML = guest.links.map(link => {
-          // Usar clase de Bootstrap para el icono si es bi-algo, sino usar un logo si es específico (como 'osompress' o 'empresa')
-          let iconClass = `bi ${link.icono} fs-5`;
-          if (link.tipo === "osompress") {
-             // Este icono no existe en bi, se puede usar un icono de código genérico o un div con una imagen si se cargara
-             iconClass = "bi bi-code-square fs-5"; 
-          } else if (link.tipo === "empresa") {
-             iconClass = "bi bi-building fs-5";
-          }
-          
-          return `
-            <a href="${link.url}" class="btn btn-outline-info" target="_blank" aria-label="${link.tipo}" rel="noopener noreferrer">
-                <i class="${iconClass}"></i>
-            </a>
-          `;
-      }).join('');
-      
-      return `
-        <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}Label" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header bg-dark text-white border-0">
-                <h5 class="modal-title" id="${modalId}Label">${guest.nombre}</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-              </div>
-              <div class="modal-body bg-dark text-light">
-                <p><strong>${guest.titulo}</strong></p>
-                <hr class="text-secondary">
-                <p><strong>Bio:</strong> ${guest.bio_corta}</p>
-                <p><strong>${guest.episodio_numero}:</strong> ${guest.episodio_titulo}</p>
-              </div>
-              <div class="modal-footer flex-column align-items-center bg-dark border-0">
-                <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-                  <a href="${guest.episodio_link || "#"}" class="btn btn-accent btn-lg w-100" target="_blank" rel="noopener noreferrer"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-                </div>
-                <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
-                  ${socialLinksHTML}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-  }
-
-  function renderPagination() {
-    const totalPages = Math.ceil(invitados.length / perPage);
-    pagination.innerHTML = "";
-    if (totalPages <= 1) return;
-
-    const addPage = (text, disabled, active, onClick) => {
-      const li = document.createElement("li");
-      li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-      li.innerHTML = `<a class="page-link bg-dark text-white border-secondary" href="#">${text}</a>`;
-      if (!disabled) li.addEventListener("click", onClick);
-      pagination.appendChild(li);
-    };
-
-    addPage("«", currentPage === 1, false, () => { currentPage--; renderGuests(); });
-    for (let i = 1; i <= totalPages; i++) {
-      addPage(i, false, i === currentPage, () => { currentPage = i; renderGuests(); });
-    }
-    addPage("»", currentPage === totalPages, false, () => { currentPage++; renderGuests(); });
-  }
-
-  loadData();
-});
+]
