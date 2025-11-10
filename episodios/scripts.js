@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let currentPage = 1;
     const perPage = 12; // 4 filas de 3 tarjetas
     let categoriaActiva = "all";
-    let ordenActivo = "relevancia"; 
+    let ordenActivo = "relevancia_reciente"; // Criterio de orden por defecto AHORA ES RECIENTE
     let terminoBusqueda = "";
 
     async function loadData() {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             listaFiltrada = listaFiltrada.filter(ep => ep.categorias?.includes(categoriaActiva));
         }
 
-        // 2. Filtrado por BÚSQUEDA (Case-insensitive: Título, Descripción, Categorías)
+        // 2. Filtrado por BÚSQUEDA (TÍTULO, DESCRIPCIÓN O CATEGORÍA)
         if (terminoBusqueda.length > 0) {
             const query = terminoBusqueda;
             listaFiltrada = listaFiltrada.filter(ep => 
@@ -49,22 +49,25 @@ document.addEventListener("DOMContentLoaded", async () => {
             );
         }
         
-        // 3. Ordenamiento (Prioriza destacados, luego por fecha)
+        // 3. Ordenamiento (Prioriza destacados, luego aplica la fecha solicitada)
         listaFiltrada.sort((a, b) => {
             
-            // Relevancia (Prioridad 1: destacado true va primero)
-            if (ordenActivo === "relevancia") {
+            // Lógica de Relevancia (Aplica para ambos modos "relevancia_...")
+            if (ordenActivo.startsWith('relevancia')) {
+                // 1. Prioridad: destacado true va primero
                 if (a.destacado && !b.destacado) return -1;
                 if (!a.destacado && b.destacado) return 1;
-            } 
+            }
             
-            // Mas Reciente (Defecto y Relevancia secundaria)
-            if (ordenActivo === "mas_reciente" || ordenActivo === "relevancia") {
+            // 2. Desempate o Modo Fecha Pura (solo si los modos son iguales o si no es modo Relevancia)
+            
+            // Más Reciente (Default para Relevancia y modo fecha pura)
+            if (ordenActivo === "mas_reciente" || ordenActivo === "relevancia_reciente") {
                 return b.numero - a.numero; // Descendente por número
             }
             
-            // Mas Antiguo
-            if (ordenActivo === "mas_antiguo") {
+            // Más Antiguo (Default para Relevancia antigua y modo fecha pura)
+            if (ordenActivo === "mas_antiguo" || ordenActivo === "relevancia_antigua") {
                 return a.numero - b.numero; // Ascendente por número
             }
             
@@ -77,8 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function handleSearch() {
-        // Almacena el término de búsqueda en minúsculas y aplica todos los filtros
-        terminoBusqueda = searchInput.value.toLowerCase().trim(); 
+        terminoBusqueda = searchInput.value.toLowerCase().trim();
         applyFiltersAndSort();
     }
 
