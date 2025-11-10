@@ -1,165 +1,168 @@
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*
+ * Archivo CSS para la sección de Invitados
+ * Complementa los estilos base de ../style.css
+ */
 
-/* ===== Variables globales (Las usamos de ../style.css) ===== */
 :root {
-  --fondo-principal: #0e1722;
-  --fondo-secundario: #0b1118;
-  --texto-principal: #eee7d5;
-  --color-accent: #2093cc;
-  --color-secondary: #ccc;
-  --sombra-card: rgba(32,147,204,0.4);
-  --border-radius-card: 0.8rem;
+    --color-bg: #0e1722;
+    --color-bg-alt: #0b1118;
+    --color-text: #eee7d5;
+    --color-accent: #2093cc;
+    --color-secondary: #ccc;
+    --border-radius-card: 0.8rem;
 }
 
-/* ===== Body ===== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--fondo-secundario); 
-  color: var(--texto-principal);
-  overflow-x: hidden;
-}
-
-/* El Header usa estilos de ../style.css */
-
-/* ===== Contenedor principal y tarjetas ===== */
+/* === Contenedor Principal === */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+    background-color: var(--color-bg-alt);
 }
 
-/* Estilo para los botones de filtro y ordenamiento */
-#categorias .btn-outline-info,
-#ordenamiento .btn-outline-light {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transition: background-color 0.2s ease, color 0.2s ease;
+.text-info {
+    color: var(--color-accent) !important;
 }
 
-#categorias .btn-outline-info:hover,
-#ordenamiento .btn-outline-light:hover {
-    background-color: var(--color-accent);
-    color: var(--texto-principal);
+/* === Card de Invitado (Guest Card) === */
+.guest-card {
+    transition: all 0.4s ease;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border: none;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
 }
 
-#categorias .btn.active,
-#ordenamiento .btn.active {
-    background-color: var(--color-accent) !important;
-    color: var(--texto-principal) !important;
-    border-color: var(--color-accent) !important;
+.guest-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 22px rgba(32, 147, 204, 0.6);
 }
 
-
-/* === Card de Episodios (Ajustado para tener altura uniforme) === */
-.episode-card {
-  transition: all 0.4s ease;
-  background-color: var(--fondo-principal);
-  color: var(--texto-principal);
-  border: none;
-  border-radius: var(--border-radius-card);
-  overflow: hidden;
-  position: relative;
-  /* Clave para altura uniforme: fuerza el 100% de la altura del contenedor */
-  height: 100%; 
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+.guest-card .card-img-top {
+    /* Estilos para hacer la imagen redonda con borde de acento */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 1.5rem auto 0.5rem;
+    border: 4px solid var(--color-accent); /* Borde de acento */
+    transition: transform 0.3s ease;
 }
 
-.episode-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 22px var(--sombra-card);
+.guest-card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
-.card-img-top {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.episode-card:hover .card-img-top {
-  transform: scale(1.05);
+.guest-card .card-body {
+    padding: 1.4rem 1.6rem;
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
 }
 
-.card-body {
-  padding: 1.4rem 1.6rem;
-  /* Permite que el cuerpo ocupe el espacio restante y alinea contenido interno */
-  flex-grow: 1; 
-  display: flex; 
-  flex-direction: column;
-  justify-content: space-between; 
+.guest-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
 }
 
-.card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-  color: var(--texto-principal);
+.guest-card .card-text {
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
 }
 
-/* Limitar la descripción a un máximo de 3 líneas para altura uniforme */
-.card-text {
-  font-size: 0.95rem;
-  color: var(--color-secondary);
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Límite de 3 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-height: calc(3 * 1.5em); 
-}
-
-/* Botón Escuchar (Accent) */
+/* === Botón de Escuchar/Ver más === */
 .btn-accent {
-  background-color: var(--color-accent);
-  color: var(--texto-principal);
-  border-radius: 50px;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: none;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 .btn-accent:hover {
-  background-color: #31b0f2;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--sombra-card);
+    background-color: #31b0f2;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(32, 147, 204, 0.6);
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-  background-color: var(--fondo-principal);
-  border: 1px solid #1a2633;
-}
-.dropdown-item {
-  color: var(--texto-principal);
-}
-.dropdown-item:hover {
-  background-color: var(--color-accent);
-  color: #fff !important;
+/* === Modales === */
+.modal-content {
+    background-color: var(--color-bg-alt);
+    color: var(--color-text);
+    border: 1px solid #1a2633;
 }
 
-/* Paginación (Ajuste para centrar el contenido y el elemento) */
+.modal-header,
+.modal-footer {
+    background-color: var(--color-bg);
+    border: none;
+}
+
+.modal-title {
+    color: var(--color-accent);
+}
+
+.btn-close {
+    /* Hacer el botón de cerrar visible en fondo oscuro */
+    filter: invert(1);
+}
+
+.modal-body hr {
+    color: #333; /* Color de línea para el separador */
+    opacity: 0.5;
+}
+
+/* Estilo para botones sociales en el modal */
+.modal-footer .btn-outline-info {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transition: all 0.2s ease;
+}
+
+.modal-footer .btn-outline-info:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Ajuste para el botón de colapso dentro del modal */
+.modal-body .collapse-btn {
+    font-size: 0.9em;
+    padding: 0.2rem 0.8rem;
+    border-radius: 5px;
+}
+
+
+/* === Paginación - CORRECCIÓN DE CENTRADO DEFINITIVO === */
+.pagination {
+    width: fit-content; 
+    margin: 0 auto; 
+}
+
 .pagination .page-item .page-link {
-    background-color: var(--fondo-principal);
-    color: var(--texto-principal);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     border: 1px solid #333;
-    display: flex;
+    transition: all 0.2s ease;
+    display: flex; 
     align-items: center;
     justify-content: center;
-    min-width: 40px;
+    min-width: 40px; 
 }
+
+.pagination .page-item:not(.active) .page-link:hover {
+    background-color: #222;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
 .pagination .page-item.active .page-link {
     background-color: var(--color-accent) !important;
+    color: white !important;
     border-color: var(--color-accent) !important;
 }
