@@ -225,17 +225,17 @@
     "id": "15",
     "nombre": "Mila Coco",
     "titulo": "COPYWRITER EXPERTA EN FUNNELS",
-    "imagen": "#",
+    "imagen": "../imagenes/1760684959320coco.webp",
     "episodio_titulo": "Email Marketing",
     "episodio_numero": "Episodio pendiente",
     "episodio_link": "#",
     "bio_corta": "Desde 2017 ayuda a empresas estrategias y embudos de captación y retención de clientes. Es profesora de varios másters y sitios como la Cámara de Comercio de Valencia, y tiene una academia con +700 alumnos.",
-    "bio_completa": "",
     "links": [
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/milacoco", "icono": "bi-linkedin" }
     ]
   }
 ]
+
 
 
 
