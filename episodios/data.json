@@ -6,7 +6,6 @@
       "descripcion": "Analizamos las nuevas tecnologías solares y su impacto.",
       "imagen": "https://images.pexels.com/photos/885350/pexels-photo-885350.jpeg",
       "categorias": ["planet"],
-      "subcategorias": ["Energía","Innovación"],
       "destacado": true,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -20,7 +19,6 @@
       "descripcion": "Descubre cómo los modelos de lenguaje están transformando todo.",
       "imagen": "https://images.pexels.com/photos/3182772/pexels-photo-3182772.jpeg",
       "categorias": ["tech","think"],
-      "subcategorias": ["IA","Lenguaje"],
       "destacado": true,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -34,7 +32,6 @@
       "descripcion": "Exploramos el futuro de los autos eléctricos y el transporte verde.",
       "imagen": "https://images.pexels.com/photos/276024/pexels-photo-276024.jpeg",
       "categorias": ["planet","move"],
-      "subcategorias": ["Sostenibilidad","Transporte"],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
