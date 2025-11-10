@@ -4,14 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const pagination = document.getElementById("pagination");
     const categoriasBtns = document.querySelectorAll("#categorias button");
     const ordenamientoBtns = document.querySelectorAll("#ordenamiento button");
-    const subcatContainer = document.getElementById("subcategorias"); // Se mantiene para consistencia, aunque no se usa para subcats
+    const searchInput = document.getElementById("episodeSearch"); // Nuevo elemento del buscador
 
     let episodios = [];
     let filtrados = [];
     let currentPage = 1;
     const perPage = 9; // Reducido a 9 para mejor paginación visual
     let categoriaActiva = "all";
-    let ordenActivo = "relevancia"; // Nuevo: Criterio de orden por defecto
+    let ordenActivo = "relevancia"; // Criterio de orden por defecto
+    let terminoBusqueda = ""; // Nuevo estado para la búsqueda
 
     async function loadData() {
         try {
@@ -30,43 +31,56 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
     
-    // Función central para aplicar filtros y ordenamiento
+    // Función central para aplicar búsqueda, filtros y ordenamiento
     function applyFiltersAndSort() {
-        // 1. Filtrado por Categoría (permite múltiples categorías por episodio)
-        if (categoriaActiva === "all") {
-            filtrados = episodios;
-        } else {
+        let listaFiltrada = episodios;
+
+        // 1. Filtrado por CATEGORÍA
+        if (categoriaActiva !== "all") {
             // Filtra solo los episodios cuya lista de categorías incluya la categoría activa
-            filtrados = episodios.filter(ep => ep.categorias?.includes(categoriaActiva));
+            listaFiltrada = listaFiltrada.filter(ep => ep.categorias?.includes(categoriaActiva));
         }
 
-        // 2. Ordenamiento
-        filtrados.sort((a, b) => {
-            // Lógica de ordenamiento por Relevancia (Destacados)
+        // 2. Filtrado por BÚSQUEDA
+        if (terminoBusqueda.length > 0) {
+            const query = terminoBusqueda;
+            listaFiltrada = listaFiltrada.filter(ep => 
+                ep.titulo.toLowerCase().includes(query) ||
+                ep.descripcion.toLowerCase().includes(query) ||
+                ep.categorias.join(' ').toLowerCase().includes(query) // Búsqueda en categorías
+            );
+        }
+        
+        // 3. Ordenamiento
+        listaFiltrada.sort((a, b) => {
+            // Relevancia
             if (ordenActivo === "relevancia") {
-                // Primero, si A es destacado y B no, A va primero
                 if (a.destacado && !b.destacado) return -1;
-                // Si B es destacado y A no, B va primero
                 if (!a.destacado && b.destacado) return 1;
             } 
             
-            // Si no hay diferencia de relevancia o si el orden NO es 'relevancia', ordenamos por número (fecha)
-            
+            // Mas Reciente (Defecto y Relevancia secundaria)
             if (ordenActivo === "mas_reciente" || ordenActivo === "relevancia") {
-                // Mas reciente (número más alto) va primero: b.numero - a.numero (Descendente)
-                return b.numero - a.numero; 
+                return b.numero - a.numero; // Descendente por número
             }
             
+            // Mas Antiguo
             if (ordenActivo === "mas_antiguo") {
-                // Mas antiguo (número más bajo) va primero: a.numero - b.numero (Ascendente)
-                return a.numero - b.numero;
+                return a.numero - b.numero; // Ascendente por número
             }
             
-            return 0; // Si no hay criterio, no cambia el orden
+            return 0;
         });
         
+        filtrados = listaFiltrada;
         currentPage = 1;
         renderCards();
+    }
+
+    function handleSearch() {
+        // Almacena el término de búsqueda y aplica todos los filtros
+        terminoBusqueda = searchInput.value.toLowerCase().trim();
+        applyFiltersAndSort();
     }
 
 
@@ -77,7 +91,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         const pagData = filtrados.slice(start, end);
 
         if (pagData.length === 0) {
-            container.innerHTML = `<p class="text-center text-light">No hay episodios disponibles.</p>`;
+            const mensaje = terminoBusqueda.length > 0 
+                ? `No se encontraron episodios que coincidan con la búsqueda "${searchInput.value}".`
+                : `No hay episodios disponibles.`;
+            container.innerHTML = `<p class="text-center text-secondary mt-5">${mensaje}</p>`;
             pagination.innerHTML = "";
             return;
         }
@@ -132,6 +149,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // === Event Listeners ===
 
+    // Evento para el Buscador
+    if (searchInput) {
+        searchInput.addEventListener("input", handleSearch);
+    }
+
     // Eventos para Botones de Categorías
     categoriasBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -158,12 +180,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         btn.addEventListener("click", () => {
             ordenamientoBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
-            ordenActivo = btn.dataset.sort;
-            
-            // Reaplicar orden (los filtros no cambian, solo el orden)
-            applyFiltersAndSort();
-        });
-    });
-
-    loadData();
-});
+            orden
