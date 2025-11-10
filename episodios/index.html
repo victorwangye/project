@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mentes404 | Invitados del Podcast</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="../style.css"> 
-  <link rel="stylesheet" href="invitados.css">
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mentes404 | Episodios</title>
+
+<link rel="stylesheet" href="../style.css"> 
+<link rel="stylesheet" href="style.css"> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 </head>
+
 <body class="bg-dark text-light">
-  
+
 <header>
   <a href="../" class="logo-btn">Mentes404</a>
 
   <nav class="d-none d-md-flex">
     <a href="../" class="menu-text">Inicio</a>
-    <a href="../episodios/" class="menu-text">Episodios</a>
-    <a href="./" class="menu-text active">Invitados</a>
+    <a href="./" class="menu-text active">Episodios</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/" class="menu-text">Invitados</a>
     <a href="../blog/" class="menu-text">Blog</a>
     <a href="../contacto/" class="menu-text">Contacto</a>
   </nav>
@@ -30,86 +31,122 @@
     </button>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
       <li><a class="dropdown-item" href="../">Inicio</a></li>
-      <li><a class="dropdown-item" href="../episodios/">Episodios</a></li>
-      <li><a class="dropdown-item active" href="./">Invitados</a></li>
+      <li><a class="dropdown-item active" href="./">Episodios</a></li>
+      <li><a class="dropdown-item" href="../Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
       <li><a class="dropdown-item" href="../blog/">Blog</a></li>
       <li><a class="dropdown-item" href="../contacto/">Contacto</a></li>
     </ul>
   </div>
 </header>
-  
-<main class="container py-5">
-  <h1 class="mb-4 text-center text-info">Personas que hemos invitado al Podcast</h1>
+
+
+<main class="container py-4">
+  <h1 class="mb-4 text-center text-info">Todos los Episodios</h1>
 
   <section class="text-center mb-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
             <div class="input-group">
                 <span class="input-group-text bg-primary border-primary text-white"><i class="bi bi-search"></i></span>
-                <input type="text" id="guestSearch" class="form-control bg-dark text-white border-primary" placeholder="Buscar invitado por nombre o descripción...">
+                <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-primary" placeholder="Buscar por título, descripción o tema...">
             </div>
         </div>
     </div>
   </section>
+  
+  <section class="text-center mb-4">
+    <h2 class="mb-3 fs-5 text-secondary">Filtrar por Categoría</h2>
+    <div id="categorias" class="btn-group flex-wrap" role="group">
+      <button class="btn btn-outline-light active" data-category="all">Todos</button>
+      <button class="btn btn-outline-info" data-category="think">Think</button>
+      <button class="btn btn-outline-info" data-category="tech">Tech</button>
+      <button class="btn btn-outline-info" data-category="planet">Planet</button>
+      <button class="btn btn-outline-info" data-category="move">Move</button>
+    </div>
+    
+    <div id="subcategorias" class="mt-3 d-none"></div>
+  </section>
+  
+  <section class="text-center mb-5">
+    <h2 class="mb-2 fs-5 text-secondary">Ordenar por</h2>
+    <div id="ordenamiento" class="btn-group flex-wrap" role="group">
+        <button class="btn btn-sm btn-outline-light active" data-sort="relevancia">⭐ Relevancia (Destacados)</button>
+        <button class="btn btn-sm btn-outline-light" data-sort="mas_reciente">⬇️ Más Reciente</button>
+        <button class="btn btn-sm btn-outline-light" data-sort="mas_antiguo">⬆️ Más Antiguo</button>
+    </div>
+  </section>
 
-  <section id="guests-container" class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="guest-card-template" style="display:none;">
-      <div class="card guest-card h-100">
-        <img src="" class="card-img-top" alt="Foto del invitado"> 
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text text-muted"></p>
-          
-          <div class="d-flex justify-content-center gap-2 mt-auto">
-            <a href="#" class="btn btn-dark btn-sm"><i class="bi bi-headphones"></i> Escuchar</a>
-            <button class="btn btn-accent btn-sm btn-secondary" type="button">Ver más</button>
+  <section id="cards-container" class="row g-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4" id="card-template" style="display:none">
+      <div class="card episode-card bg-secondary text-light">
+          <img src="" class="card-img-top" alt="">
+          <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              
+              <div class="mb-2 d-flex align-items-center justify-content-between">
+                  <div class="dropdown">
+                      <button class="btn btn-accent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      🎧 Escuchar
+                      </button>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item youtube" href="#" target="_blank"><i class="bi bi-youtube"></i> YouTube</a></li>
+                          <li><a class="dropdown-item spotify" href="#" target="_blank"><i class="bi bi-spotify"></i> Spotify</a></li>
+                          <li><a class="dropdown-item apple" href="#" target="_blank">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-light me-1">
+                                  <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
+                                  <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
+                                  <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
+                                  <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
+                              </svg> 
+                              Apple Podcast
+                          </a></li>
+                      </ul>
+                  </div>
+                  <small class="text-info text-end categories-text"></small>
+              </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <nav aria-label="Paginación de invitados" class="mt-5 text-center">
+  <nav aria-label="Paginación de episodios" class="mt-5 text-center">
     <ul id="pagination" class="pagination justify-content-center"></ul>
   </nav>
 </main>
 
-<div id="modals-container">
-  </div>
-
-
 <footer>
-  <div class="footer-social">
-    <span>Síguenos:</span>
-    <div class="d-flex justify-content-center gap-3 mt-2">
-      <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb"><i class="bi bi-spotify fs-3"></i></a>
-      <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA"><i class="bi bi-youtube fs-3"></i></a>
-      <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light fs-3">
-          <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
-          <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
-          <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
-          <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/mentes404.studio/"><i class="bi bi-instagram fs-3"></i></a>
-      <a href="https://www.linkedin.com/company/mentes404/"><i class="bi bi-linkedin fs-3"></i></a>
-      <a href="https://www.tiktok.com/@mentes404"><i class="bi bi-tiktok fs-3"></i></a>
+    <div class="footer-social">
+      <span>Síguenos:</span>
+      <div class="d-flex justify-content-center gap-3 mt-2">
+        <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb"><i class="bi bi-spotify fs-3"></i></a>
+        <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA"><i class="bi bi-youtube fs-3"></i></a>
+        <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" class="text-light d-flex align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-light  fs-3">
+        <path fill="currentColor" d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path>
+        <path fill="currentColor" fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path>
+        <path fill="currentColor" fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path>
+        <path fill="currentColor" d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path>
+      </svg>
+    </a>
+        <a href="https://www.instagram.com/mentes404.studio/"><i class="bi bi-instagram fs-3"></i></a>
+        <a href="https://www.linkedin.com/company/mentes404/"><i class="bi bi-linkedin fs-3"></i></a>
+        <a href="https://www.tiktok.com/@mentes404"><i class="bi bi-tiktok fs-3"></i></a>
+      </div>
     </div>
-  </div>
 
-  <div class="footer-menu mb-2">
-    <a href="../">Inicio</a>
-    <a href="../episodios/">Episodios</a>
-    <a href="./">Invitados</a>
-    <a href="../blog/">Blog</a>
-    <a href="../contacto/">Contacto</a>
-  </div>
+    <div class="footer-menu mb-2">
+      <a href="../">Inicio</a>
+      <a href="./">Episodios</a>
+      <a href="../Personas-que-hemos-invitado-al-Podcast/">Invitados</a>
+      <a href="../blog/">Blog</a>
+      <a href="../contacto/">Contacto</a>
+    </div>
 
-  <p style="font-size: 0.9em; color: #aaa;">© 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.</p>
-</footer>
+    <p style="font-size: 0.9em; color: #aaa;">© 2025 <strong>Mentes404™</strong> – Todos los derechos reservados.</p>
+  </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="invitados.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
