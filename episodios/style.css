@@ -19,7 +19,7 @@
 /* ===== Body ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--fondo-secundario); /* Usamos el fondo alternativo del sitio principal */
+  background-color: var(--fondo-secundario); 
   color: var(--texto-principal);
   overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ main {
   padding: 2rem 1rem;
 }
 
-/* Estilo para los botones de filtro */
+/* Estilo para los botones de filtro y ordenamiento */
 #categorias .btn-outline-info,
 #ordenamiento .btn-outline-light {
     color: var(--color-accent);
@@ -55,7 +55,7 @@ main {
 }
 
 
-/* === Card de Episodios (Ajustado para parecerse al index) === */
+/* === Card de Episodios (Ajustado para tener altura uniforme) === */
 .episode-card {
   transition: all 0.4s ease;
   background-color: var(--fondo-principal);
@@ -64,8 +64,10 @@ main {
   border-radius: var(--border-radius-card);
   overflow: hidden;
   position: relative;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
-  height: 100%;
 }
 
 .episode-card:hover {
@@ -85,9 +87,10 @@ main {
 
 .card-body {
   padding: 1.4rem 1.6rem;
-  display: flex;
+  flex-grow: 1; 
+  display: flex; 
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .card-title {
@@ -98,11 +101,19 @@ main {
   color: var(--texto-principal);
 }
 
+/* Limitar la descripción a un máximo de 3 líneas para altura uniforme */
 .card-text {
   font-size: 0.95rem;
   color: var(--color-secondary);
   margin-bottom: 1rem;
   line-height: 1.5;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(3 * 1.5em); 
 }
 
 /* Botón Escuchar (Accent) */
@@ -114,6 +125,7 @@ main {
   padding: 0.5rem 1.5rem;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .btn-accent:hover {
@@ -135,7 +147,7 @@ main {
   color: #fff !important;
 }
 
-/* Paginación (Ajuste para centrar el contenido) */
+/* Paginación (Ajuste para centrar el contenido y el elemento) */
 .pagination .page-item .page-link {
     background-color: var(--fondo-principal);
     color: var(--texto-principal);
@@ -149,5 +161,3 @@ main {
     background-color: var(--color-accent) !important;
     border-color: var(--color-accent) !important;
 }
-
-/* El Footer usa estilos de ../style.css */
