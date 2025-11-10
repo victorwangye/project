@@ -41,8 +41,19 @@
 
 
 <main class="container py-4">
-  <h1 class="mb-5 text-center text-info">Todos los Episodios</h1>
+  <h1 class="mb-4 text-center text-info">Todos los Episodios</h1>
 
+  <section class="text-center mb-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="input-group">
+                <span class="input-group-text bg-primary border-primary text-white"><i class="bi bi-search"></i></span>
+                <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-primary" placeholder="Buscar por título, descripción o invitado...">
+            </div>
+        </div>
+    </div>
+  </section>
+  
   <section class="text-center mb-4">
     <h2 class="mb-3 fs-5 text-secondary">Filtrar por Categoría</h2>
     <div id="categorias" class="btn-group flex-wrap" role="group">
