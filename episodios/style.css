@@ -5,183 +5,149 @@
   box-sizing: border-box;
 }
 
-/* ===== Variables globales ===== */
+/* ===== Variables globales (Las usamos de ../style.css) ===== */
 :root {
   --fondo-principal: #0e1722;
   --fondo-secundario: #0b1118;
   --texto-principal: #eee7d5;
-  --texto-secundario: #4d4f52;
-  --boton-principal: #2093cc;
-  --boton-hover: #1b7abf;
-  --fuente-principal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-accent: #2093cc;
+  --color-secondary: #ccc;
   --sombra-card: rgba(32,147,204,0.4);
-  --border-radius-card: 15px;
-  --padding-card: 1.5rem;
+  --border-radius-card: 0.8rem;
 }
 
 /* ===== Body ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, var(--fondo-principal), #1c2535);
+  background-color: var(--fondo-secundario); /* Usamos el fondo alternativo del sitio principal */
   color: var(--texto-principal);
   overflow-x: hidden;
 }
 
-/* ===== Header ===== */
-header {
-  background-color: var(--fondo-principal);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-a.logo-btn {
-  font-weight: 700;
-  color: var(--boton-principal);
-  text-decoration: none;
-  font-size: 1.4rem;
-}
-
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a.menu-text {
-  color: var(--texto-principal);
-  font-weight: 500;
-  position: relative;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-nav a.menu-text.active {
-  color: var(--boton-principal);
-  font-weight: 700;
-}
-
-nav a.menu-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: var(--boton-principal);
-  transition: width 0.3s ease;
-}
-
-nav a.menu-text:hover::after,
-nav a.menu-text.active::after {
-  width: 100%;
-}
-
-/* ===== Dropdown ===== */
-.dropdown-menu {
-  background-color: var(--fondo-principal);
-  border: none;
-}
-
-.dropdown-item {
-  color: var(--texto-principal);
-  transition: background 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #333;
-  color: #fff !important;
-}
+/* El Header usa estilos de ../style.css */
 
 /* ===== Contenedor principal y tarjetas ===== */
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  padding: 2rem 1rem;
 }
 
-.card {
-  background-color: rgba(28,37,53,0.9);
+/* Estilo para los botones de filtro */
+#categorias .btn-outline-info,
+#ordenamiento .btn-outline-light {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#categorias .btn-outline-info:hover,
+#ordenamiento .btn-outline-light:hover {
+    background-color: var(--color-accent);
+    color: var(--texto-principal);
+}
+
+#categorias .btn.active,
+#ordenamiento .btn.active {
+    background-color: var(--color-accent) !important;
+    color: var(--texto-principal) !important;
+    border-color: var(--color-accent) !important;
+}
+
+
+/* === Card de Episodios (Ajustado para parecerse al index) === */
+.episode-card {
+  transition: all 0.4s ease;
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+  border: none;
   border-radius: var(--border-radius-card);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+  height: 100%;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 25px var(--sombra-card);
+.episode-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 22px var(--sombra-card);
 }
 
-.card img {
+.card-img-top {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(238,231,213,0.1);
+  transition: transform 0.5s ease;
+}
+.episode-card:hover .card-img-top {
+  transform: scale(1.05);
 }
 
-.card-content {
-  padding: var(--padding-card);
+.card-body {
+  padding: 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
   color: var(--texto-principal);
 }
 
-.card p {
-  color: white;
-  font-size: 1rem;
+.card-text {
+  font-size: 0.95rem;
+  color: var(--color-secondary);
   margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
-.card button {
-  align-self: start;
+/* Botón Escuchar (Accent) */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--texto-principal);
+  border-radius: 50px;
+  font-weight: 600;
   padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--boton-principal);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
-.card button:hover {
-  background-color: var(--boton-hover);
+.btn-accent:hover {
+  background-color: #31b0f2;
   transform: scale(1.05);
+  box-shadow: 0 0 10px var(--sombra-card);
 }
 
-/* ===== Footer ===== */
-footer {
+/* Dropdown Menu */
+.dropdown-menu {
   background-color: var(--fondo-principal);
+  border: 1px solid #1a2633;
+}
+.dropdown-item {
   color: var(--texto-principal);
-  padding: 2rem 1rem;
-  text-align: center;
+}
+.dropdown-item:hover {
+  background-color: var(--color-accent);
+  color: #fff !important;
 }
 
-footer a {
-  color: var(--texto-principal);
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
+/* Paginación (Ajuste para centrar el contenido) */
+.pagination .page-item .page-link {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
 }
 
-footer a:hover {
-  color: var(--boton-principal);
-}
-
-.footer-social {
-  margin-bottom: 1rem;
-}
+/* El Footer usa estilos de ../style.css */
