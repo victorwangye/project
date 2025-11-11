@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const template = document.getElementById("guest-card-template");
     const pagination = document.getElementById("pagination");
     const modalContainer = document.getElementById("modals-container");
-    // Eliminado: const searchInput = document.getElementById("guestSearch"); 
 
     let invitados = [];
     let filteredInvitados = []; 
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // Se eliminó la función filterGuests
+    // Nota: filterGuests (buscador) ha sido eliminado
 
     function renderGuests() {
         container.innerHTML = "";
@@ -58,8 +57,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
-        // Usamos la lista completa si no hay búsqueda
-        const pagData = (filteredInvitados.length > 0 ? filteredInvitados : invitados).slice(start, end);
+        // Usamos la lista completa, ya que no hay búsqueda activa
+        const pagData = invitados.slice(start, end);
 
         if (pagData.length === 0) {
             container.innerHTML = `<p class="text-center text-secondary mt-5">No hay invitados disponibles.</p>`;
