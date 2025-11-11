@@ -118,6 +118,12 @@ main {
     opacity: 0.5;
 }
 
+/* ESTILOS CLAVE PARA ADAPTAR LAS REDES SOCIALES (Flexbox) */
+.modal-footer .d-flex {
+    /* El d-flex ya está en el HTML, esta regla asegura que se envuelva */
+    flex-wrap: wrap; 
+}
+
 /* Estilo para botones sociales en el modal */
 .modal-footer .btn-outline-info {
     color: var(--color-accent);
