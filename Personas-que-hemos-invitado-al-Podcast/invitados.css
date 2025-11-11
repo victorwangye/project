@@ -56,7 +56,7 @@ main {
 .guest-card .card-body {
     padding: 1.4rem 1.6rem;
     text-align: center;
-    display: flex; /* Para empujar el botón al fondo si es necesario */
+    display: flex; 
     flex-direction: column;
 }
 
@@ -130,17 +130,29 @@ main {
     color: white;
 }
 
-/* === Paginación - CENTRADO DEL CONTENIDO DEL LINK === */
+/* Ajuste para el botón de colapso dentro del modal */
+.modal-body .collapse-btn {
+    font-size: 0.9em;
+    padding: 0.2rem 0.8rem;
+    border-radius: 5px;
+}
+
+
+/* === Paginación - CORRECCIÓN DE CENTRADO DEFINITIVO === */
+.pagination {
+    width: fit-content; 
+    margin: 0 auto; 
+}
+
 .pagination .page-item .page-link {
     background-color: var(--color-bg);
     color: var(--color-text);
     border: 1px solid #333;
     transition: all 0.2s ease;
-    /* CENTRADO AÑADIDO: */
     display: flex; 
     align-items: center;
     justify-content: center;
-    min-width: 40px; /* Asegura un ancho uniforme para centrar mejor */
+    min-width: 40px; 
 }
 
 .pagination .page-item:not(.active) .page-link:hover {
@@ -150,7 +162,7 @@ main {
 }
 
 .pagination .page-item.active .page-link {
-    background-color: var(--color-accent);
-    color: white;
-    border-color: var(--color-accent);
+    background-color: var(--color-accent) !important;
+    color: white !important;
+    border-color: var(--color-accent) !important;
 }
