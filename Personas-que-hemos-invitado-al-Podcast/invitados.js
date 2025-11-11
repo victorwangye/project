@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    /* ELIMINADA: La función filterGuests ya no se usa */
+    // Se eliminó la función filterGuests
 
     function renderGuests() {
         container.innerHTML = "";
@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
-        const pagData = filteredInvitados.slice(start, end);
+        // Usamos la lista completa si no hay búsqueda
+        const pagData = (filteredInvitados.length > 0 ? filteredInvitados : invitados).slice(start, end);
 
         if (pagData.length === 0) {
             container.innerHTML = `<p class="text-center text-secondary mt-5">No hay invitados disponibles.</p>`;
@@ -82,9 +83,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             modalButton.setAttribute("data-bs-target", `#${modalId}`);
             modalButton.textContent = "Ver más";
 
-            // CORRECCIÓN: Enlace de la tarjeta apunta al link del episodio
+            // CORRECCIÓN: Enlace de la tarjeta apunta al link de YouTube
             const listenButton = card.querySelector(".btn-dark");
-            // Usamos guest.episodio_link que contiene el enlace de YouTube
             listenButton.href = guest.episodio_link || "#"; 
             listenButton.target = "_blank";
 
@@ -209,7 +209,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const addPage = (text, disabled, active, onClick) => {
             const li = document.createElement("li");
             li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-            // Mantenemos la clase d-flex para el diseño de episodios
             li.innerHTML = `<a class="page-link bg-dark text-white border-secondary d-flex justify-content-center align-items-center" href="#">${text}</a>`;
             if (!disabled) li.addEventListener("click", onClick);
             pagination.appendChild(li);
