@@ -87,9 +87,7 @@ main {
 
 .card-body {
   padding: 1.4rem 1.6rem;
-  /* CORRECCIÓN: Quitamos el flex-grow y justify-content para que el botón no se separe del texto */
-  display: flex; 
-  flex-direction: column;
+  /* CORRECCIÓN: Quitamos display: flex y flex-direction para diseño de flujo normal */
 }
 
 .card-title {
