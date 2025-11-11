@@ -160,7 +160,7 @@
       "numero": 13,
       "titulo": "Marketing digital, inteligencia artificial y formación – Juan Merodio, Emprendedor | Mentes404 #13",
       "descripcion": "En el episodio #13 de Mentes404, conversamos con Juan Merodio, uno de los mayores referentes del marketing digital en habla hispana y fundador de TEKDI, sobre cómo la inteligencia artificial está revolucionando el marketing, el SEO y la creación de contenido. Descubre cómo la IA está cambiando la forma de hacer campañas, qué habilidades necesita el nuevo profesional del marketing y por qué la formación autodidacta será clave en el futuro del sector. 🎙️ Temas clave: • De marketing tradicional a marketing con IA. • El nuevo SEO en la era de ChatGPT. • Cómo usar la IA para crear contenido sin perder autenticidad. • Ética, honestidad y posicionamiento digital. • El futuro de las agencias y los empleos del marketing. • Educación, aprendizaje continuo y mentores. ",
-      "imagen": "../imagenes/epimg/ep13,webp",
+      "imagen": "../imagenes/epimg/ep13.webp",
       "categorias": ["tech","move"],
       "destacado": false,
       "links": {
@@ -171,4 +171,5 @@
     }
   ]
 }
+
 
