@@ -3,37 +3,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     const template = document.getElementById("guest-card-template");
     const pagination = document.getElementById("pagination");
     const modalContainer = document.getElementById("modals-container");
-    const searchInput = document.getElementById("guestSearch"); // Elemento del buscador
+    const searchInput = document.getElementById("guestSearch"); 
 
     let invitados = [];
-    let filteredInvitados = []; // Nueva lista para resultados filtrados
+    let filteredInvitados = []; 
     let currentPage = 1;
-    const perPage = 9;
+    const perPage = 9; // Para 3 columnas por fila (3x3)
     const BIO_COLLAPSE_THRESHOLD = 300;
 
     // Función de ordenamiento personalizado: prioriza IDs con letras
     function customSort(a, b) {
-        // Expresión regular para detectar cualquier letra (carácter no numérico) en el ID
         const isALetter = /[a-zA-Z]/.test(a.id);
         const isBLetter = /[a-zA-Z]/.test(b.id);
         const idA = String(a.id);
         const idB = String(b.id);
 
-        // 1. Prioridad: IDs con letra vienen ANTES de IDs solo numéricos.
-        if (isALetter && !isBLetter) {
-            return -1; // A (con letra) viene antes que B (sin letra)
-        }
-        if (!isALetter && isBLetter) {
-            return 1; // B (con letra) viene antes que A (sin letra)
-        }
+        // 1. Prioridad: IDs con letra (ej. "1a") van primero.
+        if (isALetter && !isBLetter) return -1;
+        if (!isALetter && isBLetter) return 1;
 
-        // 2. Si ambos tienen letra o ambos no tienen letra:
-
+        // 2. Ordenación secundaria:
         if (isALetter && isBLetter) {
-            // Si ambos tienen letra (ej. "1A" y "2A"): ordenación lexicográfica (alfabética)
+            // Si ambos tienen letra: ordenación alfabética por ID
             return idA.localeCompare(idB);
         } else {
-            // Si ambos son puramente numéricos: ordenación numérica ascendente
+            // Si ambos son numéricos: ordenación numérica ascendente
             return Number(idA) - Number(idB);
         }
     }
@@ -47,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Aplicar el ordenamiento personalizado
             invitados.sort(customSort); 
             
-            // Inicializar la lista filtrada con todos los invitados
+            // Inicializar la lista filtrada
             filteredInvitados = invitados;
             renderGuests();
         } catch (err) {
@@ -58,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function filterGuests() {
         const query = searchInput.value.toLowerCase().trim();
-        currentPage = 1; // Resetear a la primera página al buscar
+        currentPage = 1; 
 
         if (query === "") {
             filteredInvitados = invitados;
@@ -137,15 +131,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           `;
         }).join('');
 
-        let bioContent = guest.bio_completa || guest.bio_corta; // Usar bio_completa o bio_corta como fallback
+        let bioContent = guest.bio_completa || guest.bio_corta; 
         let displayBio;
         let collapseToggle = '';
         
-        // Reemplazar saltos de línea (\n) con etiquetas <br> para HTML
         const formattedBio = bioContent.replace(/\n/g, '<br>');
 
         if (formattedBio.length > BIO_COLLAPSE_THRESHOLD) {
-            // Encuentra el último espacio antes del umbral para no cortar palabras
             const splitIndex = formattedBio.lastIndexOf(' ', BIO_COLLAPSE_THRESHOLD);
             const shortBio = formattedBio.substring(0, splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD) + '...';
             const hiddenBio = formattedBio.substring(splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD);
