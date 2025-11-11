@@ -30,6 +30,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
     
+    // Función de puntuación de coincidencia para la búsqueda
+    function getMatchScore(episode, query) {
+        let score = 0;
+        const q = query.toLowerCase();
+
+        // Si el título contiene la consulta
+        if (episode.titulo.toLowerCase().includes(q)) {
+            score += 10;
+        }
+        // Si la descripción contiene la consulta
+        if (episode.descripcion.toLowerCase().includes(q)) {
+            score += 5;
+        }
+        // Si alguna categoría coincide exactamente
+        if (episode.categorias.some(c => c.toLowerCase() === q)) {
+            score += 15;
+        }
+        // Si es un episodio destacado, añade un bono (solo en búsqueda)
+        if (episode.destacado) {
+            score += 2;
+        }
+        return score;
+    }
+
     // Función central para aplicar búsqueda, filtros y ordenamiento
     function applyFiltersAndSort() {
         let listaFiltrada = episodios;
@@ -39,27 +63,34 @@ document.addEventListener("DOMContentLoaded", async () => {
             listaFiltrada = listaFiltrada.filter(ep => ep.categorias?.includes(categoriaActiva));
         }
 
-        // 2. Filtrado por BÚSQUEDA (TÍTULO, DESCRIPCIÓN O CATEGORÍA)
+        // 2. Filtrado y Puntuación por BÚSQUEDA
         if (terminoBusqueda.length > 0) {
             const query = terminoBusqueda;
-            listaFiltrada = listaFiltrada.filter(ep => 
-                ep.titulo.toLowerCase().includes(query) ||
-                ep.descripcion.toLowerCase().includes(query) ||
-                ep.categorias.join(' ').toLowerCase().includes(query)
-            );
+            
+            // Filtra y adjunta la puntuación de coincidencia
+            listaFiltrada = listaFiltrada
+                .map(ep => ({ ...ep, score: getMatchScore(ep, query) }))
+                .filter(ep => ep.score > 0); // Solo incluye si hay coincidencia
         }
         
-        // 3. Ordenamiento (Prioriza destacados, luego aplica la fecha solicitada)
+        // 3. Ordenamiento (Aplica relevancia, fecha y puntuación de búsqueda)
         listaFiltrada.sort((a, b) => {
             
-            // Lógica de Relevancia (Aplica para ambos modos "relevancia_...")
+            // PRIORIDAD 1: Ordenamiento por puntuación de búsqueda (solo si hay término de búsqueda)
+            if (terminoBusqueda.length > 0) {
+                if (b.score !== a.score) {
+                    return b.score - a.score; // Mayor puntuación primero
+                }
+            }
+            
+            // PRIORIDAD 2: Lógica de Relevancia (Aplica para ambos modos "relevancia_...")
             if (ordenActivo.startsWith('relevancia')) {
                 // 1. Prioridad: destacado true va primero
                 if (a.destacado && !b.destacado) return -1;
                 if (!a.destacado && b.destacado) return 1;
             }
             
-            // 2. Desempate o Modo Fecha Pura (solo si los modos son iguales o si no es modo Relevancia)
+            // PRIORIDAD 3: Desempate o Modo Fecha Pura (si no hay búsqueda o puntuaciones iguales)
             
             // Más Reciente (Default para Relevancia y modo fecha pura)
             if (ordenActivo === "mas_reciente" || ordenActivo === "relevancia_reciente") {
@@ -92,8 +123,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const pagData = filtrados.slice(start, end);
 
         if (pagData.length === 0) {
+            // MENSAJE DE NO ENCONTRADO PERSONALIZADO
             const mensaje = terminoBusqueda.length > 0 
-                ? `No se encontraron episodios que coincidan con la búsqueda.`
+                ? `vaya parece ser que te encontraste un 404, solicita el episodio mandando un mensaje a <a href="mailto:hola@mentes404.studio" class="text-info">hola@mentes404.studio</a>`
                 : `No hay episodios disponibles.`;
             container.innerHTML = `<p class="text-center text-secondary mt-5">${mensaje}</p>`;
             pagination.innerHTML = "";
@@ -119,7 +151,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".apple").href = ep.links.apple;
             
             // Categorías
-            card.querySelector(".categories-text").textContent = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
+            // Se inyecta en el div, no en el span de antes
+            const categoriesDiv = cardWrapper.querySelector(".categories-text");
+            if (categoriesDiv) {
+                categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
+            }
             
             container.appendChild(cardWrapper);
         });
