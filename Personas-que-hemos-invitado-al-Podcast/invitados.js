@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const template = document.getElementById("guest-card-template");
     const pagination = document.getElementById("pagination");
     const modalContainer = document.getElementById("modals-container");
-    const searchInput = document.getElementById("guestSearch"); 
+    // Eliminado: const searchInput = document.getElementById("guestSearch"); 
 
     let invitados = [];
     let filteredInvitados = []; 
     let currentPage = 1;
-    const perPage = 9; // Para 3 columnas por fila (3x3)
+    const perPage = 9; // 3 columnas por fila (3x3)
     const BIO_COLLAPSE_THRESHOLD = 300;
 
     // Función de ordenamiento personalizado: prioriza IDs con letras
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Aplicar el ordenamiento personalizado
             invitados.sort(customSort); 
             
-            // Inicializar la lista filtrada
+            // La lista inicial filtrada son todos los invitados
             filteredInvitados = invitados;
             renderGuests();
         } catch (err) {
@@ -50,21 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    function filterGuests() {
-        const query = searchInput.value.toLowerCase().trim();
-        currentPage = 1; 
-
-        if (query === "") {
-            filteredInvitados = invitados;
-        } else {
-            filteredInvitados = invitados.filter(guest => 
-                guest.nombre.toLowerCase().includes(query) ||
-                guest.titulo.toLowerCase().includes(query) ||
-                (guest.bio_corta && guest.bio_corta.toLowerCase().includes(query))
-            );
-        }
-        renderGuests();
-    }
+    /* ELIMINADA: La función filterGuests ya no se usa */
 
     function renderGuests() {
         container.innerHTML = "";
@@ -75,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const pagData = filteredInvitados.slice(start, end);
 
         if (pagData.length === 0) {
-            container.innerHTML = `<p class="text-center text-secondary mt-5">No se encontraron invitados que coincidan con la búsqueda.</p>`;
+            container.innerHTML = `<p class="text-center text-secondary mt-5">No hay invitados disponibles.</p>`;
             pagination.innerHTML = "";
             return;
         }
@@ -96,8 +82,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             modalButton.setAttribute("data-bs-target", `#${modalId}`);
             modalButton.textContent = "Ver más";
 
+            // CORRECCIÓN: Enlace de la tarjeta apunta al link del episodio
             const listenButton = card.querySelector(".btn-dark");
-            listenButton.href = guest.episodio_link || "#";
+            // Usamos guest.episodio_link que contiene el enlace de YouTube
+            listenButton.href = guest.episodio_link || "#"; 
             listenButton.target = "_blank";
 
             container.appendChild(card);
@@ -221,6 +209,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const addPage = (text, disabled, active, onClick) => {
             const li = document.createElement("li");
             li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+            // Mantenemos la clase d-flex para el diseño de episodios
             li.innerHTML = `<a class="page-link bg-dark text-white border-secondary d-flex justify-content-center align-items-center" href="#">${text}</a>`;
             if (!disabled) li.addEventListener("click", onClick);
             pagination.appendChild(li);
@@ -231,11 +220,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             addPage(i, false, i === currentPage, () => { currentPage = i; renderGuests(); });
         }
         addPage("»", currentPage === totalPages, false, () => { currentPage++; renderGuests(); });
-    }
-
-    // Escuchar cambios en el input de búsqueda
-    if (searchInput) {
-        searchInput.addEventListener("input", filterGuests);
     }
 
     loadData();
