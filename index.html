@@ -141,90 +141,15 @@
 </section>
 
 
-  <!-- Últimos episodios -->
-<section class="episode-section">
+  <section class="episode-section">
   <h2>Últimos episodios</h2>
   <div class="container">
-    <div class="row g-4">
-
-      <!-- Episodio 8 -->
-      <div class="col-md-4">
-        <div class="card episode-card">
-          <img src="imagenes/epimg/ep8.webp" class="card-img-top" alt="Episodio 8">
-          <div class="card-body">
-            <h5 class="card-title">Nanotecnología - Daniel González Muñoz PhD</h5>
-            <p class="card-text">En este episodio de Mentes404, conversamos con Daniel González Muñoz, Doctor en Fotocatálisis y Nanociencia, CEO y divulgador científico. Desde su experiencia, exploramos que es la nanotecnología.</p>
-
-            <!-- Dropdown escuchar -->
-            <div class="dropdown">
-              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio" data-bs-toggle="dropdown" aria-expanded="false">
-              🎧 Escuchar
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio8">
-              <li><a class="dropdown-item youtube" href="https://youtu.be/w2fIngayTJQ?si=_DGHlftppYPTvtkx" target="_blank">YouTube</a></li>
-              <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/5K9offS0rqvZmKhFYXnbA5?si=exnAKwquShCqerI6LZZsIg" target="_blank">Spotify</a></li>
-              <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/nanotecnolog%C3%ADa-phd-daniel-gonz%C3%A1lez-mu%C3%B1oz-mentes404-08/id1817544014?i=1000730790777" target="_blank">Apple Podcast</a></li>
-            </ul>
-          </div>
-
-          </div>
-        </div>
+    <div class="row g-4" id="latest-episodes-container">
       </div>
-
-      <!-- Episodio 7 -->
-      <div class="col-md-4">
-        <div class="card episode-card">
-          <img src="imagenes/epimg/ep7.webp" class="card-img-top" alt="Episodio 7">
-          <div class="card-body">
-            <h5 class="card-title">Episodio 7: Hablamos sin filtros sobre los bootcamps - Rebeca García Muñoz</h5>
-            <p class="card-text">En este episodio conversamos Rebeca García Muñoz,  que después de estudiar y vivir en Corea decidió reinventarse profesionalmente al regresar a España.</p>
-
-            <!-- Dropdown escuchar -->
-            <div class="dropdown">
-              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio8" data-bs-toggle="dropdown" aria-expanded="false">
-              🎧 Escuchar
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio">
-              <li><a class="dropdown-item" href="https://youtu.be/0KRBAck9ms8?si=RyGg8JwmpF7QExQl" target="_blank">YouTube</a></li>
-              <li><a class="dropdown-item" href="https://open.spotify.com/episode/3Da1KfgS9ybYpQsRXNQFTy?si=2dcd3cacd67a4516" target="_blank">Spotify</a></li>
-              <li><a class="dropdown-item" href="https://podcasts.apple.com/es/podcast/hablamos-sin-filtros-sobre-los-bootcamps-rebeca-garc%C3%ADa/id1817544014?i=1000729497522" target="_blank">Apple Podcast</a></li>
-            </ul>
-          </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Episodio 6 -->
-      <div class="col-md-4">
-        <div class="card episode-card">
-          <img src="imagenes/epimg/ep6.webp" class="card-img-top" alt="Episodio 6">
-          <div class="card-body">
-            <h5 class="card-title">Episodio 6: Bitcoin, criptomonedas y el futuro del dinero - Javier Pastor Moreno</h5>
-            <p class="card-text">En este episodio de Mentes404 hablamos con Javier Pastor, director de formación en Bit2Me, sobre el mundo de las criptomonedas y su impacto en el futuro de la economía digital.</p>
-
-            <!-- Dropdown escuchar -->
-          <div class="dropdown">
-              <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio" data-bs-toggle="dropdown" aria-expanded="false">
-              🎧 Escuchar
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio8">
-              <li><a class="dropdown-item youtube" href="https://youtu.be/8kse_XQM2lE?si=wHDCt_EJ-2LMHkCj" target="_blank">YouTube</a></li>
-              <li><a class="dropdown-item spotify" href="https://open.spotify.com/episode/7CLvi7Jql9Afp3wobLp6Cz?si=f430c92ea05b4738" target="_blank">Spotify</a></li>
-              <li><a class="dropdown-item apple" href="https://podcasts.apple.com/es/podcast/bitcoin-criptomonedas-y-el-futuro-del-dinero-javier/id1817544014?i=1000729059195" target="_blank">Apple Podcast</a></li>
-            </ul>
-          </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
 
-  <!-- Footer -->
   <footer>
     <div class="footer-social">
       <span>Síguenos:</span>
@@ -257,8 +182,70 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const container = document.getElementById("latest-episodes-container");
+        if (!container) return; 
+
+        try {
+            // 1. Fetch data
+            // La ruta es relativa a index.html
+            const res = await fetch("episodios/data.json");
+            if (!res.ok) throw new Error("No se pudo cargar episodios/data.json.");
+            const data = await res.json();
+            
+            // 2. Sort episodes by number (descending) to get the latest ones
+            const sortedEpisodes = data.episodios.sort((a, b) => b.numero - a.numero);
+            
+            // 3. Select the top 3 latest episodes
+            const latestEpisodes = sortedEpisodes.slice(0, 3);
+            
+            let htmlContent = '';
+
+            // 4. Generate HTML for each episode
+            latestEpisodes.forEach(ep => {
+                // Ajuste de ruta de imagen: eliminar el '../' ya que index.html está en la raíz
+                const imagePath = ep.imagen.replace('../', '');
+                // Recortar el título para eliminar la referencia al estudio y número
+                const displayTitle = ep.titulo.split(' | ')[0]; 
+                // Recortar la descripción para que sea un preview corto
+                const displayDescription = ep.descripcion.length > 150 ? ep.descripcion.substring(0, 150).trim() + '...' : ep.descripcion;
+
+
+                const cardHtml = `
+                <div class="col-md-4">
+                    <div class="card episode-card">
+                        <img src="${imagePath}" class="card-img-top" alt="Episodio ${ep.numero}">
+                        <div class="card-body">
+                            <h5 class="card-title">${displayTitle}</h5>
+                            <p class="card-text">${displayDescription}</p>
+
+                            <div class="dropdown">
+                                <button class="btn btn-accent dropdown-toggle" type="button" id="dropdownEpisodio${ep.numero}" data-bs-toggle="dropdown" aria-expanded="false">
+                                🎧 Escuchar
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownEpisodio${ep.numero}">
+                                    <li><a class="dropdown-item youtube" href="${ep.links.youtube}" target="_blank">YouTube</a></li>
+                                    <li><a class="dropdown-item spotify" href="${ep.links.spotify}" target="_blank">Spotify</a></li>
+                                    <li><a class="dropdown-item apple" href="${ep.links.apple}" target="_blank">Apple Podcast</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                htmlContent += cardHtml;
+            });
+
+            // 5. Inject HTML into the container
+            container.innerHTML = htmlContent;
+
+        } catch (error) {
+            console.error("Error al cargar los últimos episodios:", error);
+            container.innerHTML = '<p class="text-center text-secondary">Error al cargar los últimos episodios. Por favor, revise la consola para más detalles.</p>';
+        }
+    });
+  </script>
 </body>
 </html>
-
-
-
