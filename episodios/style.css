@@ -64,8 +64,7 @@ main {
   border-radius: var(--border-radius-card);
   overflow: hidden;
   position: relative;
-  /* Clave para altura uniforme: fuerza el 100% de la altura del contenedor */
-  height: 100%; 
+  /* Ya no forzamos altura: height: 100%; */
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
@@ -103,7 +102,7 @@ main {
   color: var(--texto-principal);
 }
 
-/* Limitar la descripción a un máximo de 3 líneas para altura uniforme */
+/* Límite de la descripción a un máximo de 3 líneas */
 .card-text {
   font-size: 0.95rem;
   color: var(--color-secondary);
@@ -115,7 +114,7 @@ main {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: calc(3 * 1.5em); 
+  /* Se elimina min-height: calc(3 * 1.5em); */
 }
 
 /* Botón Escuchar (Accent) */
