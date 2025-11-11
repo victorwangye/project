@@ -41,7 +41,7 @@
     "imagen": "../imagenes/0.webp",
     "episodio_titulo": "Criptozoología y cultura",
     "episodio_numero": "Episodio 03",
-    "episodio_link": "#",
+    "episodio_link": "https://www.youtube.com/watch?v=_Ag5G_8YqdU&t=1234s",
     "bio_corta": "Licenciado en Antropología Cultural, Máster en Cooperación Internacional y autor de varios libros, incluyendo 'Así creamos monstruos'. Trabajó para el Ministerio de Asuntos Exteriores y se especializó en la investigación de las creencias populares y el fenómeno ovni desde una perspectiva antropológica.",
     "bio_completa": "Nació en Santander, España, en 1955. Es licenciado en Antropología Cultural por la Universidad de Barcelona, Máster en Cooperación Internacional y Diploma de Estudios Avanzados (DEA) en Antropología Social, ambos por la Universidad Complutense de Madrid. Trabajó para el Ministerio de Asuntos Exteriores como canciller en varias embajadas y consulados de España, y ha sido coordinador general adjunto de la Cooperación Española en varios países. Ha tenido destinos en Mozambique, Argentina, República Dominicana y Filipinas.\nEs autor de los libros Entre ufólogos, creyentes y contactados. Una historia social de los ovnis en España (CdU, 1993), Ovnis y ciencias humanas (Fundación Anomalía, 2002), Historia cultural de los ovnis en España 1950-1990 (Reediciones Anómalas, 2022) y Así creamos monstruos (Luciérnaga, 2023). Para la obtención del DEA en Antropología Social realizó el trabajo Valores, símbolos y representaciones en una experiencia de contacto extraterrestre: el grupo Aztlán (2003), el único trabajo de postrado existente en el ámbito universitario español sobre el tema ovni y el contacto extraterrestre. Es autor también de artículos sobre África y Filipinas.",
     "links": [
@@ -57,7 +57,7 @@
     "imagen": "../imagenes/IMG_1098.webp",
     "episodio_titulo": "Mentalidad financiera y finanzas personales: conceptos clave para empezar",
     "episodio_numero": "Episodio 04",
-    "episodio_link": "#",
+    "episodio_link": "https://www.youtube.com/watch?v=hMcbpC-28yo&t=2265s",
     "bio_corta": "Licenciado en ADE, DEA en Economía y experto en Análisis de decisión. Colabora como docente e instructor en programas de educación financiera, impulsando la alfabetización financiera mediante su labor divulgativa y su enfoque práctico.",
     "bio_completa": "Beltrán Rubio González es licenciado en ADE, DEA (Diploma de Estudios Avanzados) en Economía y experto en Análisis de decisión. Inversor desde hace 15 años, colabora como docente e instructor en programas de educación financiera, acercando la inversión y los mercados a un público amplio de manera práctica y sencilla. Impulsa la alfabetización financiera mediante su labor divulgativa, ayudando a las personas a tomar mejores decisiones sobre gasto, ahorro e inversión, especialmente orientada hacia la gestión pasiva. Su enfoque accesible y didáctico lo ha convertido en un punto de apoyo para quienes desean iniciarse en las finanzas personales y la inversión a largo plazo.",
     "links": [
@@ -71,7 +71,7 @@
     "imagen": "../imagenes/dataenrique.webp",
     "episodio_titulo": "Una experiencia como estudiante e instructor de bootcamp",
     "episodio_numero": "Episodio 05",
-    "episodio_link": "#",
+    "episodio_link": "https://www.youtube.com/watch?v=k328JddLV70&t=3508s",
     "bio_corta": "Podólogo de formación que se reinventó profesionalmente enfocándose en la programación y ciencia de datos. Instructor de bootcamp en Data Science. Su transición laboral comenzó durante la pandemia, demostrando que nunca es tarde para un cambio de carrera.",
     "bio_completa": "Soy Enrique Revuelta, podólogo de formación. En 2020, la pandemia me llevó a replantear mi rumbo profesional y decidí enfocarme en la programación.\nInicié con un curso de diseño de videojuegos con C# y Unity, realizando prácticas en Mad Gear Games. Estas prácticas me ayudaron a ver que esto me iba de verdad y que podía dedicarme a ello. Por lo que decidí ampliar mi base de conocimientos matriculándome en un CFGS de Desarrollo de Aplicaciones Multiplatafoma.\nConocí The Bridge a través de un webinar organizado por el instituto, y escribí a la ponente el mismo día nada más terminar. Necesitaba saber más sobre los bootcamps y si podría ser un candidato válido para realizar uno con ellos.\nDespués de varias entrevistas no solo conseguí mi plaza sino que me concedieron una beca de la Fundación Universia.",
     "links": [
@@ -147,17 +147,16 @@
   },
   {
     "id": "10",
-    "nombre": "Jorge Galvez Garcia",
-    "titulo": "Fundador y CEO de Made In Code.",
-    "imagen": "../imagenes/1695373179025.webp",
-    "episodio_titulo": "Crear algo que importe, aunque aún no dé dinero",
-    "episodio_numero": "Episodio 10",
-    "episodio_link": "#",
-    "bio_corta": "Con experiencia previa en el sector comercial, textil y de representaciones, dio un giro a su carrera para sumergirse en el mundo de los datos y el análisis predictivo. Fundador y CEO de Made In Code.",
-    "bio_completa": "Durante 12 años, he estado inmerso en el mundo del sector comercial, textil y representaciones. Sin embargo, decidí dar un giro en mi carrera y sumergirme de lleno en el fascinante mundo de los datos, descubriendo así un sinfín de oportunidades de negocio y crecimiento. Mi enfoque se ha centrado en el análisis predictivo y la programación, donde he aplicado mi creatividad, visión y excelentes habilidades comerciales.",
+    "nombre": "Alejandro Alonso Montero",
+    "titulo": "Programador Full Stack",
+    "imagen": "../imagenes/1748464688198.webp",
+    "episodio_titulo": "Nunca es demasiado tarde para empezar de nuevo: la transición laboral",
+    "episodio_numero": "Episodio pendiente",
+    "episodio_link": "https://www.youtube.com/watch?v=e8kGIk_iHKI&t=3s",
+    "bio_corta": "Decidió dar un giro a su vida a los 41 años, buscando un bootcamp de programación para reinventarse profesionalmente. Hoy, trabaja como programador, demostrando que con actitud y formación, todo es posible.",
+    "bio_completa": "Después de años de esfuerzo y dedicación en distintos sectores —desde perito hasta teleoperador—, Alejandro Alonso decidió que era momento de dar un giro a su vida. A los 41 años, con determinación y ganas de aprender, buscó un bootcamp de programación para reinventarse profesionalmente. Hoy, Alejandro trabaja como programador, demostrando que nunca es tarde para empezar de nuevo y que con actitud y formación, todo es posible.",
     "links": [
-      { "tipo": "linkedin", "url": "https://www.linkedin.com/in/jorgegalvezgarcia/", "icono": "bi-linkedin" },
-      { "tipo": "empresa", "url": "https://madeincode.es/", "icono": "bi-code-slash" }
+      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso", "icono": "bi-linkedin" }
     ]
   },
   {
@@ -215,20 +214,6 @@
   },
   {
     "id": "14",
-    "nombre": "Alejandro Alonso Montero",
-    "titulo": "Programador Full Stack",
-    "imagen": "../imagenes/1748464688198.webp",
-    "episodio_titulo": "Nunca es demasiado tarde para empezar de nuevo: la transición laboral",
-    "episodio_numero": "Episodio pendiente",
-    "episodio_link": "#",
-    "bio_corta": "Decidió dar un giro a su vida a los 41 años, buscando un bootcamp de programación para reinventarse profesionalmente. Hoy, trabaja como programador, demostrando que con actitud y formación, todo es posible.",
-    "bio_completa": "Después de años de esfuerzo y dedicación en distintos sectores —desde perito hasta teleoperador—, Alejandro Alonso decidió que era momento de dar un giro a su vida. A los 41 años, con determinación y ganas de aprender, buscó un bootcamp de programación para reinventarse profesionalmente. Hoy, Alejandro trabaja como programador, demostrando que nunca es tarde para empezar de nuevo y que con actitud y formación, todo es posible.",
-    "links": [
-      { "tipo": "linkedin", "url": "https://es.linkedin.com/in/programador-full-stack-javascript-alejandro-alonso", "icono": "bi-linkedin" }
-    ]
-  },
-  {
-    "id": "15",
     "nombre": "Mila Coco",
     "titulo": "COPYWRITER EXPERTA EN FUNNELS",
     "imagen": "../imagenes/1760684959320coco.webp",
@@ -246,6 +231,7 @@
     ]
   }
 ]
+
 
 
 
