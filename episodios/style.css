@@ -55,7 +55,7 @@ main {
 }
 
 
-/* === Card de Episodios (Ajustado para tener altura uniforme) === */
+/* === Card de Episodios (Ajustado para tener altura variable) === */
 .episode-card {
   transition: all 0.4s ease;
   background-color: var(--fondo-principal);
@@ -64,7 +64,7 @@ main {
   border-radius: var(--border-radius-card);
   overflow: hidden;
   position: relative;
-  /* Ya no forzamos altura: height: 100%; */
+  /* Altura variable, no forzada */
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
@@ -87,11 +87,9 @@ main {
 
 .card-body {
   padding: 1.4rem 1.6rem;
-  /* Permite que el cuerpo ocupe el espacio restante y alinea contenido interno */
-  flex-grow: 1; 
+  /* CORRECCIÓN: Quitamos el flex-grow y justify-content para que el botón no se separe del texto */
   display: flex; 
   flex-direction: column;
-  justify-content: space-between; 
 }
 
 .card-title {
@@ -114,7 +112,6 @@ main {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Se elimina min-height: calc(3 * 1.5em); */
 }
 
 /* Botón Escuchar (Accent) */
