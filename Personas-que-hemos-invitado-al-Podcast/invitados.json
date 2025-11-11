@@ -90,7 +90,13 @@
     "episodio_link": "https://youtu.be/8kse_XQM2lE",
     "bio_corta": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
     "bio_completa": "Experto en el mundo de las criptomonedas y su impacto en la economía digital. Dirige la formación en una de las plataformas líderes en el sector, compartiendo su visión sobre las finanzas descentralizadas y el futuro del dinero.",
-    "links": []
+    "links": [
+      { "tipo": "youtube", "url": "https://www.youtube.com/channel/UC0vU2x5cUqPxezice74OhdQ", "icono": "bi-youtube" },
+        { "tipo": "web", "url": "https://bit2me.com/es/nosotros", "icono": "bi-globe" },
+        { "tipo": "linkedin", "url": "https://www.linkedin.com/in/javier-pastor-moreno/", "icono": "bi-linkedin" },
+        { "tipo": "instagram", "url": "https://www.instagram.com/javierbitcoin/", "icono": "bi-instagram" },
+        { "tipo": "twitter", "url": "https://x.com/javierbitcoin", "icono": "bi-twitter-x" }
+    ]
   },
   {
     "id": "7",
@@ -240,6 +246,7 @@
     ]
   }
 ]
+
 
 
 
