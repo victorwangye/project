@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             score += 5;
         }
         // Si alguna categoría coincide exactamente
-        if (episode.categorias.some(c => c.toLowerCase() === q)) {
+        if (episode.categorias.some(c => c.toLowerCase().includes(q))) { // Uso includes para categorías parciales
             score += 15;
         }
         // Si es un episodio destacado, añade un bono (solo en búsqueda)
@@ -151,7 +151,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".apple").href = ep.links.apple;
             
             // Categorías
-            // Se inyecta en el div, no en el span de antes
             const categoriesDiv = cardWrapper.querySelector(".categories-text");
             if (categoriesDiv) {
                 categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
