@@ -30,6 +30,10 @@ main {
     border-radius: var(--border-radius-card);
     overflow: hidden;
     position: relative;
+    /* Aseguramos altura uniforme */
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,6 +62,7 @@ main {
     text-align: center;
     display: flex; 
     flex-direction: column;
+    flex-grow: 1; /* Permite que el cuerpo ocupe el espacio */
 }
 
 .guest-card .card-title {
@@ -118,9 +123,9 @@ main {
     opacity: 0.5;
 }
 
-/* ESTILOS CLAVE PARA ADAPTAR LAS REDES SOCIALES (Flexbox) */
+/* ESTILOS CLAVE PARA ADAPTAR LAS REDES SOCIALES */
 .modal-footer .d-flex {
-    /* El d-flex ya está en el HTML, esta regla asegura que se envuelva */
+    /* Asegura que los iconos salten a la siguiente línea si no caben */
     flex-wrap: wrap; 
 }
 
