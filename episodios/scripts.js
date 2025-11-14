@@ -142,7 +142,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Rellenar datos
             card.querySelector("img").src = ep.imagen;
             card.querySelector("img").alt = ep.titulo;
-            card.querySelector(".card-title").textContent = `#${ep.numero}: ${ep.titulo}`;
+            
+            // MODIFICADO: Limpia el título como en la página de inicio
+            const fullTitle = ep.titulo;
+            const cleanTitle = fullTitle.split(' | ')[0]; // Obtiene la parte antes del pipe y el tag de estudio
+            card.querySelector(".card-title").textContent = `#${ep.numero}: ${cleanTitle}`;
+            
             card.querySelector(".card-text").textContent = ep.descripcion;
             
             // Enlaces de Podcast
