@@ -1,4 +1,4 @@
-/* === Card de Episodios (Ajustado para tener altura variable) === */
+/* === Card de Episodios (Sincronizado con estilos de la página de inicio) === */
 .episode-card {
   transition: all 0.4s ease;
   background-color: var(--fondo-principal);
@@ -7,51 +7,106 @@
   border-radius: var(--border-radius-card);
   overflow: hidden;
   position: relative;
-  /* CORRECCIÓN: Se eliminan display: flex y flex-direction para igualar el comportamiento de la tarjeta de inicio */
+  /* Se eliminan las propiedades flex para alinearse con index.html */
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
-  /* AÑADIDO: Estilos de ancho y margen de la página de inicio */
   max-width: 370px;
   margin: 0 auto 40px;
 }
 
 .episode-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 22px var(--sombra-card);
+  /* Sombra exacta de la página de inicio: rgba(32, 147, 204, 0.6) */
+  box-shadow: 0 0 22px rgba(32, 147, 204, 0.6);
 }
 
 .card-img-top {
   width: 100%;
   height: 190px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  /* Asegurar border-radius superior */
+  border-top-left-radius: var(--border-radius-card);
+  border-top-right-radius: var(--border-radius-card);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
 .episode-card:hover .card-img-top {
   transform: scale(1.05);
+  opacity: 0.9; /* Efecto de opacidad al hacer hover, como en index.html */
 }
 
 .card-body {
   padding: 1.4rem 1.6rem;
-  /* Ya no se requiere la corrección anterior, se deja en flujo normal. */
 }
 
 .card-title {
-  font-size: 1.1rem; /* CORRECCIÓN: Se cambia de 1.2rem a 1.1rem para igualar el estilo de inicio */
+  font-size: 1.1rem; /* Corregido a 1.1rem, igual que en la página de inicio */
   font-weight: 600;
   margin-bottom: 0.6rem;
   line-height: 1.3;
   color: var(--texto-principal);
 }
 
-/* Límite de la descripción a un máximo de 3 líneas (Mantenido porque es funcional para el listado) */
+/* Límite de la descripción a un máximo de 3 líneas */
 .card-text {
   font-size: 0.95rem;
   color: var(--color-secondary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem; /* Corregido a 1.1rem, igual que en la página de inicio */
   line-height: 1.5;
   
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Límite de 3 líneas */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Botón Escuchar (Accent) */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--texto-principal);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #31b0f2;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(32, 147, 204, 0.6); /* Sombra de hover de botón de index.html */
+}
+
+/* Dropdown Menu (Asegurando estilos de color correctos) */
+.dropdown-menu {
+  background-color: var(--fondo-principal);
+  border: 1px solid #1a2633;
+}
+.dropdown-item {
+  color: var(--texto-principal);
+}
+.dropdown-item:hover {
+  background-color: var(--color-accent);
+  color: #fff !important;
+}
+
+/* Paginación (Se mantiene, es la misma lógica en index.html) */
+.pagination {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.pagination .page-item .page-link {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
 }
