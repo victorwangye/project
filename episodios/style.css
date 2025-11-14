@@ -1,60 +1,3 @@
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ===== Variables globales (Las usamos de ../style.css) ===== */
-:root {
-  --fondo-principal: #0e1722;
-  --fondo-secundario: #0b1118;
-  --texto-principal: #eee7d5;
-  --color-accent: #2093cc;
-  --color-secondary: #ccc;
-  --sombra-card: rgba(32,147,204,0.4);
-  --border-radius-card: 0.8rem;
-}
-
-/* ===== Body ===== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--fondo-secundario); 
-  color: var(--texto-principal);
-  overflow-x: hidden;
-}
-
-/* El Header usa estilos de ../style.css */
-
-/* ===== Contenedor principal y tarjetas ===== */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Estilo para los botones de filtro y ordenamiento */
-#categorias .btn-outline-info,
-#ordenamiento .btn-outline-light {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#categorias .btn-outline-info:hover,
-#ordenamiento .btn-outline-light:hover {
-    background-color: var(--color-accent);
-    color: var(--texto-principal);
-}
-
-#categorias .btn.active,
-#ordenamiento .btn.active {
-    background-color: var(--color-accent) !important;
-    color: var(--texto-principal) !important;
-    border-color: var(--color-accent) !important;
-}
-
-
 /* === Card de Episodios (Ajustado para tener altura variable) === */
 .episode-card {
   transition: all 0.4s ease;
@@ -64,9 +7,7 @@ main {
   border-radius: var(--border-radius-card);
   overflow: hidden;
   position: relative;
-  /* Altura variable, no forzada */
-  display: flex;
-  flex-direction: column;
+  /* CORRECCIÓN: Se eliminan display: flex y flex-direction para igualar el comportamiento de la tarjeta de inicio */
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
   /* AÑADIDO: Estilos de ancho y margen de la página de inicio */
   max-width: 370px;
@@ -90,18 +31,18 @@ main {
 
 .card-body {
   padding: 1.4rem 1.6rem;
-  /* CORRECCIÓN: Quitamos display: flex y flex-direction para diseño de flujo normal */
+  /* Ya no se requiere la corrección anterior, se deja en flujo normal. */
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* CORRECCIÓN: Se cambia de 1.2rem a 1.1rem para igualar el estilo de inicio */
   font-weight: 600;
   margin-bottom: 0.6rem;
   line-height: 1.3;
   color: var(--texto-principal);
 }
 
-/* Límite de la descripción a un máximo de 3 líneas */
+/* Límite de la descripción a un máximo de 3 líneas (Mantenido porque es funcional para el listado) */
 .card-text {
   font-size: 0.95rem;
   color: var(--color-secondary);
@@ -113,55 +54,4 @@ main {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Botón Escuchar (Accent) */
-.btn-accent {
-  background-color: var(--color-accent);
-  color: var(--texto-principal);
-  border-radius: 50px;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.btn-accent:hover {
-  background-color: #31b0f2;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--sombra-card);
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-  background-color: var(--fondo-principal);
-  border: 1px solid #1a2633;
-}
-.dropdown-item {
-  color: var(--texto-principal);
-}
-.dropdown-item:hover {
-  background-color: var(--color-accent);
-  color: #fff !important;
-}
-
-/* Paginación (Ajuste para centrar el contenido y el elemento) */
-.pagination {
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.pagination .page-item .page-link {
-    background-color: var(--fondo-principal);
-    color: var(--texto-principal);
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-}
-.pagination .page-item.active .page-link {
-    background-color: var(--color-accent) !important;
-    border-color: var(--color-accent) !important;
 }
