@@ -148,7 +148,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             const cleanTitle = fullTitle.split(' | ')[0]; // Obtiene la parte antes del pipe y el tag de estudio
             card.querySelector(".card-title").textContent = `#${ep.numero}: ${cleanTitle}`;
             
-            card.querySelector(".card-text").textContent = ep.descripcion;
+            // MODIFICADO: Aplicar truncamiento de descripción de 150 caracteres para igualar la página de inicio
+            const fullDescription = ep.descripcion;
+            const displayDescription = fullDescription.length > 150 
+                ? fullDescription.substring(0, 150).trim() + '...' 
+                : fullDescription;
+            card.querySelector(".card-text").textContent = displayDescription;
             
             // Enlaces de Podcast
             card.querySelector(".youtube").href = ep.links.youtube;
