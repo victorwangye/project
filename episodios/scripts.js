@@ -143,10 +143,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector("img").src = ep.imagen;
             card.querySelector("img").alt = ep.titulo;
             
-            // MODIFICADO: Limpia el título como en la página de inicio
+            // MODIFICADO: Limpia el título y elimina el prefijo de número para COINCIDIR con la página de inicio
             const fullTitle = ep.titulo;
             const cleanTitle = fullTitle.split(' | ')[0]; // Obtiene la parte antes del pipe y el tag de estudio
-            card.querySelector(".card-title").textContent = `#${ep.numero}: ${cleanTitle}`;
+            card.querySelector(".card-title").textContent = cleanTitle;
             
             // MODIFICADO: Aplicar truncamiento de descripción de 150 caracteres para igualar la página de inicio
             const fullDescription = ep.descripcion;
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".spotify").href = ep.links.spotify;
             card.querySelector(".apple").href = ep.links.apple;
             
-            // Categorías
+            // Categorías (MANTENIDO)
             const categoriesDiv = cardWrapper.querySelector(".categories-text");
             if (categoriesDiv) {
                 categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
