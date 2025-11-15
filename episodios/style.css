@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* ===== Variables globales (Las usamos de ../style.css) ===== */
+/* ===== Variables globales ===== */
 :root {
   --fondo-principal: #0e1722;
   --fondo-secundario: #0b1118;
@@ -24,16 +24,14 @@ body {
   overflow-x: hidden;
 }
 
-/* El Header usa estilos de ../style.css */
-
-/* ===== Contenedor principal y tarjetas ===== */
+/* ===== Contenedor principal ===== */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* Estilo para los botones de filtro y ordenamiento */
+/* ===== Botones de filtro y ordenamiento ===== */
 #categorias .btn-outline-info,
 #ordenamiento .btn-outline-light {
     color: var(--color-accent);
@@ -54,14 +52,16 @@ main {
     border-color: var(--color-accent) !important;
 }
 
+/* ========================================================================= */
+/* ========== CARDS DE EPISODIOS — IDÉNTICAS A LAS DE LA PÁGINA DE INICIO == */
+/* ========================================================================= */
 
-/* === Card de Episodios - Estilo idéntico a la página de inicio === */
 .episode-card {
   transition: all 0.4s ease;
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
   border: none;
-  border-radius: var(--border-radius-card); /* 0.8rem */
+  border-radius: 0.8rem;
   overflow: hidden;
   position: relative;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
@@ -69,46 +69,45 @@ main {
   margin: 0 auto 40px;
 }
 
-.episode-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 22px rgba(32, 147, 204, 0.6);
-}
-
-.card-img-top {
+.episode-card img {
   width: 100%;
   height: 190px;
   object-fit: cover;
-  border-top-left-radius: var(--border-radius-card); 
-  border-top-right-radius: var(--border-radius-card);
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.episode-card:hover .card-img-top {
+/* Hover idéntico al home */
+.episode-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 22px rgba(32,147,204,0.6);
+}
+
+.episode-card:hover img {
   transform: scale(1.05);
   opacity: 0.9;
 }
 
-.card-body {
+.episode-card .card-body {
   padding: 1.4rem 1.6rem;
 }
 
-.card-title {
+.episode-card .card-title {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
   line-height: 1.3;
-  color: var(--texto-principal);
 }
 
-.card-text {
+.episode-card .card-text {
   font-size: 0.95rem;
   color: var(--color-secondary);
   margin-bottom: 1.1rem;
   line-height: 1.5;
-  /* La truncación (si es necesaria) se maneja por JS, no por CSS. */
 }
 
-/* Botón Escuchar (Accent) */
+/* ===== Botón Escuchar (idéntico al home) ===== */
 .btn-accent {
   background-color: var(--color-accent);
   color: var(--texto-principal);
@@ -126,7 +125,7 @@ main {
   box-shadow: 0 0 10px rgba(32, 147, 204, 0.6);
 }
 
-/* Dropdown Menu - Estilos idénticos a la página de inicio */
+/* ===== Dropdown ===== */
 .dropdown-menu {
   background-color: var(--fondo-principal);
   border: 1px solid #1a2633;
@@ -135,15 +134,17 @@ main {
   margin-top: 8px;
   transition: all 0.25s ease;
 }
+
 .dropdown-item {
   color: var(--texto-principal);
 }
+
 .dropdown-item:hover {
   background-color: var(--color-accent);
   color: #fff !important;
 }
 
-/* Paginación */
+/* ===== Paginación ===== */
 .pagination {
     width: fit-content;
     margin: 0 auto;
@@ -158,7 +159,26 @@ main {
     justify-content: center;
     min-width: 40px;
 }
+
 .pagination .page-item.active .page-link {
     background-color: var(--color-accent) !important;
     border-color: var(--color-accent) !important;
+}
+
+/* ===== RESPONSIVO — Igual que en la página de inicio ===== */
+@media (max-width: 992px) {
+  .episode-card {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .episode-card {
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .episode-card img {
+    height: 170px;
+  }
 }
