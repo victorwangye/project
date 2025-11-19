@@ -181,9 +181,20 @@
         "spotify": "https://open.spotify.com/episode/1ln92LOq4w652yThBvmOmN?si=2qnm-JstRSOl50nQ6JICxg",
         "apple": "https://podcasts.apple.com/es/podcast/la-newsletter-que-s%C3%AD-vende-paciencia-storytelling-mila/id1817544014?i=1000736410347"
       }
+    },
+    {
+      "numero": 15,
+      "titulo": "La web también contamina: sostenibilidad web - Nahuai Badiola, Web Sust. Adv. | Mentes404 #15",
+      "descripcion":"Desmontamos el mito de que la "nube" es etérea y exploramos la importancia de la sostenibilidad web con Nahuai Badiola, quien nos guía paso a paso para crear páginas más ecológicas, ligeras y rápidas. Si tienes un blog de WordPress o cualquier sitio web, esta guía es esencial. Descubre por qué el peso de tu web y las decisiones de hosting tienen un impacto real en el planeta y cómo un sitio más sostenible es automáticamente mejor para el SEO (posicionamiento web). Aprenderás a optimizar tus imágenes (el mayor peso de una web), a elegir el mejor hosting verde y a auditar la huella de carbono de tu página con herramientas como Website Carbon Calculator y Ecograder. Además, discutimos si la Unión Europea impondrá un sello de sostenibilidad web en el corto plazo. ¡Pequeños cambios técnicos pueden ahorrar toneladas de CO2!",
+      "links": {
+        "youtube": "https://youtu.be/_m-b42_a14k?si=Q9HDkHYilsc8MwO0",
+        "spotify": "https://open.spotify.com/episode/4hLSf79p3Rf486XEmJM00s?si=unzD1qmeQh2Ojw-Pkj_A9w",
+        "apple": "https://podcasts.apple.com/es/podcast/la-web-tambi%C3%A9n-contamina-sostenibilidad-web-nahuai/id1817544014?i=1000737398285"
+      }
     }
   ]
 }
+
 
 
 
