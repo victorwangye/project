@@ -186,6 +186,9 @@
       "numero": 15,
       "titulo": "La web también contamina: sostenibilidad web - Nahuai Badiola, Web Sust. Adv. | Mentes404 #15",
       "descripcion":"Desmontamos el mito de que la nube es etérea y exploramos la importancia de la sostenibilidad web con Nahuai Badiola, quien nos guía paso a paso para crear páginas más ecológicas, ligeras y rápidas. Si tienes un blog de WordPress o cualquier sitio web, esta guía es esencial. Descubre por qué el peso de tu web y las decisiones de hosting tienen un impacto real en el planeta y cómo un sitio más sostenible es automáticamente mejor para el SEO (posicionamiento web). Aprenderás a optimizar tus imágenes (el mayor peso de una web), a elegir el mejor hosting verde y a auditar la huella de carbono de tu página con herramientas como Website Carbon Calculator y Ecograder. Además, discutimos si la Unión Europea impondrá un sello de sostenibilidad web en el corto plazo. ¡Pequeños cambios técnicos pueden ahorrar toneladas de CO2!",
+      "imagen": "../imagenes/epimg/ep15.webp",
+      "categorias": ["tech","planet"],
+      "destacado": false,
       "links": {
         "youtube": "https://youtu.be/_m-b42_a14k?si=Q9HDkHYilsc8MwO0",
         "spotify": "https://open.spotify.com/episode/4hLSf79p3Rf486XEmJM00s?si=unzD1qmeQh2Ojw-Pkj_A9w",
@@ -194,6 +197,7 @@
     }
   ]
 }
+
 
 
 
