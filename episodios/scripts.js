@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".spotify").href = ep.links.spotify;
             card.querySelector(".apple").href = ep.links.apple;
             
-            // Categorías (MANTENIDO)
+            // Categorías (RESTITUIDO)
             const categoriesDiv = cardWrapper.querySelector(".categories-text");
             if (categoriesDiv) {
                 categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
