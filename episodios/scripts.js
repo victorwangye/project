@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function loadData() {
         try {
-            const res = await fetch("./data.json");
+            // CORRECCIÓN: Se simplifica la ruta del fetch a "data.json"
+            const res = await fetch("data.json"); 
             if (!res.ok) throw new Error("No se pudo cargar data.json");
             const data = await res.json();
 
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".spotify").href = ep.links.spotify;
             card.querySelector(".apple").href = ep.links.apple;
             
-            // Categorías (RESTITUIDO)
+            // Categorías 
             const categoriesDiv = cardWrapper.querySelector(".categories-text");
             if (categoriesDiv) {
                 categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
