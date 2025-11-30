@@ -3,7 +3,7 @@
     {
       "numero": 1,
       "titulo": "De la neurociencia al emprendimiento digital - Nahuai Badiola, Consultor WordPress | Mentes404 #01",
-      "descripcion": "En este episodio de Mentes404 conversamos con Nahuai Badiola, desarrollador WordPress, emprendedor digital y exinvestigador en neurociencia. Hablamos sobre WordPress desde Gut...",
+      "descripcion": "En este episodio de Mentes404 conversamos con Nahuai Badiola, desarrollador WordPress, emprendedor digital y exinvestigador en neurociencia. Hablamos sobre WordPress desde Gutenberg a la IA, la sostenibilidad web y el foco para gestionar proyectos, tiempo y estrés.",
       "imagen": "../imagenes/epimg/ep1.webp",
       "categorias": ["move", "tech", "think"],
       "destacado": false,
@@ -16,9 +16,9 @@
     {
       "numero": 2,
       "titulo": "AI red teaming, deepfakes y sesgos invisibles – Hugo Ramallo, Divulgador de IA | Mentes404 #02",
-      "descripcion": "En este episodio de Mentes404, conversamos con Hugo Ramallo, divulgador y formador en inteligencia artificial, además de fundador y CEO de globalcobots. Abordamos los temas...",
+      "descripcion": "Conversamos con Hugo Ramallo, divulgador y formador en inteligencia artificial, sobre los riesgos críticos de la IA: seguridad, deepfakes, sesgos y pensamiento crítico. Explica cómo funciona el AI Red Teaming, cómo detectar si hablas con una IA, el impacto de los sesgos y cómo usar la IA para aprender mejor.",
       "imagen": "../imagenes/epimg/ep2.webp",
-      "categorias": ["tech","think"],
+      "categorias": ["tech", "think"],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/9FJZ7Y4HxM4?si=qTe0XedwzOAXjxKI",
@@ -29,9 +29,9 @@
     {
       "numero": 3,
       "titulo": "Criptozoología y cultura - Ignacio Cabria, Investigador de las creencias | Mentes404 #03",
-      "descripcion": "En este episodio de Mentes404 conversamos con Ignacio Cabria sobre la criptozoología y el papel cultural de estas criaturas legendarias. No hablamos solo de \"si existen o ...",
+      "descripcion": "Ignacio Cabria explora el papel cultural de criaturas legendarias y lo que revelan sobre miedo, misterio y la necesidad humana de lo desconocido.",
       "imagen": "../imagenes/epimg/ep3.webp",
-      "categorias": ["planet","think"],
+      "categorias": ["planet", "think"],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/_Ag5G_8YqdU?si=wPtbmQc-Ft76W_FM",
@@ -42,9 +42,9 @@
     {
       "numero": 4,
       "titulo": "Cómo empezar con tus finanzas personales - Beltrán Rubio, divulgador financiero | Mentes404 #04",
-      "descripcion": "En este episodio conversamos con Beltrán Rubio, divulgador y educador financiero, sobre lo esencial para dar los primeros pasos en las finanzas personales. Que es la mentali...",
+      "descripcion": "Guía práctica sobre mentalidad financiera, ahorro e inversión para quienes comienzan a gestionar su dinero.",
       "imagen": "../imagenes/epimg/ep4.webp",
-      "categorias": ["move","think"],
+      "categorias": ["move", "think"],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/hMcbpC-28yo?si=vAwU335Mi6eKoPM1",
@@ -55,9 +55,9 @@
     {
       "numero": 5,
       "titulo": "Estudiante e instructor de bootcamp - Enrique Revuelta García, Data Scientist | Mentes404 #05",
-      "descripcion": "En este episodio de Mentes404 conversamos con Enrique Revuelta García, quien pasó de trabajar como podólogo a convertirse en científico de datos. Enrique comparte su expe...",
+      "descripcion": "Historia de reinvención profesional: de podólogo a científico de datos. Enrique comparte su experiencia como estudiante y como instructor de bootcamp.",
       "imagen": "../imagenes/epimg/ep5.webp",
-      "categorias": ["move","think"],
+      "categorias": ["move", "think"],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/k328JddLV70?si=LVukbJAzyBzUkrC1",
@@ -68,14 +68,144 @@
     {
       "numero": 6,
       "titulo": "Bitcoin, criptomonedas y el futuro del dinero - Javier Pastor Moreno, Bit2Me | Mentes404 #06",
-      "descripcion": "En este episodio de Mentes404 hablamos con Javier Pastor, director de formación en Bit2Me, sobre el mundo de las criptomonedas y su impacto en el futuro de la economía digi...",
+      "descripcion": "Javier Pastor explica el papel de las criptomonedas, Bitcoin como oro digital y las tendencias clave del sector.",
       "imagen": "../imagenes/epimg/ep6.webp",
-      "categorias": ["move","tech"],
+      "categorias": ["move", "tech"],
       "destacado": true,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=8kse_XQM2lE",
         "spotify": "https://open.spotify.com/episode/7CLvi7Jql9Afp3wobLp6Cz?si=hnpnNRP6S2qegSOHBiEswg",
         "apple": "https://podcasts.apple.com/es/podcast/bitcoin-criptomonedas-y-el-futuro-del-dinero-javier/id1817544014?i=1000729059195"
+      }
+    },
+    {
+      "numero": 7,
+      "titulo": "Hablamos sin filtros sobre los bootcamps - Rebeca García Muñoz, Studio Design Lead | Mentes404 #07",
+      "descripcion": "Rebeca comparte su transición profesional tras volver de Corea y cómo un bootcamp UX/UI impulsó su carrera hasta Deloitte.",
+      "imagen": "../imagenes/epimg/ep7.webp",
+      "categorias": ["move", "think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=0KRBAck9ms8&t=2291s",
+        "spotify": "https://open.spotify.com/episode/3Da1KfgS9ybYpQsRXNQFTy?si=9bVkt5XxSu6K18mkpNm51w",
+        "apple": "https://podcasts.apple.com/es/podcast/hablamos-sin-filtros-sobre-los-bootcamps-rebeca-garc%C3%ADa/id1817544014?i=1000729497522"
+      }
+    },
+    {
+      "numero": 8,
+      "titulo": "Nanotecnología - PhD Daniel González Muñoz | Mentes404 #08",
+      "descripcion": "Daniel González Muñoz explica qué es la nanotecnología, sus aplicaciones reales, los mitos comunes y consejos para jóvenes científicos.",
+      "imagen": "../imagenes/epimg/ep8.webp",
+      "categorias": ["planet", "tech"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/w2fIngayTJQ?si=boKhGmKcreIS_QNf",
+        "spotify": "https://open.spotify.com/episode/5K9offS0rqvZmKhFYXnbA5?si=fNtuxZXWTLm8UQv2JHYcQg",
+        "apple": "https://podcasts.apple.com/es/podcast/nanotecnolog%C3%ADa-phd-daniel-gonz%C3%A1lez-mu%C3%B1oz-mentes404-08/id1817544014?i=1000730790777"
+      }
+    },
+    {
+      "numero": 9,
+      "titulo": "Leer la naturaleza y hacerse preguntas - Mireia Querol Rovira | Mentes404 #09",
+      "descripcion": "Exploramos la relación emocional con los animales, la salud de los ecosistemas y la importancia de reconectar con la naturaleza.",
+      "imagen": "../imagenes/epimg/ep9.webp",
+      "categorias": ["planet", "think"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://youtu.be/hWppFSeymIo?si=E5ZK1aC7jn8ZPASo",
+        "spotify": "https://open.spotify.com/episode/3YGEEIPMXilBv3knHkG0K7?si=OUbrCDTISauW5jWTw7GvVw",
+        "apple": "https://podcasts.apple.com/es/podcast/leer-la-naturaleza-y-hacerse-preguntas-mireia-querol/id1817544014?i=1000731966129"
+      }
+    },
+    {
+      "numero": 10,
+      "titulo": "Cómo reinventarse en tecnología a los 41: la historia de Alejandro Alonso Montero | Mentes404 #10",
+      "descripcion": "Historia real de reinvención profesional: miedos, sacrificios y el camino hacia el primer empleo en tecnología.",
+      "imagen": "../imagenes/epimg/ep10.webp",
+      "categorias": ["move", "think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/e8kGIk_iHKI?si=owpQXw1_n-TqZb3I",
+        "spotify": "https://open.spotify.com/episode/1xbYtcf20r00lSw5DPowL4?si=5ZitL-wITFu-EDxHsqwE0A",
+        "apple": "https://podcasts.apple.com/es/podcast/como-reinventarse-en-tecnolog%C3%ADa-a-los-41-la/id1817544014?i=1000732959908"
+      }
+    },
+    {
+      "numero": 11,
+      "titulo": "Héctor Rojas: El Científico Venezolano Oculto que Salvó el Apolo 11 | Mentes404 #11",
+      "descripcion": "Biografía del científico Héctor Rojas y su contribución al alunizaje del Apolo 11.",
+      "imagen": "../imagenes/epimg/ep11.webp",
+      "categorias": ["planet"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/IaP77QN8NTg?si=r95W20ROKL0wYU4q",
+        "spotify": "https://open.spotify.com/episode/5cRtgcUDEJuVC1aa35AOqu?si=oixwBMY_TfeQ6W28VST0mw",
+        "apple": "https://podcasts.apple.com/es/podcast/h%C3%A9ctor-rojas-el-cient%C3%ADfico-venezolano-oculto-que/id1817544014?i=1000733683161"
+      }
+    },
+    {
+      "numero": 12,
+      "titulo": "De pequeños hábitos a grandes cambios - Marc Reklau, Autor Best Seller | Mentes404 #12",
+      "descripcion": "Una conversación sobre hábitos, mentalidad, constancia y aprendizaje práctico para cambiar la vida.",
+      "imagen": "../imagenes/epimg/ep12.webp",
+      "categorias": ["think", "move"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://youtu.be/K9WIMzyPYGY?si=bPZvvYvTT-uH1XRl",
+        "spotify": "https://open.spotify.com/episode/1ufPu1n6Ndtn61U24cWpkj?si=XPVV5IZdRpGc4GYcRvNVtg",
+        "apple": "https://podcasts.apple.com/es/podcast/de-peque%C3%B1os-h%C3%A1bitos-a-grandes-cambios-marc/id1817544014?i=1000734032713"
+      }
+    },
+    {
+      "numero": 13,
+      "titulo": "Marketing digital, inteligencia artificial y formación – Juan Merodio, Emprendedor | Mentes404 #13",
+      "descripcion": "Juan Merodio analiza el impacto de la IA en el marketing, la creación de contenido, el SEO y el futuro de la formación.",
+      "imagen": "../imagenes/epimg/ep13.webp",
+      "categorias": ["tech", "move"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/AX1tjVZOII4?si=oh5iNw32cvhTQCRx",
+        "spotify": "https://open.spotify.com/episode/2XxWapnfW2GLMGzBfRyJsl?si=t5DvgN_zQaehoMYiHhbkiA",
+        "apple": "https://podcasts.apple.com/es/podcast/marketing-digital-inteligencia-artificial-y-formaci%C3%B3n/id1817544014?i=1000735377650"
+      }
+    },
+    {
+      "numero": 14,
+      "titulo": "La Newsletter que SÍ VENDE: Paciencia, Storytelling – Mila Coco, Copywriter | Mentes404 #14",
+      "descripcion": "Estrategias de email marketing basadas en diferenciación, storytelling, confianza y uso estratégico de IA.",
+      "imagen": "../imagenes/epimg/ep14.webp",
+      "categorias": ["tech", "move"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/6UY6ktGbG3Y?si=j9y_uq-FhEnWrbYv",
+        "spotify": "https://open.spotify.com/episode/1ln92LOq4w652yThBvmOmN?si=2qnm-JstRSOl50nQ6JICxg",
+        "apple": "https://podcasts.apple.com/es/podcast/la-newsletter-que-s%C3%AD-vende-paciencia-storytelling-mila/id1817544014?i=1000736410347"
+      }
+    },
+    {
+      "numero": 15,
+      "titulo": "La web también contamina: sostenibilidad web - Nahuai Badiola, Web Sust. Adv. | Mentes404 #15",
+      "descripcion": "Guía práctica para reducir la huella digital: optimización de imágenes, hosting verde, rendimiento web y futuro regulatorio.",
+      "imagen": "../imagenes/epimg/ep15.webp",
+      "categorias": ["tech", "planet"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/_m-b42_a14k?si=Q9HDkHYilsc8MwO0",
+        "spotify": "https://open.spotify.com/episode/4hLSf79p3Rf486XEmJM00s?si=unzD1qmeQh2Ojw-Pkj_A9w",
+        "apple": "https://podcasts.apple.com/es/podcast/la-web-tambi%C3%A9n-contamina-sostenibilidad-web-nahuai/id1817544014?i=1000737398285"
+      }
+    },
+    {
+      "numero": 16,
+      "titulo": "IA aplicada al aprendizaje – Hugo Ramallo García, Divulgador de IA | Mentes404 #16",
+      "descripcion": "Hugo Ramallo explica cómo usar la inteligencia artificial (ChatGPT, Gemini, etc.) para acelerar y mejorar el aprendizaje: simplificar conceptos complejos, ahorrar tiempo, diseñar un roadmap personalizado mediante prompts y practicar con 'by coding' sin perder la base teórica. También abordamos pensamiento crítico, cómo evitar el aprendizaje superficial y trucos prácticos para aprender idiomas y programar con ayuda de la IA.",
+      "imagen": "../imagenes/epimg/ep16.webp",
+      "categorias": ["tech", "think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=5Srlj9OaJfY",
+        "spotify": "https://open.spotify.com/episode/5g7ShDtwbEk0CvrkcEC9Wz?si=DduVdUNKRDW9CyyIBJYh3g",
+        "apple": "https://podcasts.apple.com/es/podcast/ia-aplicada-al-aprendizaje-hugo-ramallo-divulgador/id1817544014?i=1000738507927"
       }
     }
   ]
