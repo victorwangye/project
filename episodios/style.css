@@ -6,7 +6,7 @@
 :root {
   --color-bg: #0e1722;
   --color-bg-alt: #0b1118;
-  --color-bg-card: #141f2b; /* Un tono un poco más claro para la tarjeta */
+  --color-bg-card: #141f2b; 
   --color-text: #eee7d5;
   --color-accent: #2093cc;
   --color-secondary: #ccc;
@@ -71,42 +71,6 @@ nav a.menu-text.active::after {
   width: 100%;
 }
 
-/* ===== NUEVOS ESTILOS DEL PANEL DE CONTROL ===== */
-
-.filter-control-panel {
-    background-color: var(--color-bg-alt) !important;
-    border: 1px solid #1a2633;
-}
-
-/* Estilos para los botones de categoría */
-#categorias .btn {
-    border-color: var(--color-accent) !important;
-    color: var(--color-accent) !important;
-    transition: all 0.2s ease;
-}
-#categorias .btn:hover:not(.active) {
-    background-color: rgba(32, 147, 204, 0.1);
-}
-#categorias .btn.active {
-    background-color: var(--color-accent) !important;
-    color: var(--color-text) !important;
-}
-
-/* Estilos para el Dropdown de Ordenamiento */
-#sortDropdown {
-    /* Ajusta el color de fondo y borde del select */
-    background-color: var(--color-bg) !important;
-    color: var(--color-text) !important;
-    border-color: #333 !important;
-    padding-right: 2.5rem; /* Espacio para el icono de flecha */
-}
-
-/* Estilo para las opciones del select */
-#sortDropdown option {
-    background-color: var(--color-bg); 
-    color: var(--color-text);
-}
-
 /* Paginación - Estilos base */
 .pagination {
     width: fit-content;
@@ -137,10 +101,44 @@ nav a.menu-text.active::after {
 }
 
 
-/* ===== ESTILOS DE LA TARJETA (DEL PASO ANTERIOR) ===== */
+/* ===== ESTILOS DEL PANEL DE CONTROL (MODERNO) ===== */
+
+.filter-control-panel {
+    background-color: var(--color-bg-alt) !important;
+    border: 1px solid #1a2633;
+}
+
+/* Estilos para los botones de categoría */
+#categorias .btn {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+    transition: all 0.2s ease;
+}
+#categorias .btn:hover:not(.active) {
+    background-color: rgba(32, 147, 204, 0.1);
+}
+#categorias .btn.active {
+    background-color: var(--color-accent) !important;
+    color: var(--color-text) !important;
+}
+
+/* Estilos para el Dropdown de Ordenamiento */
+#sortDropdown {
+    background-color: var(--color-bg) !important;
+    color: var(--color-text) !important;
+    border-color: #333 !important;
+    padding-right: 2.5rem; 
+}
+#sortDropdown option {
+    background-color: var(--color-bg); 
+    color: var(--color-text);
+}
+
+
+/* ===== ESTILOS DE LA TARJETA (FINAL) ===== */
 
 .episode-card-new {
-  background-color: var(--color-bg-card); /* Fondo más claro que el body */
+  background-color: var(--color-bg-card); 
   border: none;
   border-radius: 12px;
   overflow: hidden; 
@@ -150,14 +148,14 @@ nav a.menu-text.active::after {
 
 .episode-card-new:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(32, 147, 204, 0.4); /* Sombra con acento azul */
+  box-shadow: 0 8px 25px rgba(32, 147, 204, 0.4); 
 }
 
 /* Contenedor de Imagen */
 .image-container-new {
   position: relative;
   width: 100%;
-  height: 200px; /* Altura fija para la imagen */
+  height: 200px; 
   overflow: hidden;
 }
 
@@ -167,7 +165,7 @@ nav a.menu-text.active::after {
   object-fit: cover;
 }
 
-/* Texto Overlay Superpuesto en la Imagen */
+/* Texto Overlay Superpuesto en la Imagen (Solo el texto pequeño) */
 .image-overlay-text {
   position: absolute;
   bottom: 0;
@@ -181,39 +179,8 @@ nav a.menu-text.active::after {
 .overlay-small-text {
   font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0; /* Aseguramos que solo haya un elemento aquí */
 }
-
-.overlay-large-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
-}
-
-/* Badge de Categoría (similar al de la imagen) */
-.category-badge-new {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.4rem 0.8rem;
-  border-bottom-left-radius: 12px; 
-  border-top-right-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  /* Colores base, se sobrescriben con las clases específicas */
-  background-color: #333 !important;
-  color: #fff !important;
-}
-
-/* Colores de Badge por Categoría */
-.category-badge-new.bg-think { background-color: #ffc107 !important; color: #000 !important; } /* Amarillo/Think */
-.category-badge-new.bg-tech { background-color: #17a2b8 !important; color: #fff !important; } /* Cyan/Tech */
-.category-badge-new.bg-planet { background-color: #28a745 !important; color: #fff !important; } /* Verde/Planet */
-.category-badge-new.bg-move { background-color: #dc3545 !important; color: #fff !important; } /* Rojo/Move */
-
 
 /* Cuerpo de la Tarjeta */
 .card-body-new {
@@ -236,6 +203,11 @@ nav a.menu-text.active::after {
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+  /* Truncamiento CSS para asegurar que no se desborde */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Permitir 4 líneas de descripción antes de cortar */
+  -webkit-box-orient: vertical;
 }
 
 /* Botón Escuchar */
@@ -248,7 +220,7 @@ nav a.menu-text.active::after {
   padding: 0.5rem 1.5rem;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  width: 100%; /* Ocupa el ancho completo en el pie */
+  width: 100%; 
 }
 
 .btn-accent-new:hover {
