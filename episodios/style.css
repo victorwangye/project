@@ -5,6 +5,7 @@
 
 :root {
   --color-bg: #0e1722;
+  --color-bg-alt: #0b1118;
   --color-bg-card: #141f2b; /* Un tono un poco más claro para la tarjeta */
   --color-text: #eee7d5;
   --color-accent: #2093cc;
@@ -70,6 +71,42 @@ nav a.menu-text.active::after {
   width: 100%;
 }
 
+/* ===== NUEVOS ESTILOS DEL PANEL DE CONTROL ===== */
+
+.filter-control-panel {
+    background-color: var(--color-bg-alt) !important;
+    border: 1px solid #1a2633;
+}
+
+/* Estilos para los botones de categoría */
+#categorias .btn {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+    transition: all 0.2s ease;
+}
+#categorias .btn:hover:not(.active) {
+    background-color: rgba(32, 147, 204, 0.1);
+}
+#categorias .btn.active {
+    background-color: var(--color-accent) !important;
+    color: var(--color-text) !important;
+}
+
+/* Estilos para el Dropdown de Ordenamiento */
+#sortDropdown {
+    /* Ajusta el color de fondo y borde del select */
+    background-color: var(--color-bg) !important;
+    color: var(--color-text) !important;
+    border-color: #333 !important;
+    padding-right: 2.5rem; /* Espacio para el icono de flecha */
+}
+
+/* Estilo para las opciones del select */
+#sortDropdown option {
+    background-color: var(--color-bg); 
+    color: var(--color-text);
+}
+
 /* Paginación - Estilos base */
 .pagination {
     width: fit-content;
@@ -100,13 +137,13 @@ nav a.menu-text.active::after {
 }
 
 
-/* ===== ESTILOS DEL REDISEÑO DE TARJETAS (NUEVO) ===== */
+/* ===== ESTILOS DE LA TARJETA (DEL PASO ANTERIOR) ===== */
 
 .episode-card-new {
   background-color: var(--color-bg-card); /* Fondo más claro que el body */
   border: none;
   border-radius: 12px;
-  overflow: hidden; /* Importante para la imagen redondeada */
+  overflow: hidden; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -160,7 +197,7 @@ nav a.menu-text.active::after {
   top: 0;
   right: 0;
   padding: 0.4rem 0.8rem;
-  border-bottom-left-radius: 12px; /* Esquina redondeada en la parte inferior izquierda */
+  border-bottom-left-radius: 12px; 
   border-top-right-radius: 12px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -183,7 +220,7 @@ nav a.menu-text.active::after {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Para empujar el botón hacia abajo */
+  justify-content: space-between; 
   flex-grow: 1;
 }
 
@@ -219,7 +256,7 @@ nav a.menu-text.active::after {
   transform: scale(1.02);
 }
 
-/* Dropdown */
+/* Dropdown de escuchar de la tarjeta */
 .dropdown-menu {
   background-color: var(--color-bg-card);
   border: 1px solid #1a2633;
