@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const pagination = document.getElementById("pagination");
     const categoriasBtns = document.querySelectorAll("#categorias button");
     const searchInput = document.getElementById("episodeSearch"); 
-    // NUEVO: Selecciona el dropdown de ordenamiento
     const sortDropdown = document.getElementById("sortDropdown"); 
 
     let episodios = []; 
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let ordenActivo = sortDropdown ? sortDropdown.value : "relevancia_reciente";
     let terminoBusqueda = "";
 
-    // Mapeo para asignar clases de color a los badges
+    // Mapeo (ya no se usa para el badge, pero se mantiene si se necesita para otras partes del sitio)
     const categoryColorMap = {
         'think': 'bg-think',
         'tech': 'bg-tech',
@@ -24,15 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         'move': 'bg-move'
     };
     
-    // Función auxiliar para obtener el título corto para el overlay (texto grande sobre la imagen)
-    function getOverlayTitle(fullTitle) {
-        // Busca el separador común (| o -) para usar la primera parte como título de impacto
-        const separatorIndex = fullTitle.indexOf('|');
-        if (separatorIndex !== -1) {
-            return fullTitle.substring(0, separatorIndex).trim();
-        }
-        // Si no hay separador, usa el título completo o lo trunca si es muy largo
-        return fullTitle.length > 50 ? fullTitle.substring(0, 50).trim() + '...' : fullTitle;
+    // Función auxiliar para obtener el título corto para el overlay (ya no se usa el título, solo se necesita el número)
+    function getOverlayText(epNumero) {
+        return `Mentes404 | #${epNumero.toString().padStart(2, '0')}`;
     }
 
 
@@ -52,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
     
-    // Función de puntuación de coincidencia para la búsqueda
+    // Función de puntuación de coincidencia para la búsqueda (se mantiene)
     function getMatchScore(episode, query) {
         let score = 0;
         const q = query.toLowerCase();
@@ -72,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return score;
     }
 
-    // Función central para aplicar búsqueda, filtros y ordenamiento
+    // Función central para aplicar búsqueda, filtros y ordenamiento (se mantiene)
     function applyFiltersAndSort() {
         let listaFiltrada = episodios;
 
@@ -90,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 .filter(ep => ep.score > 0); 
         }
         
-        // 3. Ordenamiento
+        // 3. Ordenamiento (se mantiene)
         listaFiltrada.sort((a, b) => {
             
             if (terminoBusqueda.length > 0) {
@@ -127,7 +120,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     function renderCards() {
-        // Elimina las tarjetas existentes, excepto la plantilla
         container.querySelectorAll(".col-12:not(#card-template)").forEach(c => c.remove());
         
         const start = (currentPage-1)*perPage;
@@ -156,30 +148,22 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".card-img-top-new").src = ep.imagen;
             card.querySelector(".card-img-top-new").alt = ep.titulo;
             
-            // Texto Overlay
-            card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero.toString().padStart(2, '0')}`;
-            card.querySelector(".overlay-large-title").textContent = getOverlayTitle(ep.titulo);
-            
-            // Badge de Categoría
-            const mainCategory = ep.categorias[0]; 
-            const categoryBadge = card.querySelector(".category-badge-new");
-            
-            categoryBadge.className = 'category-badge-new badge'; 
-            categoryBadge.classList.add(categoryColorMap[mainCategory] || 'bg-secondary');
-            categoryBadge.textContent = mainCategory.toUpperCase();
+            // Texto Overlay (Solo el texto pequeño de Mentes404 | #XX)
+            card.querySelector(".overlay-small-text").textContent = getOverlayText(ep.numero);
 
             
             // --- CUERPO DE LA TARJETA ---
             
-            // Título completo (limpio)
+            // Título (el título que se muestra debajo de la imagen)
             const fullTitle = ep.titulo;
             const cleanTitle = fullTitle.split(' | ')[0]; 
             card.querySelector(".card-title-new").textContent = cleanTitle;
             
-            // Descripción truncada 
+            // Descripción (Truncamiento a 150 caracteres + ...)
             const fullDescription = ep.descripcion;
-            const displayDescription = fullDescription.length > 150 
-                ? fullDescription.substring(0, 150).trim() + '...' 
+            const maxChars = 150;
+            const displayDescription = fullDescription.length > maxChars 
+                ? fullDescription.substring(0, maxChars).trim() + '...' 
                 : fullDescription;
             card.querySelector(".card-text-new").textContent = displayDescription;
             
@@ -216,12 +200,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // === Event Listeners ===
 
-    // Evento para el Buscador
     if (searchInput) {
         searchInput.addEventListener("input", handleSearch);
     }
 
-    // Eventos para Botones de Categorías
     categoriasBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             categoriasBtns.forEach(b => b.classList.remove("active"));
@@ -231,7 +213,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // NUEVO: Evento para el Dropdown de Ordenamiento
     if (sortDropdown) {
         sortDropdown.addEventListener("change", (e) => {
             ordenActivo = e.target.value;
