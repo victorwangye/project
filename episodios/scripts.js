@@ -9,14 +9,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     let episodios = []; 
     let filtrados = []; 
     let currentPage = 1;
-    const perPage = 12; // 4 filas de 3 tarjetas
+    const perPage = 12; // Mantiene 12 elementos por página
     let categoriaActiva = "all";
-    let ordenActivo = "relevancia_reciente"; // Criterio de orden por defecto AHORA ES RECIENTE
+    let ordenActivo = "relevancia_reciente"; // Criterio de orden por defecto 
     let terminoBusqueda = "";
+
+    // Mapeo para asignar clases de color a los badges
+    const categoryColorMap = {
+        'think': 'bg-think',
+        'tech': 'bg-tech',
+        'planet': 'bg-planet',
+        'move': 'bg-move'
+    };
+    
+    // Función auxiliar para obtener el título corto para el overlay (texto grande sobre la imagen)
+    function getOverlayTitle(fullTitle) {
+        // Busca el separador común (| o -) para usar la primera parte como título de impacto
+        const separatorIndex = fullTitle.indexOf('|');
+        if (separatorIndex !== -1) {
+            return fullTitle.substring(0, separatorIndex).trim();
+        }
+        // Si no hay separador, usa el título completo o lo trunca si es muy largo
+        return fullTitle.length > 50 ? fullTitle.substring(0, 50).trim() + '...' : fullTitle;
+    }
+
 
     async function loadData() {
         try {
-            // CORRECCIÓN: Se simplifica la ruta del fetch a "data.json"
             const res = await fetch("data.json"); 
             if (!res.ok) throw new Error("No se pudo cargar data.json");
             const data = await res.json();
@@ -36,19 +55,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         let score = 0;
         const q = query.toLowerCase();
 
-        // Si el título contiene la consulta
         if (episode.titulo.toLowerCase().includes(q)) {
             score += 10;
         }
-        // Si la descripción contiene la consulta
         if (episode.descripcion.toLowerCase().includes(q)) {
             score += 5;
         }
-        // Si alguna categoría coincide exactamente
-        if (episode.categorias.some(c => c.toLowerCase().includes(q))) { // Uso includes para categorías parciales
+        if (episode.categorias.some(c => c.toLowerCase().includes(q))) { 
             score += 15;
         }
-        // Si es un episodio destacado, añade un bono (solo en búsqueda)
         if (episode.destacado) {
             score += 2;
         }
@@ -71,36 +86,29 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Filtra y adjunta la puntuación de coincidencia
             listaFiltrada = listaFiltrada
                 .map(ep => ({ ...ep, score: getMatchScore(ep, query) }))
-                .filter(ep => ep.score > 0); // Solo incluye si hay coincidencia
+                .filter(ep => ep.score > 0); 
         }
         
-        // 3. Ordenamiento (Aplica relevancia, fecha y puntuación de búsqueda)
+        // 3. Ordenamiento
         listaFiltrada.sort((a, b) => {
             
-            // PRIORIDAD 1: Ordenamiento por puntuación de búsqueda (solo si hay término de búsqueda)
             if (terminoBusqueda.length > 0) {
                 if (b.score !== a.score) {
-                    return b.score - a.score; // Mayor puntuación primero
+                    return b.score - a.score; 
                 }
             }
             
-            // PRIORIDAD 2: Lógica de Relevancia (Aplica para ambos modos "relevancia_...")
             if (ordenActivo.startsWith('relevancia')) {
-                // 1. Prioridad: destacado true va primero
                 if (a.destacado && !b.destacado) return -1;
                 if (!a.destacado && b.destacado) return 1;
             }
             
-            // PRIORIDAD 3: Desempate o Modo Fecha Pura (si no hay búsqueda o puntuaciones iguales)
-            
-            // Más Reciente (Default para Relevancia y modo fecha pura)
             if (ordenActivo === "mas_reciente" || ordenActivo === "relevancia_reciente") {
-                return b.numero - a.numero; // Descendente por número
+                return b.numero - a.numero; 
             }
             
-            // Más Antiguo (Default para Relevancia antigua y modo fecha pura)
             if (ordenActivo === "mas_antiguo" || ordenActivo === "relevancia_antigua") {
-                return a.numero - b.numero; // Ascendente por número
+                return a.numero - b.numero; 
             }
             
             return 0;
@@ -118,13 +126,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     function renderCards() {
+        // Elimina las tarjetas existentes, excepto la plantilla
         container.querySelectorAll(".col-12:not(#card-template)").forEach(c => c.remove());
+        
         const start = (currentPage-1)*perPage;
         const end = start + perPage;
         const pagData = filtrados.slice(start, end);
 
         if (pagData.length === 0) {
-            // MENSAJE DE NO ENCONTRADO PERSONALIZADO
             const mensaje = terminoBusqueda.length > 0 
                 ? `vaya parece ser que te encontraste un 404, solicita el episodio mandando un mensaje a <a href="mailto:hola@mentes404.studio" class="text-info">hola@mentes404.studio</a>`
                 : `No hay episodios disponibles.`;
@@ -138,34 +147,46 @@ document.addEventListener("DOMContentLoaded", async () => {
             cardWrapper.id = "";
             cardWrapper.style.display = "block";
             
-            const card = cardWrapper.querySelector(".episode-card");
+            const card = cardWrapper.querySelector(".episode-card-new");
+            
+            // --- CUBIERTA DE IMAGEN Y TEXTO OVERLAY ---
+            
+            // Imagen
+            card.querySelector(".card-img-top-new").src = ep.imagen;
+            card.querySelector(".card-img-top-new").alt = ep.titulo;
+            
+            // Texto Overlay
+            card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero}`;
+            card.querySelector(".overlay-large-title").textContent = getOverlayTitle(ep.titulo);
+            
+            // Badge de Categoría
+            const mainCategory = ep.categorias[0]; // Usamos la primera categoría para el badge
+            const categoryBadge = card.querySelector(".category-badge-new");
+            
+            // Limpia clases anteriores y aplica la clase de color y texto
+            categoryBadge.className = 'category-badge-new badge'; // Reset
+            categoryBadge.classList.add(categoryColorMap[mainCategory] || 'bg-secondary');
+            categoryBadge.textContent = mainCategory.toUpperCase();
 
-            // Rellenar datos
-            card.querySelector("img").src = ep.imagen;
-            card.querySelector("img").alt = ep.titulo;
             
-            // MODIFICADO: Limpia el título y elimina el prefijo de número para COINCIDIR con la página de inicio
+            // --- CUERPO DE LA TARJETA ---
+            
+            // Título completo (limpio)
             const fullTitle = ep.titulo;
-            const cleanTitle = fullTitle.split(' | ')[0]; // Obtiene la parte antes del pipe y el tag de estudio
-            card.querySelector(".card-title").textContent = cleanTitle;
+            const cleanTitle = fullTitle.split(' | ')[0]; // Limpia el sufijo | Mentes404 #XX
+            card.querySelector(".card-title-new").textContent = cleanTitle;
             
-            // MODIFICADO: Aplicar truncamiento de descripción de 150 caracteres para igualar la página de inicio
+            // Descripción truncada (para que coincida con el estilo de la imagen)
             const fullDescription = ep.descripcion;
             const displayDescription = fullDescription.length > 150 
                 ? fullDescription.substring(0, 150).trim() + '...' 
                 : fullDescription;
-            card.querySelector(".card-text").textContent = displayDescription;
+            card.querySelector(".card-text-new").textContent = displayDescription;
             
             // Enlaces de Podcast
             card.querySelector(".youtube").href = ep.links.youtube;
             card.querySelector(".spotify").href = ep.links.spotify;
             card.querySelector(".apple").href = ep.links.apple;
-            
-            // Categorías 
-            const categoriesDiv = cardWrapper.querySelector(".categories-text");
-            if (categoriesDiv) {
-                categoriesDiv.innerHTML = "Categorías: " + ep.categorias.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ");
-            }
             
             container.appendChild(cardWrapper);
         });
@@ -203,21 +224,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Eventos para Botones de Categorías
     categoriasBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-            categoriasBtns.forEach(b => b.classList.remove("active", "btn-outline-light", "btn-outline-info"));
-            
-            // Restablecer estilos de botones
-            categoriasBtns.forEach(b => {
-                if (b.dataset.category === "all") {
-                    b.classList.add("btn-outline-light");
-                } else {
-                    b.classList.add("btn-outline-info");
-                }
-            });
-            
+            categoriasBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             categoriaActiva = btn.dataset.category;
-            
-            // Reaplicar filtros y orden
             applyFiltersAndSort();
         });
     });
@@ -228,8 +237,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             ordenamientoBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             ordenActivo = btn.dataset.sort;
-            
-            // Reaplicar orden 
             applyFiltersAndSort();
         });
     });
