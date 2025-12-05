@@ -3,15 +3,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const template = document.getElementById("card-template");
     const pagination = document.getElementById("pagination");
     const categoriasBtns = document.querySelectorAll("#categorias button");
-    const ordenamientoBtns = document.querySelectorAll("#ordenamiento button");
     const searchInput = document.getElementById("episodeSearch"); 
+    // NUEVO: Selecciona el dropdown de ordenamiento
+    const sortDropdown = document.getElementById("sortDropdown"); 
 
     let episodios = []; 
     let filtrados = []; 
     let currentPage = 1;
-    const perPage = 12; // Mantiene 12 elementos por página
+    const perPage = 12; 
     let categoriaActiva = "all";
-    let ordenActivo = "relevancia_reciente"; // Criterio de orden por defecto 
+    // Inicializa el orden con el valor por defecto del select
+    let ordenActivo = sortDropdown ? sortDropdown.value : "relevancia_reciente";
     let terminoBusqueda = "";
 
     // Mapeo para asignar clases de color a los badges
@@ -83,7 +85,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (terminoBusqueda.length > 0) {
             const query = terminoBusqueda;
             
-            // Filtra y adjunta la puntuación de coincidencia
             listaFiltrada = listaFiltrada
                 .map(ep => ({ ...ep, score: getMatchScore(ep, query) }))
                 .filter(ep => ep.score > 0); 
@@ -156,15 +157,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".card-img-top-new").alt = ep.titulo;
             
             // Texto Overlay
-            card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero}`;
+            card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero.toString().padStart(2, '0')}`;
             card.querySelector(".overlay-large-title").textContent = getOverlayTitle(ep.titulo);
             
             // Badge de Categoría
-            const mainCategory = ep.categorias[0]; // Usamos la primera categoría para el badge
+            const mainCategory = ep.categorias[0]; 
             const categoryBadge = card.querySelector(".category-badge-new");
             
-            // Limpia clases anteriores y aplica la clase de color y texto
-            categoryBadge.className = 'category-badge-new badge'; // Reset
+            categoryBadge.className = 'category-badge-new badge'; 
             categoryBadge.classList.add(categoryColorMap[mainCategory] || 'bg-secondary');
             categoryBadge.textContent = mainCategory.toUpperCase();
 
@@ -173,10 +173,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             
             // Título completo (limpio)
             const fullTitle = ep.titulo;
-            const cleanTitle = fullTitle.split(' | ')[0]; // Limpia el sufijo | Mentes404 #XX
+            const cleanTitle = fullTitle.split(' | ')[0]; 
             card.querySelector(".card-title-new").textContent = cleanTitle;
             
-            // Descripción truncada (para que coincida con el estilo de la imagen)
+            // Descripción truncada 
             const fullDescription = ep.descripcion;
             const displayDescription = fullDescription.length > 150 
                 ? fullDescription.substring(0, 150).trim() + '...' 
@@ -231,15 +231,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // Eventos para Botones de Ordenamiento
-    ordenamientoBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            ordenamientoBtns.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            ordenActivo = btn.dataset.sort;
+    // NUEVO: Evento para el Dropdown de Ordenamiento
+    if (sortDropdown) {
+        sortDropdown.addEventListener("change", (e) => {
+            ordenActivo = e.target.value;
             applyFiltersAndSort();
         });
-    });
+    }
 
     loadData();
 });
