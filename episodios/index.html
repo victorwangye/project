@@ -40,25 +40,34 @@
 <main class="container py-4">
   <h1 class="mb-5 text-center text-info">Todos los Episodios</h1>
 
-  <section class="mb-5">
-    
-    <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-            <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-info" placeholder="Buscar episodios...">
+  <section class="filter-control-panel mb-5 p-3 rounded-3 shadow">
+    <div class="row align-items-center g-3">
+        <div class="col-12 col-lg-5">
+            <div class="input-group">
+                <span class="input-group-text bg-secondary border-secondary text-white"><i class="bi bi-search"></i></span>
+                <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-secondary" placeholder="Buscar por título o tema...">
+            </div>
         </div>
-    </div>
 
-    <div class="d-flex justify-content-center flex-wrap gap-2 mb-3" id="categorias">
-      <button class="btn btn-outline-info active" data-category="all">Todos</button>
-      <button class="btn btn-outline-info" data-category="think">Think</button>
-      <button class="btn btn-outline-info" data-category="tech">Tech</button>
-      <button class="btn btn-outline-info" data-category="planet">Planet</button>
-      <button class="btn btn-outline-info" data-category="move">Move</button>
-    </div>
+        <div class="col-12 col-lg-4 text-center">
+            <div id="categorias" class="btn-group w-100 flex-wrap" role="group">
+              <button class="btn btn-outline-info active btn-sm" data-category="all">Todos</button>
+              <button class="btn btn-outline-info btn-sm" data-category="think">Think</button>
+              <button class="btn btn-outline-info btn-sm" data-category="tech">Tech</button>
+              <button class="btn btn-outline-info btn-sm" data-category="planet">Planet</button>
+              <button class="btn btn-outline-info btn-sm" data-category="move">Move</button>
+            </div>
+        </div>
 
-    <div class="d-flex justify-content-center flex-wrap gap-2" id="ordenamiento">
-      <button class="btn btn-sm btn-outline-secondary active" data-sort="relevancia_reciente">Reciente ⭐</button>
-      <button class="btn btn-sm btn-outline-secondary" data-sort="mas_antiguo">Más Antiguo</button>
+        <div class="col-12 col-lg-3">
+             <select id="sortDropdown" class="form-select bg-dark text-white border-secondary">
+                <option value="relevancia_reciente" selected>⭐ Relevancia (Reciente)</option>
+                <option value="relevancia_antigua">⭐ Relevancia (Antiguo)</option>
+                <option value="mas_reciente">⬇️ Solo Más Reciente</option>
+                <option value="mas_antiguo">⬆️ Solo Más Antiguo</option>
+            </select>
+            <div id="ordenamiento" style="display:none;"></div> 
+        </div>
     </div>
   </section>
   <section id="cards-container" class="row g-4 justify-content-center">
