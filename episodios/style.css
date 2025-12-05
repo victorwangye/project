@@ -165,7 +165,7 @@ nav a.menu-text.active::after {
   object-fit: cover;
 }
 
-/* Texto Overlay Superpuesto en la Imagen (Solo el texto pequeño) */
+/* Texto Overlay Superpuesto en la Imagen (Solo el degradado) */
 .image-overlay-text {
   position: absolute;
   bottom: 0;
@@ -174,21 +174,6 @@ nav a.menu-text.active::after {
   padding: 1rem;
   /* Degradado oscuro para mejorar la legibilidad del texto sobre la imagen */
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-}
-
-.overlay-small-text {
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 0; /* Aseguramos que solo haya un elemento aquí */
-}
-
-/* AÑADIDO: Estilo para el Título Grande en el Overlay */
-.overlay-large-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    line-height: 1.2;
 }
 
 
