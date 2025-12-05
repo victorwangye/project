@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mentes404 | Episodios</title>
 
-<link rel="stylesheet" href="../style.css"> 
-<link rel="stylesheet" href="style.css"> 
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"> 
+
 </head>
 
 <body class="bg-dark text-light">
@@ -38,68 +37,66 @@
     </ul>
   </div>
 </header>
-
-
 <main class="container py-4">
-  <h1 class="mb-4 text-center text-info">Todos los Episodios</h1>
+  <h1 class="mb-5 text-center text-info">Todos los Episodios</h1>
 
-  <section class="text-center mb-5">
-    <div class="row justify-content-center">
+  <section class="mb-5">
+    
+    <div class="row mb-4 justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
-            <div class="input-group">
-                <span class="input-group-text bg-primary border-primary text-white"><i class="bi bi-search"></i></span>
-                <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-primary" placeholder="Buscar por título, descripción o tema...">
-            </div>
+            <input type="text" id="episodeSearch" class="form-control bg-dark text-white border-info" placeholder="Buscar episodios...">
         </div>
     </div>
-  </section>
-  
-  <section class="text-center mb-4">
-    <h2 class="mb-3 fs-5 text-secondary">Filtrar por Categoría</h2>
-    <div id="categorias" class="btn-group flex-wrap" role="group">
-      <button class="btn btn-outline-light active" data-category="all">Todos</button>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2 mb-3" id="categorias">
+      <button class="btn btn-outline-info active" data-category="all">Todos</button>
       <button class="btn btn-outline-info" data-category="think">Think</button>
       <button class="btn btn-outline-info" data-category="tech">Tech</button>
       <button class="btn btn-outline-info" data-category="planet">Planet</button>
       <button class="btn btn-outline-info" data-category="move">Move</button>
     </div>
-    
-    <div id="subcategorias" class="mt-3 d-none"></div>
-  </section>
-  
-  <section class="text-center mb-5">
-    <h2 class="mb-2 fs-5 text-secondary">Ordenar por</h2>
-    <div id="ordenamiento" class="btn-group flex-wrap" role="group">
-        <button class="btn btn-sm btn-outline-light active" data-sort="relevancia_reciente">⭐ Relevancia (Más Reciente)</button>
-        <button class="btn btn-sm btn-outline-light" data-sort="relevancia_antigua">⭐ Relevancia (Más Antiguo)</button>
-        <button class="btn btn-sm btn-outline-light" data-sort="mas_reciente">⬇️ Solo Más Reciente</button>
-        <button class="btn btn-sm btn-outline-light" data-sort="mas_antiguo">⬆️ Solo Más Antiguo</button>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2" id="ordenamiento">
+      <button class="btn btn-sm btn-outline-secondary active" data-sort="relevancia_reciente">Reciente ⭐</button>
+      <button class="btn btn-sm btn-outline-secondary" data-sort="mas_antiguo">Más Antiguo</button>
     </div>
   </section>
-
   <section id="cards-container" class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4" id="card-template" style="display:none">
-      <div class="card episode-card">
-          <img src="" class="card-img-top" alt="">
-          <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text"></p>
-              
-              <div class="mb-2 text-info categories-text"></div> <div class="dropdown">
-                  <button class="btn btn-accent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  🎧 Escuchar
-                  </button>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item youtube" href="#" target="_blank">YouTube</a></li>
-                      <li><a class="dropdown-item spotify" href="#" target="_blank">Spotify</a></li>
-                      <li><a class="dropdown-item apple" href="#" target="_blank">Apple Podcast</a></li>
-                  </ul>
-              </div>
+    
+    <div class="col-12 col-md-6 col-lg-4" id="card-template" style="display:none">
+      <div class="card episode-card-new h-100">
+        
+        <div class="image-container-new">
+          <img class="card-img-top-new" src="" alt="Portada del Episodio">
+          
+          <div class="image-overlay-text">
+            <p class="overlay-small-text text-white-50"></p>
+            <h3 class="overlay-large-title text-white"></h3>
           </div>
+          
+          <span class="category-badge-new badge"></span>
+        </div>
+        
+        <div class="card-body-new">
+          <h5 class="card-title-new"></h5>
+          <p class="card-text-new text-secondary"></p>
+          
+          <div class="dropdown mt-3">
+              <button class="btn btn-accent-new dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              🎧 Escuchar
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item youtube" href="#" target="_blank">YouTube</a></li>
+                  <li><a class="dropdown-item spotify" href="#" target="_blank">Spotify</a></li>
+                  <li><a class="dropdown-item apple" href="#" target="_blank">Apple Podcast</a></li>
+              </ul>
+          </div>
+          
+        </div>
       </div>
     </div>
+    
   </section>
-
   <nav aria-label="Paginación de episodios" class="mt-5 text-center">
     <ul id="pagination" class="pagination justify-content-center"></ul>
   </nav>
