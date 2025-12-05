@@ -1,41 +1,341 @@
-/* ===== Reset/Body - Mantenemos el box-sizing por buena práctica y la restricción de overflow-x. ===== */
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #0e1722;
+  --color-bg-alt: #0b1118;
+  --color-text: #eee7d5;
+  --color-accent: #2093cc;
+  --color-secondary: #ccc;
 }
 
 body {
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-/* ===== Contenedor principal - Ajustes de layout únicos ===== */
-main {
-  max-width: 1200px;
+/* ===== Header ===== */
+header {
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+a.logo-btn {
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a.menu-text {
+  color: var(--color-text);
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav a.menu-text.active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+nav a.menu-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+nav a.menu-text:hover::after,
+nav a.menu-text.active::after {
+  width: 100%;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(rgba(14,23,34,0.8), rgba(14,23,34,0.8)), url('imagenes/hero-bg.webp') center/cover no-repeat;
+  color: var(--color-text);
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  max-width: 700px;
   margin: 0 auto;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.btn-hero {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #167aa8;
+  transform: scale(1.05);
+}
+
+/* ===== Carrusel ===== */
+.carousel-inner img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+/* ===== Temas destacados ===== */
+.topics-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--color-bg-alt);
+}
+
+.topics-section h2 {
+  color: var(--color-accent);
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ===== Cards de temas ===== */
+.topic-card {
+  background-color: var(--color-bg);
+  border-radius: 0.8rem;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.topic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.topic-card i {
+  font-size: 3rem;
+  color: var(--color-accent);
+  margin-bottom: 1.2rem;
+  display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.topic-card:hover i {
+  transform: scale(1.1);
+  color: #31b0f2;
+}
+
+.topic-card h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+.topic-card p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 260px;
+}
+
+/* ===== Últimos episodios ===== */
+.episode-section {
+  background-color: var(--color-bg-alt);
+  padding: 4rem 1rem;
+}
+
+.episode-section h2 {
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* ===== Card de episodios ===== */
+.episode-card {
+  transition: all 0.4s ease;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: none;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+  max-width: 370px; /* ligeramente más grande */
+  margin: 0 auto 40px;
+}
+
+.episode-card img {
+  width: 100%;
+  height: 190px; /* ligeramente más alto */
+  object-fit: cover;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Efecto hover */
+.episode-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 22px rgba(32, 147, 204, 0.6);
+}
+
+.episode-card:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Cuerpo del card */
+.episode-card .card-body {
+  padding: 1.4rem 1.6rem;
+}
+
+.episode-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.episode-card .card-text {
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Botón Escuchar */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: #31b0f2;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(32, 147, 204, 0.6);
+}
+
+/* ===== Dropdown ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  background-color: var(--color-bg);
+  border: 1px solid #1a2633;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin-top: 8px;
+  transition: all 0.25s ease;
+}
+
+.dropdown-item {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-accent);
+  color: #fff !important;
+}
+
+/* Abre hacia arriba solo cuando no hay espacio */
+.dropup .dropdown-menu {
+  bottom: 100%;
+  top: auto;
+  margin-bottom: 8px;
+}
+
+/* Animación sutil */
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
   padding: 2rem 1rem;
+  text-align: center;
 }
 
-/* ===== Botones de filtro y ordenamiento - ESTILOS ÚNICOS ===== */
-#categorias .btn-outline-info,
-#ordenamiento .btn-outline-light {
-    /* Usamos variables de color definidas en ../style.css */
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transition: background-color 0.2s ease, color 0.2s ease;
+footer a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
 }
 
-#categorias .btn-outline-info:hover,
-#ordenamiento .btn-outline-light:hover {
-    background-color: var(--color-accent);
-    color: var(--color-text);
+footer a:hover {
+  color: var(--color-accent);
 }
 
-#categorias .btn.active,
-#ordenamiento .btn.active {
-    background-color: var(--color-accent) !important;
-    color: var(--color-text) !important;
-    border-color: var(--color-accent) !important;
+/* ===== Responsivo ===== */
+@media (max-width: 992px) {
+  .episode-card {
+    max-width: 340px;
+  }
 }
 
+@media (max-width: 768px) {
+  .episode-card {
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .episode-card img {
+    height: 170px;
+  }
+}
 /* ===== Paginación - ESTILOS ÚNICOS ===== */
 .pagination {
     width: fit-content;
