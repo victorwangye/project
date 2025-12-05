@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         'move': 'bg-move'
     };
     
-    // Función auxiliar para obtener el título corto para el overlay (texto grande sobre la imagen)
+    // Función auxiliar para obtener el título corto para el overlay (ya no se usa pero se mantiene para lógica interna si fuera necesario)
     function getOverlayTitle(fullTitle) {
         // Busca el separador común (| o -) para usar la primera parte como título de impacto
         const separatorIndex = fullTitle.indexOf('|');
@@ -156,9 +156,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.querySelector(".card-img-top-new").src = ep.imagen;
             card.querySelector(".card-img-top-new").alt = ep.titulo;
             
-            // Texto Overlay
-            card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero.toString().padStart(2, '0')}`;
-            card.querySelector(".overlay-large-title").textContent = getOverlayTitle(ep.titulo);
+            // Texto Overlay (Las líneas para inyectar texto redundante han sido eliminadas/comentadas)
+            // card.querySelector(".overlay-small-text").textContent = `Mentes404 | #${ep.numero.toString().padStart(2, '0')}`;
+            // card.querySelector(".overlay-large-title").textContent = getOverlayTitle(ep.titulo);
             
             // Badge de Categoría
             const mainCategory = ep.categorias[0]; 
