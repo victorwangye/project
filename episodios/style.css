@@ -182,6 +182,16 @@ nav a.menu-text.active::after {
   margin-bottom: 0; /* Aseguramos que solo haya un elemento aquí */
 }
 
+/* AÑADIDO: Estilo para el Título Grande en el Overlay */
+.overlay-large-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+
 /* Cuerpo de la Tarjeta */
 .card-body-new {
   padding: 1.5rem;
