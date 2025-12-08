@@ -178,7 +178,7 @@ nav a.menu-text.active::after {
   max-width: 260px;
 }
 
-/* ===== Últimos episodios ===== */
+/* ===== Últimos episodios (Sección General) ===== */
 .episode-section {
   background-color: var(--color-bg-alt);
   padding: 4rem 1rem;
@@ -191,7 +191,7 @@ nav a.menu-text.active::after {
   font-size: 1.8rem;
 }
 
-/* ===== Card de episodios ===== */
+/* ===== Card de episodios (Diseño Antiguo, Mantenido por si acaso) ===== */
 .episode-card {
   transition: all 0.4s ease;
   background-color: var(--color-bg);
@@ -244,7 +244,7 @@ nav a.menu-text.active::after {
   line-height: 1.5;
 }
 
-/* Botón Escuchar */
+/* Botón Escuchar (Genérico) */
 .btn-accent {
   background-color: var(--color-accent);
   color: var(--color-text);
@@ -256,12 +256,12 @@ nav a.menu-text.active::after {
 }
 
 .btn-accent:hover {
-  background-color: #31b0f2;
+  background-color: #167aa8;
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(32, 147, 204, 0.6);
 }
 
-/* ===== Dropdown ===== */
+/* ===== Dropdown (Genérico) ===== */
 .dropdown {
   position: relative;
 }
@@ -319,7 +319,7 @@ footer a:hover {
   color: var(--color-accent);
 }
 
-/* ===== Responsivo ===== */
+/* ===== Responsivo (Estilos Antiguos) ===== */
 @media (max-width: 992px) {
   .episode-card {
     max-width: 340px;
@@ -334,5 +334,161 @@ footer a:hover {
 
   .episode-card img {
     height: 170px;
+  }
+}
+
+/* ================================================= */
+/* === ESTILOS PARA LA NUEVA TARJETA HORIZONTAL === */
+/* ================================================= */
+
+.horizontal-episode-card {
+  display: flex;
+  flex-direction: row; /* Diseño horizontal */
+  background-color: var(--color-bg-alt); /* Fondo ligeramente más claro que el body */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.horizontal-episode-card:hover {
+  box-shadow: 0 4px 25px rgba(32, 147, 204, 0.6); /* Sombra con color de acento */
+}
+
+/* Contenedor de Imagen con Efecto Hover */
+.card-image-wrap {
+  position: relative;
+  width: 250px; /* Ancho fijo para la imagen */
+  flex-shrink: 0;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-image-wrap a {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  pointer-events: none; /* Asegura que el clic pase al <a> */
+  opacity: 0.9;
+}
+
+.horizontal-episode-card:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: var(--color-accent);
+}
+
+/* Contenido del Episodio */
+.card-content-wrap {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-content-wrap .card-title {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-content-wrap .card-description {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Botón de Escuchar Episodio */
+.btn-watch-episode {
+  display: inline-block;
+  color: var(--color-accent); /* Color de acento para el texto */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.btn-watch-episode:hover {
+  color: #31b0f2;
+  transform: translateX(5px);
+}
+
+.btn-watch-episode i {
+  font-size: 1.1rem;
+}
+
+
+/* Enlaces Sociales Pequeños */
+.social-links-small {
+  margin-top: 1.5rem;
+}
+
+.social-links-small a {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+}
+
+.social-links-small a:hover {
+  color: var(--color-accent);
+}
+
+/* Asegurar el tamaño del SVG del Apple Podcast */
+.social-links-small svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: sub; /* Alineación mejorada con los iconos de fuente */
+}
+
+/* Responsive para móvil (Adaptación de la tarjeta horizontal) */
+@media (max-width: 768px) {
+  .horizontal-episode-card {
+    flex-direction: column;
+  }
+  
+  .card-image-wrap {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen en móvil */
+  }
+
+  .card-content-wrap {
+    padding: 1rem 1.5rem;
+  }
+
+  .card-content-wrap .card-title {
+    font-size: 1.3rem;
+  }
+
+  .btn-watch-episode {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-links-small {
+    text-align: left;
+    margin-top: 1rem;
   }
 }
