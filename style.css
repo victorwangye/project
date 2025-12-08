@@ -348,13 +348,16 @@ footer a:hover {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.3s ease;
+  /* Mantiene la transición, pero el efecto hover será neutral */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
   max-width: 1000px;
   margin: 0 auto;
 }
 
+/* NEUTRALIZACIÓN DEL HOVER: Mantiene el estado base al pasar el cursor */
 .horizontal-episode-card:hover {
-  box-shadow: 0 4px 25px rgba(32, 147, 204, 0.6); /* Sombra con color de acento */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sin cambio de sombra */
+  transform: none; /* Sin movimiento */
 }
 
 /* Contenedor de Imagen: Muestra la miniatura completa */
@@ -369,7 +372,7 @@ footer a:hover {
 .card-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* CAMBIO CLAVE: Muestra la imagen completa */
+  object-fit: contain; /* Muestra la imagen completa (sin recortar) */
   display: block;
   padding: 5px; /* Pequeño padding para un mejor acabado */
 }
@@ -400,7 +403,7 @@ footer a:hover {
 /* Botón de Escuchar Episodio */
 .btn-watch-episode {
   display: inline-block;
-  color: var(--color-accent); /* Color de acento para el texto */
+  color: var(--color-accent);
   font-weight: 600;
   text-decoration: none;
   font-size: 1.05rem;
@@ -438,7 +441,7 @@ footer a:hover {
 .social-links-small svg {
     width: 24px;
     height: 24px;
-    vertical-align: sub; /* Alineación mejorada con los iconos de fuente */
+    vertical-align: sub;
 }
 
 /* Responsive para móvil (Adaptación de la tarjeta horizontal) */
@@ -449,7 +452,7 @@ footer a:hover {
   
   .card-image-wrap {
     width: 100%;
-    height: 200px; /* Altura fija para la imagen en móvil */
+    height: 200px;
   }
 
   .card-content-wrap {
