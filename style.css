@@ -357,44 +357,21 @@ footer a:hover {
   box-shadow: 0 4px 25px rgba(32, 147, 204, 0.6); /* Sombra con color de acento */
 }
 
-/* Contenedor de Imagen con Efecto Hover */
+/* Contenedor de Imagen: Muestra la miniatura completa */
 .card-image-wrap {
   position: relative;
   width: 250px; /* Ancho fijo para la imagen */
   flex-shrink: 0;
+  height: 200px; /* Altura fija para el contenedor */
+  background-color: var(--color-bg); /* Fondo oscuro para el espacio sobrante */
 }
 
 .card-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* CAMBIO CLAVE: Muestra la imagen completa */
   display: block;
-}
-
-.card-image-wrap a {
-  display: block;
-  position: relative;
-  height: 100%;
-}
-
-.play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  padding: 0.5rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  pointer-events: none; /* Asegura que el clic pase al <a> */
-  opacity: 0.9;
-}
-
-.horizontal-episode-card:hover .play-icon {
-  transform: translate(-50%, -50%) scale(1.1);
-  background-color: var(--color-accent);
+  padding: 5px; /* Pequeño padding para un mejor acabado */
 }
 
 /* Contenido del Episodio */
