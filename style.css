@@ -350,7 +350,7 @@ footer a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   /* Mantiene la transición, pero el efecto hover será neutral */
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
-  max-width: 1000px;
+  /* ANTES: max-width: 1000px; - ELIMINADO para usar el ancho completo de la columna de Bootstrap */
   margin: 0 auto;
 }
 
@@ -360,12 +360,12 @@ footer a:hover {
   transform: none; /* Sin movimiento */
 }
 
-/* Contenedor de Imagen: Muestra la miniatura completa */
+/* Contenedor de Imagen: AUMENTO DE TAMAÑO y Muestra la miniatura completa */
 .card-image-wrap {
   position: relative;
-  width: 250px; /* Ancho fijo para la imagen */
+  width: 300px; /* CAMBIO: Aumento a 300px */
   flex-shrink: 0;
-  height: 200px; /* Altura fija para el contenedor */
+  height: 240px; /* CAMBIO: Aumento a 240px */
   background-color: var(--color-bg); /* Fondo oscuro para el espacio sobrante */
 }
 
@@ -452,7 +452,7 @@ footer a:hover {
   
   .card-image-wrap {
     width: 100%;
-    height: 200px;
+    height: 240px; 
   }
 
   .card-content-wrap {
