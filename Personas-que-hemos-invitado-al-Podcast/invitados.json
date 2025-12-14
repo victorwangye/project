@@ -242,7 +242,7 @@
     "bio_corta": "Soy Idriss El Hassani, un estudiante de Máster en Psicologia General Sanitaria apasionado por una sola cosa: ayudar a las personas y contribuir a su bienestar emocional.",
     "bio_completa": "Hoy con mi amigo Victor os hablaré del impacto que puede tener la IA en mi ámbito laboral que es la salud mental y hasta que punto los algoritmos pueden condicionar nuestra forma de pensar, actuar y sentir emociones. Espero que este episodio os guste, si queréis más contenido sobre psicologia y salud mental, podéis seguir mi cuenta https://www.instagram.com/diariodeunpsicologo_/",
     "links": [
-        { "tipo": "instagram", "url": "https://www.instagram.com/diariodeunpsicologo_/", "icono": "bi-instagram" },
+        { "tipo": "instagram", "url": "https://www.instagram.com/diariodeunpsicologo_/", "icono": "bi-instagram" }
     ]
   },
   {
@@ -268,6 +268,7 @@
     ]
   }
 ]
+
 
 
 
