@@ -220,6 +220,18 @@
         "spotify": "https://open.spotify.com/episode/0PcoQGFLVlcAQxFmT6TyIb?si=vzKqUlVnR3y3k9wHL8YVIg",
         "apple": "https://podcasts.apple.com/us/podcast/la-cultura-de-la-propina-el-deporte-y-la-pol%C3%ADtica-en/id1817544014?i=1000739488871"
       }
+    },
+    {
+      "numero": 18,
+      "titulo": "IA y Psicología: Por qué el Vínculo Terapéutico es Insustituible - Idriss El Hassani | Mentes404 #18",
+      "descripcion": "En este episodio crucial, exploramos el impacto profundo y a menudo invisible de la Inteligencia Artificial (IA) en nuestra vida emocional, el autoconocimiento y la psicología. Contamos con la visión experta de Idriss El Hassani, estudiante de Máster en Psicología General Sanitaria, para trazar la línea entre la ayuda tecnológica y la manipulación algorítmica. Temas clave que analizamos: • IA vs. Terapeuta Humano: ¿Es el chatbot capaz de detectar patrones psicológicos más rápido? Analizamos las ventajas del análisis de datos de la IA frente a la insustituible empatía y el vínculo terapéutico humano. • El Espejo Digital: Descubre cómo la IA acelera tu autoconocimiento, pero con el riesgo de definir tu identidad por métricas y no por tu experiencia. • Procrastinación y Emociones: Explicamos por qué procrastinar no es pereza, sino un mecanismo de regulación emocional, y el límite de la IA para resolver las causas profundas. • Riesgos Cognitivos y Éticos: El peligro del Sesgo de Confirmación amplificado por algoritmos y la necesidad urgente de transparencia para proteger la autonomía emocional. • Autoestima y Terapia Digital: ¿Cómo proteger tu valor personal en un entorno obsesionado con las métricas? La diferencia entre un chatbot terapéutico y la comprensión genuina. Este episodio es esencial para cualquiera que use herramientas como ChatGPT, Gemini o cualquier aplicación de Terapia Digital y desee entender las verdaderas implicaciones psicológicas.",
+      "categorias": ["tech, think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=0yVFKSRuie8&t=1782s",
+        "spotify": "https://open.spotify.com/episode/5YZOR21jG0EpjvKdeDN7Lu?si=yCxCeKoWTkOG1QQfzrYjFg",
+        "apple": "https://podcasts.apple.com/es/podcast/ia-y-psicolog%C3%ADa-por-qu%C3%A9-el-v%C3%ADnculo-terap%C3%A9utico-es/id1817544014?i=1000741114845"
+      }
     }
   ]
 }
