@@ -254,8 +254,7 @@
     "episodio_numero": "Episodio 18",
     "episodio_link": "#",
     "bio_corta": "Apasionado de las nuevas tecnologías desde pequeño, sobre todo los dispositivos móviles en el cual deseo seguir formándome e ir mejorando profesionalmente. Aprendiendo nuevas cosas casi a diario y dispuesto a nuevos retos y oportunidades.",
-    "bio_completa": "Actualmente centrado en Android y algunas de sus variantes (Android thing, VR y smartwatch) pero siempre hay hueco para nuevos desafíos.
-Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por lo que estoy creando un blog con tutoriales sobre el lenguaje, desde lo más básico hasta llegar a Android. https://cursokotlin.com",
+    "bio_completa": "Actualmente centrado en Android y algunas de sus variantes (Android thing, VR y smartwatch) pero siempre hay hueco para nuevos desafíos. <br><br>Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por lo que estoy creando un blog con tutoriales sobre el lenguaje, desde lo más básico hasta llegar a Android. https://cursokotlin.com",
     "links": [
         { "tipo": "youtube", "url": "https://www.youtube.com/c/aristidevs", "icono": "bi-youtube" },
         { "tipo": "web", "url": "https://aristi.dev/", "icono": "bi-globe" },
@@ -269,6 +268,7 @@ Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por l
     ]
   }
 ]
+
 
 
 
