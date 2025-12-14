@@ -30,7 +30,7 @@
     "links": [
       { "tipo": "web", "url": "https://www.hugoramallo.com", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://es.linkedin.com/in/hugoramallo/es", "icono": "bi-linkedin" },
-      { "tipo": "empresa", "url": "https://www.globalcobots.com", "icono": "bi-code-slash" },
+      { "tipo": "empresa", "url": "https://www.globalcobots.com", "icono": "../imagenes/lg0901.svg" },
       { "tipo": "youtube", "url": "https://m.youtube.com/@globalcobots", "icono": "bi-youtube" }
     ]
   },
@@ -208,6 +208,7 @@
       { "tipo": "web", "url": "https://www.juanmerodio.com/", "icono": "bi-globe" },
       { "tipo": "linkedin", "url": "https://www.linkedin.com/in/juanmerodio/?locale=es_ES", "icono": "bi-linkedin" },
       { "tipo": "youtube", "url": "https://www.youtube.com/@juanmerodio", "icono": "bi-youtube" },
+      { "tipo": "tekdi", "url": "https://tekdi.education/", "icono": "../imagenes/dbtid_AAB3JnnFpP9lrGxQBrWXWWesutwL_WFHV3c.webp" },
       { "tipo": "instagram", "url": "https://www.instagram.com/juanmerodio", "icono": "bi-instagram" },
       { "tipo": "twitter", "url": "https://twitter.com/juanmerodio", "icono": "bi-twitter-x" }
     ]
@@ -268,6 +269,7 @@ Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por l
     ]
   }
 ]
+
 
 
 
