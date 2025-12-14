@@ -262,13 +262,14 @@ Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por l
         { "tipo": "appcademy", "url": "https://www.appcademy.dev/", "icono": "bi-mortarboard" }
         { "tipo": "linkedin", "url": "https://www.linkedin.com/in/aristides-guimera-orozco/", "icono": "bi-linkedin" },
         { "tipo": "instagram", "url": "https://www.instagram.com/aristidevs/", "icono": "bi-instagram" },
-        { "tipo": "twitter", "url": "https://x.com/AristiDevs", "icono": "bi-twitter-x" }
-        { "tipo": "twitch", "url": "https://www.twitch.tv/aristidevs", "icono": "bi-twitch" }
-        { "tipo": "github", "url": "https://github.com/ArisGuimera", "icono": "bi-github" }
+        { "tipo": "twitter", "url": "https://x.com/AristiDevs", "icono": "bi-twitter-x" },
+        { "tipo": "twitch", "url": "https://www.twitch.tv/aristidevs", "icono": "bi-twitch" },
+        { "tipo": "github", "url": "https://github.com/ArisGuimera", "icono": "bi-github" },
         { "tipo": "tiktok", "url": "https://www.tiktok.com/@aristidevs", "icono": "bi-tiktok" }
     ]
   }
 ]
+
 
 
 
