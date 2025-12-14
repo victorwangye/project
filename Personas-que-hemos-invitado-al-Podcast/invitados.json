@@ -258,7 +258,7 @@
     "links": [
         { "tipo": "youtube", "url": "https://www.youtube.com/c/aristidevs", "icono": "bi-youtube" },
         { "tipo": "web", "url": "https://aristi.dev/", "icono": "bi-globe" },
-        { "tipo": "appcademy", "url": "https://www.appcademy.dev/", "icono": "bi-mortarboard" }
+        { "tipo": "appcademy", "url": "https://www.appcademy.dev/", "icono": "bi-mortarboard" },
         { "tipo": "linkedin", "url": "https://www.linkedin.com/in/aristides-guimera-orozco/", "icono": "bi-linkedin" },
         { "tipo": "instagram", "url": "https://www.instagram.com/aristidevs/", "icono": "bi-instagram" },
         { "tipo": "twitter", "url": "https://x.com/AristiDevs", "icono": "bi-twitter-x" },
@@ -268,6 +268,7 @@
     ]
   }
 ]
+
 
 
 
