@@ -229,7 +229,7 @@
         { "tipo": "facebook", "url": "https://www.facebook.com/milacocop/", "icono": "bi-facebook" },
         { "tipo": "twitter", "url": "https://x.com/MilaCoco", "icono": "bi-twitter-x" }
     ]
-  }
+  },
   {
     "id": "15",
     "nombre": "Idriss El Hassani",
@@ -243,8 +243,7 @@
     "links": [
         { "tipo": "instagram", "url": "https://www.instagram.com/diariodeunpsicologo_/", "icono": "bi-instagram" },
     ]
-  }
-  
+  },
   {
     "id": "16a",
     "nombre": "Arístides Guimerá Orozco",
@@ -269,6 +268,7 @@ Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por l
     ]
   }
 ]
+
 
 
 
