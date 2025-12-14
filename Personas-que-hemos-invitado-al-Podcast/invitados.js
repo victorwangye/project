@@ -104,16 +104,27 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (tipo === "empresa" && icono === "bi-award") return "bi bi-award fs-5";
             if (tipo === "osompress") return "bi bi-code-square fs-5";
             if (tipo === "academia") return "bi bi-mortarboard fs-5";
-            if (tipo === "bluesky") return "bi bi-twitter-x fs-5";
+            // CORRECCIÓN: Manejar explícitamente el tipo "twitter" para asegurar que el ícono bi-twitter-x se renderice
+            if (tipo === "twitter" || tipo === "bluesky") return "bi bi-twitter-x fs-5";
             return `bi ${icono} fs-5`;
         };
 
         const socialLinksHTML = guest.links.map(link => {
-            const iconClass = getIconClass(link.tipo, link.icono);
+            let contentHTML;
+
+            // Lógica para mostrar la imagen si es el logo de TEKDI (o similar)
+            if (link.tipo === "tekdi_logo") {
+                // Se asume que el 'icono' contiene la ruta de la imagen
+                contentHTML = `<img src="${link.icono}" alt="Logo TEKDI" style="width: 24px; height: 24px; filter: invert(0.8) brightness(1.5); vertical-align: middle;">`;
+            } else {
+                // Lógica para iconos de Bootstrap (bi)
+                const iconClass = getIconClass(link.tipo, link.icono);
+                contentHTML = `<i class="${iconClass}"></i>`;
+            }
 
             return `
             <a href="${link.url}" class="btn btn-outline-info" target="_blank" aria-label="${link.tipo}" rel="noopener noreferrer">
-                <i class="${iconClass}"></i>
+                ${contentHTML}
             </a>
           `;
         }).join('');
