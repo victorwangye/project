@@ -218,7 +218,7 @@
     "titulo": "COPYWRITER EXPERTA EN FUNNELS",
     "imagen": "../imagenes/1760684959320coco.webp",
     "episodio_titulo": "Email Marketing",
-    "episodio_numero": "Episodio pendiente",
+    "episodio_numero": "Episodio 14",
     "episodio_link": "#",
     "bio_corta": "Desde 2017 ayuda a empresas estrategias y embudos de captación y retención de clientes. Es profesora de varios másters y sitios como la Cámara de Comercio de Valencia, y tiene una academia con +700 alumnos.",
     "links": [
@@ -230,7 +230,46 @@
         { "tipo": "twitter", "url": "https://x.com/MilaCoco", "icono": "bi-twitter-x" }
     ]
   }
+  {
+    "id": "15",
+    "nombre": "Idriss El Hassani",
+    "titulo": "Estudiante de Máster en Psicología General Sanitaria",
+    "imagen": "../imagenes/idriss.webp",
+    "episodio_titulo": "IA y Psicología: Por qué el Vínculo Terapéutico es Insustituible",
+    "episodio_numero": "Episodio 18",
+    "episodio_link": "#",
+    "bio_corta": "Soy Idriss El Hassani, un estudiante de Máster en Psicologia General Sanitaria apasionado por una sola cosa: ayudar a las personas y contribuir a su bienestar emocional.",
+    "bio_completa": "Hoy con mi amigo Victor os hablaré del impacto que puede tener la IA en mi ámbito laboral que es la salud mental y hasta que punto los algoritmos pueden condicionar nuestra forma de pensar, actuar y sentir emociones. Espero que este episodio os guste, si queréis más contenido sobre psicologia y salud mental, podéis seguir mi cuenta https://www.instagram.com/diariodeunpsicologo_/",
+    "links": [
+        { "tipo": "instagram", "url": "https://www.instagram.com/diariodeunpsicologo_/", "icono": "bi-instagram" },
+    ]
+  }
+  
+  {
+    "id": "16a",
+    "nombre": "Arístides Guimerá Orozco",
+    "titulo": "Mobile Team Lead y Creador de Contenido",
+    "imagen": "../imagenes/aristidevs.webp",
+    "episodio_titulo": "Cómo construir una carrera sólida como programador",
+    "episodio_numero": "Episodio 18",
+    "episodio_link": "#",
+    "bio_corta": "Apasionado de las nuevas tecnologías desde pequeño, sobre todo los dispositivos móviles en el cual deseo seguir formándome e ir mejorando profesionalmente. Aprendiendo nuevas cosas casi a diario y dispuesto a nuevos retos y oportunidades.",
+    "bio_completa": "Actualmente centrado en Android y algunas de sus variantes (Android thing, VR y smartwatch) pero siempre hay hueco para nuevos desafíos.
+Con muchas aspiraciones y metas, la última es aprender y enseñar Kotlin, por lo que estoy creando un blog con tutoriales sobre el lenguaje, desde lo más básico hasta llegar a Android. https://cursokotlin.com",
+    "links": [
+        { "tipo": "youtube", "url": "https://www.youtube.com/c/aristidevs", "icono": "bi-youtube" },
+        { "tipo": "web", "url": "https://aristi.dev/", "icono": "bi-globe" },
+        { "tipo": "appcademy", "url": "https://www.appcademy.dev/", "icono": "bi-mortarboard" }
+        { "tipo": "linkedin", "url": "https://www.linkedin.com/in/aristides-guimera-orozco/", "icono": "bi-linkedin" },
+        { "tipo": "instagram", "url": "https://www.instagram.com/aristidevs/", "icono": "bi-instagram" },
+        { "tipo": "twitter", "url": "https://x.com/AristiDevs", "icono": "bi-twitter-x" }
+        { "tipo": "twitch", "url": "https://www.twitch.tv/aristidevs", "icono": "bi-twitch" }
+        { "tipo": "github", "url": "https://github.com/ArisGuimera", "icono": "bi-github" }
+        { "tipo": "tiktok", "url": "https://www.tiktok.com/@aristidevs", "icono": "bi-tiktok" }
+    ]
+  }
 ]
+
 
 
 
