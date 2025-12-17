@@ -233,6 +233,19 @@
         "spotify": "https://open.spotify.com/episode/5YZOR21jG0EpjvKdeDN7Lu?si=yCxCeKoWTkOG1QQfzrYjFg",
         "apple": "https://podcasts.apple.com/es/podcast/ia-y-psicolog%C3%ADa-por-qu%C3%A9-el-v%C3%ADnculo-terap%C3%A9utico-es/id1817544014?i=1000741114845"
       }
+    },
+    {
+      "numero": 19,
+      "titulo": "Cómo construir una carrera sólida como programador – Arístides Guimerá, Mobile Tech Lead |  #19",
+      "descripcion": "En esta profunda entrevista con Arístides Guimerá Orozco, un referente en desarrollo móvil y creador de contenido, desglosamos su trayectoria, desde sus difíciles inicios en la programación hasta convertirse en Team Lead Mobile y una figura clave en YouTube. Aris comparte su perspectiva honesta sobre la mejor metodología para aprender a programar (centrarse en las bases y practicar sin parar), los errores más comunes en juniors (el tutorial hell y no salir del happy path), y cómo la Inteligencia Artificial (IA) está redefiniendo el puesto junior. Temas clave que cubrimos: ¿Cómo empezar a programar? El balance entre la Universidad, FP, bootcamps y la autodisciplina. Kotlin vs. Java: La apuesta de Aris por Kotlin y el potencial del desarrollo multiplataforma (KMP). Clean Code y Deuda Técnica: La importancia de la arquitectura para la escalabilidad y cómo lidiar con el código legacy. Seniority y Empleo: Consejos para destacar como junior en el mercado actual, la diferencia entre tener años de experiencia y seniority, y el poder del portfolio. Disciplina y Burnout: La clave para el éxito en la programación: la disciplina vence al talento. Networking en España: Por qué es crucial conectar y buscar activamente oportunidades (incluso sin vacantes). Trabajo Remoto vs. Híbrido: La visión de Aris sobre el equilibrio laboral. Si eres un estudiante de programación, un junior buscando tu primer empleo, o un senior buscando mantenerte actualizado en IA y frameworks como Kotlin Multiplatform, esta entrevista es esencial para entender el panorama de la ingeniería de software moderna.",
+      "imagen": "../imagenes/epimg/ep19.webp",
+      "categorias": ["tech"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=pKexZtMLKM0&t=4s",
+        "spotify": "https://open.spotify.com/episode/0PcoQGFLVlcAQxFmT6TyIb?si=vzKqUlVnR3y3k9wHL8YVIg",
+        "apple": "https://podcasts.apple.com/us/podcast/la-cultura-de-la-propina-el-deporte-y-la-pol%C3%ADtica-en/id1817544014?i=1000739488871"
+      }
     }
   ]
 }
