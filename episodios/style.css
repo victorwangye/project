@@ -71,6 +71,36 @@ nav a.menu-text.active::after {
   width: 100%;
 }
 
+/* Asegura que el fondo del footer sea el color oscuro principal */
+footer {
+  background-color: var(--color-bg); /* #0e1722 */
+  color: var(--color-text);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Estilos para los enlaces del menú del footer */
+.footer-menu a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: var(--color-accent);
+}
+
+/* Asegura que los iconos de redes sociales cambien de color al pasar el cursor */
+.footer-social a {
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--color-accent);
+}
+
 /* Paginación - Estilos base */
 .pagination {
     width: fit-content;
