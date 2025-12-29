@@ -12,11 +12,6 @@
     --border-radius-card: 0.8rem;
 }
 
-/* === Contenedor Principal === */
-body {
-    background-color: var(--color-bg-alt);
-}
-
 .text-info {
     color: var(--color-accent) !important;
 }
