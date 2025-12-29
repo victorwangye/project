@@ -12,7 +12,6 @@
     --border-radius-card: 0.8rem;
 }
 main {
-    min-height: 100vw;
     background-color: var(--color-bg-alt);
 }
 
