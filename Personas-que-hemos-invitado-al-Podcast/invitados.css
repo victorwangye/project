@@ -13,7 +13,7 @@
 }
 
 /* === Contenedor Principal === */
-main {
+body {
     background-color: var(--color-bg-alt);
 }
 
