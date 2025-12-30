@@ -1,133 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentes404 | Contacto</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Mentes404</title>
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50%25'%20y='50%25'%20font-family='Arial,%20sans-serif'%20font-size='50'%20fill='%231a73e8'%20text-anchor='middle'%20dominant-baseline='central'%20font-weight='bold'%3E404%3C/text%3E%3C/svg%3E">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+  <style>
+    :root {
+      --color-bg: #0e1722;
+      --color-bg-alt: #0b1118;
+      --color-text: #eee7d5;
+      --color-accent: #2093cc;
+    }
 
-    <style>
-        .contact-header {
-            padding: 5rem 1rem 3rem;
-            text-align: center;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
 
-        .contact-card {
-            background-color: var(--color-bg-alt);
-            border-radius: 15px;
-            padding: 2.5rem;
-            border: 1px solid rgba(32, 147, 204, 0.2);
-            height: 100%;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
 
-        .contact-card i {
-            font-size: 1.8rem;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
+    .logo-btn {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--color-accent);
+    }
 
-        .contact-link {
-            color: var(--color-text);
-            text-decoration: none;
-            font-weight: 600;
-        }
+    .menu-text {
+      margin-left: 20px;
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        .copy-badge {
-            display: inline-block;
-            background: rgba(32, 147, 204, 0.1);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            border: 1px solid var(--color-accent);
-            color: var(--color-text);
-        }
-    </style>
+    .menu-text:hover, .menu-text.active {
+      color: var(--color-accent);
+    }
+
+    .contact-header {
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+    }
+
+    .contact-card {
+      background-color: var(--color-bg-alt);
+      border-radius: 15px;
+      padding: 2.5rem;
+      border: 1px solid rgba(32, 147, 204, 0.2);
+      height: 100%;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-accent);
+    }
+
+    .pill-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(32, 147, 204, 0.1);
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .contact-card i {
+      font-size: 2.2rem;
+      color: var(--color-text);
+      opacity: 0.9;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mail-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      border: 1px solid var(--color-accent);
+      background: rgba(32, 147, 204, 0.1);
+      transition: all 0.3s;
+    }
+
+    .mail-link:hover {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    .footer-social a i {
+      color: var(--color-text);
+      transition: color 0.3s;
+    }
+
+    .footer-social a i:hover {
+      color: var(--color-accent);
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid #1a2633;
+    }
+
+    .footer-menu a {
+      margin: 0 10px;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <a href="/" class="logo-btn">
-        <span style="color:#EEE7D5;">Mentes</span>404
-    </a>
-
-    <nav class="d-none d-md-flex">
-        <a href="/" class="menu-text">Inicio</a>
-        <a href="/episodios/" class="menu-text">Episodios</a>
-        <a href="/Personas-que-hemos-invitado-al-Podcast/" class="menu-text">Invitados</a>
-        <a href="/blog/" class="menu-text">Blog</a>
-        <a href="/contacto/" class="menu-text active">Contacto</a>
-    </nav>
+  <a href="../index.html" class="logo-btn"><span style="color:#EEE7D5;">Mentes</span>404</a>
+  <nav class="d-none d-md-flex">
+    <a href="../index.html" class="menu-text">Inicio</a>
+    <a href="../episodios/index.html" class="menu-text">Episodios</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/index.html" class="menu-text">Invitados</a>
+    <a href="../blog/index.html" class="menu-text">Blog</a>
+    <a href="index.html" class="menu-text active">Contacto</a>
+  </nav>
 </header>
 
 <main class="container mb-5">
+  <section class="contact-header">
+    <h1 class="display-4 fw-bold">Hablemos</h1>
+    <p class="lead text-secondary mx-auto" style="max-width: 600px;">
+      Propuestas de impacto, perfiles de invitados o mentoría estratégica. Buscamos conversaciones que aporten valor real.
+    </p>
+  </section>
 
-    <section class="contact-header">
-        <h1 class="display-4 fw-bold">Contacto</h1>
-        <p class="lead text-secondary">
-            Propuestas, colaboraciones o participación en el podcast.
-            Aquí es donde empieza la conversación.
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-5">
+      <div class="contact-card text-center">
+        <span class="pill-badge">Think • Tech • Planet • Move</span>
+        <i class="bi bi-mic"></i>
+        <h3>Propuestas & Colaboraciones</h3>
+        <p class="text-secondary small">
+          Si tienes una historia de reinvención profesional, una investigación disruptiva o un proyecto tecnológico con propósito, queremos conocerte.
         </p>
-    </section>
-
-    <div class="row g-4 justify-content-center">
-
-        <!-- Propuestas -->
-        <div class="col-md-5">
-            <div class="contact-card text-center">
-                <i class="bi bi-lightbulb"></i>
-                <h3 class="mt-3">Propuestas y colaboraciones</h3>
-                <p class="text-secondary small">
-                    ¿Tienes un tema interesante, quieres proponer a alguien
-                    o participar como invitado en Mentes404?
-                    Escríbenos y lo revisamos.
-                </p>
-
-                <a href="mailto:hola@mentes404.studio" class="copy-badge text-decoration-none">
-                    hola@mentes404.studio
-                </a>
-            </div>
-        </div>
-
-        <!-- Comunidad -->
-        <div class="col-md-5">
-            <div class="contact-card text-center">
-                <i class="bi bi-people"></i>
-                <h3 class="mt-3">Comunidad Mentes404</h3>
-                <p class="text-secondary small">
-                    Síguenos en redes y escríbenos por mensaje directo.
-                    Es la forma más rápida de estar en contacto con el equipo.
-                </p>
-
-                <div class="d-flex justify-content-center gap-3 mt-2">
-                    <a href="https://www.linkedin.com/company/mentes404/" class="contact-link">
-                        <i class="bi bi-linkedin fs-4"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mentes404.studio/" class="contact-link">
-                        <i class="bi bi-instagram fs-4"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA" class="contact-link">
-                        <i class="bi bi-youtube fs-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
+        <a href="mailto:hola@mentes404.studio" class="mail-link">hola@mentes404.studio</a>
+      </div>
     </div>
+
+    <div class="col-md-5">
+      <div class="contact-card text-center">
+        <span class="pill-badge">Comunidad & Feedback</span>
+        <i class="bi bi-people"></i>
+        <h3>Conecta con Mentes404</h3>
+        <p class="text-secondary small">
+          Participa en la conversación y mantente actualizado con las últimas ideas sobre desarrollo personal y futuro digital.
+        </p>
+        <div class="d-flex justify-content-center gap-4 mt-3">
+          <a href="https://www.linkedin.com/in/victorwangye/" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+          <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#"><i class="bi bi-youtube fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
-    <p style="font-size:0.9em;color:#aaa;">
-        © 2025 <strong>Mentes404™</strong> — Todos los derechos reservados.
-    </p>
+  <div class="footer-social">
+    <div class="d-flex justify-content-center gap-3 mb-3">
+      <a href="#"><i class="bi bi-spotify fs-3"></i></a>
+      <a href="#"><i class="bi bi-apple fs-3"></i></a>
+      <a href="#"><i class="bi bi-youtube fs-3"></i></a>
+      <a href="#"><i class="bi bi-instagram fs-3"></i></a>
+      <a href="https://www.linkedin.com/in/victorwangye/" target="_blank"><i class="bi bi-linkedin fs-3"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-menu mb-3">
+    <a href="../index.html">Inicio</a>
+    <a href="../episodios/index.html">Episodios</a>
+    <a href="../Personas-que-hemos-invitado-al-Podcast/index.html">Invitados</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+
+  <p style="font-size:0.85em;color:#aaa;">© 2025 <strong>Mentes404™</strong> | Estrategia y Curación de Contenido</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
