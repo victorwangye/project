@@ -253,3 +253,22 @@ main h1 {
   .image-container-new { height: 180px; }
   header { padding: 1rem; }
 }
+/* 1. OCULTAR ETIQUETAS DE CATEGORÍA */
+.category-badge-new {
+    display: none !important; /* Esto elimina la etiqueta de Move, Tech, etc. de las cards */
+}
+
+/* 2. CENTRAR PAGINACIÓN */
+/* Aseguramos que el contenedor de la paginación ocupe todo el ancho y su contenido esté centrado */
+.pagination {
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 0;
+    list-style: none;
+    margin-top: 3rem;
+}
+
+/* Ajuste adicional para el contenedor de la lista de paginación */
+#pagination {
+    justify-content: center !important;
+}
