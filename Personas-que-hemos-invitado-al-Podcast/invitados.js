@@ -5,211 +5,166 @@ document.addEventListener("DOMContentLoaded", async () => {
     const modalContainer = document.getElementById("modals-container");
 
     let invitados = [];
-    let filteredInvitados = []; 
     let currentPage = 1;
-    const perPage = 9; 
-    const BIO_COLLAPSE_THRESHOLD = 300;
+    const perPage = 9; // Configurado para mostrar 3 filas de 3 columnas
 
-    // Función de ordenamiento
-    function customSort(a, b) {
-        const isALetter = /[a-zA-Z]/.test(a.id);
-        const isBLetter = /[a-zA-Z]/.test(b.id);
-        const idA = String(a.id);
-        const idB = String(b.id);
-        if (isALetter && !isBLetter) return -1;
-        if (!isALetter && isBLetter) return 1;
-        if (isALetter && isBLetter) {
-            return idA.localeCompare(idB);
-        } else {
-            return Number(idA) - Number(idB);
-        }
-    }
-
+    // 1. Cargar los datos desde el JSON
     async function loadData() {
         try {
             const res = await fetch("invitados.json");
-            if (!res.ok) throw new Error("No se pudo cargar invitados.json");
+            if (!res.ok) throw new Error("No se pudo cargar el archivo JSON");
             invitados = await res.json();
-            invitados.sort(customSort); 
-            filteredInvitados = invitados;
+            
+            // Opcional: Ordenar invitados por ID o nombre si es necesario
+            // invitados.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+
             renderGuests();
         } catch (err) {
+            console.error("Error cargando invitados:", err);
             if (container) {
-                container.innerHTML = `<p class="text-danger text-center">Error cargando invitados: ${err.message}</p>`;
+                container.innerHTML = `<p class="text-center text-danger">Error al cargar invitados. Revisa la consola.</p>`;
             }
-            console.error(err);
         }
     }
 
+    // 2. Renderizar las tarjetas de invitados
     function renderGuests() {
         if (!container || !template) return;
 
         container.innerHTML = "";
-        modalContainer.innerHTML = "";
+        if (modalContainer) modalContainer.innerHTML = "";
         
+        // Calcular rango de paginación
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
-        const pagData = filteredInvitados.slice(start, end);
-
-        if (pagData.length === 0) {
-            container.innerHTML = `<p class="text-center text-secondary mt-5">No hay invitados disponibles.</p>`;
-            pagination.innerHTML = "";
-            return;
-        }
+        const pagData = invitados.slice(start, end);
 
         pagData.forEach(guest => {
             const card = template.cloneNode(true);
-            const modalId = `modalGuest${String(guest.id).replace(/\./g, '_')}`; 
-            card.id = "";
             card.style.display = "block";
+            card.id = ""; // Limpiar el ID del clon
 
-            // Imagen
+            // Crear un ID único para el modal basado en el ID del invitado
+            const modalId = `modalGuest_${guest.id}`.replace(/\./g, '_');
+
+            // Asignar Imagen
             const img = card.querySelector("img");
             if (img) {
                 img.src = guest.imagen;
                 img.alt = guest.nombre;
             }
 
-            // Nombre y Título
+            // Asignar Nombre y Título
             const title = card.querySelector(".card-title");
             if (title) title.textContent = guest.nombre;
             
             const text = card.querySelector(".card-text");
             if (text) text.textContent = guest.titulo;
 
-            // Botón de Modal (Corregido para buscar por clase genérica o tipo)
-            // Buscamos el botón que dice "Ver más" o el segundo botón del grupo
-            const modalButton = card.querySelector("button.btn-accent") || card.querySelector("button");
-            if (modalButton) {
-                modalButton.setAttribute("data-bs-toggle", "modal");
-                modalButton.setAttribute("data-bs-target", `#${modalId}`);
-                modalButton.textContent = "Ver más";
+            // Configurar Botón "Escuchar" (el enlace <a>)
+            const listenBtn = card.querySelector(".btn-listen") || card.querySelector("a.btn");
+            if (listenBtn) {
+                listenBtn.href = guest.episodio_link || "#";
+                listenBtn.target = "_blank";
             }
 
-            // Botón de Escuchar
-            const listenButton = card.querySelector("a.btn");
-            if (listenButton) {
-                listenButton.href = guest.episodio_link || "#"; 
-                listenButton.target = "_blank";
+            // Configurar Botón "Ver más" (el <button>)
+            const moreBtn = card.querySelector(".btn-more") || card.querySelector("button");
+            if (moreBtn) {
+                moreBtn.setAttribute("data-bs-toggle", "modal");
+                moreBtn.setAttribute("data-bs-target", `#${modalId}`);
             }
 
             container.appendChild(card);
 
-            // Crear el modal
-            const modalHTML = createModal(guest, modalId);
-            const wrapper = document.createElement('div');
-            wrapper.innerHTML = modalHTML;
-            modalContainer.appendChild(wrapper.firstChild);
+            // Generar el Modal correspondiente
+            if (modalContainer) {
+                renderModal(guest, modalId);
+            }
         });
 
-        initializeCollapseEvents();
         renderPagination();
     }
 
-    function createModal(guest, modalId) {
-        const getIconClass = (tipo, icono) => {
-            if (tipo === "twitter" || tipo === "bluesky") return "bi bi-twitter-x";
-            return `bi ${icono}`;
-        };
-
-        const socialLinksHTML = guest.links.map(link => {
-            let contentHTML = `<i class="${getIconClass(link.tipo, link.icono)} fs-5"></i>`;
-            if (link.tipo === "tekdi_logo") {
-                contentHTML = `<img src="${link.icono}" alt="Logo" style="width: 24px; filter: invert(0.8); vertical-align: middle;">`;
-            }
-
-            return `
-            <a href="${link.url}" class="btn btn-outline-info" target="_blank" rel="noopener noreferrer">
-                ${contentHTML}
-            </a>`;
-        }).join('');
-
-        const bioContent = guest.bio_completa || guest.bio_corta || "";
-        const formattedBio = bioContent.replace(/\n/g, '<br>');
-        let displayBio = `<p>${formattedBio}</p>`;
-        let collapseToggle = '';
-
-        if (formattedBio.length > BIO_COLLAPSE_THRESHOLD) {
-            const shortBio = formattedBio.substring(0, BIO_COLLAPSE_THRESHOLD) + '...';
-            displayBio = `
-                <p id="short-bio-${guest.id}">${shortBio}</p>
-                <div class="collapse" id="more-${guest.id}">
-                    <p>${formattedBio}</p>
-                </div>`;
-            collapseToggle = `
-                <button class="btn btn-primary btn-sm collapse-btn" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#more-${guest.id}" 
-                        data-short="#short-bio-${guest.id}">
-                    Ver más
-                </button>`;
-        }
-
-        return `
-        <div class="modal fade" id="${modalId}" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
-              <div class="modal-header border-0">
-                <h5 class="modal-title text-info">${guest.nombre}</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body">
-                <p class="fw-bold">${guest.titulo}</p>
-                <hr class="border-secondary">
-                ${displayBio}
-                ${collapseToggle}
-                <hr class="border-secondary">
-                <p><strong>${guest.episodio_numero || "Episodio"}:</strong> ${guest.episodio_titulo}</p>
-              </div>
-              <div class="modal-footer flex-column border-0">
-                <a href="${guest.episodio_link || "#"}" class="btn btn-accent w-100 mb-3" target="_blank">
-                    <i class="bi bi-headphones"></i> Escuchar Episodio
-                </a>
-                <div class="d-flex gap-2">
-                  ${socialLinksHTML}
+    // 3. Generar el HTML de los modales dinámicamente
+    function renderModal(guest, modalId) {
+        const modalHtml = `
+            <div class="modal fade" id="${modalId}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-dark text-light border-secondary shadow-lg">
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title text-info fw-bold">${guest.nombre}</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="fw-bold">${guest.titulo}</p>
+                            <hr class="border-secondary">
+                            <p>${guest.bio_completa || guest.bio_corta || "Sin biografía disponible."}</p>
+                            <hr class="border-secondary">
+                            <p class="small"><strong>Episodio:</strong> ${guest.episodio_titulo || "Pendiente"}</p>
+                        </div>
+                        <div class="modal-footer border-0 justify-content-center">
+                            <a href="${guest.episodio_link || '#'}" target="_blank" class="btn btn-primary w-100">
+                                <i class="bi bi-headphones"></i> Escuchar Episodio completo
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>`;
+            </div>`;
+        modalContainer.insertAdjacentHTML('beforeend', modalHtml);
     }
 
-    function initializeCollapseEvents() {
-        document.querySelectorAll('.collapse-btn').forEach(btn => {
-            const target = document.querySelector(btn.getAttribute('data-bs-target'));
-            const shortBio = document.querySelector(btn.getAttribute('data-short'));
-            if (target) {
-                target.addEventListener('show.bs.collapse', () => {
-                    btn.textContent = "Ocultar";
-                    if (shortBio) shortBio.style.display = "none";
-                });
-                target.addEventListener('hide.bs.collapse', () => {
-                    btn.textContent = "Ver más";
-                    if (shortBio) shortBio.style.display = "block";
-                });
-            }
-        });
-    }
-
+    // 4. Renderizar Paginación con flechas
     function renderPagination() {
-        const totalPages = Math.ceil(filteredInvitados.length / perPage);
         if (!pagination) return;
+        const totalPages = Math.ceil(invitados.length / perPage);
         pagination.innerHTML = "";
+
         if (totalPages <= 1) return;
 
+        // Botón Anterior («)
+        createPageItem("«", currentPage > 1, () => {
+            currentPage--;
+            renderGuests();
+            window.scrollTo(0, 0);
+        });
+
+        // Números de página
         for (let i = 1; i <= totalPages; i++) {
-            const li = document.createElement("li");
-            li.className = `page-item ${i === currentPage ? "active" : ""}`;
-            li.innerHTML = `<a class="page-link bg-dark text-white border-secondary" href="#">${i}</a>`;
-            li.addEventListener("click", (e) => {
-                e.preventDefault();
+            createPageItem(i, true, () => {
                 currentPage = i;
                 renderGuests();
                 window.scrollTo(0, 0);
-            });
-            pagination.appendChild(li);
+            }, i === currentPage);
         }
+
+        // Botón Siguiente (»)
+        createPageItem("»", currentPage < totalPages, () => {
+            currentPage++;
+            renderGuests();
+            window.scrollTo(0, 0);
+        });
     }
 
+    // Función auxiliar para crear elementos de paginación
+    function createPageItem(text, enabled, onClick, active = false) {
+        const li = document.createElement("li");
+        li.className = `page-item ${enabled ? "" : "disabled"} ${active ? "active" : ""}`;
+        
+        const a = document.createElement("a");
+        a.className = "page-link";
+        a.href = "#";
+        a.textContent = text;
+        
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (enabled) onClick();
+        });
+
+        li.appendChild(a);
+        pagination.appendChild(li);
+    }
+
+    // Iniciar carga
     loadData();
 });
