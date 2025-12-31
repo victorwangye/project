@@ -1,6 +1,55 @@
+/* ================================================= */
+/* 1. FUENTES LOCALES (Rutas para subcarpetas)       */
+/* ================================================= */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================= */
+/* 2. RESET Y VARIABLES                             */
+/* ================================================= */
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -10,15 +59,21 @@
   --color-text: #eee7d5;
   --color-accent: #2093cc;
   --color-secondary: #ccc;
+  --font-main: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  background-color: var(--color-bg-alt);
   color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===== Estilos de Base (Header, Footer, Paginación) ===== */
+/* ================================================= */
+/* 3. HEADER Y FOOTER                               */
+/* ================================================= */
+
 header {
   background-color: var(--color-bg);
   display: flex;
@@ -31,10 +86,11 @@ header {
 }
 
 a.logo-btn {
-  font-weight: 700;
+  font-weight: 800; /* ExtraBold */
   color: var(--color-accent);
   text-decoration: none;
   font-size: 1.4rem;
+  letter-spacing: -0.02em;
 }
 
 nav {
@@ -55,117 +111,62 @@ nav a.menu-text.active {
   font-weight: 700;
 }
 
-nav a.menu-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-  transition: width 0.3s ease;
-}
-
-nav a.menu-text:hover::after,
-nav a.menu-text.active::after {
-  width: 100%;
-}
-
-/* Asegura que el fondo del footer sea el color oscuro principal */
 footer {
-  background-color: var(--color-bg); /* #0e1722 */
+  background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   text-align: center;
+  border-top: 1px solid #1a2633;
 }
 
-/* Estilos para los enlaces del menú del footer */
-.footer-menu a {
+footer a {
   color: var(--color-text);
   text-decoration: none;
+  font-weight: 500;
   margin: 0 0.5rem;
-  transition: color 0.3s ease;
 }
 
-.footer-menu a:hover {
+footer a:hover {
   color: var(--color-accent);
 }
 
-/* Asegura que los iconos de redes sociales cambien de color al pasar el cursor */
-.footer-social a {
-  color: var(--color-text);
-  transition: color 0.3s ease;
+/* ================================================= */
+/* 4. PANEL DE CONTROL (FILTROS)                    */
+/* ================================================= */
+
+main h1 {
+  font-weight: 800; /* Coherencia con el Hero */
+  letter-spacing: -0.02em;
 }
-
-.footer-social a:hover {
-  color: var(--color-accent);
-}
-
-/* Paginación - Estilos base */
-.pagination {
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.pagination .page-item .page-link {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    border: 1px solid #333;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-}
-
-.pagination .page-item:not(.active) .page-link:hover {
-    background-color: #222;
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
-.pagination .page-item.active .page-link {
-    background-color: var(--color-accent) !important;
-    color: white !important;
-    border-color: var(--color-accent) !important;
-}
-
-
-/* ===== ESTILOS DEL PANEL DE CONTROL (MODERNO) ===== */
 
 .filter-control-panel {
-    background-color: var(--color-bg-alt) !important;
-    border: 1px solid #1a2633;
+  background-color: var(--color-bg) !important;
+  border: 1px solid #1a2633;
 }
 
-/* Estilos para los botones de categoría */
 #categorias .btn {
-    border-color: var(--color-accent) !important;
-    color: var(--color-accent) !important;
-    transition: all 0.2s ease;
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
-#categorias .btn:hover:not(.active) {
-    background-color: rgba(32, 147, 204, 0.1);
-}
+
 #categorias .btn.active {
-    background-color: var(--color-accent) !important;
-    color: var(--color-text) !important;
+  background-color: var(--color-accent) !important;
+  color: #fff !important;
+  font-weight: 600;
 }
 
-/* Estilos para el Dropdown de Ordenamiento */
 #sortDropdown {
-    background-color: var(--color-bg) !important;
-    color: var(--color-text) !important;
-    border-color: #333 !important;
-    padding-right: 2.5rem; 
-}
-#sortDropdown option {
-    background-color: var(--color-bg); 
-    color: var(--color-text);
+  background-color: var(--color-bg-alt) !important;
+  color: var(--color-text) !important;
+  border: 1px solid #1a2633 !important;
+  font-weight: 400;
 }
 
-
-/* ===== ESTILOS DE LA TARJETA (FINAL) ===== */
+/* ================================================= */
+/* 5. DISEÑO DE LA TARJETA (MODERNO)                */
+/* ================================================= */
 
 .episode-card-new {
   background-color: var(--color-bg-card); 
@@ -178,102 +179,77 @@ footer {
 
 .episode-card-new:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(32, 147, 204, 0.4); 
+  box-shadow: 0 8px 25px rgba(32, 147, 204, 0.3); 
 }
 
-/* Contenedor de Imagen */
 .image-container-new {
   position: relative;
   width: 100%;
   height: 200px; 
-  overflow: hidden;
+  background-color: #000;
 }
 
 .card-img-top-new {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Para no recortar las miniaturas del podcast */
 }
 
-/* Texto Overlay Superpuesto en la Imagen (Solo el degradado) */
-.image-overlay-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  /* Degradado oscuro para mejorar la legibilidad del texto sobre la imagen */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-}
-
-
-/* Cuerpo de la Tarjeta */
 .card-body-new {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
   flex-grow: 1;
 }
 
 .card-title-new {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700; /* Bold para títulos de episodios */
   line-height: 1.3;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   color: var(--color-text);
 }
 
 .card-text-new {
   font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  /* Truncamiento CSS para asegurar que no se desborde */
-  overflow: hidden;
+  font-weight: 400; /* Regular para lectura */
+  color: var(--color-secondary);
+  margin-bottom: 1.2rem;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Permitir 4 líneas de descripción antes de cortar */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Botón Escuchar */
 .btn-accent-new {
   background-color: var(--color-accent);
-  color: var(--color-text);
+  color: #fff;
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.5rem;
   transition: all 0.3s ease;
   width: 100%; 
 }
 
-.btn-accent-new:hover {
-  background-color: #31b0f2;
-  transform: scale(1.02);
-}
+/* ================================================= */
+/* 6. PAGINACIÓN Y OTROS                            */
+/* ================================================= */
 
-/* Dropdown de escuchar de la tarjeta */
-.dropdown-menu {
-  background-color: var(--color-bg-card);
-  border: 1px solid #1a2633;
-}
-
-.dropdown-item {
+.pagination .page-link {
+  background-color: var(--color-bg);
   color: var(--color-text);
-  font-size: 0.9rem;
-  padding: 0.6rem 1rem;
+  border: 1px solid #1a2633;
+  font-weight: 500;
 }
 
-.dropdown-item:hover {
-  background-color: var(--color-accent);
-  color: #fff !important;
+.pagination .page-item.active .page-link {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
 }
 
-
-/* Responsive para que la imagen mantenga altura en móvil */
-@media (max-width: 576px) {
-    .image-container-new {
-        height: 180px; 
-    }
+@media (max-width: 768px) {
+  nav { display: none; }
+  .image-container-new { height: 180px; }
+  header { padding: 1rem; }
 }
