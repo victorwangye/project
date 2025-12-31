@@ -7,26 +7,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     let invitados = [];
     let filteredInvitados = []; 
     let currentPage = 1;
-    const perPage = 9; // 3 columnas por fila (3x3)
+    const perPage = 9; 
     const BIO_COLLAPSE_THRESHOLD = 300;
 
-    // Función de ordenamiento personalizado: prioriza IDs con letras
+    // Función de ordenamiento
     function customSort(a, b) {
         const isALetter = /[a-zA-Z]/.test(a.id);
         const isBLetter = /[a-zA-Z]/.test(b.id);
         const idA = String(a.id);
         const idB = String(b.id);
-
-        // 1. Prioridad: IDs con letra (ej. "1a") van primero.
         if (isALetter && !isBLetter) return -1;
         if (!isALetter && isBLetter) return 1;
-
-        // 2. Ordenación secundaria:
         if (isALetter && isBLetter) {
-            // Si ambos tienen letra: ordenación alfabética por ID
             return idA.localeCompare(idB);
         } else {
-            // Si ambos son numéricos: ordenación numérica ascendente
             return Number(idA) - Number(idB);
         }
     }
@@ -36,29 +30,26 @@ document.addEventListener("DOMContentLoaded", async () => {
             const res = await fetch("invitados.json");
             if (!res.ok) throw new Error("No se pudo cargar invitados.json");
             invitados = await res.json();
-
-            // Aplicar el ordenamiento personalizado
             invitados.sort(customSort); 
-            
-            // La lista inicial filtrada son todos los invitados
             filteredInvitados = invitados;
             renderGuests();
         } catch (err) {
-            container.innerHTML = `<p class="text-danger text-center">Error cargando invitados: ${err.message}</p>`;
+            if (container) {
+                container.innerHTML = `<p class="text-danger text-center">Error cargando invitados: ${err.message}</p>`;
+            }
             console.error(err);
         }
     }
 
-    // Nota: filterGuests (buscador) ha sido eliminado
-
     function renderGuests() {
+        if (!container || !template) return;
+
         container.innerHTML = "";
         modalContainer.innerHTML = "";
         
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
-        // Usamos la lista completa, ya que no hay búsqueda activa
-        const pagData = invitados.slice(start, end);
+        const pagData = filteredInvitados.slice(start, end);
 
         if (pagData.length === 0) {
             container.innerHTML = `<p class="text-center text-secondary mt-5">No hay invitados disponibles.</p>`;
@@ -68,29 +59,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         pagData.forEach(guest => {
             const card = template.cloneNode(true);
-            const modalId = `modalGuest${String(guest.id)}`; 
+            const modalId = `modalGuest${String(guest.id).replace(/\./g, '_')}`; 
             card.id = "";
             card.style.display = "block";
 
-            card.querySelector("img").src = guest.imagen;
-            card.querySelector("img").alt = guest.nombre;
-            card.querySelector("h5").textContent = guest.nombre;
-            card.querySelector("p.card-text").textContent = guest.titulo;
+            // Imagen
+            const img = card.querySelector("img");
+            if (img) {
+                img.src = guest.imagen;
+                img.alt = guest.nombre;
+            }
 
-            const modalButton = card.querySelector(".btn-secondary");
-            modalButton.setAttribute("data-bs-toggle", "modal");
-            modalButton.setAttribute("data-bs-target", `#${modalId}`);
-            modalButton.textContent = "Ver más";
+            // Nombre y Título
+            const title = card.querySelector(".card-title");
+            if (title) title.textContent = guest.nombre;
+            
+            const text = card.querySelector(".card-text");
+            if (text) text.textContent = guest.titulo;
 
-            // CORRECCIÓN: Enlace de la tarjeta apunta al link de YouTube
-            const listenButton = card.querySelector(".btn-dark");
-            listenButton.href = guest.episodio_link || "#"; 
-            listenButton.target = "_blank";
+            // Botón de Modal (Corregido para buscar por clase genérica o tipo)
+            // Buscamos el botón que dice "Ver más" o el segundo botón del grupo
+            const modalButton = card.querySelector("button.btn-accent") || card.querySelector("button");
+            if (modalButton) {
+                modalButton.setAttribute("data-bs-toggle", "modal");
+                modalButton.setAttribute("data-bs-target", `#${modalId}`);
+                modalButton.textContent = "Ver más";
+            }
+
+            // Botón de Escuchar
+            const listenButton = card.querySelector("a.btn");
+            if (listenButton) {
+                listenButton.href = guest.episodio_link || "#"; 
+                listenButton.target = "_blank";
+            }
 
             container.appendChild(card);
 
+            // Crear el modal
             const modalHTML = createModal(guest, modalId);
-            modalContainer.innerHTML += modalHTML;
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = modalHTML;
+            modalContainer.appendChild(wrapper.firstChild);
         });
 
         initializeCollapseEvents();
@@ -99,136 +108,107 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function createModal(guest, modalId) {
         const getIconClass = (tipo, icono) => {
-            if (tipo === "empresa" && icono === "bi-code-slash") return "bi bi-code-slash fs-5";
-            if (tipo === "empresa" && icono === "bi-building") return "bi bi-building fs-5";
-            if (tipo === "empresa" && icono === "bi-award") return "bi bi-award fs-5";
-            if (tipo === "osompress") return "bi bi-code-square fs-5";
-            if (tipo === "academia") return "bi bi-mortarboard fs-5";
-            // CORRECCIÓN: Manejar explícitamente el tipo "twitter" para asegurar que el ícono bi-twitter-x se renderice
-            if (tipo === "twitter" || tipo === "bluesky") return "bi bi-twitter-x fs-5";
-            return `bi ${icono} fs-5`;
+            if (tipo === "twitter" || tipo === "bluesky") return "bi bi-twitter-x";
+            return `bi ${icono}`;
         };
 
         const socialLinksHTML = guest.links.map(link => {
-            let contentHTML;
-
-            // Lógica para mostrar la imagen si es el logo de TEKDI (o similar)
+            let contentHTML = `<i class="${getIconClass(link.tipo, link.icono)} fs-5"></i>`;
             if (link.tipo === "tekdi_logo") {
-                // Se asume que el 'icono' contiene la ruta de la imagen
-                contentHTML = `<img src="${link.icono}" alt="Logo TEKDI" style="width: 24px; height: 24px; filter: invert(0.8) brightness(1.5); vertical-align: middle;">`;
-            } else {
-                // Lógica para iconos de Bootstrap (bi)
-                const iconClass = getIconClass(link.tipo, link.icono);
-                contentHTML = `<i class="${iconClass}"></i>`;
+                contentHTML = `<img src="${link.icono}" alt="Logo" style="width: 24px; filter: invert(0.8); vertical-align: middle;">`;
             }
 
             return `
-            <a href="${link.url}" class="btn btn-outline-info" target="_blank" aria-label="${link.tipo}" rel="noopener noreferrer">
+            <a href="${link.url}" class="btn btn-outline-info" target="_blank" rel="noopener noreferrer">
                 ${contentHTML}
-            </a>
-          `;
+            </a>`;
         }).join('');
 
-        let bioContent = guest.bio_completa || guest.bio_corta; 
-        let displayBio;
-        let collapseToggle = '';
-        
+        const bioContent = guest.bio_completa || guest.bio_corta || "";
         const formattedBio = bioContent.replace(/\n/g, '<br>');
+        let displayBio = `<p>${formattedBio}</p>`;
+        let collapseToggle = '';
 
         if (formattedBio.length > BIO_COLLAPSE_THRESHOLD) {
-            const splitIndex = formattedBio.lastIndexOf(' ', BIO_COLLAPSE_THRESHOLD);
-            const shortBio = formattedBio.substring(0, splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD) + '...';
-            const hiddenBio = formattedBio.substring(splitIndex > -1 ? splitIndex : BIO_COLLAPSE_THRESHOLD);
-
+            const shortBio = formattedBio.substring(0, BIO_COLLAPSE_THRESHOLD) + '...';
             displayBio = `
-              <p>${shortBio}<span id="dots-${guest.id}"></span></p>
-              <div class="collapse" id="more-${guest.id}">
-                  <p style="margin-top: -1rem;">${hiddenBio}</p>
-              </div>
-          `;
+                <p id="short-bio-${guest.id}">${shortBio}</p>
+                <div class="collapse" id="more-${guest.id}">
+                    <p>${formattedBio}</p>
+                </div>`;
             collapseToggle = `
-              <button class="btn btn-primary btn-sm mt-2 collapse-btn" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#more-${guest.id}" 
-                      aria-expanded="false" 
-                      aria-controls="more-${guest.id}" 
-                      data-dots="#dots-${guest.id}">
-                  Ver más
-              </button>
-          `;
-        } else {
-            displayBio = `<p>${formattedBio}</p>`;
+                <button class="btn btn-primary btn-sm collapse-btn" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#more-${guest.id}" 
+                        data-short="#short-bio-${guest.id}">
+                    Ver más
+                </button>`;
         }
 
         return `
-        <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}Label" aria-hidden="true">
+        <div class="modal fade" id="${modalId}" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header bg-dark text-white border-0">
-                <h5 class="modal-title" id="${modalId}Label">${guest.nombre}</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-content bg-dark text-light border-secondary">
+              <div class="modal-header border-0">
+                <h5 class="modal-title text-info">${guest.nombre}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
               </div>
-              <div class="modal-body bg-dark text-light">
-                <p><strong>${guest.titulo}</strong></p>
-                <hr class="text-secondary">
-                <p><strong>Bio:</strong></p>
+              <div class="modal-body">
+                <p class="fw-bold">${guest.titulo}</p>
+                <hr class="border-secondary">
                 ${displayBio}
                 ${collapseToggle}
-                <hr class="text-secondary">
-                <p><strong>${guest.episodio_numero || "Episodio pendiente"}:</strong> ${guest.episodio_titulo}</p>
+                <hr class="border-secondary">
+                <p><strong>${guest.episodio_numero || "Episodio"}:</strong> ${guest.episodio_titulo}</p>
               </div>
-              <div class="modal-footer flex-column align-items-center bg-dark border-0">
-                <div class="d-grid gap-2 col-10 col-md-8 mb-3">
-                  <a href="${guest.episodio_link || "#"}" class="btn btn-accent btn-lg w-100" target="_blank" rel="noopener noreferrer"><i class="bi bi-headphones"></i> Escuchar Episodio</a>
-                </div>
-                <div class="d-flex flex-wrap gap-3 justify-content-center text-center">
+              <div class="modal-footer flex-column border-0">
+                <a href="${guest.episodio_link || "#"}" class="btn btn-accent w-100 mb-3" target="_blank">
+                    <i class="bi bi-headphones"></i> Escuchar Episodio
+                </a>
+                <div class="d-flex gap-2">
                   ${socialLinksHTML}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      `;
+        </div>`;
     }
 
     function initializeCollapseEvents() {
         document.querySelectorAll('.collapse-btn').forEach(btn => {
-            const targetId = btn.getAttribute('data-bs-target');
-            const collapseElement = document.querySelector(targetId);
-            const dotsElement = document.querySelector(btn.getAttribute('data-dots'));
-
-            if (collapseElement) {
-                collapseElement.addEventListener('show.bs.collapse', () => {
+            const target = document.querySelector(btn.getAttribute('data-bs-target'));
+            const shortBio = document.querySelector(btn.getAttribute('data-short'));
+            if (target) {
+                target.addEventListener('show.bs.collapse', () => {
                     btn.textContent = "Ocultar";
-                    if (dotsElement) dotsElement.style.display = "none";
+                    if (shortBio) shortBio.style.display = "none";
                 });
-                collapseElement.addEventListener('hide.bs.collapse', () => {
+                target.addEventListener('hide.bs.collapse', () => {
                     btn.textContent = "Ver más";
-                    if (dotsElement) dotsElement.style.display = "inline";
+                    if (shortBio) shortBio.style.display = "block";
                 });
             }
         });
     }
 
     function renderPagination() {
-        const totalPages = Math.ceil(filteredInvitados.length / perPage); 
+        const totalPages = Math.ceil(filteredInvitados.length / perPage);
+        if (!pagination) return;
         pagination.innerHTML = "";
         if (totalPages <= 1) return;
 
-        const addPage = (text, disabled, active, onClick) => {
-            const li = document.createElement("li");
-            li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-            li.innerHTML = `<a class="page-link bg-dark text-white border-secondary d-flex justify-content-center align-items-center" href="#">${text}</a>`;
-            if (!disabled) li.addEventListener("click", onClick);
-            pagination.appendChild(li);
-        };
-
-        addPage("«", currentPage === 1, false, () => { currentPage--; renderGuests(); });
         for (let i = 1; i <= totalPages; i++) {
-            addPage(i, false, i === currentPage, () => { currentPage = i; renderGuests(); });
+            const li = document.createElement("li");
+            li.className = `page-item ${i === currentPage ? "active" : ""}`;
+            li.innerHTML = `<a class="page-link bg-dark text-white border-secondary" href="#">${i}</a>`;
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentPage = i;
+                renderGuests();
+                window.scrollTo(0, 0);
+            });
+            pagination.appendChild(li);
         }
-        addPage("»", currentPage === totalPages, false, () => { currentPage++; renderGuests(); });
     }
 
     loadData();
