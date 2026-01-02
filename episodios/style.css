@@ -1,175 +1,62 @@
-/* ================================================= */
-/* 1. FUENTES Y VARIABLES                            */
-/* ================================================= */
-@font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins-Regular.woff2') format('woff2');
-  font-weight: 400; font-style: normal; font-display: swap;
+/* =========================
+   ESTILOS SOLO DE EPISODIOS
+   ========================= */
+
+.episodios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-:root {
-  --color-bg: #0e1722;
-  --color-bg-alt: #0b1118;
-  --color-bg-card: #141f2b; 
-  --color-text: #eee7d5;
-  --color-accent: #2093cc;
-  --color-secondary: #ccc;
-  --font-main: 'Poppins', sans-serif;
-}
-
-body {
-  font-family: var(--font-main);
-  background-color: var(--color-bg-alt);
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-/* ================================================= */
-/* 2. HEADER (MENÚ CENTRADO EN EL MEDIO)             */
-/* ================================================= */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid #1a2633;
-}
-
-/* El logo a la izquierda con ancho fijo */
-.logo-btn {
-  flex: 0 0 200px;
-  font-weight: 800;
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: var(--color-accent);
-}
-
-/* NAVEGACIÓN CENTRADA EXACTAMENTE EN EL MEDIO */
-nav.d-none.d-md-flex {
-  flex: 1;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.menu-text {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.menu-text.active, .menu-text:hover {
-  color: var(--color-accent);
-}
-
-/* Espaciador a la derecha para equilibrar el logo y centrar el nav */
-.header-spacer {
-  flex: 0 0 200px;
-}
-
-/* ================================================= */
-/* 3. CARDS (DISEÑO ORIGINAL)                        */
-/* ================================================= */
-.episode-card-new {
-  background-color: var(--color-bg-card); 
-  border: none;
+/* Tarjeta de episodio */
+.episodio-card {
+  background-color: #111;
   border-radius: 12px;
-  overflow: hidden; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.episode-card-new:hover {
-  transform: translateY(-5px);
-}
-
-.image-container-new {
-  position: relative;
-  width: 100%;
-  height: 200px; /* Altura original */
-  background-color: #000;
-}
-
-.card-img-top-new {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* No recorta la imagen original */
-}
-
-.card-body-new {
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-title-new {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-text);
+.episodio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
 }
 
-.btn-accent-new {
-  background-color: var(--color-accent);
-  color: #fff;
-  border-radius: 50px;
-  width: 100%;
-  font-weight: 600;
+/* Título del episodio */
+.episodio-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
-/* Ocultar etiquetas de categoría */
-.category-badge-new {
-  display: none !important;
+/* Descripción */
+.episodio-card p {
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 1rem;
 }
 
-/* ================================================= */
-/* 4. PAGINACIÓN (EFECTO BLOQUEO/OSCURO)              */
-/* ================================================= */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 3rem;
+/* Botón */
+.episodio-card button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.pagination .page-link {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  border: 1px solid #1a2633;
-  padding: 10px 18px;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.pagination .page-link:hover:not(.disabled) {
-  background-color: var(--color-accent);
-  color: white;
-}
-
-.pagination .page-item.active .page-link {
-  background-color: var(--color-accent) !important;
-  border-color: var(--color-accent) !important;
-  color: white !important;
-}
-
-/* EFECTO DE BLOQUEO: Cuando no puedes ir más atrás o adelante */
-.pagination .page-item.disabled .page-link {
-  background-color: #080c11; /* Color oscuro/apagado */
-  color: #444;              /* Texto gris oscuro */
-  border-color: #1a2633;
-  cursor: not-allowed;      /* Cursor de prohibido */
-  opacity: 0.6;
-}
-
-/* ================================================= */
-/* 5. OTROS                                          */
-/* ================================================= */
-footer {
-  background-color: var(--color-bg);
-  padding: 3rem 1rem;
-  text-align: center;
-  border-top: 1px solid #1a2633;
-}
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media (max-width: 768px) {
-  .header-spacer { display: none; }
-  header { justify-content: space-between; }
-  .logo-btn { flex: 0 1 auto; }
+  .episodios-container {
+    padding: 1.2rem;
+  }
+
+  .episodio-card {
+    padding: 1.2rem;
+  }
+
+  .episodio-card h3 {
+    font-size: 1.1rem;
+  }
 }
