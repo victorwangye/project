@@ -74,31 +74,38 @@ body {
 /* 3. HEADER Y FOOTER                               */
 /* ================================================= */
 
-/* Deja esto en el CSS raíz y bórralo de episodios/style.css */
-header {
-  background-color: var(--color-bg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-
-
-a.logo-btn {
-  font-weight: 800; /* ExtraBold */
-  color: var(--color-accent);
-  text-decoration: none;
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-}
-
 nav {
   display: flex;
   gap: 2rem;
+}
+
+nav a.menu-text {
+  color: var(--color-text);
+  font-weight: 500; /* Medium para nitidez */
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav a.menu-text.active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+nav a.menu-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+nav a.menu-text:hover::after,
+nav a.menu-text.active::after {
+  width: 100%;
 }
 footer {
   background-color: var(--color-bg);
@@ -253,16 +260,4 @@ main h1 {
 /* 1. OCULTAR ETIQUETAS DE CATEGORÍA */
 .category-badge-new {
     display: none !important; /* Esto elimina la etiqueta de Move, Tech, etc. de las cards */
-}
-
-
-.menu-text {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.menu-text:hover,
-.menu-text.active {
-  color: var(--color-accent);
 }
