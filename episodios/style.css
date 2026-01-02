@@ -86,16 +86,7 @@ header {
   z-index: 1000;
 }
 
-nav a.menu-text {
-  color: var(--color-text);
-  font-weight: 500;
-  text-decoration: none;
-}
 
-nav a.menu-text.active {
-  color: var(--color-accent);
-  font-weight: 700;
-}
 
 a.logo-btn {
   font-weight: 800; /* ExtraBold */
