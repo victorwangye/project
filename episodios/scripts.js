@@ -64,12 +64,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (terminoBusqueda && b.score !== a.score) {
                 return b.score - a.score;
             }
+
             if (ordenActivo.startsWith("relevancia")) {
                 if (a.destacado && !b.destacado) return -1;
                 if (!a.destacado && b.destacado) return 1;
             }
+
             if (ordenActivo.includes("reciente")) return b.numero - a.numero;
             if (ordenActivo.includes("antiguo")) return a.numero - b.numero;
+
             return 0;
         });
 
@@ -79,7 +82,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function renderCards() {
-        // Limpiar contenedor manteniendo el template
         container.querySelectorAll(".col-12:not(#card-template)").forEach(el => el.remove());
 
         const start = (currentPage - 1) * perPage;
@@ -100,16 +102,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             cardWrapper.style.display = "block";
 
             const card = cardWrapper.querySelector(".episode-card-new");
+
             card.querySelector(".card-img-top-new").src = ep.imagen;
             card.querySelector(".card-img-top-new").alt = ep.titulo;
 
-            // El badge de categoría se mantiene en el DOM pero el CSS que pasaste lo oculta
             const badge = card.querySelector(".category-badge-new");
             const cat = ep.categorias?.[0] || "general";
             badge.className = `category-badge-new badge ${categoryColorMap[cat] || "bg-secondary"}`;
             badge.textContent = cat.toUpperCase();
 
-            card.querySelector(".card-title-new").textContent = ep.titulo.split(" | ")[0];
+            card.querySelector(".card-title-new").textContent =
+                ep.titulo.split(" | ")[0];
 
             card.querySelector(".card-text-new").textContent =
                 ep.descripcion.length > 150
@@ -130,32 +133,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         const totalPages = Math.ceil(filtrados.length / perPage);
         pagination.innerHTML = "";
 
-        if (totalPages <= 1) return;
+        if (totalPages === 0) return;
 
         const addPage = (text, disabled, active, onClick) => {
             const li = document.createElement("li");
-            // Se añade la clase 'disabled' para aplicar el efecto visual de bloqueo
             li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-            li.innerHTML = `<a class="page-link" href="#">${text}</a>`;
-            
-            if (!disabled) {
-                li.addEventListener("click", e => {
-                    e.preventDefault();
-                    onClick();
-                    // Efecto de subida suave al cambiar de página
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
+            li.innerHTML = `
+                <a class="page-link" href="#">${text}</a>`;
+            if (!disabled) li.addEventListener("click", e => {
+                e.preventDefault();
+                onClick();
+            });
             pagination.appendChild(li);
         };
 
-        // Botón Anterior (Atrás)
         addPage("«", currentPage === 1, false, () => {
             currentPage--;
             renderCards();
         });
 
-        // Lógica de números de página
         const start = Math.max(1, currentPage - 2);
         const end = Math.min(totalPages, currentPage + 2);
 
@@ -166,14 +162,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
 
-        // Botón Siguiente
         addPage("»", currentPage === totalPages, false, () => {
             currentPage++;
             renderCards();
         });
     }
 
-    // Listeners para filtros y búsqueda
     if (searchInput) {
         searchInput.addEventListener("input", () => {
             terminoBusqueda = searchInput.value.trim().toLowerCase();
