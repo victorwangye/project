@@ -74,39 +74,6 @@ body {
 /* 3. HEADER Y FOOTER                               */
 /* ================================================= */
 
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a.menu-text {
-  color: var(--color-text);
-  font-weight: 500; /* Medium para nitidez */
-  position: relative;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-nav a.menu-text.active {
-  color: var(--color-accent);
-  font-weight: 700;
-}
-
-nav a.menu-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-  transition: width 0.3s ease;
-}
-
-nav a.menu-text:hover::after,
-nav a.menu-text.active::after {
-  width: 100%;
-}
 footer {
   background-color: var(--color-bg);
   color: var(--color-text);
