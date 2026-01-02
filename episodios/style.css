@@ -1,62 +1,230 @@
-/* =========================
-   ESTILOS SOLO DE EPISODIOS
-   ========================= */
+/* ================================================= */
+/* 1. FUENTES LOCALES (Rutas para subcarpetas)       */
+/* ================================================= */
 
-.episodios-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Tarjeta de episodio */
-.episodio-card {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-.episodio-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Título del episodio */
-.episodio-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Descripción */
-.episodio-card p {
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================= */
+/* 2. RESET Y VARIABLES                             */
+/* ================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0e1722;
+  --color-bg-alt: #0b1118;
+  --color-bg-card: #141f2b; 
+  --color-text: #eee7d5;
+  --color-accent: #2093cc;
+  --color-secondary: #ccc;
+  --font-main: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
   line-height: 1.6;
-  opacity: 0.85;
-  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Botón */
-.episodio-card button {
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
+/* ================================================= */
+/* 3. HEADER Y FOOTER                               */
+/* ================================================= */
+
+footer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid #1a2633;
+}
+
+footer a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* ================================================= */
+/* 4. PANEL DE CONTROL (FILTROS)                    */
+/* ================================================= */
+
+main h1 {
+  font-weight: 800; /* Coherencia con el Hero */
+  letter-spacing: -0.02em;
+}
+
+.filter-control-panel {
+  background-color: var(--color-bg) !important;
+  border: 1px solid #1a2633;
+}
+
+#categorias .btn {
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#categorias .btn.active {
+  background-color: var(--color-accent) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+#sortDropdown {
+  background-color: var(--color-bg-alt) !important;
+  color: var(--color-text) !important;
+  border: 1px solid #1a2633 !important;
+  font-weight: 400;
+}
+
+/* ================================================= */
+/* 5. DISEÑO DE LA TARJETA (MODERNO)                */
+/* ================================================= */
+
+.episode-card-new {
+  background-color: var(--color-bg-card); 
   border: none;
-  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+.episode-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(32, 147, 204, 0.3); 
+}
+
+.image-container-new {
+  position: relative;
+  width: 100%;
+  height: 200px; 
+  background-color: #000;
+}
+
+.card-img-top-new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Para no recortar las miniaturas del podcast */
+}
+
+.card-body-new {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title-new {
+  font-size: 1.2rem;
+  font-weight: 700; /* Bold para títulos de episodios */
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+.card-text-new {
+  font-size: 0.95rem;
+  font-weight: 400; /* Regular para lectura */
+  color: var(--color-secondary);
+  margin-bottom: 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-accent-new {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%; 
+}
+
+/* ================================================= */
+/* 6. PAGINACIÓN Y OTROS                            */
+/* ================================================= */
+
+.pagination .page-link {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid #1a2633;
+  font-weight: 500;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+/* Asegura que el contenedor ocupe todo el ancho y el ul esté centrado */
+.pagination {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    padding-left: 0;        /* Elimina el padding por defecto de las listas */
+    list-style: none;
+    margin-top: 2rem;
+}
 
 @media (max-width: 768px) {
-  .episodios-container {
-    padding: 1.2rem;
-  }
-
-  .episodio-card {
-    padding: 1.2rem;
-  }
-
-  .episodio-card h3 {
-    font-size: 1.1rem;
-  }
+  nav { display: none; }
+  .image-container-new { height: 180px; }
+  header { padding: 1rem; }
+}
+/* 1. OCULTAR ETIQUETAS DE CATEGORÍA */
+.category-badge-new {
+    display: none !important; /* Esto elimina la etiqueta de Move, Tech, etc. de las cards */
 }
