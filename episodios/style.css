@@ -210,14 +210,7 @@ main h1 {
   background-color: var(--color-accent) !important;
   border-color: var(--color-accent) !important;
 }
-/* Asegura que el contenedor ocupe todo el ancho y el ul esté centrado */
-.pagination {
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    padding-left: 0;        /* Elimina el padding por defecto de las listas */
-    list-style: none;
-    margin-top: 2rem;
-}
+
 
 @media (max-width: 768px) {
   nav { display: none; }
