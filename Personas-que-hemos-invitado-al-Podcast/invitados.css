@@ -241,26 +241,10 @@ h1 {
 }
 
 @media (max-width: 576px) {
-  .pagination .page-link {
-    padding: 0.5rem 0.8rem;
-  }
   .guest-card .card-img-top {
     width: 130px;
     height: 130px;
   }
 }
-/* Ajuste para que la paginación sea responsive */
-.pagination {
-    flex-wrap: wrap; /* Permite que los números bajen a la siguiente línea si no caben */
-    justify-content: center;
-    gap: 5px; /* Reduce el espacio entre botones en móvil */
-}
 
-@media (max-width: 576px) {
-    .pagination .page-link {
-        padding: 0.4rem 0.6rem; /* Reduce aún más el tamaño del botón */
-        font-size: 0.85rem;      /* Reduce el tamaño del texto */
-        min-width: 35px;        /* Asegura un área de clic mínima cómoda */
-        text-align: center;
-    }
-}
+
