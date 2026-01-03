@@ -163,7 +163,27 @@ h1 {
   opacity: 0.3;
   color: var(--color-secondary);
 }
+/* Centrado de la paginación de invitados */
+#pagination {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap; /* Evita que se desborde en móviles si hay muchas páginas */
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
 
+/* Mejora visual para los items de paginación */
+.page-item.active .page-link {
+    background-color: #2093cc !important; /* Color de acento del podcast */
+    border-color: #2093cc !important;
+}
+
+.page-link {
+    background-color: #141f2b; /* Fondo oscuro coherente con las cards */
+    color: #eee7d5;
+    border: 1px solid #1a2633;
+}
 /* ================================================= */
 /* 5. MODALES (NOMBRE EN AZUL / BLANCO)             */
 /* ================================================= */
