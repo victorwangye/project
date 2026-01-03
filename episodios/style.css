@@ -211,6 +211,23 @@ main h1 {
   border-color: var(--color-accent) !important;
 }
 
+/* Forzar el centrado de la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Útil para móviles si hay muchas páginas */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+/* Opcional: Centrar el contenedor nav por si acaso */
+nav[aria-label="Paginación de episodios"] {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 
 @media (max-width: 768px) {
   nav { display: none; }
