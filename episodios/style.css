@@ -70,28 +70,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================================================= */
-/* 3. HEADER Y FOOTER                               */
-/* ================================================= */
 
-footer {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  padding: 3rem 1rem;
-  text-align: center;
-  border-top: 1px solid #1a2633;
-}
-
-footer a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 500;
-  margin: 0 0.5rem;
-}
-
-footer a:hover {
-  color: var(--color-accent);
-}
 
 /* ================================================= */
 /* 4. PANEL DE CONTROL (FILTROS)                    */
