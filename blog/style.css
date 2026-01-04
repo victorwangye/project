@@ -71,3 +71,20 @@
 .breadcrumb-item + .breadcrumb-item::before {
     color: #eee7d5; /* Color del texto principal */
 }
+/* Unificar las tarjetas del blog con el estilo global */
+.blog-card, .topic-card {
+    background-color: var(--color-bg) !important; /* Fondo #0e1722 */
+    border: 1px solid #1a2633 !important;
+    padding: 0 !important; /* Para que la imagen llegue al borde */
+    overflow: hidden;
+}
+
+.blog-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Ajuste para el hover */
+.blog-card:hover {
+    border-color: var(--color-accent) !important;
+    transform: translateY(-6px);
+}
