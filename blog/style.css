@@ -1,44 +1,92 @@
-/* Añade esto a victorwangye/project/.../blog/style.css */
+/* ======================================================
+   ESTILOS PARA ARTÍCULOS INDIVIDUALES
+   Ruta: /blog/articulos/*
+====================================================== */
 
-.article-container {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+.article-wrapper {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2.5rem 1.8rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
 }
 
-/* Mejora la legibilidad de los párrafos */
-.article-body p {
-    margin-bottom: 1.5rem;
-    text-align: justify;
+/* HERO */
+.article-hero {
+    margin-bottom: 2.5rem;
 }
 
-/* Estilo para las listas (Hitos) */
-.article-body ul {
-    padding-left: 1.2rem;
-    margin-bottom: 2rem;
+.article-category {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #1da1f2;
 }
 
-.article-body li {
-    margin-bottom: 1rem;
+.article-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: .6rem 0 1rem;
+    color: #111;
 }
 
-/* Estilo para el botón de acción (Call to Action) */
-.btn-primary {
-    background-color: #2093cc;
-    border: none;
-    padding: 12px 25px;
-    font-weight: 600;
-    transition: transform 0.2s;
+.article-meta {
+    font-size: .9rem;
+    color: #6c757d;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    background-color: #1a7ab0;
-}
-
-/* Imagen destacada con bordes suaves */
-.featured-image {
+.article-hero img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    margin-top: 1.8rem;
+    border-radius: 14px;
     object-fit: cover;
+}
+
+/* CONTENIDO */
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c2c2c;
+}
+
+.article-content p {
+    margin-bottom: 1.6rem;
+}
+
+.article-content h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin: 3rem 0 1.2rem;
+    color: #111;
+}
+
+.article-content blockquote {
+    margin: 2.5rem 0;
+    padding-left: 1.2rem;
+    border-left: 4px solid #1da1f2;
+    font-style: italic;
+    color: #555;
+}
+
+/* FOOTER DEL ARTÍCULO */
+.article-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+    font-size: .9rem;
+    color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .article-wrapper {
+        padding: 2rem 1.2rem;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
 }
