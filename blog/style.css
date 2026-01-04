@@ -1,48 +1,52 @@
-/* Estilos específicos para la lectura de artículos */
+/* Estilos para el contenedor del artículo */
 .article-container {
-    max-width: 800px; /* Ancho óptimo para lectura */
+    max-width: 850px; /* Ancho ideal para lectura */
     background: #ffffff;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    color: #333; /* Texto oscuro para mejor contraste sobre fondo blanco */
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    color: #2d3436;
 }
 
 .article-header h1 {
-    color: var(--color-bg); /* Usa el color oscuro de tu paleta principal */
-    line-height: 1.2;
+    font-size: 2.8rem;
+    color: #0e1722; /* Color oscuro de tu marca */
 }
 
 .article-body {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1.8;
 }
 
 .article-body h2 {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
+    color: #2093cc; /* Tu color accent */
     font-weight: 700;
-    color: var(--color-accent); /* Azul de tu marca */
 }
 
+/* Caja de Insight */
 .insight-box {
-    background-color: #f0f9ff;
-    border-left: 5px solid var(--color-accent);
+    background-color: #f1f9fe;
+    border-left: 4px solid #2093cc;
     padding: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     display: flex;
-    align-items: flex-start;
     gap: 1rem;
-    border-radius: 0 8px 8px 0;
+    border-radius: 4px;
 }
 
 .insight-box i {
-    font-size: 1.5rem;
-    color: var(--color-accent);
+    color: #2093cc;
+    font-size: 1.4rem;
 }
 
+/* Adaptación móvil */
 @media (max-width: 768px) {
     .article-container {
         padding: 1.5rem;
-        margin: 1rem;
+        margin: 10px;
+    }
+    .article-header h1 {
+        font-size: 2rem;
     }
 }
