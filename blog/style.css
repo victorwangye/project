@@ -1,0 +1,48 @@
+/* Estilos específicos para la lectura de artículos */
+.article-container {
+    max-width: 800px; /* Ancho óptimo para lectura */
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    color: #333; /* Texto oscuro para mejor contraste sobre fondo blanco */
+}
+
+.article-header h1 {
+    color: var(--color-bg); /* Usa el color oscuro de tu paleta principal */
+    line-height: 1.2;
+}
+
+.article-body {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.article-body h2 {
+    margin-top: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent); /* Azul de tu marca */
+}
+
+.insight-box {
+    background-color: #f0f9ff;
+    border-left: 5px solid var(--color-accent);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.insight-box i {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .article-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
