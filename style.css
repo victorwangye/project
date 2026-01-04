@@ -342,111 +342,98 @@ nav a.menu-text.active::after {
 /* 7. DROPDOWNS, BOTONES EXTRA Y FOOTER             */
 /* ================================================= */
 
-.btn-accent {
-
-  background-color: var(--color-accent);
-
-  color: var(--color-text);
-
-  border-radius: 50px;
-
-  font-weight: 600;
-
-  padding: 0.5rem 1.5rem;
-
-  transition: all 0.3s ease;
-
+.footer-mentes404 {
+  background-color: #0e1722; /* color de fondo actual */
+  color: #eee7d5; /* texto principal */
+  padding: 3rem 1rem 1.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-
-
-.dropdown-menu {
-
-  background-color: var(--color-bg);
-
-  border: 1px solid #1a2633;
-
-  border-radius: 0.5rem;
-
+.footer-mentes404 .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
-
-
-.dropdown-item {
-
-  color: var(--color-text);
-
-  font-weight: 400;
-
+.footer-mentes404 .footer-section {
+  flex: 1 1 200px;
 }
 
-
-
-.dropdown-item:hover {
-
-  background-color: var(--color-accent);
-
-  color: #fff;
-
-}
-
-
-
-footer {
-
-  background-color: var(--color-bg);
-
-  color: var(--color-text);
-
-  padding: 3rem 1rem;
-
-  text-align: center;
-
-  border-top: 1px solid #1a2633;
-
-}
-
-
-
-footer a {
-
-  color: var(--color-text);
-
+/* Logo */
+.footer-mentes404 .footer-logo .logo-btn {
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #2093cc; /* acento azul */
   text-decoration: none;
+  display: inline-block;
+}
 
-  margin: 0 0.5rem;
+.footer-mentes404 .footer-socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
 
+.footer-mentes404 .footer-socials a {
+  color: #eee7d5;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-mentes404 .footer-socials a:hover {
+  color: #2093cc; /* acento azul al pasar */
+}
+
+/* Contacto */
+.footer-mentes404 .footer-contact a {
+  color: #2093cc;
+  text-decoration: none;
   font-weight: 500;
-
-  transition: color 0.3s ease;
-
 }
 
-
-
-footer a:hover {
-
-  color: var(--color-accent);
-
+.footer-mentes404 .footer-contact a:hover {
+  text-decoration: underline;
 }
-/* Ajuste para móviles */
+
+/* Links generales */
+.footer-mentes404 a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.3s;
+}
+
+.footer-mentes404 a:hover {
+  color: #2093cc;
+}
+
+/* Footer inferior */
+.footer-mentes404 .footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #1a2633;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .footer-top-row {
+  .footer-mentes404 .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
-  .footer-slogan {
-    margin: 1rem auto 0;
-  }
-  .footer-social-icons {
-    justify-content: center;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+
+  .footer-mentes404 .footer-logo .logo-btn {
+    font-size: 1.4rem;
   }
 }
+
 /* ================================================= */
 /* 8. RESPONSIVE                                    */
 /* ================================================= */
@@ -477,6 +464,7 @@ footer a:hover {
     font-size: 1.4rem;
   }
 }
+
 
 
 
