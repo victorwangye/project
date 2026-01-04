@@ -1,92 +1,48 @@
-/* ======================================================
-   ESTILOS PARA ARTÍCULOS INDIVIDUALES
-   Ruta: /blog/articulos/*
-====================================================== */
+/* ======================================
+   ARTÍCULOS – ESTILO EDITORIAL SIMPLE
+   Compatible con GitHub Pages
+====================================== */
 
-.article-wrapper {
-    max-width: 880px;
+.blog-article {
+    max-width: 720px;
     margin: 0 auto;
-    padding: 2.5rem 1.8rem;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    padding: 0 1rem;
 }
 
-/* HERO */
-.article-hero {
-    margin-bottom: 2.5rem;
-}
-
-.article-category {
-    font-size: 0.8rem;
+.blog-article h1 {
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: #1da1f2;
+    margin-bottom: .75rem;
 }
 
-.article-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.15;
-    margin: .6rem 0 1rem;
-    color: #111;
-}
-
-.article-meta {
-    font-size: .9rem;
+.blog-article .meta {
+    font-size: .85rem;
     color: #6c757d;
+    margin-bottom: 1.5rem;
 }
 
-.article-hero img {
+.blog-article img {
     width: 100%;
-    margin-top: 1.8rem;
-    border-radius: 14px;
-    object-fit: cover;
+    height: auto;
+    margin: 1.5rem 0;
 }
 
-/* CONTENIDO */
-.article-content {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #2c2c2c;
+.blog-article p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
 }
 
-.article-content p {
-    margin-bottom: 1.6rem;
+.blog-article h2 {
+    font-size: 1.35rem;
+    margin: 2rem 0 .75rem;
+    font-weight: 600;
 }
 
-.article-content h2 {
-    font-size: 1.65rem;
-    font-weight: 700;
-    margin: 3rem 0 1.2rem;
-    color: #111;
-}
-
-.article-content blockquote {
-    margin: 2.5rem 0;
-    padding-left: 1.2rem;
-    border-left: 4px solid #1da1f2;
-    font-style: italic;
+.blog-article blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
     color: #555;
-}
-
-/* FOOTER DEL ARTÍCULO */
-.article-footer {
-    margin-top: 3.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e5e5e5;
-    font-size: .9rem;
-    color: #777;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .article-wrapper {
-        padding: 2rem 1.2rem;
-    }
-
-    .article-title {
-        font-size: 2rem;
-    }
+    font-style: italic;
 }
