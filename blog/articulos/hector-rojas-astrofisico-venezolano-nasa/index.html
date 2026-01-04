@@ -1,97 +1,108 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Héctor Rojas: El Astrofísico Venezolano en la NASA | Blog Mentes404</title>
+    <title>Héctor Rojas: El genio venezolano de la NASA | Mentes404</title>
+    
     <link rel="icon" type="image/png" href="../../../favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@10.5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
+<body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="../../../index.html">
-                <img src="../../../imagenes/lg0901.svg" alt="Mentes404 Logo" width="120">
+    <header class="bg-dark py-3 mb-5 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../../../index.html" class="text-white text-decoration-none fs-4 fw-bold">
+                <span style="color: #EEE7D5;">Mentes</span><span style="color: #2093cc;">404</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../../index.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../episodios/index.html">Episodios</a></li>
-                </ul>
-            </div>
+            <nav>
+                <a href="../../../index.html" class="text-white ms-3 text-decoration-none small">Inicio</a>
+                <a href="../../index.html" class="text-white ms-3 text-decoration-none small">Blog</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main class="container d-flex justify-content-center my-5">
-        <article class="article-container shadow-lg p-4 p-md-5 bg-white rounded">
-            
-            <header class="article-header">
-                <nav aria-label="Breadcrumb" class="breadcrumbs mb-4 text-muted small">
-                    <a href="../../../index.html" class="text-decoration-none">Inicio</a> / 
-                    <a href="../../index.html" class="text-decoration-none">Blog</a> / 
-                    <span class="text-dark">Héctor Rojas</span>
-                </nav>
-
-                <h1 class="display-5 fw-bold mb-4">Héctor Rojas: El genio venezolano que la NASA intentó borrar de la historia</h1>
+    <main class="container">
+        <div class="row justify-content-center">
+            <article class="col-12 col-lg-9 article-container shadow-sm">
                 
-                <div class="mb-5">
-                    <img src="../../../imagenes/epimg/ep11.webp" alt="Héctor Rojas Astrofísico NASA" class="img-fluid rounded shadow w-100">
-                    <p class="text-center text-muted small mt-2 italic">Héctor R. Rojas durante sus años de investigación en astrofísica espacial.</p>
-                </div>
-            </header>
+                <header class="article-header mb-5">
+                    <nav aria-label="Breadcrumb" class="mb-3">
+                        <ol class="breadcrumb small">
+                            <li class="breadcrumb-item"><a href="../../../index.html" class="text-decoration-none">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-decoration-none">Blog</a></li>
+                            <li class="breadcrumb-item active" aria-current="page text-truncate">Héctor Rojas</li>
+                        </ol>
+                    </nav>
 
-            <section class="article-body">
-                <p class="lead fw-normal mb-4">
-                    ¿Es posible que la llegada del hombre a la Luna le deba su éxito a un científico latinoamericano cuyo nombre fue omitido de los libros oficiales? La historia de <strong>Héctor R. Rojas</strong> es un thriller de ciencia, política y orgullo nacional.
-                </p>
+                    <h1 class="fw-bold mb-4">Héctor Rojas: El genio venezolano que la NASA intentó borrar de la historia</h1>
+                    
+                    <figure class="figure w-100">
+                        <img src="../../../imagenes/epimg/ep11.webp" alt="Héctor Rojas Astrofísico NASA" class="img-fluid rounded shadow-sm w-100">
+                        <figcaption class="figure-caption text-center mt-3">Créditos: Archivos del Expediente Rojas.</figcaption>
+                    </figure>
+                </header>
 
-                <div class="insight-box p-3 mb-4 border-start border-4 border-primary bg-light rounded">
-                    <i class="bi bi-lightbulb-fill text-primary"></i>
-                    <p class="mb-0 ms-2 d-inline"><strong>Dato impactante:</strong> Sus cálculos permitieron que el módulo lunar aterrizara en un terreno firme, evitando que se hundiera en el polvo lunar.</p>
-                </div>
+                <section class="article-body">
+                    <p class="lead mb-4">
+                        ¿Sabías que un astrofísico venezolano fue clave para que el Apolo 11 aterrizara de forma segura en la Luna?. Aunque los libros de texto suelen omitir su nombre, la historia de Héctor R. Rojas es una de las más fascinantes y controvertidas de la carrera espacial.
+                    </p>
 
-                <h2>El hombre detrás de los "Coeficientes Espaciales"</h2>
-                <p>Nacido en Venezuela, Rojas no era un científico común. Con un doble doctorado en la Sorbona y una carrera militar, llegó a la NASA para trabajar en el programa Apolo. Su tarea era crítica: analizar la superficie lunar mediante un método matemático revolucionario que él mismo diseñó.</p>
+                    <p>Su negativa a renunciar a su nacionalidad y su resistencia a usar la ciencia con fines bélicos lo condenaron al "silencio histórico".</p>
 
-                <h3 class="mt-4">El precio de la soberanía</h3>
-                <p>A pesar de sus aportes fundamentales, Rojas se enfrentó a un dilema: para seguir en los proyectos de alto secreto, debía renunciar a su nacionalidad venezolana. Su negativa marcó el inicio de su declive profesional y un misterioso "borrado" de sus registros en las agencias estadounidenses.</p>
-
-                <ul class="list-group list-group-flush my-4">
-                    <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Determinó las zonas de aterrizaje seguras para el Apolo 11.</li>
-                    <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Trabajó mano a mano con los astronautas en su entrenamiento.</li>
-                    <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Sus trabajos fueron desclasificados décadas después.</li>
-                </ul>
-
-                <div class="cta-podcast p-4 text-white bg-dark rounded mt-5 d-flex align-items-center justify-content-between">
-                    <div>
-                        <h4 class="mb-1">¿Quieres conocer la historia completa?</h4>
-                        <p class="mb-0 small opacity-75">Escucha nuestro episodio dedicado a este héroe olvidado.</p>
+                    <div class="insight-box my-5">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        <div>
+                            <strong>Dato Maestro:</strong> Rojas calculó la temperatura y topografía lunar con un 0% de error, garantizando un aterrizaje seguro.
+                        </div>
                     </div>
-                    <a href="../../../episodios/index.html?ep=11" class="btn btn-primary fw-bold">🎧 Oír Episodio</a>
-                </div>
-            </section>
-        </article>
+
+                    <h2 class="h3 fw-bold mt-5 mb-3">Los hitos que cambiaron la carrera espacial</h2>
+                    <ul class="list-group list-group-flush mb-5">
+                        <li class="list-group-item bg-transparent"><i class="bi bi-geo-alt-fill text-primary me-2"></i> <strong>Mapas Lunares:</strong> Desarrolló coeficientes espaciales para cálculos térmicos exactos.</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-rocket-takeoff-fill text-primary me-2"></i> <strong>Apolo 10:</strong> Evidencia sugiere un aterrizaje secreto meses antes de Armstrong.</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-lightning-charge-fill text-primary me-2"></i> <strong>Antigravedad:</strong> Investigó el "Láser Estelar" para manipular la gravedad.</li>
+                    </ul>
+
+                    <blockquote class="blockquote border-start border-4 border-primary ps-4 my-5 fw-light italic">
+                        "Fue condenado a un silencio histórico inaceptable por no querer participar en fines supremacistas y bélicos".
+                    </blockquote>
+
+                    <aside class="p-4 bg-dark text-white rounded-3 shadow mt-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="fw-bold mb-1">Escucha el episodio completo</h4>
+                                <p class="small mb-0 opacity-75">Conversamos con su biógrafo oficial sobre los documentos secretos recuperados.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <a href="../../../episodios/index.html?ep=11" class="btn btn-primary btn-lg fw-bold px-4">🎧 Escuchar</a>
+                            </div>
+                        </div>
+                    </aside>
+                </section>
+
+                <footer class="mt-5 pt-4 border-top text-center text-muted small">
+                    <p>¿Quieres profundizar? Visita <a href="https://expedienterrojas.com" target="_blank" class="text-primary">expedienterrojas.com</a> para descargar la biografía completa.</p>
+                </footer>
+            </article>
+        </div>
     </main>
 
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
-            <p class="mb-0">© 2026 Mentes404. Todos los derechos reservados.</p>
-            <div class="mt-2">
-                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
-            </div>
+            <p class="small mb-0 opacity-50">© 2026 Mentes404™ – Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@10.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
