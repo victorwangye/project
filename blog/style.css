@@ -1,52 +1,44 @@
-/* Estilos para el contenedor del artículo */
+/* Añade esto a victorwangye/project/.../blog/style.css */
+
 .article-container {
-    max-width: 850px; /* Ancho ideal para lectura */
-    background: #ffffff;
-    padding: 3.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    color: #2d3436;
-}
-
-.article-header h1 {
-    font-size: 2.8rem;
-    color: #0e1722; /* Color oscuro de tu marca */
-}
-
-.article-body {
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-.article-body h2 {
     margin-top: 2rem;
-    color: #2093cc; /* Tu color accent */
-    font-weight: 700;
+    margin-bottom: 4rem;
 }
 
-/* Caja de Insight */
-.insight-box {
-    background-color: #f1f9fe;
-    border-left: 4px solid #2093cc;
-    padding: 1.5rem;
-    margin: 2.5rem 0;
-    display: flex;
-    gap: 1rem;
-    border-radius: 4px;
+/* Mejora la legibilidad de los párrafos */
+.article-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
-.insight-box i {
-    color: #2093cc;
-    font-size: 1.4rem;
+/* Estilo para las listas (Hitos) */
+.article-body ul {
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-/* Adaptación móvil */
-@media (max-width: 768px) {
-    .article-container {
-        padding: 1.5rem;
-        margin: 10px;
-    }
-    .article-header h1 {
-        font-size: 2rem;
-    }
+.article-body li {
+    margin-bottom: 1rem;
+}
+
+/* Estilo para el botón de acción (Call to Action) */
+.btn-primary {
+    background-color: #2093cc;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #1a7ab0;
+}
+
+/* Imagen destacada con bordes suaves */
+.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
