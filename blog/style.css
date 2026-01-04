@@ -46,3 +46,28 @@
     color: #555;
     font-style: italic;
 }
+
+/* Estilos para las migas de pan */
+.breadcrumb {
+    background-color: transparent; /* Quita el fondo gris por defecto */
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item a {
+    color: var(--color-accent); /* Usa el azul #2093cc que ya tienes */
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Color gris para el texto de la página actual */
+}
+
+/* Separador (el / entre links) */
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #eee7d5; /* Color del texto principal */
+}
