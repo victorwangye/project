@@ -342,107 +342,93 @@ nav a.menu-text.active::after {
 /* 7. DROPDOWNS, BOTONES EXTRA Y FOOTER             */
 /* ================================================= */
 
+.btn-accent {
+
+  background-color: var(--color-accent);
+
+  color: var(--color-text);
+
+  border-radius: 50px;
+
+  font-weight: 600;
+
+  padding: 0.5rem 1.5rem;
+
+  transition: all 0.3s ease;
+
+}
+
+
+
+.dropdown-menu {
+
+  background-color: var(--color-bg);
+
+  border: 1px solid #1a2633;
+
+  border-radius: 0.5rem;
+
+}
+
+
+
+.dropdown-item {
+
+  color: var(--color-text);
+
+  font-weight: 400;
+
+}
+
+
+
+.dropdown-item:hover {
+
+  background-color: var(--color-accent);
+
+  color: #fff;
+
+}
+
+
+
 footer {
-  background-color: var(--color-bg-alt);
-  padding: 4rem 2rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.container-footer {
-  max-width: 1200px; /* Ancho amplio pero controlado */
-  margin: 0 auto;
-}
+  background-color: var(--color-bg);
 
-.footer-top-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Esto separa los bloques a los extremos */
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer-brand {
-  flex: 1 1 300px; /* Toma espacio pero permite que otros crezcan */
-}
-
-.footer-slogan {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: var(--color-secondary);
-  line-height: 1.6;
-  max-width: 320px;
-}
-
-.footer-label {
-  display: block;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  color: var(--color-accent);
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-}
-
-.footer-nav-group, .footer-social-group {
-  flex: 0 1 auto;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column; /* Lista vertical para orden */
-  gap: 0.8rem;
-}
-
-.footer-links a {
   color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+
+  padding: 3rem 1rem;
+
+  text-align: center;
+
+  border-top: 1px solid #1a2633;
+
 }
 
-.footer-links a:hover {
-  color: var(--color-accent);
-}
 
-.footer-social-icons {
-  display: flex;
-  gap: 1.2rem;
-  margin-bottom: 1.5rem;
-}
 
-.footer-social-icons a {
-  font-size: 1.4rem;
+footer a {
+
   color: var(--color-text);
-  transition: transform 0.2s, color 0.2s;
-}
 
-.footer-social-icons a:hover {
-  color: var(--color-accent);
-  transform: translateY(-3px);
-}
-
-.footer-legal-link {
-  font-size: 0.85rem;
-  color: #888;
   text-decoration: none;
+
+  margin: 0 0.5rem;
+
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+
 }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
 
-.copyright {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0;
-}
 
+footer a:hover {
+
+  color: var(--color-accent);
+
+}
 /* Ajuste para móviles */
 @media (max-width: 768px) {
   .footer-top-row {
@@ -491,5 +477,6 @@ footer {
     font-size: 1.4rem;
   }
 }
+
 
 
