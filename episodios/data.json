@@ -42,7 +42,7 @@
     {
       "numero": 4,
       "titulo": "Cómo empezar con tus finanzas personales - Beltrán Rubio, divulgador financiero | Mentes404 #04",
-      "descripcion": "Guía práctica sobre mentalidad financiera, ahorro e inversión para quienes comienzan a gestionar su dinero.",
+      "descripcion": "¿Por qué nos cuesta tanto ahorrar a pesar de saber que es necesario? En este episodio, conversamos con Beltrán Rubio sobre el concepto de mentalidad financiera, un factor que va mucho más allá de los números y que está profundamente ligado a nuestras emociones y sensaciones. Beltrán nos explica cómo las creencias limitantes que arrastramos desde la infancia condicionan nuestras decisiones económicas actuales y por qué desaprender es el primer paso para construir una relación sana con el dinero. A lo largo de la charla, desmitificamos la inversión, quitándole la etiqueta de compleja para presentarla como una habilidad tan accesible como conducir un coche o montar en bicicleta. Lo que aprenderás en este episodio: Definición de Mentalidad Financiera: La combinación de lo que pensamos y cómo sentimos ante situaciones económicas. La trampa del banco: Por qué el asesor de tu sucursal suele actuar más como comercial que como aliado cómo buscar asesoramiento independiente. Hoja de ruta para el ahorro: Los tres pasos esenciales antes de invertir: fondo de emergencia, cancelación de deudas y fondo de seguridad. Inversión consciente: Por qué invertir no es un capricho, sino una necesidad para combatir la inflación y no perder poder adquisitivo. Estrategias contra el consumo: Cómo aplicar el gasto consciente preguntándote si una compra te acerca o te aleja de tus objetivos. Educación y Redes Sociales: Cómo filtrar la información de calidad en plataformas como LinkedIn y evitar el ruido de los mensajes catastrofistas.",
       "imagen": "../imagenes/epimg/ep4.webp",
       "categorias": ["move", "think"],
       "destacado": false,
@@ -80,8 +80,8 @@
     },
     {
       "numero": 7,
-      "titulo": "Hablamos sin filtros sobre los bootcamps - Rebeca García Muñoz, Studio Design Lead | Mentes404 #07",
-      "descripcion": "Rebeca comparte su transición profesional tras volver de Corea y cómo un bootcamp UX/UI impulsó su carrera hasta Deloitte.",
+      "titulo": "De Diseño Gráfico a UX/UI: ¿Vale la pena un Bootcamp? - Rebeca García Muñoz, Studio Design Lead | Mentes404 #07",
+      "descripcion": "¿Estás pensando en estudiar un bootcamp de diseño UX/UI pero no sabes si realmente te ayudará a encontrar trabajo? En este episodio, Rebeca comparte su trayectoria completa: desde sus inicios en diseño gráfico y su experiencia tecnológica en Corea del Sur, hasta su decisión de cursar un bootcamp intensivo en Neoland para dar el salto al diseño de producto digital. Analizamos con honestidad los retos de la formación intensiva, las diferencias entre un máster y un bootcamp, y la realidad del mercado laboral actual en España para perfiles junior y senior.",
       "imagen": "../imagenes/epimg/ep7.webp",
       "categorias": ["move", "think"],
       "destacado": false,
