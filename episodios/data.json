@@ -246,6 +246,19 @@
         "spotify": "https://open.spotify.com/episode/0Acm44mQGS2kQ1fVFmSeS5?si=03yh77qGSryB2K2TuBUF0Q",
         "apple": "https://podcasts.apple.com/es/podcast/mentes404-mentes-404/id1817544014?i=1000741670026"
       }
+    },
+    {
+      "numero": 20,
+      "titulo": "Inteligencia Colectiva El modelo para escalar equipos | Luis Miguel López Peces, Consultor Tech #20",
+      "descripcion": "",
+      "imagen": "../imagenes/epimg/ep20.webp",
+      "categorias": ["think", "move"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://youtu.be/l-UyRkRo-y4?si=oTAvbI3ZBXA8YEoI",
+        "spotify": "",
+        "apple": ""
+      }
     }
   ]
 }
