@@ -1,4 +1,4 @@
-{
+  {
   "episodios": [
     {
       "numero": 1,
@@ -257,7 +257,7 @@
       "links": {
         "youtube": "https://youtu.be/l-UyRkRo-y4?si=oTAvbI3ZBXA8YEoI",
         "spotify": "https://open.spotify.com/episode/5UqzmPhYYLKRqTWGtuN6Bm?si=KXvlSVMeT369TEmchl-zWA",
-        "apple": "https://podcasts.apple.com/es/podcast/inteligencia-colectiva-el-modelo-para-escalar/id1817544014?i=1000750304365",
+        "apple": "https://podcasts.apple.com/es/podcast/inteligencia-colectiva-el-modelo-para-escalar/id1817544014?i=1000750304365"
       }
     }
   ]
