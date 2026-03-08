@@ -253,11 +253,24 @@
       "descripcion": "¿Cómo potenciar la Inteligencia Colectiva en equipos de tecnología? 🐝 En este episodio nos acompaña Luis Miguel López Peces, arquitecto tecnológico con más de 20 años de trayectoria, para profundizar en un concepto que va más allá de las metodologías tradicionales: la capacidad de un grupo para funcionar como una colmena, analizando por qué el ego es el patrón más destructivo en el sector tech, cómo la pasión y la humildad nos diferencian de las máquinas en la era de la IA, la metáfora de la colmena, más allá de Scrum, el problema del ego, equipos de estrellas vs. equipos unidos, la inspiración en la naturaleza, la experiencia en las Big 4 y su libro Big 4: Yo estuve ahí, una guía para ayudar a nuevas generaciones a gestionar expectativas y evitar decepciones en el entorno laboral.",
       "imagen": "../imagenes/epimg/ep20.webp",
       "categorias": ["think", "move"],
-      "destacado": true,
+      "destacado": false,
       "links": {
         "youtube": "https://youtu.be/l-UyRkRo-y4?si=oTAvbI3ZBXA8YEoI",
         "spotify": "https://open.spotify.com/episode/5UqzmPhYYLKRqTWGtuN6Bm?si=KXvlSVMeT369TEmchl-zWA",
         "apple": "https://podcasts.apple.com/es/podcast/inteligencia-colectiva-el-modelo-para-escalar/id1817544014?i=1000750304365"
+      }
+    },
+    {
+      "numero": 21,
+      "titulo": "¿Por qué seguimos viviendo en el Imperio Romano? La Herencia del Derecho y la Cultura | Paco Álvarez #21",
+      "descripcion": "¿Alguna vez te has preguntado por qué hablamos español, usamos el alfabeto latino o tenemos juicios con abogados? En este episodio exploramos el legado más grande de la historia: el Imperio Romano. 🏛️ Acompáñanos en un viaje por el tiempo para descubrir que Roma no son solo ruinas y columnas. Analizamos cómo su sistema legal (el Derecho Romano) nos hace más libres hoy en día y por qué figuras como Julio César o Espartaco son muy diferentes a como los pintan en las películas. En este vídeo descubrirás: ❌ Mitos de Hollywood: ¿Existió el saludo romano y el gesto del pulgar en el coliseo? 🛡️ La vida del legionario: ¿Era posible ascender socialmente o terminar como gladiador? 📜 Derecho y Libertad: El verdadero monumento que nos dejaron los romanos. 📉 La caída del Imperio: ¿Realmente se fue Roma o simplemente se transformó en lo que somos hoy? 🏺 Curiosidades: El origen egipcio de la lechuga romana y los barriles de vino galos. Si te apasiona la historia antigua, la arqueología y entender cómo el pasado moldea nuestro presente, ¡este vídeo es para ti!",
+      "imagen": "../imagenes/epimg/ep21.webp",
+      "categorias": ["planet"],
+      "destacado": true,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=j3EpqwI4owU",
+        "spotify": "https://open.spotify.com/episode/0fqSlel9dwIFyZTlaPeDxM?si=5xHlodYhTZKB4ul2IMBWGw",
+        "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-seguimos-viviendo-en-el-imperio-romano-la/id1817544014?i=1000753033060"
       }
     }
   ]
