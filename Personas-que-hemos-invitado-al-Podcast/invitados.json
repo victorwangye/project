@@ -266,7 +266,44 @@
         { "tipo": "github", "url": "https://github.com/ArisGuimera", "icono": "bi-github" },
         { "tipo": "tiktok", "url": "https://www.tiktok.com/@aristidevs", "icono": "bi-tiktok" }
     ]
-  }
+  },
+  {
+  "id": "17",
+  "nombre": "Luis Miguel López Peces",
+  "titulo": "Consultor y arquitecto tecnológico.",
+  "imagen": "../imagenes/luis_miguel_lopez_peces.webp",
+  "episodio_titulo": "Transformación digital, IA y procesos de negocio",
+  "episodio_numero": "Episodio 20",
+  "episodio_link": "#",
+  "bio_corta": "Consultor y arquitecto tecnológico con más de 20 años de experiencia en transformación digital, especializado en procesos de negocio, inteligencia artificial generativa, sistemas de información, TIC y Blockchain.",
+  "bio_completa": "Luis Miguel López Peces es consultor y arquitecto tecnológico con más de 20 años de experiencia en transformación digital. Especializado en procesos de negocio con y sin Inteligencia Artificial Generativa, sistemas de información, TIC y Blockchain, ha liderado proyectos de innovación en grandes consultoras internacionales, incluyendo una Big Four. Actualmente acompaña a empresas y equipos en innovación y sostenibilidad, y comparte su experiencia como instructor y asesor en automatización y nuevas plataformas de inteligencia artificial. Combina divulgación, investigación tecnológica y participación en iniciativas de software libre.",
+  "links": [
+    { "tipo": "web", "url": "https://lacajaambar.com/", "icono": "bi-globe" },
+    { "tipo": "linkedin", "url": "https://www.linkedin.com/in/luis-miguel-l%C3%B3pez-peces/", "icono": "bi-linkedin" },
+    { "tipo": "instagram", "url": "https://www.instagram.com/luismiguellopezpeces/", "icono": "bi-instagram" },
+    { "tipo": "youtube", "url": "https://www.youtube.com/@luismiguellopezpeces8923", "icono": "bi-youtube" },
+    { "tipo": "libro", "url": "https://big-four-circle.lovable.app/", "icono": "bi-book" }
+  ]
+},
+  {
+  "id": "18",
+  "nombre": "Paco Álvarez",
+  "titulo": "Investigador, geógrafo e historiador.",
+  "imagen": "../imagenes/paco_alvarez.webp",
+  "episodio_titulo": "Somos romanos: historia antigua y sociedad actual",
+  "episodio_numero": "Episodio 21",
+  "episodio_link": "#",
+  "bio_corta": "Investigador, geógrafo e historiador madrileño especializado en divulgación sobre la Antigua Roma y su influencia en nuestra sociedad actual. Autor de varios libros que comparan el mundo romano con la vida moderna.",
+  "bio_completa": "Paco Álvarez, madrileño de 1965, es investigador, geógrafo e historiador. Ha trabajado en quince países de dos continentes en el ámbito de la comunicación para grandes compañías como Airbus, Banco Santander, Peugeot, Repsol o Telefónica. También ha participado en distintos proyectos culturales colaborando con figuras como Milos Forman, Kerry Kennedy, Yvonne Blake o Arturo Pérez-Reverte, así como con instituciones como la Fundación Princesa de Asturias, la Agencia Espacial Europea, la Armada Española y diversas administraciones públicas.\n\nColaborador habitual en medios como Discovery Channel, La 2 de RTVE, National Geographic Channel, BBC o COPE, ha sido nombrado Amigo de la Infantería de Marina y es conferenciante frecuente en universidades, museos y centros culturales.\n\nEs autor de los libros 'Somos Romanos', 'Estamos locos estos romanos', 'Romanos de Aquí', 'Mitomorfosis', 'Crónica Rosa Rosae' y 'Roma Underground'. En sus obras compara de forma amena nuestra civilización moderna con la antigua Roma, reivindicando la Historia Antigua con un enfoque divulgativo y cercano.",
+  "links": [
+    { "tipo": "web", "url": "https://pacoalvarezromano.es/", "icono": "bi-globe" },
+    { "tipo": "youtube", "url": "https://www.youtube.com/@HistoriapacOalvarezromano26753", "icono": "bi-youtube" },
+    { "tipo": "twitter", "url": "https://x.com/romanos_somos", "icono": "bi-twitter-x" },
+    { "tipo": "instagram", "url": "https://www.instagram.com/pacoalvarez.romano/", "icono": "bi-instagram" },
+    { "tipo": "facebook", "url": "https://www.facebook.com/paco.alvarezrodriguez.9", "icono": "bi-facebook" },
+    { "tipo": "linkedin", "url": "https://www.linkedin.com/in/paco-%C3%A1lvarez-el-romano-54b8172bb/", "icono": "bi-linkedin" }
+  ]
+}
 ]
 
 
