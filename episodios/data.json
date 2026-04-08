@@ -272,6 +272,32 @@
         "spotify": "https://open.spotify.com/episode/0fqSlel9dwIFyZTlaPeDxM?si=5xHlodYhTZKB4ul2IMBWGw",
         "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-seguimos-viviendo-en-el-imperio-romano-la/id1817544014?i=1000753033060"
       }
+    },
+    {
+      "numero": 22,
+      "titulo": "Psicología del Aprendizaje (I) Desmontando el Conductismo en la Era Digital | Idriss El Hassani, #22",
+      "descripcion": "¿Alguna vez te has preguntado por qué es tan difícil soltar el móvil? En este episodio de Mentes404, Víctor charla con Idris sobre la psicología del aprendizaje aplicada a nuestra vida digital. Analizamos cómo el formato de vídeo corto (TikTok, Reels, Shorts) hackea nuestros mecanismos de atención y por qué nuestro cerebro prefiere la gratificación instantánea al esfuerzo de leer un libro. Exploramos conceptos fundamentales como: - El sistema dopaminérgico y la búsqueda constante de placer. - La diferencia entre procesamiento superficial y profundo. - El condicionamiento clásico de Pávlov aplicado a las notificaciones del móvil. - Por qué nos duele tanto perder una racha en Duolingo (aversión a la pérdida). - Aprende por qué el cerebro no borra aprendizajes, sino que los sustituye, y qué técnicas puedes usar para recuperar tu capacidad de concentración. Sobre el invitado: Soy Idriss El Hassani, un estudiante de Máster en Psicologia General Sanitaria apasionado por una sola cosa: ayudar a las personas y contribuir a su bienestar emocional. Espero que este episodio os guste, si queréis más contenido sobre psicologia y salud mental, podéis seguir mi cuenta https://www.instagram.com/diariodeunpsicologo_/",
+      "imagen": "../imagenes/epimg/ep22.webp",
+      "categorias": ["think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=WO7Tu9tmq_k",
+        "spotify": "https://open.spotify.com/episode/5CwMGEas8idCSY7J4yrGPc?si=OlVBoURgS5muGrqlfi0lHA",
+        "apple": "https://podcasts.apple.com/es/podcast/psicolog%C3%ADa-del-aprendizaje-i-desmontando-el/id1817544014?i=1000755945394"
+      }
+    },
+    {
+      "numero": 23,
+      "titulo": "Psicología del Aprendizaje (II): Como optimizar tu método de estudio | Idriss El Hassani, Psicólogo #23",
+      "descripcion": "¿Sientes que estudias mucho pero no retienes nada? En esta segunda parte de nuestra charla con el psicólogo Idriss El Hassani, profundizamos en la neuropsicología del aprendizaje para descubrir qué métodos de estudio funcionan realmente y cómo podemos entrenar nuestro cerebro para ser más eficientes. Hablamos sobre fenómenos actuales como los vídeos de Study with me, la ciencia detrás de la música para concentrarse y desglosamos técnicas de productividad famosas como el Método Pomodoro, el Método Feynman y el Palacio de la Memoria (Loci). 🎁 REGALO ESPECIAL: Hemos preparado un manual en PDF que resume todas las técnicas y conceptos de estos dos episodios. Puedes descargarlo aquí: [mentes404.studio/descargar-guia] En este episodio aprenderás: - Por qué lento es el camino más rápido para alcanzar tus objetivos. - El efecto de la facilitación social y por qué nos ayuda ver a otros estudiar. - ¿Funcionan las ondas alfa y la música para el modo foco? - Cómo aplicar el Método Pomodoro y el Time Blocking Cognitivo sin morir en el intento. - El truco del Palacio de la Memoria para recordar datos de forma espacial. - El mito del multitasking y la importancia del sueño en la consolidación de recuerdos.",
+      "imagen": "../imagenes/epimg/ep23.webp",
+      "categorias": ["think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=rgRCoTV1nE8",
+        "spotify": "https://open.spotify.com/episode/1yC7wEgR4XW2QSiiKrOMYp?si=C1_RcSTQRSKTFLvpx9LL2Q",
+        "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-seguimos-viviendo-en-el-imperio-romano-la/id1817544014?i=1000753033060"
+      }
     }
   ]
 }
