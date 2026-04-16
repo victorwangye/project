@@ -49,7 +49,7 @@ h1 {
 }
 
 /* ================================================= */
-/* 3. DISEÑO DE CARDS                               */
+/* 3. DISEÑO DE CARDS (3 EN 3)                      */
 /* ================================================= */
 
 .guest-card {
@@ -126,61 +126,58 @@ h1 {
 }
 
 /* ================================================= */
-/* 4. PAGINACIÓN (GENERAL Y MÓVIL)                  */
+/* 4. PAGINACIÓN (CORRECCIÓN MÓVIL)                 */
 /* ================================================= */
 
+/* Forzamos que el contenedor de paginación sea visible y flexible */
 #pagination {
-  display: flex !important;
-  justify-content: center !important;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  gap: 8px;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    margin-top: 3rem !important;
+    margin-bottom: 2rem !important;
+    padding-left: 0;
+    list-style: none;
+    width: 100%;
 }
 
-.pagination .page-link {
-  background-color: #141f2b;
-  color: var(--color-text);
-  border: 1px solid #1a2633;
-  padding: 0.75rem 1.1rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  font-weight: 600;
-  text-decoration: none;
+.page-item {
+    display: block !important; /* Evita que Bootstrap oculte los items */
+    margin: 2px;
 }
 
-.pagination .page-link:hover {
-  background-color: #1a2633;
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+.page-link {
+    background-color: #141f2b !important;
+    color: #eee7d5 !important;
+    border: 1px solid #1a2633 !important;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px; /* Tamaño ideal para dedos en móvil */
 }
 
-.pagination .page-item.active .page-link {
-  background-color: var(--color-accent) !important;
-  border-color: var(--color-accent) !important;
-  color: #fff;
+.page-item.active .page-link {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: #fff !important;
 }
 
-.pagination .page-item.disabled .page-link {
-  background-color: transparent;
-  opacity: 0.3;
-  color: var(--color-secondary);
-  pointer-events: none;
+.page-item.disabled .page-link {
+    background-color: transparent !important;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
-/* Ajustes específicos para móviles */
+/* Ajustes finos para pantallas muy pequeñas */
 @media (max-width: 576px) {
-  #pagination {
-    gap: 5px;
-  }
-
-  .pagination .page-link {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
-    min-width: 38px;
-    text-align: center;
-  }
+    .pagination .page-link {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+        min-width: 38px;
+    }
 }
 
 /* ================================================= */
