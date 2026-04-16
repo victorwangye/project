@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const sortDropdown = document.getElementById("sortDropdown");
 
     let episodios = [];
+    let episodiosMezclados = []; // Para el orden aleatorio inicial
     let filtrados = [];
     let currentPage = 1;
     const perPage = 12;
@@ -27,13 +28,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (!res.ok) throw new Error("No se pudo cargar data.json");
             const data = await res.json();
             episodios = data.episodios || [];
+            
+            // Creamos una copia aleatoria inicial para dar oportunidad a todos
+            episodiosMezclados = [...episodios].sort(() => Math.random() - 0.5);
+            
             applyFiltersAndSort();
         } catch (err) {
             console.error(err);
-            container.innerHTML = `
-                <p class="text-danger text-center">
-                    Error al cargar los episodios.
-                </p>`;
+            container.innerHTML = `<p class="text-danger text-center">Error al cargar los episodios.</p>`;
         }
     }
 
@@ -48,7 +50,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function applyFiltersAndSort() {
-        let lista = [...episodios];
+        // Si el usuario no está buscando ni ha cambiado el orden, usamos la lista aleatoria
+        const esEstadoInicial = (ordenActivo === "relevancia_reciente" && !terminoBusqueda);
+        let lista = esEstadoInicial ? [...episodiosMezclados] : [...episodios];
 
         if (categoriaActiva !== "all") {
             lista = lista.filter(ep => ep.categorias?.includes(categoriaActiva));
@@ -60,21 +64,19 @@ document.addEventListener("DOMContentLoaded", async () => {
                 .filter(ep => ep.score > 0);
         }
 
-        lista.sort((a, b) => {
-            if (terminoBusqueda && b.score !== a.score) {
-                return b.score - a.score;
-            }
-
-            if (ordenActivo.startsWith("relevancia")) {
-                if (a.destacado && !b.destacado) return -1;
-                if (!a.destacado && b.destacado) return 1;
-            }
-
-            if (ordenActivo.includes("reciente")) return b.numero - a.numero;
-            if (ordenActivo.includes("antiguo")) return a.numero - b.numero;
-
-            return 0;
-        });
+        // Solo ordenamos si NO estamos en el modo aleatorio inicial o si hay búsqueda
+        if (!esEstadoInicial || terminoBusqueda) {
+            lista.sort((a, b) => {
+                if (terminoBusqueda && b.score !== a.score) return b.score - a.score;
+                if (ordenActivo.includes("reciente")) return b.numero - a.numero;
+                if (ordenActivo.includes("antiguo")) return a.numero - b.numero;
+                if (ordenActivo.startsWith("relevancia")) {
+                    if (a.destacado && !b.destacado) return -1;
+                    if (!a.destacado && b.destacado) return 1;
+                }
+                return 0;
+            });
+        }
 
         filtrados = lista;
         currentPage = 1;
@@ -83,15 +85,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function renderCards() {
         container.querySelectorAll(".col-12:not(#card-template)").forEach(el => el.remove());
-
         const start = (currentPage - 1) * perPage;
         const pagData = filtrados.slice(start, start + perPage);
 
         if (!pagData.length) {
-            container.innerHTML = `
-                <p class="text-center text-secondary mt-5">
-                    No hay episodios disponibles.
-                </p>`;
+            container.innerHTML = `<p class="text-center text-secondary mt-5">No hay episodios.</p>`;
             pagination.innerHTML = "";
             return;
         }
@@ -100,72 +98,42 @@ document.addEventListener("DOMContentLoaded", async () => {
             const cardWrapper = template.cloneNode(true);
             cardWrapper.id = "";
             cardWrapper.style.display = "block";
-
             const card = cardWrapper.querySelector(".episode-card-new");
-
             card.querySelector(".card-img-top-new").src = ep.imagen;
-            card.querySelector(".card-img-top-new").alt = ep.titulo;
-
             const badge = card.querySelector(".category-badge-new");
             const cat = ep.categorias?.[0] || "general";
             badge.className = `category-badge-new badge ${categoryColorMap[cat] || "bg-secondary"}`;
             badge.textContent = cat.toUpperCase();
-
-            card.querySelector(".card-title-new").textContent =
-                ep.titulo.split(" | ")[0];
-
-            card.querySelector(".card-text-new").textContent =
-                ep.descripcion.length > 150
-                    ? ep.descripcion.slice(0, 150) + "..."
-                    : ep.descripcion;
-
+            card.querySelector(".card-title-new").textContent = ep.titulo.split(" | ")[0];
+            card.querySelector(".card-text-new").textContent = ep.descripcion.slice(0, 150) + "...";
             card.querySelector(".youtube").href = ep.links.youtube;
             card.querySelector(".spotify").href = ep.links.spotify;
             card.querySelector(".apple").href = ep.links.apple;
-
             container.appendChild(cardWrapper);
         });
-
         renderPagination();
     }
 
     function renderPagination() {
         const totalPages = Math.ceil(filtrados.length / perPage);
         pagination.innerHTML = "";
-
-        if (totalPages === 0) return;
+        if (totalPages <= 1) return;
 
         const addPage = (text, disabled, active, onClick) => {
             const li = document.createElement("li");
             li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-            li.innerHTML = `
-                <a class="page-link" href="#">${text}</a>`;
-            if (!disabled) li.addEventListener("click", e => {
-                e.preventDefault();
-                onClick();
-            });
+            li.innerHTML = `<a class="page-link" href="#">${text}</a>`;
+            if (!disabled) li.addEventListener("click", e => { e.preventDefault(); onClick(); });
             pagination.appendChild(li);
         };
 
-        addPage("«", currentPage === 1, false, () => {
-            currentPage--;
-            renderCards();
-        });
-
-        const start = Math.max(1, currentPage - 2);
-        const end = Math.min(totalPages, currentPage + 2);
-
-        for (let i = start; i <= end; i++) {
-            addPage(i, false, i === currentPage, () => {
-                currentPage = i;
-                renderCards();
-            });
+        addPage("«", currentPage === 1, false, () => { currentPage--; renderCards(); window.scrollTo(0,0); });
+        for (let i = 1; i <= totalPages; i++) {
+            if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                addPage(i, false, i === currentPage, () => { currentPage = i; renderCards(); window.scrollTo(0,0); });
+            }
         }
-
-        addPage("»", currentPage === totalPages, false, () => {
-            currentPage++;
-            renderCards();
-        });
+        addPage("»", currentPage === totalPages, false, () => { currentPage++; renderCards(); window.scrollTo(0,0); });
     }
 
     if (searchInput) {
