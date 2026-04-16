@@ -49,7 +49,7 @@ h1 {
 }
 
 /* ================================================= */
-/* 3. DISEÑO DE CARDS (3 EN 3)                      */
+/* 3. DISEÑO DE CARDS                               */
 /* ================================================= */
 
 .guest-card {
@@ -68,7 +68,6 @@ h1 {
   box-shadow: 0 10px 30px rgba(32, 147, 204, 0.3);
 }
 
-/* Imagen del Invitado (Aumentada a 165px) */
 .guest-card .card-img-top {
   width: 165px;
   height: 165px;
@@ -95,7 +94,7 @@ h1 {
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: #ffffff; /* Nombre en blanco */
+  color: #ffffff;
 }
 
 .guest-card .card-text {
@@ -104,7 +103,6 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Botones dentro de la Card */
 .btn-accent {
   background-color: var(--color-accent);
   color: #fff;
@@ -128,22 +126,28 @@ h1 {
 }
 
 /* ================================================= */
-/* 4. PAGINACIÓN CON FLECHAS                        */
+/* 4. PAGINACIÓN (GENERAL Y MÓVIL)                  */
 /* ================================================= */
 
-.pagination {
-  margin-top: 4rem;
+#pagination {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
   gap: 8px;
 }
 
 .pagination .page-link {
-  background-color: var(--color-bg);
+  background-color: #141f2b;
   color: var(--color-text);
   border: 1px solid #1a2633;
   padding: 0.75rem 1.1rem;
   border-radius: 8px;
   transition: all 0.2s ease;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .pagination .page-link:hover {
@@ -153,8 +157,8 @@ h1 {
 }
 
 .pagination .page-item.active .page-link {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
   color: #fff;
 }
 
@@ -162,30 +166,25 @@ h1 {
   background-color: transparent;
   opacity: 0.3;
   color: var(--color-secondary);
-}
-/* Centrado de la paginación de invitados */
-#pagination {
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap; /* Evita que se desborde en móviles si hay muchas páginas */
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    width: 100%;
+  pointer-events: none;
 }
 
-/* Mejora visual para los items de paginación */
-.page-item.active .page-link {
-    background-color: #2093cc !important; /* Color de acento del podcast */
-    border-color: #2093cc !important;
+/* Ajustes específicos para móviles */
+@media (max-width: 576px) {
+  #pagination {
+    gap: 5px;
+  }
+
+  .pagination .page-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    min-width: 38px;
+    text-align: center;
+  }
 }
 
-.page-link {
-    background-color: #141f2b; /* Fondo oscuro coherente con las cards */
-    color: #eee7d5;
-    border: 1px solid #1a2633;
-}
 /* ================================================= */
-/* 5. MODALES (NOMBRE EN AZUL / BLANCO)             */
+/* 5. MODALES                                       */
 /* ================================================= */
 
 .modal-content {
@@ -201,23 +200,14 @@ h1 {
 
 .modal-title {
   font-weight: 700;
-  color: var(--color-accent) !important; /* Azul Mentes404 */
+  color: var(--color-accent) !important;
   font-size: 1.5rem;
 }
 
 .modal-body p {
-  color: var(--color-text) !important; /* Texto en blanco hueso */
+  color: var(--color-text) !important;
 }
 
-.modal-body .text-secondary {
-  color: var(--color-secondary) !important;
-}
-
-.btn-close-white {
-  filter: invert(1);
-}
-
-/* Estilo para redes sociales en modal */
 .modal-body .btn-outline-info {
   color: var(--color-accent);
   border-color: var(--color-accent);
@@ -229,8 +219,12 @@ h1 {
   color: #fff;
 }
 
+.btn-close-white {
+  filter: invert(1);
+}
+
 /* ================================================= */
-/* 6. RESPONSIVE                                    */
+/* 6. RESPONSIVE CARDS                              */
 /* ================================================= */
 
 @media (max-width: 992px) {
@@ -246,5 +240,3 @@ h1 {
     height: 130px;
   }
 }
-
-
