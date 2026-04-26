@@ -298,6 +298,19 @@
         "spotify": "https://open.spotify.com/episode/1yC7wEgR4XW2QSiiKrOMYp?si=C1_RcSTQRSKTFLvpx9LL2Q",
         "apple": "https://podcasts.apple.com/es/podcast/psicolog%C3%ADa-del-aprendizaje-ii-como-optimizar-tu-m%C3%A9todo/id1817544014?i=1000760342017"
       }
-    }
+    },
+    {
+  "numero": 24,
+  "titulo": "Cómo generar confianza en tu web: El poder del UX Writing y el lenguaje claro | Álex Ochoa, Psicólogo especializado en comunicación y UX #24",
+  "descripcion": "¿Cómo influyen las palabras en la confianza que sienten tus usuarios? En este episodio conversamos con Álex Ochoa sobre el impacto del lenguaje claro en los productos digitales y cómo una buena estrategia de contenido construye la credibilidad de tu marca. Exploramos la diferencia entre Copywriting y UX Writing, y por qué guiar al usuario es clave para reducir la frustración. En este episodio aprenderás: - Qué es el UX Writing y su diferencia con el Copywriting. - Principios de lenguaje claro y ergonomía cognitiva. - Cómo la voz y el tono definen la personalidad de tu marca. - Errores comunes que generan desconfianza como los patrones oscuros. - Consejos prácticos para pulir tu estilo de escritura en productos digitales. Libro recomendado: Writing is Designing: Words and the User Experience.",
+  "imagen": "../imagenes/epimg/ep24.webp",
+  "categorias": ["think"],
+  "destacado": false,
+  "links": {
+    "youtube": "https://www.youtube.com/watch?v=0PljIP1rI2Q",
+    "spotify": "https://open.spotify.com/episode/0cphLVIAWfnWVkaumkvTNi?si=lwYVTTLHQ7-_SXya9KC-dQ",
+    "apple": "https://podcasts.apple.com/il/podcast/c%C3%B3mo-generar-confianza-en-tu-web-el-poder-del-ux/id1817544014?i=1000763043328"
+  }
+}
   ]
 }
