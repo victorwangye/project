@@ -303,6 +303,24 @@
     { "tipo": "facebook", "url": "https://www.facebook.com/paco.alvarezrodriguez.9", "icono": "bi-facebook" },
     { "tipo": "linkedin", "url": "https://www.linkedin.com/in/paco-%C3%A1lvarez-el-romano-54b8172bb/", "icono": "bi-linkedin" }
   ]
+},
+  {
+  "id": "19",
+  "nombre": "Álex Ochoa",
+  "titulo": "Psicólogo especializado en Comunicación y UX.",
+  "imagen": "../imagenes/alex_ochoa.webp",
+  "episodio_titulo": "Comunicación, UX y el arte de la claridad",
+  "episodio_numero": "Episodio 22",
+  "episodio_link": "#",
+  "bio_corta": "Psicólogo, UX Writer y divulgador. Se dedica a traducir ideas complejas en mensajes claros, diseñando estrategias de comunicación para marcas y organizaciones a través de la psicología y las palabras.",
+  "bio_completa": "Soy psicólogo especializado en Comunicación y UX. No me gusta hablar de mí mismo en tercera persona, así que te lo cuento de tú a tú: soy UX Writer, copywriter, divulgador y escritor de microficción.\n\nMi objetivo en la vida es facilitar la comunicación y, sobre todo, predicar con el ejemplo. Las palabras son mi materia prima; con ellas diseño estrategias para marcas, personas y organizaciones. Dicho de otra forma: lo que hago es traducir ideas complejas en mensajes claros.\n\nEspero que te guste el episodio y no te olvides de seguir a Víctor y a Mentes404.",
+  "links": [
+    { "tipo": "web", "url": "https://www.alexochoa.es/", "icono": "bi-globe" },
+    { "tipo": "linkedin", "url": "https://www.linkedin.com/in/ochoa-alex/", "icono": "bi-linkedin" },
+    { "tipo": "twitter", "url": "https://x.com/Tintalectronico", "icono": "bi-twitter-x" },
+    { "tipo": "instagram", "url": "https://www.instagram.com/mister_comodo/", "icono": "bi-instagram" },
+    { "tipo": "substack", "url": "https://substack.com/@tintalectronico", "icono": "bi-newsletter" }
+  ]
 }
 ]
 
