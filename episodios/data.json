@@ -311,6 +311,19 @@
     "spotify": "https://open.spotify.com/episode/0cphLVIAWfnWVkaumkvTNi?si=lwYVTTLHQ7-_SXya9KC-dQ",
     "apple": "https://podcasts.apple.com/il/podcast/c%C3%B3mo-generar-confianza-en-tu-web-el-poder-del-ux/id1817544014?i=1000763043328"
   }
+},
+    {
+  "numero": 25,
+  "titulo": "Sistemas de IA para Escalar Negocios: El Paso de Operador a Orquestador | Gabriel Neuman, Consultor | Mentes404 #26",
+  "descripcion": "¿Cómo pasar de apagar fuegos a orquestar el crecimiento de tu empresa? 🚀 En este episodio de Mentes404, conversamos con Gabriel Neuman, consultor experto en NoCode, automatización e inteligencia artificial, sobre la verdadera arquitectura detrás de un negocio escalable. Muchos emprendedores utilizan la IA como una herramienta aislada, pero Gabriel nos enseña a verla como parte de un sistema integral. Descubre por qué el futuro del trabajo no es \"hacer más\", sino diseñar procesos que permitan a los dueños de negocio pasar del rol de operador al de orquestador. Lo que aprenderás en este episodio: Estrategia de IA para negocios: cómo integrar la inteligencia artificial en tu flujo de trabajo real. Zapier vs Make vs n8n: el criterio profesional para elegir tu infraestructura de automatización. Mentalidad de sistemas: el paso a paso para auditar tus procesos y encontrar el ROI de cada automatización. Consultoría NoCode: por qué no necesitas ser programador para construir una empresa tecnológica y eficiente. Si quieres dejar de ser el cuello de botella de tu propio proyecto y empezar a escalar con inteligencia, esta charla con Gabriel Neuman es la hoja de ruta que necesitas.",
+  "imagen": "../imagenes/epimg/ep25.png",
+  "categorias": ["tech", "move"],
+  "destacado": false,
+  "links": {
+    "youtube": "https://youtu.be/n92koyM-e5c?si=F6xpN3Yo4F0AaDl0",
+    "spotify": "https://open.spotify.com/episode/5r1PJuqbZfQtaIobPQwgMY?si=pTwjaJvfQ-iLCWQiR6fblw",
+    "apple": "https://podcasts.apple.com/us/podcast/sistemas-de-ia-para-escalar-negocios-el-paso/id1817544014?i=1000767560149"
+  }
 }
   ]
 }
