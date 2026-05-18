@@ -321,21 +321,43 @@
     { "tipo": "instagram", "url": "https://www.instagram.com/mister_comodo/", "icono": "bi-instagram" },
     { "tipo": "substack", "url": "https://substack.com/@tintalectronico", "icono": "bi-newsletter" }
   ]
+},
+  {
+  "id": "20",
+  "nombre": "Gabriel Neuman",
+  "titulo": "Fundador de GNB Labs y Chief Automation Officer externo.",
+  "imagen": "../imagenes/neuman.jpg",
+  "episodio_titulo": "Sistemas de IA para Escalar Negocios: El Paso de Operador a Orquestador | Gabriel Neuman, Consultor",
+  "episodio_numero": "Episodio 25",
+  "episodio_link": "#",
+  "bio_corta": "Gabriel Neuman es Chief Automation Officer externo para PyMEs LATAM. Operador antes que consultor: audita la operación, deja el piso listo y recién ahí conecta tecnología. Su tesis es que la IA amplifica lo que encuentra — y cuando encuentra desorden, lo amplifica.",
+  "bio_completa": "Gabriel Neuman es fundador de GNB Labs y Chief Automation Officer externo para PyMEs LATAM. Lleva años acompañando a fundadores y operadores que tienen procesos manuales consumiendo 5-15 horas semanales y que quieren escalar sin contratar más personal.\n\nSu enfoque es contrarian dentro del mundo de la IA: la transformación digital no es un proyecto de tecnología, es un proyecto de claridad operativa. Antes de proponer cualquier herramienta, audita la operación. Solo entonces conecta IA, n8n, Make o lo que el caso pida.\n\nPublica su newsletter en gabrielneuman.com/diario donde comparte casos reales con números verificables, sin teoría ni promesas de resultados milagrosos.",
+  "links": [
+    {
+      "tipo": "web",
+      "url": "https://www.gabrielneuman.com",
+      "icono": "bi-globe"
+    },
+    {
+      "tipo": "linkedin",
+      "url": "https://www.linkedin.com/in/gabrielneuman",
+      "icono": "bi-linkedin"
+    },
+    {
+      "tipo": "youtube",
+      "url": "https://www.youtube.com/@neumang",
+      "icono": "bi-youtube"
+    },
+    {
+      "tipo": "instagram",
+      "url": "https://www.instagram.com/neumang",
+      "icono": "bi-instagram"
+    },
+    {
+      "tipo": "twitter",
+      "url": "https://twitter.com/gneuman",
+      "icono": "bi-twitter-x"
+    }
+  ]
 }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
