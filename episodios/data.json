@@ -324,6 +324,19 @@
     "spotify": "https://open.spotify.com/episode/5r1PJuqbZfQtaIobPQwgMY?si=pTwjaJvfQ-iLCWQiR6fblw",
     "apple": "https://podcasts.apple.com/us/podcast/sistemas-de-ia-para-escalar-negocios-el-paso/id1817544014?i=1000767560149"
   }
+},
+    {
+  "numero": 26,
+  "titulo": "¿Por qué nadie hace clic en tu contenido? Reviértelo con copywriting | Facundo Guzmán, Copywriter",
+  "descripcion": "¿Sientes que trabajas horas en un video o artículo y, al publicarlo, nadie entra? El problema no es tu contenido, es tu 'puerta de entrada'. En esta masterclass, el copywriter Facundo Guzmán nos revela por qué la mayoría de los creadores están 'ahuyentando' a su audiencia con titulares genéricos y cómo puedes usar la psicología del copywriting para captar la atención de inmediato. En este episodio aprenderás: La importancia del titular: Por qué deberías dedicarle casi el mismo tiempo que al resto del contenido. Investigación vs. Creatividad: El secreto del 80% de éxito en un título no es ser 'creativo', sino conocer los miedos y deseos de tu audiencia. Abrir y cerrar heridas: Cómo usar la miniatura para plantear un problema incómodo y el título para prometer la solución. Evitar el clickbait vacío: Cómo hacer promesas potentes que sí puedas cumplir dentro del video para no perder la confianza de tu público. Sobre el invitado: Facundo Guzmán tiene un doctorado y lleva años dirigiendo equipos. Hoy aplica ese enfoque al copywriting: investiga, cuestiona y convierte ideas complejas en mensajes claros que destacan y venden. Porque cuando todo suena igual, el problema no es el producto o el servicio: es cómo se comunica. Si quieres profundizar en lo trabajado en el episodio y dejar de escribir titulares que pasan desapercibidos, puedes descargar su guía gratuita: “5 maneras de redactar titulares para que capten la atención desde el primer instante”.",
+  "imagen": "../imagenes/epimg/ep26.png",
+  "categorias": ["move"],
+  "destacado": false,
+  "links": {
+    "youtube": "https://youtu.be/6I-aQ4SqkKo",
+    "spotify": "https://open.spotify.com/episode/3d84a7e9b2c1d0e4f5a6b7c8d9e0f1a2",
+    "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-nadie-hace-clic-en-tu-contenido-revi%C3%A9rtelo/id1817544014?i=1000769806141"
+  }
 }
   ]
 }
