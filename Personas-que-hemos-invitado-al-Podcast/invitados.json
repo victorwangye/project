@@ -359,5 +359,20 @@
       "icono": "bi-twitter-x"
     }
   ]
+},
+  {
+  "id": "21",
+  "nombre": "Facundo Guzmán",
+  "titulo": "Copywriter y estratega de comunicación.",
+  "imagen": "../imagenes/facundo_guzman.webp",
+  "episodio_titulo": "Copywriting estratégico: cómo destacar cuando todo suena igual",
+  "episodio_numero": "Episodio 26",
+  "episodio_link": "#",
+  "bio_corta": "Doctor y estratega de comunicación. Investiga, cuestiona y convierte ideas complejas en mensajes claros que destacan y venden. Su enfoque ayuda a resolver problemas de comunicación cuando el producto o servicio no logra diferenciarse.",
+  "bio_completa": "Facundo Guzmán cuenta con un doctorado y años de experiencia dirigiendo equipos. Hoy aplica ese bagaje académico y profesional al mundo del copywriting: investiga, cuestiona y convierte ideas complejas en mensajes claros que realmente destacan y venden. Su tesis es clara: cuando todo suena igual, el problema no es el producto o el servicio, sino la forma en que se comunica. Autor de la guía gratuita “5 maneras de redactar titulares para que capten la atención desde el primer instante”, ayuda a profesionales y marcas a dejar atrás los titulares que pasan desapercibidos.",
+  "links": [
+    { "tipo": "web", "url": "https://guzmanfacundo.com/", "icono": "bi-globe" },
+    { "tipo": "linkedin", "url": "https://www.linkedin.com/in/copywriter-facundo-guzman/", "icono": "bi-linkedin" }
+  ]
 }
 ]
