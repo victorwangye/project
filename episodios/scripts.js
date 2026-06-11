@@ -1,25 +1,26 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById("cards-container");
-    const template = document.getElementById("card-template");
+    const container  = document.getElementById("cards-container");
+    const template   = document.getElementById("card-template");
     const pagination = document.getElementById("pagination");
+    const resultsMeta = document.getElementById("results-meta");
     const categoriasBtns = document.querySelectorAll("#categorias button");
-    const searchInput = document.getElementById("episodeSearch");
-    const sortDropdown = document.getElementById("sortDropdown");
+    const searchInput    = document.getElementById("episodeSearch");
+    const sortDropdown   = document.getElementById("sortDropdown");
 
     let episodios = [];
-    let episodiosMezclados = []; // Para el orden aleatorio inicial
     let filtrados = [];
     let currentPage = 1;
     const perPage = 12;
-    let categoriaActiva = "all";
-    let ordenActivo = sortDropdown ? sortDropdown.value : "relevancia_reciente";
-    let terminoBusqueda = "";
+    let categoriaActiva  = "all";
+    let ordenActivo      = sortDropdown ? sortDropdown.value : "mas_reciente";
+    let terminoBusqueda  = "";
 
-    const categoryColorMap = {
-        think: "bg-think",
-        tech: "bg-tech",
-        planet: "bg-planet",
-        move: "bg-move"
+    const pilarLabels = {
+        think:   "🧠 Think",
+        tech:    "🤖 Tech",
+        planet:  "🌍 Planet",
+        move:    "🚀 Move",
+        general: "Mentes404"
     };
 
     async function loadData() {
@@ -28,31 +29,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (!res.ok) throw new Error("No se pudo cargar data.json");
             const data = await res.json();
             episodios = data.episodios || [];
-            
-            // Creamos una copia aleatoria inicial para dar oportunidad a todos
-            episodiosMezclados = [...episodios].sort(() => Math.random() - 0.5);
-            
             applyFiltersAndSort();
         } catch (err) {
             console.error(err);
-            container.innerHTML = `<p class="text-danger text-center">Error al cargar los episodios.</p>`;
+            container.innerHTML = `<p class="text-danger text-center mt-5">Error al cargar los episodios.</p>`;
         }
     }
 
     function getMatchScore(ep, query) {
         let score = 0;
         const q = query.toLowerCase();
-        if (ep.titulo.toLowerCase().includes(q)) score += 10;
-        if (ep.descripcion.toLowerCase().includes(q)) score += 5;
-        if (ep.categorias?.some(c => c.toLowerCase().includes(q))) score += 15;
-        if (ep.destacado) score += 2;
+        if (ep.titulo.toLowerCase().includes(q))                    score += 10;
+        if (ep.descripcion.toLowerCase().includes(q))               score += 5;
+        if (ep.categorias?.some(c => c.toLowerCase().includes(q)))  score += 15;
         return score;
     }
 
     function applyFiltersAndSort() {
-        // Si el usuario no está buscando ni ha cambiado el orden, usamos la lista aleatoria
-        const esEstadoInicial = (ordenActivo === "relevancia_reciente" && !terminoBusqueda);
-        let lista = esEstadoInicial ? [...episodiosMezclados] : [...episodios];
+        let lista = [...episodios];
 
         if (categoriaActiva !== "all") {
             lista = lista.filter(ep => ep.categorias?.includes(categoriaActiva));
@@ -60,57 +54,83 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (terminoBusqueda) {
             lista = lista
-                .map(ep => ({ ...ep, score: getMatchScore(ep, terminoBusqueda) }))
-                .filter(ep => ep.score > 0);
+                .map(ep => ({ ...ep, _score: getMatchScore(ep, terminoBusqueda) }))
+                .filter(ep => ep._score > 0);
         }
 
-        // Solo ordenamos si NO estamos en el modo aleatorio inicial o si hay búsqueda
-        if (!esEstadoInicial || terminoBusqueda) {
-            lista.sort((a, b) => {
-                if (terminoBusqueda && b.score !== a.score) return b.score - a.score;
-                if (ordenActivo.includes("reciente")) return b.numero - a.numero;
-                if (ordenActivo.includes("antiguo")) return a.numero - b.numero;
-                if (ordenActivo.startsWith("relevancia")) {
-                    if (a.destacado && !b.destacado) return -1;
-                    if (!a.destacado && b.destacado) return 1;
-                }
-                return 0;
-            });
-        }
+        lista.sort((a, b) => {
+            if (terminoBusqueda && b._score !== a._score) return b._score - a._score;
+            if (ordenActivo === "mas_antiguo") return a.numero - b.numero;
+            return b.numero - a.numero; // default: más reciente primero
+        });
 
-        filtrados = lista;
+        filtrados   = lista;
         currentPage = 1;
         renderCards();
     }
 
     function renderCards() {
-        container.querySelectorAll(".col-12:not(#card-template)").forEach(el => el.remove());
-        const start = (currentPage - 1) * perPage;
+        // Limpiar tarjetas previas
+        container.querySelectorAll("[data-ep-card]").forEach(el => el.remove());
+        // Limpiar también empty-state si existe
+        container.querySelectorAll(".empty-state").forEach(el => el.remove());
+
+        const start   = (currentPage - 1) * perPage;
         const pagData = filtrados.slice(start, start + perPage);
 
+        if (resultsMeta) {
+            resultsMeta.textContent = filtrados.length > 0
+                ? `${filtrados.length} episodio${filtrados.length !== 1 ? "s" : ""} encontrado${filtrados.length !== 1 ? "s" : ""}`
+                : "";
+        }
+
         if (!pagData.length) {
-            container.innerHTML = `<p class="text-center text-secondary mt-5">No hay episodios.</p>`;
+            const empty = document.createElement("div");
+            empty.className = "empty-state";
+            empty.innerHTML = `<i class="bi bi-search"></i><p>No hay episodios que coincidan con tu búsqueda.</p>`;
+            container.appendChild(empty);
             pagination.innerHTML = "";
             return;
         }
 
         pagData.forEach(ep => {
-            const cardWrapper = template.cloneNode(true);
-            cardWrapper.id = "";
-            cardWrapper.style.display = "block";
-            const card = cardWrapper.querySelector(".episode-card-new");
-            card.querySelector(".card-img-top-new").src = ep.imagen;
-            const badge = card.querySelector(".category-badge-new");
             const cat = ep.categorias?.[0] || "general";
-            badge.className = `category-badge-new badge ${categoryColorMap[cat] || "bg-secondary"}`;
-            badge.textContent = cat.toUpperCase();
-            card.querySelector(".card-title-new").textContent = ep.titulo.split(" | ")[0];
-            card.querySelector(".card-text-new").textContent = ep.descripcion.slice(0, 150) + "...";
-            card.querySelector(".youtube").href = ep.links.youtube;
-            card.querySelector(".spotify").href = ep.links.spotify;
-            card.querySelector(".apple").href = ep.links.apple;
-            container.appendChild(cardWrapper);
+
+            const wrapper = document.createElement("div");
+            wrapper.dataset.epCard = "1";
+
+            const cardNode = template.querySelector(".episode-card-new").cloneNode(true);
+
+            cardNode.querySelector(".card-img-top-new").src = ep.imagen;
+            cardNode.querySelector(".card-img-top-new").alt = ep.titulo.split(" | ")[0];
+
+            const stripe = cardNode.querySelector(".cat-stripe");
+            if (stripe) stripe.className = `cat-stripe ${cat}`;
+
+            const badge = cardNode.querySelector(".category-badge-new");
+            if (badge) badge.textContent = cat.toUpperCase();
+
+            const pilar = cardNode.querySelector(".card-pilar");
+            if (pilar) {
+                pilar.textContent = pilarLabels[cat] || "Mentes404";
+                pilar.className   = `card-pilar ${cat}`;
+            }
+
+            cardNode.querySelector(".card-title-new").textContent = ep.titulo.split(" | ")[0];
+
+            const desc = ep.descripcion.length > 150
+                ? ep.descripcion.slice(0, 150).trim() + "…"
+                : ep.descripcion;
+            cardNode.querySelector(".card-text-new").textContent = desc;
+
+            cardNode.querySelector(".youtube").href = ep.links.youtube;
+            cardNode.querySelector(".spotify").href = ep.links.spotify;
+            cardNode.querySelector(".apple").href   = ep.links.apple;
+
+            wrapper.appendChild(cardNode);
+            container.appendChild(wrapper);
         });
+
         renderPagination();
     }
 
@@ -121,19 +141,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const addPage = (text, disabled, active, onClick) => {
             const li = document.createElement("li");
-            li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+            li.className = `page-item${disabled ? " disabled" : ""}${active ? " active" : ""}`;
             li.innerHTML = `<a class="page-link" href="#">${text}</a>`;
-            if (!disabled) li.addEventListener("click", e => { e.preventDefault(); onClick(); });
+            if (!disabled) li.addEventListener("click", e => {
+                e.preventDefault();
+                onClick();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
             pagination.appendChild(li);
         };
 
-        addPage("«", currentPage === 1, false, () => { currentPage--; renderCards(); window.scrollTo(0,0); });
+        addPage("«", currentPage === 1, false, () => { currentPage--; renderCards(); });
+
+        let lastRendered = 0;
         for (let i = 1; i <= totalPages; i++) {
             if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-                addPage(i, false, i === currentPage, () => { currentPage = i; renderCards(); window.scrollTo(0,0); });
+                if (lastRendered && i - lastRendered > 1) {
+                    const li = document.createElement("li");
+                    li.className = "page-item disabled";
+                    li.innerHTML = `<a class="page-link">…</a>`;
+                    pagination.appendChild(li);
+                }
+                const idx = i;
+                addPage(i, false, i === currentPage, () => { currentPage = idx; renderCards(); });
+                lastRendered = i;
             }
         }
-        addPage("»", currentPage === totalPages, false, () => { currentPage++; renderCards(); window.scrollTo(0,0); });
+
+        addPage("»", currentPage === totalPages, false, () => { currentPage++; renderCards(); });
     }
 
     if (searchInput) {
