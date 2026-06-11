@@ -1,89 +1,589 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mentes404 | Invitados</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50%25'%20y='50%25'%20font-family='Arial,%20sans-serif'%20font-size='50'%20fill='%232093cc'%20text-anchor='middle'%20dominant-baseline='central'%20font-weight='bold'%3E404%3C/text%3E%3C/svg%3E">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css"> 
-    <link rel="stylesheet" href="invitados.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitados — Mentes404</title>
+  <meta name="description" content="Conoce a los expertos, investigadores y creadores que han pasado por Mentes404. Cada conversación, una idea que cambia cómo ves las cosas.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50%25'%20y='50%25'%20font-family='Arial,%20sans-serif'%20font-size='50'%20fill='%232093cc'%20text-anchor='middle'%20dominant-baseline='central'%20font-weight='bold'%3E404%3C/text%3E%3C/svg%3E">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    header {
+      background-color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    a.logo-btn {
+      font-weight: 800;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    nav a.menu-text {
+      color: var(--color-text);
+      font-weight: 500;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a.menu-text.active { color: var(--color-accent); font-weight: 700; }
+
+    nav a.menu-text::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      background: var(--color-accent);
+      transition: width 0.3s;
+    }
+
+    nav a.menu-text:hover::after,
+    nav a.menu-text.active::after { width: 100%; }
+
+    /* ══════════════════════════════════════════
+       PAGE HEADER
+    ══════════════════════════════════════════ */
+    .page-header {
+      background-color: var(--color-bg);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .page-header .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.6rem;
+      line-height: 1.15;
+    }
+
+    .page-header h1 span { color: var(--color-accent); }
+
+    .page-header p {
+      font-size: 1rem;
+      color: var(--color-secondary);
+      max-width: 520px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* ══════════════════════════════════════════
+       GRID DE INVITADOS
+    ══════════════════════════════════════════ */
+    .guests-grid {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .results-meta {
+      font-size: 0.82rem;
+      color: #4a5a6a;
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+      min-height: 1.2em;
+    }
+
+    #guests-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ══════════════════════════════════════════
+       TARJETA DE INVITADO
+    ══════════════════════════════════════════ */
+    .guest-card {
+      background-color: #111b26;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.5rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .guest-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+
+    /* Franja de acento en la parte superior */
+    .guest-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--color-accent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .guest-card:hover::before { opacity: 1; }
+
+    /* Foto circular */
+    .guest-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(32, 147, 204, 0.3);
+      margin-bottom: 1.2rem;
+      background-color: var(--color-bg-alt);
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .guest-card:hover .guest-avatar {
+      border-color: var(--color-accent);
+      transform: scale(1.04);
+    }
+
+    .guest-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .guest-title {
+      font-size: 0.82rem;
+      color: #6b7a8a;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .guest-ep {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.4rem;
+      opacity: 0.8;
+    }
+
+    /* Botones */
+    .guest-actions {
+      display: flex;
+      gap: 0.6rem;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .btn-listen {
+      flex: 1;
+      background: rgba(32, 147, 204, 0.1);
+      border: 1.5px solid rgba(32, 147, 204, 0.25);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-family: var(--font-main);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-listen:hover {
+      background: rgba(32, 147, 204, 0.2);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .btn-listen.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .btn-more {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      color: var(--color-text);
+      font-family: var(--font-main);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-more:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════════════════
+       MODAL
+    ══════════════════════════════════════════ */
+    .modal-content {
+      background-color: #0e1722;
+      color: var(--color-text);
+      border: 1px solid #1a2633;
+      border-radius: 16px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid #1a2633;
+      padding: 1.4rem 1.6rem 1rem;
+    }
+
+    .modal-title {
+      font-weight: 800;
+      color: var(--color-accent);
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-subtitle {
+      font-size: 0.85rem;
+      color: #6b7a8a;
+      margin-top: 0.15rem;
+    }
+
+    .btn-close-white { filter: invert(1) opacity(0.6); }
+    .btn-close-white:hover { filter: invert(1) opacity(1); }
+
+    .modal-body {
+      padding: 1.4rem 1.6rem;
+    }
+
+    .modal-bio {
+      font-size: 0.92rem;
+      color: var(--color-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    .modal-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .modal-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(32, 147, 204, 0.08);
+      border: 1px solid rgba(32, 147, 204, 0.2);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .modal-social a:hover {
+      background: rgba(32, 147, 204, 0.2);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    .modal-footer {
+      border-top: 1px solid #1a2633;
+      padding: 1rem 1.6rem 1.4rem;
+    }
+
+    .btn-modal-listen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      background: var(--color-accent);
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-modal-listen:hover {
+      background: #167aa8;
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    .btn-modal-listen.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════
+       PAGINACIÓN
+    ══════════════════════════════════════════ */
+    .pagination-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 0 1.5rem 4rem;
+    }
+
+    #pagination {
+      display: flex;
+      gap: 0.3rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #pagination .page-item .page-link {
+      background: #111b26;
+      border: 1px solid #1e2d3d;
+      color: var(--color-secondary);
+      border-radius: 8px !important;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.45rem 0.85rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+    }
+
+    #pagination .page-item .page-link:hover {
+      background: #1a2a3a;
+      border-color: var(--color-accent);
+      color: var(--color-text);
+    }
+
+    #pagination .page-item.active .page-link {
+      background: var(--color-accent) !important;
+      border-color: var(--color-accent) !important;
+      color: #fff !important;
+    }
+
+    #pagination .page-item.disabled .page-link {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════
+       EMPTY STATE
+    ══════════════════════════════════════════ */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: #4a5a6a;
+    }
+
+    .empty-state i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      color: #2a3a4a;
+    }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .footer-mentes404 {
+      background-color: #0e1722;
+      color: #eee7d5;
+      padding: 3rem 1rem 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-mentes404 .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-mentes404 .footer-section { flex: 1 1 200px; }
+
+    .footer-mentes404 .footer-contact a {
+      color: #2093cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-mentes404 .footer-contact a:hover { text-decoration: underline; }
+
+    .footer-mentes404 a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 0.3rem 0;
+      transition: color 0.3s;
+    }
+
+    .footer-mentes404 a:hover { color: #2093cc; }
+
+    .footer-mentes404 .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #1a2633;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      header { padding: 1rem; }
+      .page-header { padding: 2.5rem 1rem 2rem; }
+      #guests-container { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .guest-card { padding: 1.5rem 1rem 1.2rem; }
+      .guest-avatar { width: 80px; height: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      #guests-container { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<header>
-          <a href="../" class="logo-btn"><span style="color: #EEE7D5;">Mentes</span>404</a>
 
-    <nav class="d-none d-md-flex">
-        <a href="../" class="menu-text">Inicio</a>
-        <a href="../episodios/" class="menu-text">Episodios</a>
-        <a href="./" class="menu-text active">Invitados</a>
-        <a href="../blog/" class="menu-text">Blog</a>
-        <a href="../contacto/" class="menu-text">Contacto</a>
-    </nav>
-    <div class="dropdown d-md-none">
-        <button class="btn border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-list fs-2"></i>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
-            <li><a class="dropdown-item" href="/">Inicio</a></li>
-            <li><a class="dropdown-item" href="/episodios/">Episodios</a></li>
-            <li><a class="dropdown-item" href="/Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
-            <li><a class="dropdown-item" href="/blog/">Blog</a></li>
-            <li><a class="dropdown-item" href="/contacto/">Contacto</a></li>
-        </ul>
-    </div>
+<!-- HEADER -->
+<header>
+  <a href="../" class="logo-btn"><span style="color: #EEE7D5;">Mentes</span>404</a>
+  <nav class="d-none d-md-flex" style="gap:2rem;">
+    <a href="../" class="menu-text">Inicio</a>
+    <a href="../episodios/" class="menu-text">Episodios</a>
+    <a href="./" class="menu-text active">Invitados</a>
+    <a href="../blog/" class="menu-text">Blog</a>
+    <a href="../contacto/" class="menu-text">Contacto</a>
+  </nav>
+  <div class="dropdown d-md-none">
+    <button class="btn border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+      <li><a class="dropdown-item" href="../">Inicio</a></li>
+      <li><a class="dropdown-item" href="../episodios/">Episodios</a></li>
+      <li><a class="dropdown-item" href="../Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
+      <li><a class="dropdown-item" href="../blog/">Blog</a></li>
+      <li><a class="dropdown-item" href="../contacto/">Contacto</a></li>
+    </ul>
+  </div>
 </header>
 
-<main class="container py-5">
-    <h1 class="mb-5 text-center" style="font-weight: 800;">Invitados del Podcast</h1>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="eyebrow">Quiénes han pasado por aquí</span>
+  <h1>Los <span>invitados</span></h1>
+  <p>Expertos, investigadores y creadores en la primera línea de sus campos. Sin atajos intelectuales.</p>
+</div>
 
-    <section id="guests-container" class="row g-4 justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4" id="guest-card-template" style="display:none;">
-            <div class="card guest-card h-100">
-                <img src="" class="card-img-top" alt="Invitado"> 
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text text-secondary"></p>
-                    <div class="d-flex justify-content-center gap-3 mt-auto">
-                        <a href="#" class="btn btn-dark btn-sm btn-listen"><i class="bi bi-headphones"></i> Escuchar</a>
-                        <button class="btn btn-accent btn-sm btn-more" type="button">Ver más</button>
-                    </div>
-                </div>
-            </div>
+<!-- GRID -->
+<main class="guests-grid">
+  <p class="results-meta" id="results-meta"></p>
+
+  <div id="guests-container">
+    <!-- Template oculto — invitados.js lo clona -->
+    <div id="guest-card-template" style="display:none;">
+      <div class="guest-card">
+        <img src="" class="guest-avatar" alt="">
+        <p class="guest-ep"></p>
+        <h5 class="guest-name card-title"></h5>
+        <p class="guest-title card-text"></p>
+        <div class="guest-actions">
+          <a href="#" class="btn-listen"><i class="bi bi-headphones"></i> Escuchar</a>
+          <button class="btn-more" type="button"><i class="bi bi-person"></i> Ver más</button>
         </div>
-    </section>
-
-    <nav aria-label="Paginación" class="mt-5">
-        <ul id="pagination" class="pagination justify-content-center"></ul>
-    </nav>
+      </div>
+    </div>
+  </div>
 </main>
 
+<!-- PAGINACIÓN -->
+<div class="pagination-wrap">
+  <ul id="pagination"></ul>
+</div>
+
+<!-- MODALES -->
+<div id="modals-container"></div>
+
+<!-- FOOTER -->
 <footer class="footer-mentes404">
   <div class="footer-container">
-    
     <div class="footer-social mb-4">
       <span>Síguenos:</span>
       <div class="d-flex justify-content-center gap-4 mt-2">
         <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb" aria-label="Spotify"><i class="bi bi-spotify fs-3"></i></a>
         <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA" aria-label="YouTube"><i class="bi bi-youtube fs-3"></i></a>
         <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" aria-label="Apple Podcasts">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path><path fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path><path d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"/>
+            <path fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1-.335 1.76c3.975-1.41 6.822-5.203 6.822-9.662C22.25 5.34 17.66.75 12 .75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-.03-.125a17.481 17.481 0 0 1-.305-1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c.086.301.131.62.131.951 0 .288-.006.609-.02.953a6.75 6.75 0 1 0-7.96 0c-.014-.344-.02-.665-.02-.953 0-.331.045-.65.131-.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"/>
+            <path d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0-4.5 0"/>
+          </svg>
         </a>
         <a href="https://www.instagram.com/mentes404.studio/" aria-label="Instagram"><i class="bi bi-instagram fs-3"></i></a>
         <a href="https://www.linkedin.com/company/mentes404/" aria-label="LinkedIn"><i class="bi bi-linkedin fs-3"></i></a>
       </div>
     </div>
-
     <div class="footer-section footer-contact text-center">
       <p>¿Tienes cualquier duda?<br>Ponte en contacto con nosotros:</p>
       <a href="mailto:hola@mentes404.studio">hola@mentes404.studio</a>
     </div>
-
     <div class="footer-section footer-links text-center">
-      <div class="footer-legal">
-        <a href="/">Inicio</a>
-      </div>
+      <div class="footer-legal"><a href="/">Inicio</a></div>
       <div class="mt-2">
         <a href="/episodios/">Episodios</a>
         <a href="/Personas-que-hemos-invitado-al-Podcast/">Invitados</a>
@@ -92,14 +592,11 @@
       </div>
     </div>
   </div>
-
   <div class="footer-bottom d-flex justify-content-center align-items-center gap-2 flex-wrap">
-  <span>© 2026 <strong>Mentes404™</strong> – Todos los derechos reservados. |</span>
-  <a href="/aviso-legal">Aviso Legal</a>
-</div>
-
+    <span>© 2026 <strong>Mentes404™</strong> – Todos los derechos reservados. |</span>
+    <a href="/aviso-legal">Aviso Legal</a>
+  </div>
 </footer>
-<div id="modals-container"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="invitados.js"></script>
