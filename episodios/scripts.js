@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let currentPage = 1;
     const perPage = 12;
     let categoriaActiva  = "all";
-    let ordenActivo      = sortDropdown ? sortDropdown.value : "mas_reciente";
+    let ordenActivo      = sortDropdown ? sortDropdown.value : "aleatorio";
     let terminoBusqueda  = "";
 
     const pilarLabels = {
@@ -45,6 +45,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         return score;
     }
 
+    function shuffle(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
     function applyFiltersAndSort() {
         let lista = [...episodios];
 
@@ -58,11 +67,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                 .filter(ep => ep._score > 0);
         }
 
-        lista.sort((a, b) => {
-            if (terminoBusqueda && b._score !== a._score) return b._score - a._score;
-            if (ordenActivo === "mas_antiguo") return a.numero - b.numero;
-            return b.numero - a.numero; // default: más reciente primero
-        });
+        // Ordenar — si hay búsqueda activa siempre por score primero
+        if (terminoBusqueda) {
+            lista.sort((a, b) => {
+                if (b._score !== a._score) return b._score - a._score;
+                return b.numero - a.numero; // desempate: más reciente
+            });
+        } else {
+            if (ordenActivo === "aleatorio") {
+                lista = shuffle(lista);
+            } else if (ordenActivo === "mas_reciente") {
+                lista.sort((a, b) => b.numero - a.numero);
+            } else if (ordenActivo === "mas_antiguo") {
+                lista.sort((a, b) => a.numero - b.numero);
+            }
+        }
 
         filtrados   = lista;
         currentPage = 1;
@@ -70,9 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function renderCards() {
-        // Limpiar tarjetas previas
         container.querySelectorAll("[data-ep-card]").forEach(el => el.remove());
-        // Limpiar también empty-state si existe
         container.querySelectorAll(".empty-state").forEach(el => el.remove());
 
         const start   = (currentPage - 1) * perPage;
