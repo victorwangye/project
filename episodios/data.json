@@ -1,11 +1,15 @@
-  {
+{
   "episodios": [
     {
       "numero": 1,
       "titulo": "De la neurociencia al emprendimiento digital - Nahuai Badiola, Consultor WordPress | Mentes404 #01",
       "descripcion": "En este episodio de Mentes404 conversamos con Nahuai Badiola, desarrollador WordPress, emprendedor digital y exinvestigador en neurociencia. Hablamos sobre WordPress desde Gutenberg a la IA, la sostenibilidad web y el foco para gestionar proyectos, tiempo y estrés.",
       "imagen": "../imagenes/epimg/ep1.webp",
-      "categorias": ["move", "tech", "think"],
+      "categorias": [
+        "move",
+        "tech",
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/Vg8c-970xCk?si=UkygaUtrwEEeI7n0",
@@ -18,7 +22,10 @@
       "titulo": "AI red teaming, deepfakes y sesgos invisibles – Hugo Ramallo, Divulgador de IA | Mentes404 #02",
       "descripcion": "Conversamos con Hugo Ramallo, divulgador y formador en inteligencia artificial, sobre los riesgos críticos de la IA: seguridad, deepfakes, sesgos y pensamiento crítico. Explica cómo funciona el AI Red Teaming, cómo detectar si hablas con una IA, el impacto de los sesgos y cómo usar la IA para aprender mejor.",
       "imagen": "../imagenes/epimg/ep2.webp",
-      "categorias": ["tech", "think"],
+      "categorias": [
+        "tech",
+        "think"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/9FJZ7Y4HxM4?si=qTe0XedwzOAXjxKI",
@@ -31,7 +38,10 @@
       "titulo": "Criptozoología y cultura - Ignacio Cabria, Investigador de las creencias | Mentes404 #03",
       "descripcion": "Ignacio Cabria explora el papel cultural de criaturas legendarias y lo que revelan sobre miedo, misterio y la necesidad humana de lo desconocido.",
       "imagen": "../imagenes/epimg/ep3.webp",
-      "categorias": ["planet", "think"],
+      "categorias": [
+        "think",
+        "planet"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/_Ag5G_8YqdU?si=wPtbmQc-Ft76W_FM",
@@ -44,7 +54,10 @@
       "titulo": "Cómo empezar con tus finanzas personales - Beltrán Rubio, divulgador financiero | Mentes404 #04",
       "descripcion": "¿Por qué nos cuesta tanto ahorrar a pesar de saber que es necesario? En este episodio, conversamos con Beltrán Rubio sobre el concepto de mentalidad financiera, un factor que va mucho más allá de los números y que está profundamente ligado a nuestras emociones y sensaciones. Beltrán nos explica cómo las creencias limitantes que arrastramos desde la infancia condicionan nuestras decisiones económicas actuales y por qué desaprender es el primer paso para construir una relación sana con el dinero. A lo largo de la charla, desmitificamos la inversión, quitándole la etiqueta de compleja para presentarla como una habilidad tan accesible como conducir un coche o montar en bicicleta. Lo que aprenderás en este episodio: Definición de Mentalidad Financiera: La combinación de lo que pensamos y cómo sentimos ante situaciones económicas. La trampa del banco: Por qué el asesor de tu sucursal suele actuar más como comercial que como aliado cómo buscar asesoramiento independiente. Hoja de ruta para el ahorro: Los tres pasos esenciales antes de invertir: fondo de emergencia, cancelación de deudas y fondo de seguridad. Inversión consciente: Por qué invertir no es un capricho, sino una necesidad para combatir la inflación y no perder poder adquisitivo. Estrategias contra el consumo: Cómo aplicar el gasto consciente preguntándote si una compra te acerca o te aleja de tus objetivos. Educación y Redes Sociales: Cómo filtrar la información de calidad en plataformas como LinkedIn y evitar el ruido de los mensajes catastrofistas.",
       "imagen": "../imagenes/epimg/ep4.webp",
-      "categorias": ["move", "think"],
+      "categorias": [
+        "move",
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/hMcbpC-28yo?si=vAwU335Mi6eKoPM1",
@@ -57,7 +70,9 @@
       "titulo": "Estudiante e instructor de bootcamp - Enrique Revuelta García, Data Scientist | Mentes404 #05",
       "descripcion": "Historia de reinvención profesional: de podólogo a científico de datos. Enrique comparte su experiencia como estudiante y como instructor de bootcamp.",
       "imagen": "../imagenes/epimg/ep5.webp",
-      "categorias": ["move", "think"],
+      "categorias": [
+        "move"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/k328JddLV70?si=LVukbJAzyBzUkrC1",
@@ -70,7 +85,10 @@
       "titulo": "Bitcoin, criptomonedas y el futuro del dinero - Javier Pastor Moreno, Bit2Me | Mentes404 #06",
       "descripcion": "Javier Pastor explica el papel de las criptomonedas, Bitcoin como oro digital y las tendencias clave del sector.",
       "imagen": "../imagenes/epimg/ep6.webp",
-      "categorias": ["move", "tech"],
+      "categorias": [
+        "tech",
+        "move"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=8kse_XQM2lE",
@@ -83,7 +101,9 @@
       "titulo": "De Diseño Gráfico a UX/UI: ¿Vale la pena un Bootcamp? - Rebeca García Muñoz, Studio Design Lead | Mentes404 #07",
       "descripcion": "¿Estás pensando en estudiar un bootcamp de diseño UX/UI pero no sabes si realmente te ayudará a encontrar trabajo? En este episodio, Rebeca comparte su trayectoria completa: desde sus inicios en diseño gráfico y su experiencia tecnológica en Corea del Sur, hasta su decisión de cursar un bootcamp intensivo en Neoland para dar el salto al diseño de producto digital. Analizamos con honestidad los retos de la formación intensiva, las diferencias entre un máster y un bootcamp, y la realidad del mercado laboral actual en España para perfiles junior y senior.",
       "imagen": "../imagenes/epimg/ep7.webp",
-      "categorias": ["move", "think"],
+      "categorias": [
+        "move"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=0KRBAck9ms8&t=2291s",
@@ -96,7 +116,10 @@
       "titulo": "Nanotecnología - PhD Daniel González Muñoz | Mentes404 #08",
       "descripcion": "Daniel González Muñoz explica qué es la nanotecnología, sus aplicaciones reales, los mitos comunes y consejos para jóvenes científicos.",
       "imagen": "../imagenes/epimg/ep8.webp",
-      "categorias": ["planet", "tech"],
+      "categorias": [
+        "tech",
+        "planet"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/w2fIngayTJQ?si=boKhGmKcreIS_QNf",
@@ -109,7 +132,10 @@
       "titulo": "Leer la naturaleza y hacerse preguntas - Mireia Querol Rovira | Mentes404 #09",
       "descripcion": "Exploramos la relación emocional con los animales, la salud de los ecosistemas y la importancia de reconectar con la naturaleza.",
       "imagen": "../imagenes/epimg/ep9.webp",
-      "categorias": ["planet", "think"],
+      "categorias": [
+        "planet",
+        "think"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/hWppFSeymIo?si=E5ZK1aC7jn8ZPASo",
@@ -122,7 +148,9 @@
       "titulo": "Cómo reinventarse en tecnología a los 41: la historia de Alejandro Alonso Montero | Mentes404 #10",
       "descripcion": "Historia real de reinvención profesional: miedos, sacrificios y el camino hacia el primer empleo en tecnología.",
       "imagen": "../imagenes/epimg/ep10.webp",
-      "categorias": ["move", "think"],
+      "categorias": [
+        "move"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/e8kGIk_iHKI?si=owpQXw1_n-TqZb3I",
@@ -135,7 +163,9 @@
       "titulo": "Héctor Rojas: El Científico Venezolano Oculto que Salvó el Apolo 11 | Mentes404 #11",
       "descripcion": "Biografía del científico Héctor Rojas y su contribución al alunizaje del Apolo 11.",
       "imagen": "../imagenes/epimg/ep11.webp",
-      "categorias": ["planet"],
+      "categorias": [
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/IaP77QN8NTg?si=r95W20ROKL0wYU4q",
@@ -148,7 +178,10 @@
       "titulo": "De pequeños hábitos a grandes cambios - Marc Reklau, Autor Best Seller | Mentes404 #12",
       "descripcion": "Una conversación sobre hábitos, mentalidad, constancia y aprendizaje práctico para cambiar la vida.",
       "imagen": "../imagenes/epimg/ep12.webp",
-      "categorias": ["think", "move"],
+      "categorias": [
+        "move",
+        "think"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/K9WIMzyPYGY?si=bPZvvYvTT-uH1XRl",
@@ -161,7 +194,10 @@
       "titulo": "Marketing digital, inteligencia artificial y formación – Juan Merodio, Emprendedor | Mentes404 #13",
       "descripcion": "Juan Merodio analiza el impacto de la IA en el marketing, la creación de contenido, el SEO y el futuro de la formación.",
       "imagen": "../imagenes/epimg/ep13.webp",
-      "categorias": ["tech", "move"],
+      "categorias": [
+        "tech",
+        "move"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/AX1tjVZOII4?si=oh5iNw32cvhTQCRx",
@@ -174,7 +210,10 @@
       "titulo": "La Newsletter que SÍ VENDE: Paciencia, Storytelling – Mila Coco, Copywriter | Mentes404 #14",
       "descripcion": "Estrategias de email marketing basadas en diferenciación, storytelling, confianza y uso estratégico de IA.",
       "imagen": "../imagenes/epimg/ep14.webp",
-      "categorias": ["tech", "move"],
+      "categorias": [
+        "move",
+        "tech"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/6UY6ktGbG3Y?si=j9y_uq-FhEnWrbYv",
@@ -187,7 +226,10 @@
       "titulo": "La web también contamina: sostenibilidad web - Nahuai Badiola, Web Sust. Adv. | Mentes404 #15",
       "descripcion": "Guía práctica para reducir la huella digital: optimización de imágenes, hosting verde, rendimiento web y futuro regulatorio.",
       "imagen": "../imagenes/epimg/ep15.webp",
-      "categorias": ["tech", "planet"],
+      "categorias": [
+        "tech",
+        "planet"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/_m-b42_a14k?si=Q9HDkHYilsc8MwO0",
@@ -200,7 +242,10 @@
       "titulo": "Cómo usar la IA para aprender más rápido sin perder criterio propio – Hugo Ramallo García, Divulgador de IA | Mentes404 #16",
       "descripcion": "Hugo Ramallo explica cómo usar la inteligencia artificial (ChatGPT, Gemini, etc.) para acelerar y mejorar el aprendizaje: simplificar conceptos complejos, ahorrar tiempo, diseñar un roadmap personalizado mediante prompts y practicar con 'by coding' sin perder la base teórica. También abordamos pensamiento crítico, cómo evitar el aprendizaje superficial y trucos prácticos para aprender idiomas y programar con ayuda de la IA.",
       "imagen": "../imagenes/epimg/ep16.webp",
-      "categorias": ["tech", "think"],
+      "categorias": [
+        "tech",
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=5Srlj9OaJfY",
@@ -213,7 +258,9 @@
       "titulo": "Cómo Funciona la Propina, Deporte y Política en EE. UU. - Jack Montoya | Mentes404 #17",
       "descripcion": "En este episodio de Mentes404 exploramos la vida, las costumbres y las particularidades de la sociedad estadounidense junto a Jack Montoya, estudiante de Relaciones Internacionales y Ciencias Políticas. Descubre los temas clave que definen la vida en Estados Unidos: Tipping Culture al Descubierto: La verdad detrás de la propina: el salario, la actitud falsa y cómo esta práctica se extiende a máquinas de autoservicio y servicios sin contacto. El Gigante Deportivo Escolar: Entendemos por qué el fútbol americano y el baloncesto no son solo deportes, sino un negocio y una vía para la educación. Analizamos el trato preferencial y las becas para las estrellas de la High School, desde el wrestling hasta las cheerleaders. Política y Sociedad: Una comparación crítica entre el rígido sistema bipartidista de EEUU y la representación política en España. Además, Jack comparte su análisis de las dinámicas entre EEUU y China, y el impacto global del estilo de liderazgo de Donald Trump. Un episodio que explora la innovación social y económica de Norteamérica. Como cierre, te desafiamos con un Trivial de Cultura Americana para poner a prueba tus conocimientos.",
       "imagen": "../imagenes/epimg/ep17.webp",
-      "categorias": ["planet"],
+      "categorias": [
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=pKexZtMLKM0&t=4s",
@@ -226,7 +273,10 @@
       "titulo": "IA y Psicología: Por qué el Vínculo Terapéutico es Insustituible - Idriss El Hassani | Mentes404 #18",
       "descripcion": "En este episodio crucial, exploramos el impacto profundo y a menudo invisible de la Inteligencia Artificial (IA) en nuestra vida emocional, el autoconocimiento y la psicología. Contamos con la visión experta de Idriss El Hassani, estudiante de Máster en Psicología General Sanitaria, para trazar la línea entre la ayuda tecnológica y la manipulación algorítmica. Temas clave que analizamos: • IA vs. Terapeuta Humano: ¿Es el chatbot capaz de detectar patrones psicológicos más rápido? Analizamos las ventajas del análisis de datos de la IA frente a la insustituible empatía y el vínculo terapéutico humano. • El Espejo Digital: Descubre cómo la IA acelera tu autoconocimiento, pero con el riesgo de definir tu identidad por métricas y no por tu experiencia. • Procrastinación y Emociones: Explicamos por qué procrastinar no es pereza, sino un mecanismo de regulación emocional, y el límite de la IA para resolver las causas profundas. • Riesgos Cognitivos y Éticos: El peligro del Sesgo de Confirmación amplificado por algoritmos y la necesidad urgente de transparencia para proteger la autonomía emocional. • Autoestima y Terapia Digital: ¿Cómo proteger tu valor personal en un entorno obsesionado con las métricas? La diferencia entre un chatbot terapéutico y la comprensión genuina. Este episodio es esencial para cualquiera que use herramientas como ChatGPT, Gemini o cualquier aplicación de Terapia Digital y desee entender las verdaderas implicaciones psicológicas.",
       "imagen": "../imagenes/epimg/ep18.webp",
-      "categorias": ["tech", "think"],
+      "categorias": [
+        "tech",
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=0yVFKSRuie8&t=1782s",
@@ -239,7 +289,10 @@
       "titulo": "Cómo construir una carrera sólida como programador – Arístides Guimerá, Mobile Tech Lead |  #19",
       "descripcion": "En esta profunda entrevista con Arístides Guimerá Orozco, un referente en desarrollo móvil y creador de contenido, desglosamos su trayectoria, desde sus difíciles inicios en la programación hasta convertirse en Team Lead Mobile y una figura clave en YouTube. Aris comparte su perspectiva honesta sobre la mejor metodología para aprender a programar (centrarse en las bases y practicar sin parar), los errores más comunes en juniors (el tutorial hell y no salir del happy path), y cómo la Inteligencia Artificial (IA) está redefiniendo el puesto junior. Temas clave que cubrimos: ¿Cómo empezar a programar? El balance entre la Universidad, FP, bootcamps y la autodisciplina. Kotlin vs. Java: La apuesta de Aris por Kotlin y el potencial del desarrollo multiplataforma (KMP). Clean Code y Deuda Técnica: La importancia de la arquitectura para la escalabilidad y cómo lidiar con el código legacy. Seniority y Empleo: Consejos para destacar como junior en el mercado actual, la diferencia entre tener años de experiencia y seniority, y el poder del portfolio. Disciplina y Burnout: La clave para el éxito en la programación: la disciplina vence al talento. Networking en España: Por qué es crucial conectar y buscar activamente oportunidades (incluso sin vacantes). Trabajo Remoto vs. Híbrido: La visión de Aris sobre el equilibrio laboral. Si eres un estudiante de programación, un junior buscando tu primer empleo, o un senior buscando mantenerte actualizado en IA y frameworks como Kotlin Multiplatform, esta entrevista es esencial para entender el panorama de la ingeniería de software moderna.",
       "imagen": "../imagenes/epimg/ep19.webp",
-      "categorias": ["tech"],
+      "categorias": [
+        "tech",
+        "move"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://youtu.be/1qIZR0O4pw0?si=wh1Fwzj6iuPFXhkn",
@@ -252,7 +305,10 @@
       "titulo": "Inteligencia Colectiva El modelo para escalar equipos | Luis Miguel López Peces, Consultor Tech #20",
       "descripcion": "¿Cómo potenciar la Inteligencia Colectiva en equipos de tecnología? 🐝 En este episodio nos acompaña Luis Miguel López Peces, arquitecto tecnológico con más de 20 años de trayectoria, para profundizar en un concepto que va más allá de las metodologías tradicionales: la capacidad de un grupo para funcionar como una colmena, analizando por qué el ego es el patrón más destructivo en el sector tech, cómo la pasión y la humildad nos diferencian de las máquinas en la era de la IA, la metáfora de la colmena, más allá de Scrum, el problema del ego, equipos de estrellas vs. equipos unidos, la inspiración en la naturaleza, la experiencia en las Big 4 y su libro Big 4: Yo estuve ahí, una guía para ayudar a nuevas generaciones a gestionar expectativas y evitar decepciones en el entorno laboral.",
       "imagen": "../imagenes/epimg/ep20.webp",
-      "categorias": ["think", "move"],
+      "categorias": [
+        "move",
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/l-UyRkRo-y4?si=oTAvbI3ZBXA8YEoI",
@@ -265,7 +321,9 @@
       "titulo": "¿Por qué seguimos viviendo en el Imperio Romano? La Herencia del Derecho y la Cultura | Paco Álvarez #21",
       "descripcion": "¿Alguna vez te has preguntado por qué hablamos español, usamos el alfabeto latino o tenemos juicios con abogados? En este episodio exploramos el legado más grande de la historia: el Imperio Romano. 🏛️ Acompáñanos en un viaje por el tiempo para descubrir que Roma no son solo ruinas y columnas. Analizamos cómo su sistema legal (el Derecho Romano) nos hace más libres hoy en día y por qué figuras como Julio César o Espartaco son muy diferentes a como los pintan en las películas. En este vídeo descubrirás: ❌ Mitos de Hollywood: ¿Existió el saludo romano y el gesto del pulgar en el coliseo? 🛡️ La vida del legionario: ¿Era posible ascender socialmente o terminar como gladiador? 📜 Derecho y Libertad: El verdadero monumento que nos dejaron los romanos. 📉 La caída del Imperio: ¿Realmente se fue Roma o simplemente se transformó en lo que somos hoy? 🏺 Curiosidades: El origen egipcio de la lechuga romana y los barriles de vino galos. Si te apasiona la historia antigua, la arqueología y entender cómo el pasado moldea nuestro presente, ¡este vídeo es para ti!",
       "imagen": "../imagenes/epimg/ep21.webp",
-      "categorias": ["planet"],
+      "categorias": [
+        "think"
+      ],
       "destacado": true,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=j3EpqwI4owU",
@@ -278,7 +336,9 @@
       "titulo": "Psicología del Aprendizaje (I) Desmontando el Conductismo en la Era Digital | Idriss El Hassani, #22",
       "descripcion": "¿Alguna vez te has preguntado por qué es tan difícil soltar el móvil? En este episodio de Mentes404, Víctor charla con Idris sobre la psicología del aprendizaje aplicada a nuestra vida digital. Analizamos cómo el formato de vídeo corto (TikTok, Reels, Shorts) hackea nuestros mecanismos de atención y por qué nuestro cerebro prefiere la gratificación instantánea al esfuerzo de leer un libro. Exploramos conceptos fundamentales como: - El sistema dopaminérgico y la búsqueda constante de placer. - La diferencia entre procesamiento superficial y profundo. - El condicionamiento clásico de Pávlov aplicado a las notificaciones del móvil. - Por qué nos duele tanto perder una racha en Duolingo (aversión a la pérdida). - Aprende por qué el cerebro no borra aprendizajes, sino que los sustituye, y qué técnicas puedes usar para recuperar tu capacidad de concentración. Sobre el invitado: Soy Idriss El Hassani, un estudiante de Máster en Psicologia General Sanitaria apasionado por una sola cosa: ayudar a las personas y contribuir a su bienestar emocional. Espero que este episodio os guste, si queréis más contenido sobre psicologia y salud mental, podéis seguir mi cuenta https://www.instagram.com/diariodeunpsicologo_/",
       "imagen": "../imagenes/epimg/ep22.webp",
-      "categorias": ["think"],
+      "categorias": [
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=WO7Tu9tmq_k",
@@ -291,7 +351,9 @@
       "titulo": "Psicología del Aprendizaje (II): Como optimizar tu método de estudio | Idriss El Hassani, Psicólogo #23",
       "descripcion": "¿Sientes que estudias mucho pero no retienes nada? En esta segunda parte de nuestra charla con el psicólogo Idriss El Hassani, profundizamos en la neuropsicología del aprendizaje para descubrir qué métodos de estudio funcionan realmente y cómo podemos entrenar nuestro cerebro para ser más eficientes. Hablamos sobre fenómenos actuales como los vídeos de Study with me, la ciencia detrás de la música para concentrarse y desglosamos técnicas de productividad famosas como el Método Pomodoro, el Método Feynman y el Palacio de la Memoria (Loci). 🎁 REGALO ESPECIAL: Hemos preparado un manual en PDF que resume todas las técnicas y conceptos de estos dos episodios. Puedes descargarlo aquí: [mentes404.studio/descargar-guia] En este episodio aprenderás: - Por qué lento es el camino más rápido para alcanzar tus objetivos. - El efecto de la facilitación social y por qué nos ayuda ver a otros estudiar. - ¿Funcionan las ondas alfa y la música para el modo foco? - Cómo aplicar el Método Pomodoro y el Time Blocking Cognitivo sin morir en el intento. - El truco del Palacio de la Memoria para recordar datos de forma espacial. - El mito del multitasking y la importancia del sueño en la consolidación de recuerdos.",
       "imagen": "../imagenes/epimg/ep23.webp",
-      "categorias": ["think"],
+      "categorias": [
+        "think"
+      ],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=rgRCoTV1nE8",
@@ -300,70 +362,83 @@
       }
     },
     {
-  "numero": 24,
-  "titulo": "Cómo generar confianza en tu web: El poder del UX Writing y el lenguaje claro | Álex Ochoa, Psicólogo especializado en comunicación y UX #24",
-  "descripcion": "¿Cómo influyen las palabras en la confianza que sienten tus usuarios? En este episodio conversamos con Álex Ochoa sobre el impacto del lenguaje claro en los productos digitales y cómo una buena estrategia de contenido construye la credibilidad de tu marca. Exploramos la diferencia entre Copywriting y UX Writing, y por qué guiar al usuario es clave para reducir la frustración. En este episodio aprenderás: - Qué es el UX Writing y su diferencia con el Copywriting. - Principios de lenguaje claro y ergonomía cognitiva. - Cómo la voz y el tono definen la personalidad de tu marca. - Errores comunes que generan desconfianza como los patrones oscuros. - Consejos prácticos para pulir tu estilo de escritura en productos digitales. Libro recomendado: Writing is Designing: Words and the User Experience.",
-  "imagen": "../imagenes/epimg/ep24.webp",
-  "categorias": ["move", "tech"],
-  "destacado": false,
-  "links": {
-    "youtube": "https://www.youtube.com/watch?v=0PljIP1rI2Q",
-    "spotify": "https://open.spotify.com/episode/0cphLVIAWfnWVkaumkvTNi?si=lwYVTTLHQ7-_SXya9KC-dQ",
-    "apple": "https://podcasts.apple.com/il/podcast/c%C3%B3mo-generar-confianza-en-tu-web-el-poder-del-ux/id1817544014?i=1000763043328"
-  }
-},
+      "numero": 24,
+      "titulo": "Cómo generar confianza en tu web: El poder del UX Writing y el lenguaje claro | Álex Ochoa, Psicólogo especializado en comunicación y UX #24",
+      "descripcion": "¿Cómo influyen las palabras en la confianza que sienten tus usuarios? En este episodio conversamos con Álex Ochoa sobre el impacto del lenguaje claro en los productos digitales y cómo una buena estrategia de contenido construye la credibilidad de tu marca. Exploramos la diferencia entre Copywriting y UX Writing, y por qué guiar al usuario es clave para reducir la frustración. En este episodio aprenderás: - Qué es el UX Writing y su diferencia con el Copywriting. - Principios de lenguaje claro y ergonomía cognitiva. - Cómo la voz y el tono definen la personalidad de tu marca. - Errores comunes que generan desconfianza como los patrones oscuros. - Consejos prácticos para pulir tu estilo de escritura en productos digitales. Libro recomendado: Writing is Designing: Words and the User Experience.",
+      "imagen": "../imagenes/epimg/ep24.webp",
+      "categorias": [
+        "move",
+        "tech"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=0PljIP1rI2Q",
+        "spotify": "https://open.spotify.com/episode/0cphLVIAWfnWVkaumkvTNi?si=lwYVTTLHQ7-_SXya9KC-dQ",
+        "apple": "https://podcasts.apple.com/il/podcast/c%C3%B3mo-generar-confianza-en-tu-web-el-poder-del-ux/id1817544014?i=1000763043328"
+      }
+    },
     {
-  "numero": 25,
-  "titulo": "Sistemas de IA para Escalar Negocios: El Paso de Operador a Orquestador | Gabriel Neuman, Consultor | Mentes404 #26",
-  "descripcion": "¿Cómo pasar de apagar fuegos a orquestar el crecimiento de tu empresa? 🚀 En este episodio de Mentes404, conversamos con Gabriel Neuman, consultor experto en NoCode, automatización e inteligencia artificial, sobre la verdadera arquitectura detrás de un negocio escalable. Muchos emprendedores utilizan la IA como una herramienta aislada, pero Gabriel nos enseña a verla como parte de un sistema integral. Descubre por qué el futuro del trabajo no es \"hacer más\", sino diseñar procesos que permitan a los dueños de negocio pasar del rol de operador al de orquestador. Lo que aprenderás en este episodio: Estrategia de IA para negocios: cómo integrar la inteligencia artificial en tu flujo de trabajo real. Zapier vs Make vs n8n: el criterio profesional para elegir tu infraestructura de automatización. Mentalidad de sistemas: el paso a paso para auditar tus procesos y encontrar el ROI de cada automatización. Consultoría NoCode: por qué no necesitas ser programador para construir una empresa tecnológica y eficiente. Si quieres dejar de ser el cuello de botella de tu propio proyecto y empezar a escalar con inteligencia, esta charla con Gabriel Neuman es la hoja de ruta que necesitas.",
-  "imagen": "../imagenes/epimg/ep25.png",
-  "categorias": ["tech", "move"],
-  "destacado": false,
-  "links": {
-    "youtube": "https://youtu.be/n92koyM-e5c?si=F6xpN3Yo4F0AaDl0",
-    "spotify": "https://open.spotify.com/episode/5r1PJuqbZfQtaIobPQwgMY?si=pTwjaJvfQ-iLCWQiR6fblw",
-    "apple": "https://podcasts.apple.com/us/podcast/sistemas-de-ia-para-escalar-negocios-el-paso/id1817544014?i=1000767560149"
-  }
-},
+      "numero": 25,
+      "titulo": "Sistemas de IA para Escalar Negocios: El Paso de Operador a Orquestador | Gabriel Neuman, Consultor | Mentes404 #26",
+      "descripcion": "¿Cómo pasar de apagar fuegos a orquestar el crecimiento de tu empresa? 🚀 En este episodio de Mentes404, conversamos con Gabriel Neuman, consultor experto en NoCode, automatización e inteligencia artificial, sobre la verdadera arquitectura detrás de un negocio escalable. Muchos emprendedores utilizan la IA como una herramienta aislada, pero Gabriel nos enseña a verla como parte de un sistema integral. Descubre por qué el futuro del trabajo no es \"hacer más\", sino diseñar procesos que permitan a los dueños de negocio pasar del rol de operador al de orquestador. Lo que aprenderás en este episodio: Estrategia de IA para negocios: cómo integrar la inteligencia artificial en tu flujo de trabajo real. Zapier vs Make vs n8n: el criterio profesional para elegir tu infraestructura de automatización. Mentalidad de sistemas: el paso a paso para auditar tus procesos y encontrar el ROI de cada automatización. Consultoría NoCode: por qué no necesitas ser programador para construir una empresa tecnológica y eficiente. Si quieres dejar de ser el cuello de botella de tu propio proyecto y empezar a escalar con inteligencia, esta charla con Gabriel Neuman es la hoja de ruta que necesitas.",
+      "imagen": "../imagenes/epimg/ep25.png",
+      "categorias": [
+        "tech",
+        "move"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/n92koyM-e5c?si=F6xpN3Yo4F0AaDl0",
+        "spotify": "https://open.spotify.com/episode/5r1PJuqbZfQtaIobPQwgMY?si=pTwjaJvfQ-iLCWQiR6fblw",
+        "apple": "https://podcasts.apple.com/us/podcast/sistemas-de-ia-para-escalar-negocios-el-paso/id1817544014?i=1000767560149"
+      }
+    },
     {
-  "numero": 26,
-  "titulo": "¿Por qué nadie hace clic en tu contenido? Reviértelo con copywriting | Facundo Guzmán, Copywriter",
-  "descripcion": "¿Sientes que trabajas horas en un video o artículo y, al publicarlo, nadie entra? El problema no es tu contenido, es tu 'puerta de entrada'. En esta masterclass, el copywriter Facundo Guzmán nos revela por qué la mayoría de los creadores están 'ahuyentando' a su audiencia con titulares genéricos y cómo puedes usar la psicología del copywriting para captar la atención de inmediato. En este episodio aprenderás: La importancia del titular: Por qué deberías dedicarle casi el mismo tiempo que al resto del contenido. Investigación vs. Creatividad: El secreto del 80% de éxito en un título no es ser 'creativo', sino conocer los miedos y deseos de tu audiencia. Abrir y cerrar heridas: Cómo usar la miniatura para plantear un problema incómodo y el título para prometer la solución. Evitar el clickbait vacío: Cómo hacer promesas potentes que sí puedas cumplir dentro del video para no perder la confianza de tu público. Sobre el invitado: Facundo Guzmán tiene un doctorado y lleva años dirigiendo equipos. Hoy aplica ese enfoque al copywriting: investiga, cuestiona y convierte ideas complejas en mensajes claros que destacan y venden. Porque cuando todo suena igual, el problema no es el producto o el servicio: es cómo se comunica. Si quieres profundizar en lo trabajado en el episodio y dejar de escribir titulares que pasan desapercibidos, puedes descargar su guía gratuita: “5 maneras de redactar titulares para que capten la atención desde el primer instante”.",
-  "imagen": "../imagenes/epimg/ep26.png",
-  "categorias": ["move"],
-  "destacado": false,
-  "links": {
-    "youtube": "https://youtu.be/6I-aQ4SqkKo",
-    "spotify": "https://open.spotify.com/episode/3d84a7e9b2c1d0e4f5a6b7c8d9e0f1a2",
-    "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-nadie-hace-clic-en-tu-contenido-revi%C3%A9rtelo/id1817544014?i=1000769806141"
-  }
-},
+      "numero": 26,
+      "titulo": "¿Por qué nadie hace clic en tu contenido? Reviértelo con copywriting | Facundo Guzmán, Copywriter",
+      "descripcion": "¿Sientes que trabajas horas en un video o artículo y, al publicarlo, nadie entra? El problema no es tu contenido, es tu 'puerta de entrada'. En esta masterclass, el copywriter Facundo Guzmán nos revela por qué la mayoría de los creadores están 'ahuyentando' a su audiencia con titulares genéricos y cómo puedes usar la psicología del copywriting para captar la atención de inmediato. En este episodio aprenderás: La importancia del titular: Por qué deberías dedicarle casi el mismo tiempo que al resto del contenido. Investigación vs. Creatividad: El secreto del 80% de éxito en un título no es ser 'creativo', sino conocer los miedos y deseos de tu audiencia. Abrir y cerrar heridas: Cómo usar la miniatura para plantear un problema incómodo y el título para prometer la solución. Evitar el clickbait vacío: Cómo hacer promesas potentes que sí puedas cumplir dentro del video para no perder la confianza de tu público. Sobre el invitado: Facundo Guzmán tiene un doctorado y lleva años dirigiendo equipos. Hoy aplica ese enfoque al copywriting: investiga, cuestiona y convierte ideas complejas en mensajes claros que destacan y venden. Porque cuando todo suena igual, el problema no es el producto o el servicio: es cómo se comunica. Si quieres profundizar en lo trabajado en el episodio y dejar de escribir titulares que pasan desapercibidos, puedes descargar su guía gratuita: “5 maneras de redactar titulares para que capten la atención desde el primer instante”.",
+      "imagen": "../imagenes/epimg/ep26.png",
+      "categorias": [
+        "move"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/6I-aQ4SqkKo",
+        "spotify": "https://open.spotify.com/episode/3d84a7e9b2c1d0e4f5a6b7c8d9e0f1a2",
+        "apple": "https://podcasts.apple.com/es/podcast/por-qu%C3%A9-nadie-hace-clic-en-tu-contenido-revi%C3%A9rtelo/id1817544014?i=1000769806141"
+      }
+    },
     {
-  "numero": 27,
-  "titulo": "De Estudiante a Team Lead Trayectoria en Ingeniería Informática | Arturo Morcillo, Team Lead #27",
-  "descripcion": "En este episodio de Mentes404, conversamos con Arturo sobre su camino en el mundo de la tecnología. Desde por qué decidió estudiar Ingeniería Informática y los retos del primer año, hasta su experiencia real en prácticas durante el COVID y su evolución profesional hasta convertirse en Team Lead. Arturo nos comparte consejos clave sobre la realidad de estudiar informática (no todo es hacer 'jueguitos'), cómo afrontar el síndrome del impostor en el sector IT, la importancia del Producto Mínimo Viable (MVP) frente al perfeccionismo, por qué aprender C te facilitará el camino con otros lenguajes como Python o Ruby, y consejos honestos para encontrar tu primer empleo como Junior y manejar la presión laboral. Si estás estudiando, buscando tu primer empleo en tecnología o quieres saber qué habilidades (soft skills) son realmente útiles en el día a día de un desarrollador, este video es para ti.",
-  "imagen": "../imagenes/epimg/ep27.webp",
-  "categorias": ["tech"],
-  "destacado": false,
-  "links": {
-    "youtube": "https://youtu.be/4psHFSz1NiM?si=HkDqGvdPbfPRi-CS",
-    "spotify": "https://open.spotify.com/episode/7fJMrJIziBCBqrhhaBEtin?si=xGAMC99pQQ-tVW1DA8rX-A",
-    "apple": "https://podcasts.apple.com/es/podcast/de-estudiante-a-team-lead-trayectoria-en/id1817544014?i=1000772246685"
-  }
-},
+      "numero": 27,
+      "titulo": "De Estudiante a Team Lead Trayectoria en Ingeniería Informática | Arturo Morcillo, Team Lead #27",
+      "descripcion": "En este episodio de Mentes404, conversamos con Arturo sobre su camino en el mundo de la tecnología. Desde por qué decidió estudiar Ingeniería Informática y los retos del primer año, hasta su experiencia real en prácticas durante el COVID y su evolución profesional hasta convertirse en Team Lead. Arturo nos comparte consejos clave sobre la realidad de estudiar informática (no todo es hacer 'jueguitos'), cómo afrontar el síndrome del impostor en el sector IT, la importancia del Producto Mínimo Viable (MVP) frente al perfeccionismo, por qué aprender C te facilitará el camino con otros lenguajes como Python o Ruby, y consejos honestos para encontrar tu primer empleo como Junior y manejar la presión laboral. Si estás estudiando, buscando tu primer empleo en tecnología o quieres saber qué habilidades (soft skills) son realmente útiles en el día a día de un desarrollador, este video es para ti.",
+      "imagen": "../imagenes/epimg/ep27.webp",
+      "categorias": [
+        "move",
+        "tech"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://youtu.be/4psHFSz1NiM?si=HkDqGvdPbfPRi-CS",
+        "spotify": "https://open.spotify.com/episode/7fJMrJIziBCBqrhhaBEtin?si=xGAMC99pQQ-tVW1DA8rX-A",
+        "apple": "https://podcasts.apple.com/es/podcast/de-estudiante-a-team-lead-trayectoria-en/id1817544014?i=1000772246685"
+      }
+    },
     {
-  "numero": 28,
-  "titulo": "¿Es la IA inclusiva? La verdad sobre la accesibilidad digital | Lorena Contreras, Co-Founder CEO Globallys #28",
-  "descripcion": "¿Es la Inteligencia Artificial realmente el motor de inclusión que nos prometieron? En este episodio de Mentes404, converso con Lorena Contreras, Fundadora y CEO de Globallys, sobre la cruda realidad de la accesibilidad digital en Latinoamérica. Exploramos por qué los grandes modelos de IA aún nacen con sesgos que excluyen a millones y qué deben hacer las empresas para que la tecnología sea, de verdad, para todos. Lo que aprenderás en este video: El impacto de omitir la accesibilidad en el mercado (¡hasta un 36% de la población queda fuera!); El 'doble discurso' de la ciberseguridad en la banca y las personas con discapacidad; Cómo entrenar algoritmos para que 'vean' y describan el mundo correctamente; El futuro de la educación online y el diseño centrado en el usuario real.",
-  "imagen": "../imagenes/epimg/ep28.webp",
-  "categorias": ["tech", "plpanet"],
-  "destacado": false,
-  "links": {
-    "youtube": "https://www.youtube.com/watch?v=ziUbiT8Oh04",
-    "spotify": "https://open.spotify.com/episode/27WGzVI0LV8l5cYuAFONOB?si=FvYnWTcOTv6DGtZ1YBaLDA",
-    "apple": "https://podcasts.apple.com/es/podcast/es-la-ia-inclusiva-la-verdad-sobre-la-accesibilidad/id1817544014?i=1000774020177"
-  }
-}
-    
+      "numero": 28,
+      "titulo": "¿Es la IA inclusiva? La verdad sobre la accesibilidad digital | Lorena Contreras, Co-Founder CEO Globallys #28",
+      "descripcion": "¿Es la Inteligencia Artificial realmente el motor de inclusión que nos prometieron? En este episodio de Mentes404, converso con Lorena Contreras, Fundadora y CEO de Globallys, sobre la cruda realidad de la accesibilidad digital en Latinoamérica. Exploramos por qué los grandes modelos de IA aún nacen con sesgos que excluyen a millones y qué deben hacer las empresas para que la tecnología sea, de verdad, para todos. Lo que aprenderás en este video: El impacto de omitir la accesibilidad en el mercado (¡hasta un 36% de la población queda fuera!); El 'doble discurso' de la ciberseguridad en la banca y las personas con discapacidad; Cómo entrenar algoritmos para que 'vean' y describan el mundo correctamente; El futuro de la educación online y el diseño centrado en el usuario real.",
+      "imagen": "../imagenes/epimg/ep28.webp",
+      "categorias": [
+        "tech",
+        "planet"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ziUbiT8Oh04",
+        "spotify": "https://open.spotify.com/episode/27WGzVI0LV8l5cYuAFONOB?si=FvYnWTcOTv6DGtZ1YBaLDA",
+        "apple": "https://podcasts.apple.com/es/podcast/es-la-ia-inclusiva-la-verdad-sobre-la-accesibilidad/id1817544014?i=1000774020177"
+      }
+    }
   ]
 }
