@@ -7,9 +7,7 @@
       "imagen": "../imagenes/epimg/ep1.webp",
       "categorias": [
         "move",
-        "tech",
-        "think"
-      ],
+        "tech"      ],
       "destacado": false,
       "links": {
         "youtube": "https://youtu.be/Vg8c-970xCk?si=UkygaUtrwEEeI7n0",
@@ -71,7 +69,8 @@
       "descripcion": "Historia de reinvención profesional: de podólogo a científico de datos. Enrique comparte su experiencia como estudiante y como instructor de bootcamp.",
       "imagen": "../imagenes/epimg/ep5.webp",
       "categorias": [
-        "move"
+        "move",
+        "tech"
       ],
       "destacado": false,
       "links": {
@@ -102,7 +101,8 @@
       "descripcion": "¿Estás pensando en estudiar un bootcamp de diseño UX/UI pero no sabes si realmente te ayudará a encontrar trabajo? En este episodio, Rebeca comparte su trayectoria completa: desde sus inicios en diseño gráfico y su experiencia tecnológica en Corea del Sur, hasta su decisión de cursar un bootcamp intensivo en Neoland para dar el salto al diseño de producto digital. Analizamos con honestidad los retos de la formación intensiva, las diferencias entre un máster y un bootcamp, y la realidad del mercado laboral actual en España para perfiles junior y senior.",
       "imagen": "../imagenes/epimg/ep7.webp",
       "categorias": [
-        "move"
+        "move",
+        "tech"
       ],
       "destacado": false,
       "links": {
@@ -118,6 +118,7 @@
       "imagen": "../imagenes/epimg/ep8.webp",
       "categorias": [
         "tech",
+        "move",
         "planet"
       ],
       "destacado": false,
@@ -149,7 +150,8 @@
       "descripcion": "Historia real de reinvención profesional: miedos, sacrificios y el camino hacia el primer empleo en tecnología.",
       "imagen": "../imagenes/epimg/ep10.webp",
       "categorias": [
-        "move"
+        "move",
+        "tech",
       ],
       "destacado": false,
       "links": {
@@ -365,7 +367,8 @@
       "descripcion": "¿Cómo influyen las palabras en la confianza que sienten tus usuarios? En este episodio conversamos con Álex Ochoa sobre el impacto del lenguaje claro en los productos digitales y cómo una buena estrategia de contenido construye la credibilidad de tu marca. Exploramos la diferencia entre Copywriting y UX Writing, y por qué guiar al usuario es clave para reducir la frustración. En este episodio aprenderás: - Qué es el UX Writing y su diferencia con el Copywriting. - Principios de lenguaje claro y ergonomía cognitiva. - Cómo la voz y el tono definen la personalidad de tu marca. - Errores comunes que generan desconfianza como los patrones oscuros. - Consejos prácticos para pulir tu estilo de escritura en productos digitales. Libro recomendado: Writing is Designing: Words and the User Experience.",
       "imagen": "../imagenes/epimg/ep24.webp",
       "categorias": [
-        "move"      ],
+        "move",
+        "tech"],
       "destacado": false,
       "links": {
         "youtube": "https://www.youtube.com/watch?v=0PljIP1rI2Q",
@@ -411,7 +414,7 @@
       "imagen": "../imagenes/epimg/ep27.webp",
       "categorias": [
         "move",
-        "tech"
+        "think"
       ],
       "destacado": false,
       "links": {
