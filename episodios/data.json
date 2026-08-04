@@ -438,6 +438,22 @@
         "spotify": "https://open.spotify.com/episode/27WGzVI0LV8l5cYuAFONOB?si=FvYnWTcOTv6DGtZ1YBaLDA",
         "apple": "https://podcasts.apple.com/es/podcast/es-la-ia-inclusiva-la-verdad-sobre-la-accesibilidad/id1817544014?i=1000774020177"
       }
+    },
+    {
+      "numero": 29,
+      "titulo": "De cinturón negro a principiante: El gran cambio - Anas Melkaoui, Judoka cinturón negro | Mentes404 #29",
+      "descripcion": "¿Es la Inteligencia Artificial realmente el motor de inclusión que nos prometieron? En este episodio de Mentes404, converso con Lorena Contreras, Fundadora y CEO de Globallys, sobre la cruda realidad de la accesibilidad digital en Latinoamérica. Exploramos por qué los grandes modelos de IA aún nacen con sesgos que excluyen a millones y qué deben hacer las empresas para que la tecnología sea, de verdad, para todos. Lo que aprenderás en este video: El impacto de omitir la accesibilidad en el mercado (¡hasta un 36% de la población queda fuera!); El 'doble discurso' de la ciberseguridad en la banca y las personas con discapacidad; Cómo entrenar algoritmos para que 'vean' y describan el mundo correctamente; El futuro de la educación online y el diseño centrado en el usuario real.",
+      "imagen": "../imagenes/epimg/ep29.webp",
+      "categorias": [
+        "move",
+        "planet"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=N1i7S9SxV4A",
+        "spotify": "https://open.spotify.com/episode/6CJXG2WtmRpMl5FexQ8aVu?si=607DdgjERN2UAqmKYnJXOw",
+        "apple": "https://podcasts.apple.com/es/podcast/de-cinturón-negro-a-principiante-el-gran/id1817544014?i=1000778877535"
+      }
     }
   ]
 }
