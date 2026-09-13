@@ -454,6 +454,20 @@
         "spotify": "https://open.spotify.com/episode/6CJXG2WtmRpMl5FexQ8aVu?si=607DdgjERN2UAqmKYnJXOw",
         "apple": "https://podcasts.apple.com/es/podcast/de-cinturón-negro-a-principiante-el-gran/id1817544014?i=1000778877535"
       }
+    },
+    {
+      "numero": 30,
+      "titulo": "¿Por qué la autoayuda no funciona? La trampa del pensamiento positivo, Jaume Guinot, Psicólogo Clínico",
+      "descripcion": "¿Alguna vez has sentido que la autoayuda y el pensamiento positivo obligatorio no resuelven tus problemas reales? En este episodio de Mentes404, conversamos con un psicólogo clínico para analizar los mitos, las contradicciones y el negocio detrás de la industria del desarrollo personal y la mentalidad de abundancia. Desglosamos desde un enfoque científico y crítico por qué las fórmulas mágicas de éxito y la positividad tóxica pueden generar más frustración que bienestar, y qué alternativas existen basadas en la psicología real. Sobre el invitado: Nacido en Barcelona en mayo de 1974. La mayoría de mi vida la pasé en Cerdanyola del Vallès, donde empecé mi vida profesional con Psicología Cerdanyola para desplazarme al 2010 en Granollers donde se inicia el proyecto actual de Psicología Granollers . Siempre he estado colaborando en entidades sociales. En este momento miembro del Rotary Club de Granollers. ",
+      "imagen": "../imagenes/epimg/ep30.webp",
+      "categorias": [
+        "think"      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=L_Y1kv5mimc",
+        "spotify": "https://open.spotify.com/episode/1aPViVTDWmrcipOSPUQAdc?si=DnvcnogtRmqXDkXKBCI4UQ",
+        "apple": "https://podcasts.apple.com/es/podcast/por-qué-la-autoayuda-no-funciona-la-trampa-del-pensamiento/id1817544014?i=1000788672236"
+      }
     }
   ]
 }
