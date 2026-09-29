@@ -468,6 +468,20 @@
         "spotify": "https://open.spotify.com/episode/1aPViVTDWmrcipOSPUQAdc?si=DnvcnogtRmqXDkXKBCI4UQ",
         "apple": "https://podcasts.apple.com/es/podcast/por-qué-la-autoayuda-no-funciona-la-trampa-del-pensamiento/id1817544014?i=1000788672236"
       }
+    },
+    {
+      "numero": 31,
+      "titulo": "Robótica, Inteligencia Artificial y Drones Militares | Daniel Olayo, Drone Flight Engineer -  #31",
+      "descripcion": "¿Cómo funciona realmente la inteligencia artificial en el ámbito militar y hasta qué punto los drones y robots autónomos están cambiando la guerra moderna? En este episodio de Mentes404, conversamos con Daniel Olayo, Ingeniero de Vuelo de Drones (Drone Flight Engineer), sobre el impacto real de la robótica, la IA en defensa, la guerra de drones en Ucrania, los dilemas éticos de la toma de decisiones autónoma y qué estudiar para dedicarse a este sector. 📌 En este episodio aprenderás: IA vs. Robótica real: Por qué un robot no es inteligente como un humano y cómo se aplican los algoritmos a la resolución de problemas. Robots industriales y colaborativos: Costes, precisión, seguridad y por qué son tan caros. Drones militares e Inteligencia Artificial: Detección de objetivos por visión por computador, drones kamikaze y sistemas de enjambre (líder-seguidor vs. redes autónomas). Defensa y automatización: Fusión sensorial en cazas como el F-35, el sistema Aegis en fragatas y el mecanismo de la Mano Muerta nuclear. El cambio de doctrina militar (Guerra de Ucrania): La revolución de los drones baratos (FPV, Shahed) frente al armamento tradicional millonario. Filosofía y futuro de la IA: ¿Tienen los robots libre albedrío? Límites éticos, leyes de la robótica y la toma de decisiones en combate. Futuro laboral y formación: Cómo afectará la IA al empleo de los perfiles junior y qué estudiar para trabajar en robótica e ingeniería de drones. ",
+      "imagen": "../imagenes/epimg/ep31.webp",
+      "categorias": [
+        "tech", "think"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=FECN2G-6HZw",
+        "spotify": "https://open.spotify.com/episode/73f5yySQcTA3DqL9tNeTUb?si=jm7Y5TgRRbeCUL2bgBvoSg",
+        "apple": "https://podcasts.apple.com/es/podcast/robótica-inteligencia-artificial-y-drones-militares/id1817544014?i=1000791273552"
+      }
     }
   ]
 }
