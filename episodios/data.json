@@ -482,6 +482,20 @@
         "spotify": "https://open.spotify.com/episode/73f5yySQcTA3DqL9tNeTUb?si=jm7Y5TgRRbeCUL2bgBvoSg",
         "apple": "https://podcasts.apple.com/es/podcast/robótica-inteligencia-artificial-y-drones-militares/id1817544014?i=1000791273552"
       }
+    },
+    {
+      "numero": 32,
+      "titulo": "De la Favela al ADCC Luta Libre y Disciplina Extrema | Bernardo Passos, Cinturón Negro - #32",
+      "descripcion": "En este episodio (#32) nos acompaña Bernardo Passos, cinturón negro de Luta Libre y BJJ, para compartir una historia inspiradora de superación, mentalidad y pasión por los deportes de contacto. Desde sus inicios en las favelas de Río de Janeiro (Ilha do Governador), compitiendo sin recursos y trabajando turnos nocturnos como seguridad, hasta convertirse en un referente del grappling en Europa y entrenar con atletas de élite mundial como Kaynan Duarte y Ciryl Gane. Hablamos a fondo sobre: El origen de la Luta Libre brasileña y sus diferencias históricas con el Jiu-Jitsu (BJJ). El arte de las Leg Locks y Heel Hooks: claves técnicas, defensa y cómo evitar lesiones graves. Experiencias con la élite: entrenar y preparar a campeones como Kaynan Duarte y su paso por MMA Factory con Ciryl Gane. Mentalidad sin ego en el tatami: por qué tapear a tiempo y aprender de todos te hace mejor atleta. El sueño del ADCC World: la disciplina extrema, la filosofía del esfuerzo y la perseverancia inspirada en el camino ninja. Sobre el invitado: Bernardo Passos Bené es un luchador brasileño especializado en grappling, Luta Livre y Jiu-Jitsu brasileño, especialmente conocido por su dominio de las llaves de pierna y heel hooks. Es cinturón negro tanto de Luta Livre como de BJJ. Nació y creció en Ilha do Governador, Río de Janeiro, y comenzó a entrenar Luta Livre en 2015. Posteriormente incorporó el Jiu-Jitsu a su formación.",
+      "imagen": "../imagenes/epimg/ep32.webp",
+      "categorias": [
+        "tech", "think", "move"],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Kt2YyJdpmjo",
+        "spotify": "https://open.spotify.com/episode/4waYLnCQDtklfPpyWjk0PE?si=LzMan6pOTTaD4n6cedzZiw",
+        "apple": "https://podcasts.apple.com/es/podcast/de-la-favela-al-adcc-luta-libre-y-disciplina-extrema/id1817544014?i=1000793637985"
+      }
     }
   ]
 }
