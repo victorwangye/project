@@ -496,6 +496,38 @@
         "spotify": "https://open.spotify.com/episode/4waYLnCQDtklfPpyWjk0PE?si=LzMan6pOTTaD4n6cedzZiw",
         "apple": "https://podcasts.apple.com/es/podcast/de-la-favela-al-adcc-luta-libre-y-disciplina-extrema/id1817544014?i=1000793637985"
       }
+    },
+    {
+      "numero": 33,
+      "titulo": "Dejar la oficina para vivir de las redes - Juan Velayos, Creador de @comilonestv | Mentes404 #33",
+      "descripcion": "¿Se puede dejar la oficina para vivir creando contenido? En Mentes404 #33 hablamos con Juan Velayos, creador de @comilonestv y de Los Chicos del Plan, sobre cómo pasó de estudiar inteligencia de negocios y trabajar de camarero, repartidor y en oficina, a vivir de grabar restaurantes y planes. Juan lo cuenta sin filtro: Su primer vídeo: una receta de alitas en casa, mal grabada, que pilló unas 500 visitas. Cómo publicó 50-60 vídeos sin resultados hasta que uno pasó de 200.000 a 700.000 visitas en una noche. El error que más le quemó: publicar 7 vídeos a la semana sin editor hasta quemarse. Qué métricas mira de verdad (visitas y engagement) y qué es humo (música, descripción, hashtags). Su consejo inspirado en MrBeast: publica 100 vídeos antes de decidir si un nicho funciona. Cómo elige restaurantes, por qué nunca contacta él a los restaurantes y cuándo rechaza una colaboración pagada. La historia del bar de su barrio que se petó (100 personas al día) tras un vídeo de 1M de visitas y tuvo que archivar. Cuántas horas trabaja de verdad: 6-8h de móvil al día + grabación, unas 50h a la semana. La otra cara: sigue viviendo con su madre porque aún no puede permitirse una vivienda. Si quieres crear contenido de comida, crecer en Instagram o entender qué hay detrás de ser creador a tiempo completo, este episodio es para ti.",
+      "imagen": "../imagenes/epimg/ep33.webp",
+      "categorias": [
+        "think",
+        "tech"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ypyvVk4XH_Q",
+        "spotify": "https://open.spotify.com/episode/3FnrlE0tESpC7tPBr5NG9P",
+        "apple": "https://podcasts.apple.com/es/podcast/dejar-la-oficina-para-vivir-de-las-redes-juan/id1817544014?i=1000798378555"
+      }
+    },
+    {
+      "numero": 34,
+      "titulo": "Desde 1997 en el tatami de Gracie a Crazy Team y el futuro del ADCC España - Tito Beltrán, fundador de Crazy Team y campeón IBJJF | Mentes404 #34",
+      "descripcion": "En 1997, Robin Gracie llegó a Valencia y se instaló en el gimnasio donde entrenaba Tito Beltrán. Casi 30 años después, Tito es cinturón negro 5º grado, campeón del mundo, fundador de Crazy Team y uno de los nombres detrás de ADCC España. En este episodio repasamos su historia: sus inicios con Robin Gracie, su etapa en Barcelona, la separación de la escuela Gracie y cómo nació el nombre de Crazy Team, un equipo que hoy suma unas 30 filiales. También hablamos de: 🥋 Por qué deja la competición activa después de toda una vida compitiendo. 🥋 Su paso por las MMA y lo que le enseñó perder una lucha que iba ganando. 🥋 Por qué el paso de azul a morado es donde más gente se frustra, y cómo gestionar los nervios al competir. 🥋 Los criterios de graduación para Tito Beltrán y consejos. 🥋 El proyecto ADCC España: premios en metálico, ranking y el sueño de crear una selección española de grappling. Un episodio para cualquiera que entrene, compita o quiera entender cómo se construyó el jiu-jitsu en España desde cero.",
+      "imagen": "../imagenes/epimg/ep34.webp",
+      "categorias": [
+        "move",
+        "think"
+      ],
+      "destacado": false,
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=TMUN1fM6fPI",
+        "spotify": "https://open.spotify.com/episode/5L907MRluwuTMqu9j4cg88",
+        "apple": "https://podcasts.apple.com/es/podcast/desde-1997-en-el-tatami-de-gracie-a-crazy-team/id1817544014?i=1000801270225"
+      }
     }
   ]
 }
