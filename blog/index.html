@@ -32,6 +32,44 @@
             background-color: var(--color-bg);
             color: var(--color-text);
         }
+
+        /* PAGINACIÓN (mismo estilo que Episodios) */
+        .pagination-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        #pagination {
+            display: flex;
+            gap: 0.3rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #pagination .page-item .page-link {
+            background: #111b26;
+            border: 1px solid #1e2d3d;
+            color: var(--color-secondary);
+            border-radius: 8px !important;
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 0.45rem 0.85rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        #pagination .page-item .page-link:hover {
+            background: #1a2a3a;
+            border-color: var(--color-accent);
+            color: var(--color-text);
+        }
+        #pagination .page-item.active .page-link {
+            background: var(--color-accent) !important;
+            border-color: var(--color-accent) !important;
+            color: #fff !important;
+        }
+        #pagination .page-item.disabled .page-link { opacity: 0.3; pointer-events: none; }
     </style>
 </head>
 <body>
@@ -66,7 +104,7 @@
             <p class="lead" style="color: var(--color-secondary);">Ideas, reflexiones y profundidad sobre el universo Mentes404.</p>
         </div>
 
-        <div class="row g-4 justify-content-center">
+        <div id="blog-grid" class="row g-4 justify-content-center">
             <div class="col-md-6 col-lg-4">
                 <article class="card h-100 blog-card">
                     <img src="../imagenes/epimg/ep11.webp" class="card-img-top" alt="Héctor Rojas NASA">
@@ -586,6 +624,10 @@
                 </article>
             </div>
             </div>
+
+        <nav class="pagination-wrap" aria-label="Paginación del blog">
+            <ul id="pagination"></ul>
+        </nav>
     </main>
 
     <footer class="footer-mentes404">
@@ -628,5 +670,69 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Paginación del blog: los artículos siguen en el HTML (bueno para SEO),
+    // solo se muestran/ocultan por páginas. La página va en la URL (?pagina=N).
+    (function () {
+        const PER_PAGE = 9;
+        const grid = document.getElementById("blog-grid");
+        const pagination = document.getElementById("pagination");
+        const items = Array.from(grid.children);
+        const totalPages = Math.ceil(items.length / PER_PAGE);
+
+        function getPageFromURL() {
+            const n = parseInt(new URLSearchParams(location.search).get("pagina"), 10);
+            return Number.isInteger(n) && n >= 1 && n <= totalPages ? n : 1;
+        }
+
+        function addItem(text, page, { active = false, disabled = false, label } = {}) {
+            const li = document.createElement("li");
+            li.className = "page-item" + (active ? " active" : "") + (disabled ? " disabled" : "");
+            const a = document.createElement("a");
+            a.className = "page-link";
+            a.textContent = text;
+            if (label) a.setAttribute("aria-label", label);
+            if (active) a.setAttribute("aria-current", "page");
+            if (page && !disabled) {
+                a.href = page === 1 ? location.pathname : "?pagina=" + page;
+                a.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    goTo(page, true);
+                });
+            }
+            li.appendChild(a);
+            pagination.appendChild(li);
+        }
+
+        function renderPagination(current) {
+            pagination.innerHTML = "";
+            if (totalPages <= 1) return;
+            addItem("‹", current - 1, { disabled: current === 1, label: "Página anterior" });
+            for (let i = 1; i <= totalPages; i++) {
+                if (totalPages <= 7 || i === 1 || i === totalPages || Math.abs(i - current) <= 1) {
+                    addItem(String(i), i, { active: i === current });
+                } else if (Math.abs(i - current) === 2) {
+                    addItem("…", null, { disabled: true });
+                }
+            }
+            addItem("›", current + 1, { disabled: current === totalPages, label: "Página siguiente" });
+        }
+
+        function goTo(page, push) {
+            const start = (page - 1) * PER_PAGE;
+            items.forEach((el, i) => {
+                el.classList.toggle("d-none", i < start || i >= start + PER_PAGE);
+            });
+            renderPagination(page);
+            if (push) {
+                history.pushState({ pagina: page }, "", page === 1 ? location.pathname : "?pagina=" + page);
+                grid.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        window.addEventListener("popstate", () => goTo(getPageFromURL(), false));
+        goTo(getPageFromURL(), false);
+    })();
+    </script>
 </body>
 </html>
