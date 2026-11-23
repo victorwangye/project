@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        AI red teaming, deepfakes y sesgos: Hugo Ramallo y la cara oculta de la IA | Mentes404
+    </title>
+
+    <meta name="description"
+          content="Hugo Ramallo, formador en IA y ciberseguridad (Global Cobots), explica el AI red teaming, cómo detectar deepfakes, los sesgos de la IA y cómo usarla para pensar mejor. Episodio 2 de Mentes404.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../../../favicon.png">
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../style.css">
+
+    <!-- Bootstrap Icons (NECESARIO para Spotify / YouTube icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+<header>
+      <a href="../../../" class="logo-btn"><span style="color: #EEE7D5;">Mentes</span>404</a>
+    <nav class="d-none d-md-flex">
+      <a href="../../../" class="menu-text">Inicio</a>
+      <a href="../../../episodios/" class="menu-text">Episodios</a>
+      <a href="../../../Personas-que-hemos-invitado-al-Podcast/" class="menu-text">Invitados</a>
+      <a href="../../" class="menu-text active">Blog</a>
+      <a href="../../../contacto/" class="menu-text">Contacto</a>
+    </nav>
+
+    <div class="dropdown d-md-none">
+      <button class="btn border-0 bg-transparent p-0 text-white" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+        <li><a class="dropdown-item" href="../../../">Inicio</a></li>
+        <li><a class="dropdown-item" href="../../../episodios/">Episodios</a></li>
+        <li><a class="dropdown-item" href="../../../Personas-que-hemos-invitado-al-Podcast/">Invitados</a></li>
+        <li><a class="dropdown-item" href="../../">Blog</a></li>
+        <li><a class="dropdown-item" href="../../../contacto/">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+    <main class="blog-article">
+        <nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="../../">Blog</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Hugo Ramallo...</li>
+  </ol>
+</nav>
+        <h1>AI red teaming, deepfakes y sesgos: Hugo Ramallo y la cara oculta de la IA</h1>
+
+        <div class="meta"> Tiempo de lectura estimada: 7 minutos. </div>
+
+        <img src="../../../imagenes/epimg/ep2.webp" alt="Mentes404 episodio 2" class="img-fluid rounded mb-4" loading="lazy">
+
+<p>Un chatbot de una tienda online acaba vendiendo un producto a un precio que no debería. Otro, el de un hospital, podría filtrar datos de pacientes si alguien sabe cómo preguntarle. No son escenas de ciencia ficción: son el tipo de fallos que intenta evitar el <strong>AI red teaming</strong>.</p>
+<p>En el segundo episodio de Mentes404 hablamos con <strong>Hugo Ramallo</strong>, formador en inteligencia artificial y ciberseguridad, que colabora con IBM y lidera <strong>Global Cobots</strong>, empresa y canal de YouTube de formación en IA. Antes pasó más de diez años en el sector tecnológico, gestionando la venta de Chromebooks de Google en Europa, Oriente Medio y África.</p>
+
+<h2>Qué es el AI red teaming</h2>
+<p>Hugo llegó a este campo a través de Learn Prompting, una comunidad nacida en la Universidad de Maryland para enseñar a comunicarse con la IA. Allí colaboró en cursos de prompt engineering y descubrió una nueva especialidad: poner a prueba los modelos de lenguaje para encontrar sus fallos de seguridad.</p>
+<p>El objetivo es que un modelo no entregue información peligrosa, que nadie pueda sacarle datos privados y que no se le pueda manipular para que deje de hacer bien su trabajo.</p>
+<blockquote>Poner un chatbot en producción tiene riesgos, y muchas veces no somos conscientes.</blockquote>
+
+<h2>El difícil equilibrio</h2>
+<p>¿Cómo se protege un chatbot? Con filtros en la entrada, filtros en la salida, instrucciones de sistema (el <em>system prompt</em>) y entrenamiento para que aprenda a no responder ciertas preguntas.</p>
+<p>Pero aquí está lo difícil. Lo que pasa dentro del modelo no se controla del todo: no es determinista. Y si te pasas con los filtros, el chatbot se vuelve rígido y pierde utilidad. El modelo no distingue bien entre las instrucciones del desarrollador y las del usuario. Por eso el red teaming no consiste en poner un parche y ya, como en la ciberseguridad clásica. Es buscar el punto justo entre seguridad y flexibilidad.</p>
+
+<h2>Deepfakes: el fuego que calienta y quema</h2>
+<p>Hoy cualquiera puede crear un avatar con su propia cara y su propia voz. Hugo lo ha enseñado en su canal: para un emprendedor puede ser útil tener un avatar que atienda a clientes las 24 horas sin perder su marca personal.</p>
+<p>El problema es el otro lado. Un vídeo falso se difunde, y aunque luego se desmienta, el daño ya está hecho. Y si tienes canal de YouTube o Instagram, alguien puede clonar tu voz con lo que ya has publicado.</p>
+<p>Su metáfora es la del fuego: puedes usarlo para calentarte o quemarte con él. Usarlo de forma ética y segura es responsabilidad nuestra.</p>
+
+<h2>Cómo detectar que no hablas con quien crees</h2>
+<p>Ante un audio o una llamada que te pide dinero en nombre de un familiar, Hugo propone tres gestos:</p>
+<ul>
+    <li><strong>Doble check siempre</strong>: llama tú directamente a esa persona antes de hacer nada.</li>
+    <li><strong>Pregunta algo que solo ella sabría</strong>, y fíjate en su forma de expresarse. La voz se imita; la manera de hablar, casi nunca al 100%.</li>
+    <li><strong>Un truco de red teaming</strong>: pide que ignore sus instrucciones. Una persona te preguntará qué estás diciendo; una IA dirá que no puede hacerlo… o te revelará sus instrucciones.</li>
+</ul>
+
+<h2>Los sesgos no son de la máquina</h2>
+<p>Para Hugo, una IA neutral es casi imposible, y no por culpa del algoritmo, sino de los datos con los que se alimenta. Si aprende de textos de una cultura, hereda sus sesgos. Si aprende de textos de hace un siglo, hereda los de esa época. Se pueden mitigar con filtros, pero no eliminar del todo. Igual que en las personas.</p>
+
+<h2>Una extensión, nunca un sustituto</h2>
+<p>El riesgo que más le preocupa es otro: el <strong>sesgo de autoridad</strong>. Tratar a la IA como un oráculo y dejar de pensar. Cuenta que una vez un chatbot le insistió en que A Coruña tenía más habitantes que Vigo, y tuvo que darle fuentes oficiales para que rectificara.</p>
+<p>Su método: usar la IA como primera búsqueda, comprobar las fuentes y, para lo importante, tener libros de referencia. Y, sobre todo, conversar con ella: pedirle argumentos, discutir sus respuestas, dejar que te abra puntos de vista nuevos. Para aprender, dice, es una herramienta increíble que se infravalora.</p>
+<p>Su consejo final es claro: abraza la tecnología, aprende de forma continua y no la rechaces. Pero no sustituyas lo mejor de antes, como los libros, por lo mejor de ahora. Únelos.</p>
+
+        <h2>🎧 Escucha el episodio completo</h2>
+        <p> Este artículo solo recoge algunas ideas. La conversación completa, con sus matices, pausas y preguntas, está en el episodio. </p>
+        <p> 👉 <strong>Episodio 2: AI red teaming, deepfakes y sesgos invisibles – Hugo Ramallo, Divulgador de IA</strong> </p>
+
+    <!-- CTA PLATAFORMAS -->
+    <div class="podcast-links">
+        <a href="https://open.spotify.com/episode/3br0oWruKgfvrnpC8C5JUs?si=64a2036d882c4599" aria-label="Spotify" style="text-decoration: none; color: #1DB954; font-size: 2rem;">
+            <i class="bi bi-spotify fs-3" ></i>
+        </a>
+
+        <a href="https://youtu.be/9FJZ7Y4HxM4?si=qTe0XedwzOAXjxKI" aria-label="YouTube" style="text-decoration: none; color: #FF0000; font-size: 2rem;">
+            <i class="bi bi-youtube fs-3"></i>
+        </a>
+
+        <a href="https://podcasts.apple.com/es/podcast/ai-red-teaming-deepfakes-y-sesgos-invisibles-hugo-ramallo/id1817544014?i=1000724733016" aria-label="Apple Podcasts" style="text-decoration: none; color: #ffff; font-size: 3rem;">
+            <!-- SVG Apple Podcasts -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path><path fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path><path d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path></svg>
+
+        </a>
+    </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-mentes404">
+  <div class="footer-container">
+    
+    <div class="footer-social mb-4">
+      <span>Síguenos:</span>
+      <div class="d-flex justify-content-center gap-4 mt-2">
+        <a href="https://open.spotify.com/show/6TCSSXnzYQJ874t88lXigb" aria-label="Spotify"><i class="bi bi-spotify fs-3"></i></a>
+        <a href="https://www.youtube.com/channel/UCAXF-rQVfmxN4g8XxjrQskA" aria-label="YouTube"><i class="bi bi-youtube fs-3"></i></a>
+        <a href="https://podcasts.apple.com/us/podcast/mentes-404/id1817544014" aria-label="Apple Podcasts">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M9.5 15.5c0-1.2 1-2 2.5-2s2.5 0.8 2.5 2C14.5 18 14 23 12 23s-2.5-5-2.5-7.5Z"></path><path fill-rule="evenodd" d="M3.25 11a8.75 8.75 0 1 1 12.513 7.902 17.468 17.468 0 0 1 -0.335 1.76c3.975 -1.41 6.822 -5.203 6.822 -9.662C22.25 5.34 17.66 0.75 12 0.75S1.75 5.34 1.75 11c0 4.459 2.847 8.253 6.822 9.663l-0.03 -0.125a17.481 17.481 0 0 1 -0.305 -1.636A8.75 8.75 0 0 1 3.25 11Z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.75 11a5.25 5.25 0 1 1 9.119 3.549c0.086 0.301 0.131 0.62 0.131 0.951 0 0.288 -0.006 0.609 -0.02 0.953a6.75 6.75 0 1 0 -7.96 0c-0.014 -0.344 -0.02 -0.665 -0.02 -0.953 0 -0.331 0.045 -0.65 0.131 -0.951A5.231 5.231 0 0 1 6.75 11Z" clip-rule="evenodd"></path><path d="M9.75 10.25a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 1 0 -4.5 0"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/mentes404.studio/" aria-label="Instagram"><i class="bi bi-instagram fs-3"></i></a>
+        <a href="https://www.linkedin.com/company/mentes404/" aria-label="LinkedIn"><i class="bi bi-linkedin fs-3"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section footer-contact text-center">
+      <p>¿Tienes cualquier duda?<br>Ponte en contacto con nosotros:</p>
+      <a href="mailto:hola@mentes404.studio">hola@mentes404.studio</a>
+    </div>
+
+    <div class="footer-section footer-links text-center">
+      <div class="footer-legal">
+        <a href="/">Inicio</a>
+      </div>
+      <div class="mt-2">
+        <a href="/episodios/">Episodios</a>
+        <a href="/Personas-que-hemos-invitado-al-Podcast/">Invitados</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom d-flex justify-content-center align-items-center gap-2 flex-wrap">
+  <span>© 2026 <strong>Mentes404™</strong> – Todos los derechos reservados. |</span>
+  <a href="/aviso-legal">Aviso Legal</a>
+</div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
